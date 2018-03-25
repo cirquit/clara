@@ -1,0 +1,2 @@
+/usr/bin/ar qc libclara.a  
+/usr/bin/ranlib libclara.a

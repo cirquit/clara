@@ -1,0 +1,51 @@
+\hypertarget{classclara_1_1data__association}{}\section{clara\+:\+:data\+\_\+association$<$ N $>$ Class Template Reference}
+\label{classclara_1_1data__association}\index{clara\+::data\+\_\+association$<$ N $>$@{clara\+::data\+\_\+association$<$ N $>$}}
+
+
+A class which handles the data association task for C\+L\+A\+RA.  
+
+
+
+
+{\ttfamily \#include $<$data\+\_\+association.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classclara_1_1data__association_a50e3471d0e0ae81acb13596e07c8b154}\label{classclara_1_1data__association_a50e3471d0e0ae81acb13596e07c8b154}} 
+std\+::array$<$ \hyperlink{classclara_1_1data__association_a8bd65eee5fba8dcaa35d96b1c3c6daa2}{cone\+\_\+data}, N $>$ {\bfseries cone\+\_\+states}
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classclara_1_1data__association_a8bd65eee5fba8dcaa35d96b1c3c6daa2}\label{classclara_1_1data__association_a8bd65eee5fba8dcaa35d96b1c3c6daa2}} 
+using \hyperlink{classclara_1_1data__association_a8bd65eee5fba8dcaa35d96b1c3c6daa2}{cone\+\_\+data} = std\+::tuple$<$ double, double $>$
+\begin{DoxyCompactList}\small\item\em {\ttfamily x} and {\ttfamily y} position \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t N$>$\newline
+class clara\+::data\+\_\+association$<$ N $>$}
+
+A class which handles the data association task for C\+L\+A\+RA. 
+
+The task of clara is to return the {\itshape best} estimate of the current world position
+
+To do this, we detect cones based on some sensors which return\+:
+\begin{DoxyItemize}
+\item {\bfseries relative distance} to the current position
+\item {\bfseries yaw angle} to the car direction. This is in the range of\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000007}{Todo}]ask sheldon for yaw angle\end{DoxyRefDesc}
+
+\end{DoxyItemize}
+
+Cones are saved by their absolute position (x,y), based on the starting point of the car (usually {\ttfamily (0,0)})
+
+Template arguments\+:
+\begin{DoxyItemize}
+\item {\ttfamily N} = maximum amount of cones which we\textquotesingle{}ll be able to identify 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+library/data\+\_\+association.\+h\end{DoxyCompactItemize}

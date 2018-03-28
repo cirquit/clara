@@ -33,7 +33,7 @@ namespace clara {
     /** \brief A wrapper for the cone state
      *
      *  This class servers as the full knowledge base of a cone from the start of the detection
-     *  We use this for the [data_association](data_association.h) task, which in turn uses the [Expectation Maximization algorithm])(https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm)
+     *  We use this for the [data_association](data_association.h) task, which in turn uses the (Expectation Maximization algorithm)[https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm]
      *  to associate detected cones to the known cones. 
      *
      *  To do EM, we need to calculate the mean und covariance matrix over `x, y`. Because we know we only have a 2-dimensional state, we provide
@@ -112,26 +112,37 @@ namespace clara {
                 }
             }
 
-            /** \brief Maximum likelihood estimate for this parametrization
+            //! Helper function for currying, calls pdf(T x, T y)
+            double pdf(std::tuple<T, T> tup)
+            {
+                return pdf(std::get<0>(tup), std::get<1>(tup));
+            }
+
+            /** \brief Probability density function of this multivariate gaussian
               * Linearized gaussian multiplication for 2x2 matrizes of the mahalanobis distance in the exponent of `e`
               * \todo make a nice image for the explanation
               * **Invariant:** All the members are updated
               */
-            double maximum_likelihood_estimate(T x, T y)
+            double pdf(T x, T y)
             {   
-                const double fraction = 1 / std::sqrt(2*std::pow(M_PI, 2) * _det_cov_mat);
+                const double fraction = 1 / std::sqrt(std::pow(2*M_PI, 2) * _det_cov_mat);
 
                 const T xx = _inv_cov_mat[0];
                 const T xy = _inv_cov_mat[1];
                 const T yy = _inv_cov_mat[3];
-                const double mahalanobis = 2*(x*y*xy) + std::pow(x,2) * xx + std::pow(y,2) * yy;
+                const T x_mean = _mean_vec[0];
+                const T y_mean = _mean_vec[1];
+                const T x_norm = x - x_mean;
+                const T y_norm = y - y_mean;
+
+                const double mahalanobis = 2*(x_norm*y_norm*xy) + std::pow(x_norm,2) * xx + std::pow(y_norm,2) * yy;
                 const double factor   = std::exp(-0.5 * mahalanobis);
 
-                std::cout << "\nmle:\n"
+              /*  std::cout << "\nmle:\n"
                           << "    mahalanobis: " << mahalanobis << '\n'
                           << "    factor:      " << factor << '\n'
                           << "    fraction:    " << fraction << '\n';
-
+*/
                 return fraction * factor;
             }
 
@@ -153,7 +164,7 @@ namespace clara {
                 return _inv_cov_mat;
             }
 
-            /** \brief This access to `_det_cov_mat` can trigger a recalulation of the cone state. *Cached*
+            /** \brief This access to `_det_cov_mat` can trigger a recalculation of the cone state. *Cached*
               */
             const T & get_det_cov_mat()
             {
@@ -181,10 +192,10 @@ namespace clara {
                 _inv_cov_mat[3] =  a / _det_cov_mat;
 
                 std::cout << "\nupdate_inv_cov_mat:\n"
-                          << "_inv_cov_mat[0]: " << _inv_cov_mat[0] << '\n'
-                          << "_inv_cov_mat[1]: " << _inv_cov_mat[1] << '\n'
-                          << "_inv_cov_mat[2]: " << _inv_cov_mat[2] << '\n'
-                          << "_inv_cov_mat[3]: " << _inv_cov_mat[3] << '\n';
+                          << "    _inv_cov_mat[0]: " << _inv_cov_mat[0] << '\n'
+                          << "    _inv_cov_mat[1]: " << _inv_cov_mat[1] << '\n'
+                          << "    _inv_cov_mat[2]: " << _inv_cov_mat[2] << '\n'
+                          << "    _inv_cov_mat[3]: " << _inv_cov_mat[3] << '\n';
             }
 
             /** \brief Cached determinant calculation of a 2x2 matrix `_cov_mat`, saved in `_det_cov_mat`
@@ -198,8 +209,7 @@ namespace clara {
                 const T c = _cov_mat[2];
                 const T d = _cov_mat[3];
                 _det_cov_mat = a * d - c * b;
-                // if (_det_cov_mat < 0.00000001) { _det_cov_mat = 1; }
-                _det_cov_mat = 0.00075;
+                if (_det_cov_mat < 0.00000001) { _det_cov_mat = 1; }
                 std::cout << "\nupdate_det_cov_mat:\n"
                           << "_det_cov_mat: " << _det_cov_mat << '\n';
             }
@@ -334,7 +344,6 @@ namespace clara {
               * \endcode
               */
             std::array<T, 2> _mean_vec;
-            
     };
 } // namespace clara
 

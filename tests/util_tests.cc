@@ -20,9 +20,20 @@
 
 #include "../library/util.h"
 
-TEST_CASE("util.h", "[util]") {
+TEST_CASE("util.h:angle-radians convertion", "[rad]") {
 
-    SECTION("default test") {
-        REQUIRE(true);
-    }
+  REQUIRE(clara::util::angle_to_rad(0) == 0.0);
+  REQUIRE(clara::util::angle_to_rad(90) == Approx(1.5708));
+  REQUIRE(clara::util::angle_to_rad(180) == Approx(3.1415926));
+  REQUIRE(clara::util::angle_to_rad(-90) == Approx(-1.5708));
+
+  REQUIRE(clara::util::rad_to_angle(0) == 0.0);
+  REQUIRE(clara::util::rad_to_angle(1.5708) == Approx(90.0));
+  REQUIRE(clara::util::rad_to_angle(3.1415926) == Approx(180.0));
+  REQUIRE(clara::util::rad_to_angle(-1.5708) == Approx(-90));
+
+  for(float f = 0.0; f < 360.1; f += 0.1)
+  {
+    REQUIRE(clara::util::rad_to_angle(clara::util::angle_to_rad(f)) == Approx(f));
+  }
 }

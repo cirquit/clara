@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['set_5fmodified',['set_modified',['../classclara_1_1cone__state.html#ac9712fb4aee53df62da1cd320a45f813',1,'clara::cone_state']]]
+  ['rad_5fto_5fangle',['rad_to_angle',['../namespaceclara_1_1util.html#a203083303f1faa63dbff7ad716516b5b',1,'clara::util']]]
 ];

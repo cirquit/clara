@@ -55,13 +55,14 @@ namespace clara {
         // constructors
         public:
             /** \brief Default constructor which allocates multiple N-sized arrays
+              * Currently we use add a 1m noise in both x and y directions until 4 observations have been made to allow better association
               */
             data_association()
             : _detected_cones {0}
             , _pdfs {}
             , _cone_state_weights {}
             , _probs {}
-            , _cone_states {} { };
+            , _cone_states { { cone_state<double>(1, 1, 4) } } { };
 
             //! deleted copy constructor, we don't want anybody to move or copy this object
             data_association(const self_t & other)  = delete;

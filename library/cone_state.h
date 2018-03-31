@@ -59,22 +59,29 @@ namespace clara {
             using coords_t = std::array<T,2>;
         // constructors
         public:
-            //!
-            cone_state()
+            //! default constructor without noisy initialization
+            cone_state() : cone_state(0, 0, 0) { }
+
+            //! noisy constructor, we apply the _noise_xx and _noise_yy to the covariance matrix until we have at least  seen _end_of_noise_ob_count observations
+            cone_state(T noise_xx, T noise_yy, size_t end_of_noise_ob_count)
             : _modified(false)
-            , _cov_mat{ }
-            , _inv_cov_mat{ }
-            , _det_cov_mat{ }
-            , _mean_vec{ }
+            , _cov_mat {}
+            , _inv_cov_mat {}
+            , _det_cov_mat {}
+            , _mean_vec {}
+            , _noise_xx(noise_xx)
+            , _noise_yy(noise_yy)
+            , _end_of_noise_ob_count(end_of_noise_ob_count)
             {   // magic number (10 rounds à 10 times seeing the same cone)
                 _observations.reserve(10 * 10);
             }
+
 
             //! deleted copy constructor, we don't want anybody to move or copy this object
             cone_state(const self_t & other)  = delete;
 
             //! deleted move constructor, we don't want anybody to move or copy this object
-            cone_state(const self_t && other) = delete;
+            cone_state(self_t && other) = default;
 
         // methods
         public:
@@ -113,10 +120,10 @@ namespace clara {
                 {
                     update_mean_vec();
                     update_cov_mat();
-                    if (_observations.size() <= 3)
+                    if (_observations.size() < _end_of_noise_ob_count)
                     {
-                        _cov_mat[0] += 1; // increase the variance radius by 1 to allow for a better "association"
-                        _cov_mat[3] += 1; 
+                        _cov_mat[0] += _noise_xx; // increase the variance radius to allow for a better "association"
+                        _cov_mat[3] += _noise_yy; // increase the variance radius to allow for a better "association"
                     }
                     update_det_cov_mat();
                     update_inv_cov_mat();
@@ -132,7 +139,9 @@ namespace clara {
 
             /** \brief Probability density function of this multivariate gaussian
               * Linearized gaussian multiplication for 2x2 matrizes of the mahalanobis distance in the exponent of `e`
+              *
               * \todo make a nice image for the explanation
+              *
               * **Invariant:** All the members are updated
               */
             double pdf(T x, T y)
@@ -311,7 +320,7 @@ namespace clara {
                 //           << "    _cov_mat[3]: " << _cov_mat[3] << '\n';
             }
 
-        // member
+        // member (were private, but for logging purposes we mage them public)
         public:
             //! modification flag, if this is true, we need to recompute `_cov_mat`, `_inv_cov_mat` and `_mean_vec`. `add_observation()` triggers this
             bool _modified;
@@ -362,6 +371,13 @@ namespace clara {
               * \endcode
               */
             std::array<T, 2> _mean_vec;
+
+            //! if set in special constructor, we apply noise to the covariance matrix in for x,x
+            T _noise_xx {0};
+            //! if set in special constructor, we apply noise to the covariance matrix in for yy
+            T _noise_yy {0};
+            //! if set in special constructor, we apply _noise_xx and _noise_yy to the covariance matrix until we have seen at least _end_of_noise_ob_count observations
+            size_t _end_of_noise_ob_count {0};
 
     };
 } // namespace clara

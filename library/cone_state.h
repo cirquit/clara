@@ -66,18 +66,25 @@ namespace clara {
             , _inv_cov_mat{ }
             , _det_cov_mat{ }
             , _mean_vec{ }
-            {   // magic number (10 rounds à 10 times seing the same cone)
+            {   // magic number (10 rounds à 10 times seeing the same cone)
                 _observations.reserve(10 * 10);
             }
 
             //! deleted copy constructor, we don't want anybody to move or copy this object
-            cone_state(const self_t & other) = delete;
+            cone_state(const self_t & other)  = delete;
 
             //! deleted move constructor, we don't want anybody to move or copy this object
             cone_state(const self_t && other) = delete;
 
         // methods
         public:
+
+            //! Helper function for currying, calls add_observation(T x, T y)
+            void add_observation(std::tuple<T, T> tup)
+            {   
+                add_observation(std::get<0>(tup), std::get<1>(tup));
+            }
+
             /** \brief Adds an observation of coordiantes to the cone state
               *
               * This should be called if the EM algorithm determined with a sufficient probability that those coordiantes are in fact associated with this cone
@@ -88,8 +95,8 @@ namespace clara {
               * \todo test streaming mean / covariance functions so we don't need to accumulate all observations
               */
             void add_observation(T x, T y)
-            {
-                _observations.push_back( coords_t {x, y} );
+            {   
+                _observations.push_back( coords_t { { x, y } } );
                 set_modified(true);
             }
 
@@ -106,6 +113,11 @@ namespace clara {
                 {
                     update_mean_vec();
                     update_cov_mat();
+                    if (_observations.size() <= 3)
+                    {
+                        _cov_mat[0] += 1; // increase the variance radius by 1 to allow for a better "association"
+                        _cov_mat[3] += 1; 
+                    }
                     update_det_cov_mat();
                     update_inv_cov_mat();
                     set_modified(false);
@@ -124,7 +136,9 @@ namespace clara {
               * **Invariant:** All the members are updated
               */
             double pdf(T x, T y)
-            {   
+            {  
+                update_state();
+
                 const double fraction = 1 / std::sqrt(std::pow(2*M_PI, 2) * _det_cov_mat);
 
                 const T xx = _inv_cov_mat[0];
@@ -138,13 +152,11 @@ namespace clara {
                 const double mahalanobis = 2*(x_norm*y_norm*xy) + std::pow(x_norm,2) * xx + std::pow(y_norm,2) * yy;
                 const double factor   = std::exp(-0.5 * mahalanobis);
 
-              /*  std::cout << "\nmle:\n"
-                          << "    mahalanobis: " << mahalanobis << '\n'
-                          << "    factor:      " << factor << '\n'
-                          << "    fraction:    " << fraction << '\n';
-*/
                 return fraction * factor;
             }
+
+            //! Needed to calculate the weighting parameter for this pdf in accordance to all other weights of clusters. Returing double, because we need to divide later
+            double get_observations_size(){ return static_cast<double>(_observations.size()); }
 
         // methods
         private:
@@ -152,6 +164,7 @@ namespace clara {
               * Any access to `_mean_vec`, `_cov_mat`, `_det_cov_mat` and `_inv_cov_mat` triggers their recomputation via `update_state()`
               */
             void set_modified(bool b){ _modified = b; }
+
 
             /** \brief This acces to `_inv_cov_mat` can trigger a recalculation of the cone state. *Cached*
               *
@@ -191,11 +204,11 @@ namespace clara {
                 _inv_cov_mat[2] = -c / _det_cov_mat;
                 _inv_cov_mat[3] =  a / _det_cov_mat;
 
-                std::cout << "\nupdate_inv_cov_mat:\n"
-                          << "    _inv_cov_mat[0]: " << _inv_cov_mat[0] << '\n'
-                          << "    _inv_cov_mat[1]: " << _inv_cov_mat[1] << '\n'
-                          << "    _inv_cov_mat[2]: " << _inv_cov_mat[2] << '\n'
-                          << "    _inv_cov_mat[3]: " << _inv_cov_mat[3] << '\n';
+                // std::cout << "\nupdate_inv_cov_mat:\n"
+                //           << "    _inv_cov_mat[0]: " << _inv_cov_mat[0] << '\n'
+                //           << "    _inv_cov_mat[1]: " << _inv_cov_mat[1] << '\n'
+                //           << "    _inv_cov_mat[2]: " << _inv_cov_mat[2] << '\n'
+                //           << "    _inv_cov_mat[3]: " << _inv_cov_mat[3] << '\n';
             }
 
             /** \brief Cached determinant calculation of a 2x2 matrix `_cov_mat`, saved in `_det_cov_mat`
@@ -210,8 +223,8 @@ namespace clara {
                 const T d = _cov_mat[3];
                 _det_cov_mat = a * d - c * b;
                 if (_det_cov_mat < 0.00000001) { _det_cov_mat = 1; }
-                std::cout << "\nupdate_det_cov_mat:\n"
-                          << "_det_cov_mat: " << _det_cov_mat << '\n';
+                // std::cout << "\nupdate_det_cov_mat:\n"
+                //           << "    _det_cov_mat: " << _det_cov_mat << '\n';
             }
 
             /** \brief Updates the `_mean_vec` with the current `_observations`
@@ -223,7 +236,7 @@ namespace clara {
             {
                 const coords_t sums = 
                     std::accumulate(_observations.begin(), _observations.end()
-                                  , coords_t { 0, 0 }
+                                  , coords_t { { 0, 0 } }
                                   , [](coords_t acc, coords_t _o)
                     {
                         const T x =  _o[0];
@@ -239,12 +252,17 @@ namespace clara {
 
                 _mean_vec[0] = x_sum / observations_count;
                 _mean_vec[1] = y_sum / observations_count;
-                std::cout << "\nupdate_mean_vec:\n"
-                          << "    x_sum:   " << x_sum << '\n'
-                          << "    y_sum:   " << y_sum << '\n'
-                          << "    obs_cnt: " << observations_count << '\n'
-                          << "    _mean_vec[0]: " << _mean_vec[0] << '\n'
-                          << "    _mean_vec[1]: " << _mean_vec[1] << '\n';
+                // std::cout << "\nupdate_mean_vec:\n"
+                //           << "    x_sum:   " << x_sum << '\n'
+                //           << "    y_sum:   " << y_sum << '\n'
+                //           << "    obs_cnt: " << observations_count << '\n'
+                //           << "    _mean_vec[0]: " << _mean_vec[0] << '\n'
+                //           << "    _mean_vec[1]: " << _mean_vec[1] << '\n';
+                // for (int i = 0; i < _observations.size(); ++i)
+                // {
+                //    std::cout << "    _observations[" << i <<"]: " << _observations[i][0] << ", " << _observations[i][1] << '\n';
+                //   /* code */
+                // }
             }
 
             /** \brief Updates the `_cov_mat` with the current `_observations` and `_mean_vec`
@@ -260,7 +278,7 @@ namespace clara {
                 
                 const std::array<T, 3> cov_sum =
                     std::accumulate(_observations.begin(), _observations.end()
-                                  , std::array<T,3> { 0, 0, 0 }
+                                  , std::array<T,3> { { 0, 0, 0 } }
                                   , [&](std::array<T, 3> & cov_sum, const coords_t & _o)
                     {
                         const T          x = _o[0];
@@ -277,24 +295,24 @@ namespace clara {
                         return cov_sum;
                     });
 
-                const T cov_xx = cov_sum[0] * 1 / observations_count;
-                const T cov_yy = cov_sum[1] * 1 / observations_count;
-                const T cov_xy = cov_sum[2] * 1 / observations_count;
+                const T cov_xx = cov_sum[0] / observations_count;
+                const T cov_yy = cov_sum[1] / observations_count;
+                const T cov_xy = cov_sum[2] / observations_count;
 
                 _cov_mat[0] = cov_xx;
                 _cov_mat[1] = cov_xy;
                 _cov_mat[2] = cov_xy;
                 _cov_mat[3] = cov_yy;
 
-                std::cout << "\nupdate_cov_mat:\n"
-                          << "_cov_mat[0]: " << _cov_mat[0] << '\n'
-                          << "_cov_mat[1]: " << _cov_mat[1] << '\n'
-                          << "_cov_mat[2]: " << _cov_mat[2] << '\n'
-                          << "_cov_mat[3]: " << _cov_mat[3] << '\n';
+                // std::cout << "\nupdate_cov_mat:\n"
+                //           << "    _cov_mat[0]: " << _cov_mat[0] << '\n'
+                //           << "    _cov_mat[1]: " << _cov_mat[1] << '\n'
+                //           << "    _cov_mat[2]: " << _cov_mat[2] << '\n'
+                //           << "    _cov_mat[3]: " << _cov_mat[3] << '\n';
             }
 
         // member
-        private:
+        public:
             //! modification flag, if this is true, we need to recompute `_cov_mat`, `_inv_cov_mat` and `_mean_vec`. `add_observation()` triggers this
             bool _modified;
 
@@ -344,6 +362,7 @@ namespace clara {
               * \endcode
               */
             std::array<T, 2> _mean_vec;
+
     };
 } // namespace clara
 

@@ -19,8 +19,8 @@
  *  \addtogroup clara::util
  *  @{
  */
+#include <iostream>
 #include <blaze/Math.h>
-#include "data_association.h"
 
 //! unused macro to avoid errors because of nonuse of declared variables
 #define UNUSED(x) (void)(x)
@@ -59,7 +59,48 @@ namespace clara
         {
           return angle * (M_PI / 180.0);
         }
+
+        //! \todo
+        template <typename Iterator>
+        void advance_all(Iterator & iterator) {
+          ++iterator;
+        }
+
+        //! \todo
+        template <typename Iterator, typename ... Iterators>
+        void advance_all(Iterator  & iterator
+                       , Iterators & ... iterators) {
+            ++iterator;
+            advance_all(iterators...);
+        }
+
+        //! \todo
+        template <typename Function, typename InputIt, typename OutputIt, typename ... Iterators>
+        OutputIt zipWith(Function func,
+                         InputIt first,
+                         InputIt last,
+                         OutputIt d_first,
+                         Iterators ... iterators)
+        {
+            for (; first != last; ++first, advance_all(iterators...))
+              *d_first++ = func(*first, *(iterators)...);
+            return d_first;
+        }
         
+        /** \brief \todo
+          *
+          * Source: blatantly copied from http://stackoverflow.com/questions/3752019/how-to-get-the-index-of-a-value-in-a-vector-using-for-each
+          */ 
+        template <typename InputT, typename Function>
+        Function enumerate(InputT first,
+                           InputT last,
+                           typename std::iterator_traits<InputT>::difference_type initial,
+                           Function func)
+        {
+            for (; first != last; ++first, ++initial)
+                func(initial, *first);
+            return func;
+        }
 
     } // namespace util
 } // namespace clara

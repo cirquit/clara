@@ -56,20 +56,20 @@ TEST_CASE("cone_state.h", "[cone_state]") {
 
         cs_1.add_observation(0.5, 0.5);
         cs_1.add_observation(1.0, 0.5);
-        cs_1.add_observation(1.0, 1.0);
-        cs_1.add_observation(0.5, 1.5);
+       // cs_1.add_observation(1.0, 1.0);
+       // cs_1.add_observation(0.5, 1.5);
         cs_1.update_state();
 
         cs_2.add_observation(2.0, 4.5);
         cs_2.add_observation(2.5, 3.5);
-        cs_2.add_observation(3.0, 5.5);
+    // cs_2.add_observation(3.0, 5.5);
         cs_2.update_state();
 
         cs_3.add_observation(4.5, 1.5);
         cs_3.add_observation(4.5, 2.0);
         cs_3.add_observation(4.5, 2.5);
-        cs_3.add_observation(4.0, 2.0);
-        cs_3.add_observation(5.0, 1.0);
+    //    cs_3.add_observation(4.0, 2.0);
+    //    cs_3.add_observation(5.0, 1.0);
         cs_3.update_state();
 
         std::tuple<double, double> x1 { 1.5, 2.0 };
@@ -77,56 +77,84 @@ TEST_CASE("cone_state.h", "[cone_state]") {
         std::tuple<double, double> x3 { 5.0, 1.5 };
         std::tuple<double, double> x4 { 1.5, 0.5 };
         std::tuple<double, double> x5 { 2.0, 5.5 };
+        std::tuple<double, double> x6 { 8.0, 7.0 };
 
-        double x1_cs_1 = cs_1.pdf(x1);
-        double x1_cs_2 = cs_2.pdf(x1);
-        double x1_cs_3 = cs_3.pdf(x1);
+
+        double cs_1_ob_count = cs_1.get_observations_size();
+        double cs_2_ob_count = cs_2.get_observations_size();
+        double cs_3_ob_count = cs_3.get_observations_size();
+        double ob_count_sum  = cs_1_ob_count + cs_2_ob_count + cs_3_ob_count;
+        double cs_1_weight   = cs_1_ob_count / ob_count_sum;
+        double cs_2_weight   = cs_2_ob_count / ob_count_sum;
+        double cs_3_weight   = cs_3_ob_count / ob_count_sum;
+
+        // std::cout << "weights: \n"
+        //           << "    cs_1: " << cs_1_weight << '\n'
+        //           << "    cs_2: " << cs_2_weight << '\n'
+        //           << "    cs_3: " << cs_3_weight << '\n';
+
+
+        double x1_cs_1 = cs_1_weight * cs_1.pdf(x1);
+        double x1_cs_2 = cs_2_weight * cs_2.pdf(x1);
+        double x1_cs_3 = cs_3_weight * cs_3.pdf(x1);
         double x1_sum = x1_cs_1 + x1_cs_2 + x1_cs_3;
 
-        std::cout << "# x1:" << '\n'
-                  << "    cs_1: " << x1_cs_1 / x1_sum << '\n'
-                  << "    cs_2: " << x1_cs_2 / x1_sum << '\n'
-                  << "    cs_3: " << x1_cs_3 / x1_sum << '\n';
+        // std::cout << "# x1:" << '\n'
+        //           << "    cs_1: " << x1_cs_1 / x1_sum << ", pdf: " << cs_1.pdf(x1) << '\n'
+        //           << "    cs_2: " << x1_cs_2 / x1_sum << ", pdf: " << cs_2.pdf(x1) << '\n'
+        //           << "    cs_3: " << x1_cs_3 / x1_sum << ", pdf: " << cs_3.pdf(x1) << '\n';
 
-        double x2_cs_1 = cs_1.pdf(x2);
-        double x2_cs_2 = cs_2.pdf(x2);
-        double x2_cs_3 = cs_3.pdf(x2);
+        double x2_cs_1 = cs_1_weight * cs_1.pdf(x2);
+        double x2_cs_2 = cs_2_weight * cs_2.pdf(x2);
+        double x2_cs_3 = cs_3_weight * cs_3.pdf(x2);
         double x2_sum = x2_cs_1 + x2_cs_2 + x2_cs_3;
 
-        std::cout << "# x2:" << '\n'
-                  << "    cs_1: " << x2_cs_1 / x2_sum << '\n'
-                  << "    cs_2: " << x2_cs_2 / x2_sum << '\n'
-                  << "    cs_3: " << x2_cs_3 / x2_sum << '\n';
+        // std::cout << "# x2:" << '\n'
+        //           << "    cs_1: " << x2_cs_1 / x2_sum << ", pdf: " << cs_1.pdf(x2) << '\n'
+        //           << "    cs_2: " << x2_cs_2 / x2_sum << ", pdf: " << cs_2.pdf(x2) << '\n'
+        //           << "    cs_3: " << x2_cs_3 / x2_sum << ", pdf: " << cs_3.pdf(x2) << '\n';
 
-        double x3_cs_1 = cs_1.pdf(x3);
-        double x3_cs_2 = cs_2.pdf(x3);
-        double x3_cs_3 = cs_3.pdf(x3);
+        double x3_cs_1 = cs_1_weight * cs_1.pdf(x3);
+        double x3_cs_2 = cs_2_weight * cs_2.pdf(x3);
+        double x3_cs_3 = cs_3_weight * cs_3.pdf(x3);
         double x3_sum = x3_cs_1 + x3_cs_2 + x3_cs_3;
 
-        std::cout << "# x3:" << '\n'
-                  << "    cs_1: " << x3_cs_1 / x3_sum << '\n'
-                  << "    cs_2: " << x3_cs_2 / x3_sum << '\n'
-                  << "    cs_3: " << x3_cs_3 / x3_sum << '\n';
+        // std::cout << "# x3:" << '\n'
+        //           << "    cs_1: " << x3_cs_1 / x3_sum  << ", pdf: " << cs_1.pdf(x3) << '\n'
+        //           << "    cs_2: " << x3_cs_2 / x3_sum  << ", pdf: " << cs_2.pdf(x3) << '\n'
+        //           << "    cs_3: " << x3_cs_3 / x3_sum  << ", pdf: " << cs_3.pdf(x3) << '\n';
 
-        double x4_cs_1 = cs_1.pdf(x4);
-        double x4_cs_2 = cs_2.pdf(x4);
-        double x4_cs_3 = cs_3.pdf(x4);
+        double x4_cs_1 = cs_1_weight * cs_1.pdf(x4);
+        double x4_cs_2 = cs_2_weight * cs_2.pdf(x4);
+        double x4_cs_3 = cs_3_weight * cs_3.pdf(x4);
         double x4_sum = x4_cs_1 + x4_cs_2 + x4_cs_3;
 
-        std::cout << "# x4:" << '\n'
-                  << "    cs_1: " << x4_cs_1 / x4_sum << '\n'
-                  << "    cs_2: " << x4_cs_2 / x4_sum << '\n'
-                  << "    cs_3: " << x4_cs_3 / x4_sum << '\n';
+        // std::cout << "# x4:" << '\n'
+        //           << "    cs_1: " << x4_cs_1 / x4_sum << ", pdf: " << cs_1.pdf(x4) << '\n'
+        //           << "    cs_2: " << x4_cs_2 / x4_sum << ", pdf: " << cs_2.pdf(x4) << '\n'
+        //           << "    cs_3: " << x4_cs_3 / x4_sum << ", pdf: " << cs_3.pdf(x4) << '\n';
 
-        double x5_cs_1 = cs_1.pdf(x5);
-        double x5_cs_2 = cs_2.pdf(x5);
-        double x5_cs_3 = cs_3.pdf(x5);
+        double x5_cs_1 = cs_1_weight * cs_1.pdf(x5);
+        double x5_cs_2 = cs_2_weight * cs_2.pdf(x5);
+        double x5_cs_3 = cs_3_weight * cs_3.pdf(x5);
         double x5_sum = x5_cs_1 + x5_cs_2 + x5_cs_3;
 
-        std::cout << "# x5:" << '\n'
-                  << "    cs_1: " << x5_cs_1 / x5_sum << '\n'
-                  << "    cs_2: " << x5_cs_2 / x5_sum << '\n'
-                  << "    cs_3: " << x5_cs_3 / x5_sum << '\n';
+        // std::cout << "# x5:" << '\n'
+        //           << "    cs_1: " << x5_cs_1 / x5_sum  << ", pdf: " << cs_1.pdf(x5) << '\n'
+        //           << "    cs_2: " << x5_cs_2 / x5_sum  << ", pdf: " << cs_2.pdf(x5) << '\n'
+        //           << "    cs_3: " << x5_cs_3 / x5_sum  << ", pdf: " << cs_3.pdf(x5) << '\n';
+
+        double x6_cs_1 = cs_1_weight * cs_1.pdf(x6);
+        double x6_cs_2 = cs_2_weight * cs_2.pdf(x6);
+        double x6_cs_3 = cs_3_weight * cs_3.pdf(x6);
+        double x6_sum = x6_cs_1 + x6_cs_2 + x6_cs_3;
+
+        // std::cout << "# x5:" << '\n'
+        //           << "    cs_1: " << x6_cs_1 / x6_sum  << ", pdf: " << cs_1.pdf(x6) << '\n'
+        //           << "    cs_2: " << x6_cs_2 / x6_sum  << ", pdf: " << cs_2.pdf(x6) << '\n'
+        //           << "    cs_3: " << x6_cs_3 / x6_sum  << ", pdf: " << cs_3.pdf(x6) << '\n';
+
+        // \todo compare the covariances with the python implementation
 
         REQUIRE(true);
     }

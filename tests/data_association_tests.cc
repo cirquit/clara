@@ -63,7 +63,7 @@ TEST_CASE("data association tests", "[data]") {
 
     //     io::CSVReader<6> in(csv_path);
     //     // please provice exactly this header, separated by ','
-    //     in.read_header(io::ignore_extra_column, "distance[m]", "yaw[rad]", "x[m]", "y[m]", "color[int]", "timestamp[int]");
+    //     in.read_header(io::ignore_extra_column, "distance[m]", "angle[rad]", "x[m]", "y[m]", "color[int]", "timestamp[int]");
 
     //     // every inner vector is a single timestamp, starting from 0
     //     std::vector< std::vector<raw_cone_data> > yellow_cone_data;

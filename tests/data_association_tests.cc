@@ -36,6 +36,7 @@ void print_clusters(const std::array<clara::cone_state<double>, N> & clusters)
         // don't plot unused clusters
         if (mean_x != 0 || mean_y != 0)
         {
+        /*
             std::cout << "    Nr." << inner_counter << ":"
                       <<   " ~x: " << mean_x
                       <<  ", ~y: " << mean_y
@@ -43,6 +44,8 @@ void print_clusters(const std::array<clara::cone_state<double>, N> & clusters)
                       << ", Covar(xx): " << cs._cov_mat[0]
                       << ", Covar(xy): " << cs._cov_mat[1]
                       << ", Covar(yy): " << cs._cov_mat[3] << '\n';
+                      */
+          std::cout << mean_x << ", " << mean_y << '\n';
         }
     });
 }
@@ -50,81 +53,82 @@ void print_clusters(const std::array<clara::cone_state<double>, N> & clusters)
 
 TEST_CASE("data association tests", "[data]") {
 
-    // SECTION("example track 1 - full data test") {
-    //     // maximum 250 clusters currently for each color, this is up to test the performance of vector on unbounded data
-    //     const size_t N = 250;
-    //     // define how many sample points are to evaluate
-    //     const double MAX_SAMPLE_POINTS = 1000;
-    //     // the data format our data_association works with
-    //     using raw_cone_data = typename clara::data_association<N>::raw_cone_data;
+    SECTION("example track 1 - full data test") {
+    // maximum 250 clusters currently for each color, this is up to test the performance of vector on unbounded data
+      const size_t N = 250;
+    // define how many sample points to evaluate
+      const double MAX_SAMPLE_POINTS = 1000;
+    // the data format, our data_association works with
+      using raw_cone_data = typename clara::data_association<N>::raw_cone_data;
 
-    //     // read the data in exactly this format
-    //     std::string csv_path = "test-data/large-map-randomized-cones-d-yw-x-y-t.csv";
+      // read the data in exactly this format
+      //std::string csv_path = "../tests/test-data/large-map-randomized-cones-d-a-x-y-c-t.csv";
+      std::string csv_path = "../tests/test-data/small-map-randomized-cones-d-a-x-y-c-t.csv";
 
-    //     io::CSVReader<6> in(csv_path);
-    //     // please provice exactly this header, separated by ','
-    //     in.read_header(io::ignore_extra_column, "distance[m]", "angle[rad]", "x[m]", "y[m]", "color[int]", "timestamp[int]");
+      io::CSVReader<6> in(csv_path);
+      // please provide exactly this header, separated by ','
+      in.read_header(io::ignore_extra_column, "distance[m]", "angle[rad]", "x[m]", "y[m]", "color[int]", "timestamp[int]");
 
-    //     // every inner vector is a single timestamp, starting from 0
-    //     std::vector< std::vector<raw_cone_data> > yellow_cone_data;
-    //     std::vector< std::vector<raw_cone_data> > blue_cone_data;
-    //     std::vector< std::vector<raw_cone_data> > red_cone_data;
+      // every inner vector is a single timestamp, starting from 0
+      std::vector< std::vector<raw_cone_data> > yellow_cone_data;
+      std::vector< std::vector<raw_cone_data> > blue_cone_data;
+      std::vector< std::vector<raw_cone_data> > red_cone_data;
 
-    //     // read the data in the vector
-    //     double distance, yaw, x, y, color, timestamp;
-    //     double timestamp_old = -1.0;
-    //     while(in.read_row(distance, yaw, x, y, color, timestamp))
-    //     {
-    //         // if we already have enough sample points, stop the reading
-    //         if ( timestamp >= MAX_SAMPLE_POINTS ) { break; }
-    //         // will currently only use x, y and color for the classification
-    //         if ( timestamp != timestamp_old )
-    //         {
-    //             // create new vectors for every cone color
-    //             yellow_cone_data.push_back( std::vector<raw_cone_data>() );
-    //             blue_cone_data.push_back( std::vector<raw_cone_data>() );
-    //             red_cone_data.push_back( std::vector<raw_cone_data>() );
-    //             timestamp_old = timestamp;
-    //         }
+      // read the data in the vector
+      double distance, angle, x, y, color, timestamp;
+      int timestamp_old = -1;
+      while(in.read_row(distance, angle, x, y, color, timestamp))
+      {
+        // if we already have enough sample points, stop the reading
+        if ( timestamp >= MAX_SAMPLE_POINTS ) { break; }
+        // will currently only use x, y and color for the classification
+        if ( timestamp != timestamp_old )
+        {
+          // create new vectors for every cone color
+          yellow_cone_data.push_back( std::vector<raw_cone_data>() );
+          blue_cone_data.push_back( std::vector<raw_cone_data>() );
+          red_cone_data.push_back( std::vector<raw_cone_data>() );
+          timestamp_old = timestamp;
+        }
 
-    //         // watch out for this encoding, this is just for ease of use. Should change depending on the object type from darknet
-    //         if( color == 0 ) yellow_cone_data.back().push_back( raw_cone_data(x, y) );
-    //         if( color == 1 ) blue_cone_data.back().push_back( raw_cone_data(x, y) );
-    //         if( color == 2 ) red_cone_data.back().push_back( raw_cone_data(x, y) );
-    //     }
+        // watch out for this encoding, this is just for ease of use. Should change depending on the object type from darknet
+        if( color == 0 ) yellow_cone_data.back().push_back( raw_cone_data(x, y) );
+        if( color == 1 ) blue_cone_data.back().push_back( raw_cone_data(x, y) );
+        if( color == 2 ) red_cone_data.back().push_back( raw_cone_data(x, y) );
+      }
 
-    //     // create our association object which holds all the clusters
-    //     clara::data_association<N> yellow_data_association;
-    //     clara::data_association<N> blue_data_association;
-    //     clara::data_association<N> red_data_association;
+      // create our association object which holds all the clusters
+      clara::data_association<N> yellow_data_association;
+      clara::data_association<N> blue_data_association;
+      clara::data_association<N> red_data_association;
 
-    //     // use the data for classification
-    //     for (int t = 0; t < timestamp; ++t)
-    //     {
-    //         // get the current timestep snapshot of visible cones
-    //         auto new_yellow_cones = yellow_cone_data[t];
-    //         auto new_blue_cones   = blue_cone_data[t];
-    //         auto new_red_cones    = red_cone_data[t];
+         // use the data for classification
+         for (int t = 0; t < timestamp; ++t)
+         {
+           // get the current timestep snapshot of visible cones
+           auto new_yellow_cones = yellow_cone_data[t];
+           auto new_blue_cones   = blue_cone_data[t];
+           auto new_red_cones    = red_cone_data[t];
 
-    //         // create or update the cluster for each color
-    //         const std::array<clara::cone_state<double>, N> & current_yellow_clusters =
-    //             yellow_data_association.classify_new_data(new_yellow_cones);
-    //         const std::array<clara::cone_state<double>, N> & current_blue_clusters =
-    //             blue_data_association.classify_new_data(new_blue_cones);
-    //         const std::array<clara::cone_state<double>, N> & current_red_clusters =
-    //             red_data_association.classify_new_data(new_red_cones);
+           // create or update the cluster for each color
+           const std::array<clara::cone_state<double>, N> & current_yellow_clusters =
+             yellow_data_association.classify_new_data(new_yellow_cones);
+           const std::array<clara::cone_state<double>, N> & current_blue_clusters =
+             blue_data_association.classify_new_data(new_blue_cones);
+           const std::array<clara::cone_state<double>, N> & current_red_clusters =
+             red_data_association.classify_new_data(new_red_cones);
 
-    //         // print clusters
-    //         std::cout << "Yellow clusters - Step #" << t << '\n';
-    //         print_clusters<N>(current_yellow_clusters);
-    //         std::cout << "Blue clusters - Step #" << t << '\n';
-    //         print_clusters<N>(current_blue_clusters);
-    //         std::cout << "Red clusters - Step #" << t << '\n';
-    //         print_clusters<N>(current_red_clusters);
-    //     };
-    //}
+           // print clusters
+//           std::cout << "Yellow clusters - Step #" << t << '\n';
+           print_clusters<N>(current_yellow_clusters);
+//           std::cout << "Blue clusters - Step #" << t << '\n';
+           print_clusters<N>(current_blue_clusters);
+//           std::cout << "Red clusters - Step #" << t << '\n';
+//           print_clusters<N>(current_red_clusters);
+         };
+    }
 
-
+/*
     SECTION("example track 2 - partial information test") {
         // maximum 250 clusters currently for each color, this is up to test the performance of vector on unbounded data
         const size_t N = 250;
@@ -159,4 +163,5 @@ TEST_CASE("data association tests", "[data]") {
             print_clusters<N>(current_clusters);
         }
     }
+    */
 }

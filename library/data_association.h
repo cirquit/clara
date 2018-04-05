@@ -104,8 +104,8 @@ namespace clara {
                     // iterate over all the cones
                     for(auto cone : new_cones){
 
-                        std::cout << "Detected cone: (" << std::get<0>(cone) << ", "
-                                                        << std::get<1>(cone) << ")\n";
+//                        std::cout << "Detected cone: (" << std::get<0>(cone) << ", "
+//                                                        << std::get<1>(cone) << ")\n";
                         // for all clusters, calculate their pdfs and probabilities
                         for (size_t i = 0; i < _detected_cones_copy; ++i)
                         {
@@ -117,16 +117,16 @@ namespace clara {
                         // log every calculation, this is dependent on probs_sum
                         for (size_t i = 0; i < _detected_cones_copy; ++i)
                         {
-                            std::cout << "    pdf  ["   << i << "]: " << _pdfs[i]
-                                      << "    probs["   << i << "]: " << _probs[i] / probs_sum * 100 << '%'
-                                      << "    weights[" << i << "]: " << _cone_state_weights[i] << '\n';
+//                            std::cout << "    pdf  ["   << i << "]: " << _pdfs[i]
+//                                      << "    probs["   << i << "]: " << _probs[i] / probs_sum * 100 << '%'
+//                                      << "    weights[" << i << "]: " << _cone_state_weights[i] << '\n';
                         }
 
                         // find the maximum pdf value, if it's below our threshold, it's a new cluster \todo test this rigorously 
                         auto it = std::max_element(_pdfs.begin(), _pdfs.end());
-                        if (*it < 0.0001)
+                        if (*it < 0.0000001)
                         {
-                            std::cout << "    New cluster detected, adding to list\n";
+//                            std::cout << "    New cluster detected, adding to list\n";
                             _cone_states[_detected_cones].add_observation(cone);
                             _cone_states[_detected_cones].update_state();
                             _detected_cones++;
@@ -141,9 +141,9 @@ namespace clara {
                             // add the cone to the clusters
                             _cone_states[prob_ix].add_observation(cone);
                             _cone_states[prob_ix].update_state();
-                            std::cout << "    Added cone to this cluster Nr." << prob_ix
-                                      << " with mean: (" << _cone_states[prob_ix]._mean_vec[0] << ", "
-                                                         << _cone_states[prob_ix]._mean_vec[1] << ")\n";
+//                            std::cout << "    Added cone to this cluster Nr." << prob_ix
+//                                      << " with mean: (" << _cone_states[prob_ix]._mean_vec[0] << ", "
+//                                                         << _cone_states[prob_ix]._mean_vec[1] << ")\n";
                         }
                     }
                 }

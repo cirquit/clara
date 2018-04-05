@@ -25,7 +25,7 @@
 #define UNUSED(x) (void)(x)
 
 template<size_t N>
-void print_clusters(const std::array<clara::cone_state<double>, N> & clusters)
+void print_clusters(const std::array<clara::cone_state<double>, N> & clusters, int color)
 {
     // show all the cluster (modify this to maybe try to plot the results in gnuplot)
     clara::util::enumerate(clusters.begin(), clusters.end(), 0
@@ -36,6 +36,10 @@ void print_clusters(const std::array<clara::cone_state<double>, N> & clusters)
         // don't plot unused clusters
         if (mean_x != 0 || mean_y != 0)
         {
+        std::cout << color << ", " << inner_counter << ", " << mean_x << ", " << mean_y 
+                           << ", " << cs._cov_mat[0] 
+                           << ", " << cs._cov_mat[1] 
+                           << ", " << cs._cov_mat[3] << '\n';
         /*
             std::cout << "    Nr." << inner_counter << ":"
                       <<   " ~x: " << mean_x
@@ -45,7 +49,6 @@ void print_clusters(const std::array<clara::cone_state<double>, N> & clusters)
                       << ", Covar(xy): " << cs._cov_mat[1]
                       << ", Covar(yy): " << cs._cov_mat[3] << '\n';
                       */
-          std::cout << mean_x << ", " << mean_y << '\n';
         }
     });
 }
@@ -57,17 +60,18 @@ TEST_CASE("data association tests", "[data]") {
     // maximum 250 clusters currently for each color, this is up to test the performance of vector on unbounded data
       const size_t N = 250;
     // define how many sample points to evaluate
-      const double MAX_SAMPLE_POINTS = 1000;
+      const double MAX_SAMPLE_POINTS = 1200;
     // the data format, our data_association works with
       using raw_cone_data = typename clara::data_association<N>::raw_cone_data;
 
       // read the data in exactly this format
       //std::string csv_path = "../tests/test-data/large-map-randomized-cones-d-a-x-y-c-t.csv";
-      std::string csv_path = "../tests/test-data/small-map-randomized-cones-d-a-x-y-c-t.csv";
+      //std::string csv_path = "../tests/test-data/small-map-randomized-cones-d-a-x-y-c-t.csv";
+      std::string csv_path = "../tests/test-data/wemding-map-ground-truth-cones-d-a-x-y-c-t.csv";
 
       io::CSVReader<6> in(csv_path);
       // please provide exactly this header, separated by ','
-      in.read_header(io::ignore_extra_column, "distance[m]", "angle[rad]", "x[m]", "y[m]", "color[int]", "timestamp[int]");
+//      in.read_header(io::ignore_extra_column, "distance[m]", "angle[rad]", "x[m]", "y[m]", "color[int]", "timestamp[int]");
 
       // every inner vector is a single timestamp, starting from 0
       std::vector< std::vector<raw_cone_data> > yellow_cone_data;
@@ -120,11 +124,11 @@ TEST_CASE("data association tests", "[data]") {
 
            // print clusters
 //           std::cout << "Yellow clusters - Step #" << t << '\n';
-           print_clusters<N>(current_yellow_clusters);
+           print_clusters<N>(current_yellow_clusters, 0);
 //           std::cout << "Blue clusters - Step #" << t << '\n';
-           print_clusters<N>(current_blue_clusters);
+           print_clusters<N>(current_blue_clusters, 1);
 //           std::cout << "Red clusters - Step #" << t << '\n';
-//           print_clusters<N>(current_red_clusters);
+//           print_clusters<N>(current_red_clusters, 2);
          };
     }
 

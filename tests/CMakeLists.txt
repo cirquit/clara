@@ -17,5 +17,12 @@ set(SOURCES catch.h csv.h main.cc cone_state_tests.cc util_tests.cc data_associa
 add_executable(${TEST_NAME} ${SOURCES})
 target_link_libraries(${TEST_NAME} ${LIB_NAME})
 
-file(COPY test-data DESTINATION .)  # execute ./kafi_tests
-file(COPY test-data DESTINATION ..) # execute ./tests/kafi_tests
+# custom data association test for debugging purposes
+set(TEST_NAME_DA clara_data_assoc_test)
+set(SOURCES_DA catch.h csv.h main.cc data_association_tests.cc)
+add_executable(${TEST_NAME_DA} ${SOURCES_DA})
+target_link_libraries(${TEST_NAME_DA} ${LIB_NAME})
+
+file(COPY example-data DESTINATION .)  # execute ./clara_test
+file(COPY example-data DESTINATION ..) # execute ./tests/clara_test
+file(COPY visualization DESTINATION ..) #

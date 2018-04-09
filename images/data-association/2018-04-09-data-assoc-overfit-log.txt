@@ -1,0 +1,1 @@
+cov times 5, only yellow cones

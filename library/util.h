@@ -60,13 +60,13 @@ namespace clara
           return angle * (M_PI / 180.0);
         }
 
-        //! \todo
+        //! Specialized advance_all for a single iterator which is incremented
         template <typename Iterator>
         void advance_all(Iterator & iterator) {
           ++iterator;
         }
 
-        //! \todo
+        //! Increments all iterators by one. Defined for any amount of iterators
         template <typename Iterator, typename ... Iterators>
         void advance_all(Iterator  & iterator
                        , Iterators & ... iterators) {
@@ -74,7 +74,25 @@ namespace clara
             advance_all(iterators...);
         }
 
-        //! \todo
+        /** \brief Iterates over all iterators with a function that appends its result to OutputIt
+         *  Iterators have to have the **same size**!
+         *  Example:
+         *
+         *  \code
+         *  std::vector<int> xs { 1, 2, 3 };
+         *  std::vector<int> ys { 2, 4, 8 };
+         *  std::vector<int> res { 0, 0, 0 };
+         * 
+         *  zipWith([](int x, int y){ return x+y; }),
+         *             xs.begin(),
+         *             xs.end(),
+         *             res.begin(),
+         *             ys.begin());
+         * 
+         * // res = { 3, 6, 11 };
+         * \endcode
+         */ 
+
         template <typename Function, typename InputIt, typename OutputIt, typename ... Iterators>
         OutputIt zipWith(Function func,
                          InputIt first,
@@ -87,7 +105,32 @@ namespace clara
             return d_first;
         }
         
-        /** \brief \todo
+        /** \brief Iterates over all iterators with a function that returns void
+         *  Iterators have to have the **same size**!
+         *  Example:
+         *
+         *  \code
+         *  std::vector<int> xs { 1, 2, 3 };
+         *  std::vector<int> ys { 2, 4, 8 };
+         *  std::vector<int> res { 0, 0, 0 };
+         * 
+         *  zipWith_([](int x, int y){ std::cout << x << y << '\n'; }),
+         *           xs.begin(),
+         *           xs.end(),
+         *           ys.begin());
+         * \endcode
+         */ 
+        template <typename Function, typename InputIt, typename ... Iterators>
+        void zipWith_(Function func,
+                         InputIt first,
+                         InputIt last,
+                         Iterators ... iterators)
+        {
+            for (; first != last; ++first, advance_all(iterators...))
+                func(*first, *(iterators)...);
+        }
+
+        /** \brief Adds an index to every element in an iterators
           *
           * Source: blatantly copied from http://stackoverflow.com/questions/3752019/how-to-get-the-index-of-a-value-in-a-vector-using-for-each
           */ 

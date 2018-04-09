@@ -49,20 +49,23 @@ namespace clara {
         public:
             //! for convenience purposes
             using self_t        = data_association<N>;
-            //! noisy `x`, `y` position
+            //! possibly noisy `x`, `y` position
             using raw_cone_data = std::tuple<double, double>;
 
         // constructors
         public:
             /** \brief Default constructor which allocates multiple N-sized arrays
-              * Currently we use add a 1m noise in both x and y directions until 4 observations have been made to allow better association
+              * Currently we use add a some noise in both x and y directions until several observations have been made to allow better association
               */
             data_association()
             : _detected_cones {0}
             , _pdfs {}
             , _cone_state_weights {}
             , _probs {}
-            , _cone_states { { cone_state<double>(1, 1, 4) } } { };
+            , _cone_states { }
+            {
+                std::fill_n(_cone_states.begin(), N, cone_state<double>(0.2, 0.2, 2));
+            };
 
             //! deleted copy constructor, we don't want anybody to move or copy this object
             data_association(const self_t & other)  = delete;
@@ -78,7 +81,7 @@ namespace clara {
               */
             const std::array<cone_state<double>, N> &
             classify_new_data(const std::vector<raw_cone_data> & new_cones)
-            {
+            {   std::cerr << "-----------------------------------Timestep----------------------------------\n";
                 // when we start the car, we will take every visible cone as a ground truth cluster, we have the assumption that we don't see cones twice in a single image
                 if (_detected_cones == 0)
                 {
@@ -96,37 +99,42 @@ namespace clara {
                     // size_t m = 5; // need to iterate not from 0 but from max(0, min(m, detected_copy_cones - 5))
 
                     // the probability is weighted based on the sum of all other cones probabilities
-                    double            probs_sum = 0;
+                    // double            probs_sum = 0;
                     // compute the cluster weights (how many observations each one has divided by all)
-                    auto           cone_weights = get_cone_state_weights();
+                  //  auto           cone_weights = get_cone_state_weights();
                     // only check for previously created clusters, not the ones we create now
                     size_t _detected_cones_copy = _detected_cones;
                     // iterate over all the cones
                     for(auto cone : new_cones){
-
-//                        std::cout << "Detected cone: (" << std::get<0>(cone) << ", "
-//                                                        << std::get<1>(cone) << ")\n";
+                        std::cerr << "-------------------------------------------------------------------------------" << '\n';
+                        std::cerr << "Detected cone: (" << std::get<0>(cone) << ", "
+                                                        << std::get<1>(cone) << ")\n";
+                        std::cerr << "Currently classified cones: " << _detected_cones << '\n';
                         // for all clusters, calculate their pdfs and probabilities
                         for (size_t i = 0; i < _detected_cones_copy; ++i)
-                        {
+                        {   
+                            std::cerr << "Nr. " << i << '\n';
+                            std::cerr << "    x: " << _cone_states[i]._mean_vec[0] << ", y: " << _cone_states[i]._mean_vec[1] << '\n';
                             _pdfs[i]  = _cone_states[i].pdf(cone);
-                            _probs[i] = _cone_states[i].pdf(cone) * cone_weights[i];
-                            probs_sum += _probs[i];
-                        }
-
-                        // log every calculation, this is dependent on probs_sum
-                        for (size_t i = 0; i < _detected_cones_copy; ++i)
-                        {
-//                            std::cout << "    pdf  ["   << i << "]: " << _pdfs[i]
-//                                      << "    probs["   << i << "]: " << _probs[i] / probs_sum * 100 << '%'
-//                                      << "    weights[" << i << "]: " << _cone_state_weights[i] << '\n';
+               //             _probs[i] = _cone_states[i].pdf(cone) * cone_weights[i];
+                            std::cerr << "    pdf  :" << _pdfs[i] << '\n';
+               //             std::cerr << "    probs:" << _probs[i] << '\n';
+                            // probs_sum += _probs[i];
                         }
 
                         // find the maximum pdf value, if it's below our threshold, it's a new cluster \todo test this rigorously 
                         auto it = std::max_element(_pdfs.begin(), _pdfs.end());
-                        if (*it < 0.0000001)
+                        std::cerr << "Calculation:\n";
+                        std::cerr << "    best-pdf: " << *it << '\n'; 
+                        auto ix = std::distance(_pdfs.begin(), it);
+                        std::cerr << "    index: " << ix << '\n';
+                        double epsilon_m = 2; // 1 meter range is the biggest error we allow 
+
+                        std::cerr << "    picked best cone - x:" << _cone_states[ix]._mean_vec[0] << ", y: " << _cone_states[ix]._mean_vec[1] << '\n';
+                        std::cerr << "    distance_greater_than: " << _cone_states[ix].distance_greater_than(cone, epsilon_m) << '\n';
+                        if (_cone_states[ix].distance_greater_than(cone, epsilon_m))
                         {
-//                            std::cout << "    New cluster detected, adding to list\n";
+                            std::cerr << "    New cluster detected, adding to list\n";
                             _cone_states[_detected_cones].add_observation(cone);
                             _cone_states[_detected_cones].update_state();
                             _detected_cones++;
@@ -135,23 +143,26 @@ namespace clara {
                         else
                         {    
                             // get highest probability of all clusters - normally we would need to filter those out one by one for the next cones \todo
-                            auto prob_it = std::max_element(_probs.begin(), _probs.end());
+                            auto pdf_it = std::max_element(_pdfs.begin(), _pdfs.end());
                             // get the index
-                            size_t prob_ix = std::distance(_probs.begin(), prob_it);
+                            size_t pdf_ix = std::distance(_pdfs.begin(), pdf_it);
                             // add the cone to the clusters
-                            _cone_states[prob_ix].add_observation(cone);
-                            _cone_states[prob_ix].update_state();
-//                            std::cout << "    Added cone to this cluster Nr." << prob_ix
-//                                      << " with mean: (" << _cone_states[prob_ix]._mean_vec[0] << ", "
-//                                                         << _cone_states[prob_ix]._mean_vec[1] << ")\n";
+                            _cone_states[pdf_ix].add_observation(cone);
+                            _cone_states[pdf_ix].update_state();
+                            std::cerr << "    Added cone to this cluster Nr." << pdf_ix
+                                      << " with mean: (" << _cone_states[pdf_ix]._mean_vec[0] << ", "
+                                                         << _cone_states[pdf_ix]._mean_vec[1] << ")\n";
                         }
                     }
                 }
                 return _cone_states;
             }
 
-        // methods
-        private:
+            //! Getter for the current clusters
+            const std::array<cone_state<double>, N> & get_current_cluster() const
+            {
+                return _cone_states;
+            }
 
             /** \brief Returns the count of all seen cones which is described in the the competition handbook DE7.4 (2018)
              *  This assumes that every visible object is a cone and **we don't have outliers**
@@ -184,8 +195,12 @@ namespace clara {
             {   
                 size_t cone_count_all = get_cone_count_all();
                 util::enumerate(_cone_states.begin(), _cone_states.end(), 0, [&](unsigned i, cone_state<double> & cs)
-                {
-                    _cone_state_weights[i] = cs.get_observations_size() / cone_count_all;
+                {  
+                   if (cs.is_used()){ 
+                        //std::cout << "get_cone_state_weights #" << i << ", size: " << cs.get_observations_size() << '\n';
+                        _cone_state_weights[i] = cs.get_observations_size() / cone_count_all;
+                        //std::cout << "cone_state_weights #" << i << ": " << _cone_state_weights[i] << '\n';
+                   }
                 });
                 return _cone_state_weights;
             }

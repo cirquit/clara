@@ -16,7 +16,7 @@ const std::tuple<double, double> parse_object_t(object_t * obj)
 
     const double x = x_ * std::cos(obj -> angle_yaw) - y_ * std::sin(obj -> angle_yaw);
     const double y = x_ * std::sin(obj -> angle_yaw) + y_ * std::cos(obj -> angle_yaw);
-    return { x, y };
+    return { x + obj -> x_car , y + obj -> y_car};
 }
 
 template< size_t N >

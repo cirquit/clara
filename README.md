@@ -4,6 +4,11 @@
 
 Our custom SLAM for the FS competitions.
 
+### SIL
+
+* Carmaker to `clara` and back
+    - `object_t` has `yaw`, `car_x` and `car_y` additionly. Switch to the `sil_clara_only` branch in **this** project **AND** in the `external/object_methods` project. Do the same in the `carmaker_sil_hil` project for the updated "server" side
+
 ### Build
 #### Production build
 

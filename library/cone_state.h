@@ -117,20 +117,23 @@ namespace clara {
               * Results in a cached access to every member after recalculation for the current `_observations`
               */
             void update_state()
-            {   std::cerr << "  Updating state\n";
+            {   //std::cerr << "  Updating state, is_modified: " << is_modified() << '\n';
                 if (is_modified())
-                {   std::cerr << "  Cone is modified, size / max_N_size: " << _observations.size() << ", " << _end_of_noise_ob_count << " \n";
+                {   //std::cerr << "  Cone is modified, size / max_N_size: " << _observations.size() << ", " << _end_of_noise_ob_count << " \n";
                     update_mean_vec();
-
-                    if (_observations.size() < _end_of_noise_ob_count)
-                    {   std::cerr << "_cov_mat[0]: " << _cov_mat[0] << '\n';
-                        std::cerr << "_cov_mat[3]: " << _cov_mat[3] << '\n';
-                        _cov_mat[0] += _noise_xx; // increase the variance radius to allow for a better "association"
-                        _cov_mat[3] += _noise_yy; // increase the variance radius to allow for a better "association"
-                        std::cerr << "_cov_mat[0]: " << _cov_mat[0] << '\n';
-                        std::cerr << "_cov_mat[3]: " << _cov_mat[3] << '\n';
-                    }
                     update_cov_mat();
+
+                    if (_observations.size() < 4) // _end_of_noise_ob_count)
+                    {    //std::cerr << "_cov_mat[0]: " << _cov_mat[0] << '\n';
+                         //std::cerr << "_cov_mat[3]: " << _cov_mat[3] << '\n';
+
+                        _cov_mat[0] += 0.25;
+                        _cov_mat[3] += 0.25;
+                    //     _cov_mat[0] += _noise_xx; // increase the variance radius to allow for a better "association"
+                    //     _cov_mat[3] += _noise_yy; // increase the variance radius to allow for a better "association"
+                         //std::cerr << "_cov_mat[0]: " << _cov_mat[0] << '\n';
+                         //std::cerr << "_cov_mat[3]: " << _cov_mat[3] << '\n';
+                    }
                     update_det_cov_mat();
                     update_inv_cov_mat();
                     set_modified(false);
@@ -155,6 +158,7 @@ namespace clara {
                 update_state();
 
                 const double fraction = 1 / std::sqrt(std::pow(2*M_PI, 2) * _det_cov_mat);
+                //std::cerr << "fraction: " << fraction << '\n';
 
                 const T xx = _inv_cov_mat[0];
                 const T xy = _inv_cov_mat[1];
@@ -165,7 +169,9 @@ namespace clara {
                 const T y_norm = y - y_mean;
 
                 const double mahalanobis = 2*(x_norm*y_norm*xy) + std::pow(x_norm,2) * xx + std::pow(y_norm,2) * yy;
+                //std::cerr << "mahalanobis: " << mahalanobis << '\n';
                 const double factor   = std::exp(-0.5 * mahalanobis);
+                //std::cerr << "factor: " << factor << '\n';
 
                 return fraction * factor;
             }
@@ -185,7 +191,7 @@ namespace clara {
                 const T x_dist = std::pow(x - _mean_vec[0], 2);
                 const T y_dist = std::pow(y - _mean_vec[1], 2);
                 const T res    = std::sqrt(x_dist + y_dist);
-                std::cerr << "    distance_intrinsics: " << res << " => " << (std::abs(epsilon) < res) << "\n";
+                //std::cerr << "    distance_intrinsics: " << res << " => " << (std::abs(epsilon) < res) << "\n";
                 return std::abs(epsilon) < res; 
             }
 
@@ -247,10 +253,10 @@ namespace clara {
                 const T c = _cov_mat[2];
                 const T d = _cov_mat[3];
                 _det_cov_mat = a * d - c * b;
-             //   std::cout << "cov-mat: " << a << ", " << b << ", " << c << ", " << d << ", " << _det_cov_mat <<'\n';
-                if (std::abs(_det_cov_mat) < 0.0000000000000000000001) {
+                //std::cerr << "cov-mat: " << a << ", " << b << ", " << c << ", " << d << ", " << _det_cov_mat <<'\n';
+               // if (std::abs(_det_cov_mat) < 0.0000000000000000000001) {
                 // std::cout << "< 0.000000001 triggered\n";
-                  _det_cov_mat = 1; }
+                 // _det_cov_mat = 1; }
             }
 
             /** \brief Updates the `_mean_vec` with the current `_observations`

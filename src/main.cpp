@@ -17,6 +17,9 @@
 #include <math.h>
 #include <vector>
 #include <cstdlib>
+#include <random>
+#include <iomanip>
+#include <string>
 
 #include "../library/csv.h"
 #include "../library/data_association.h"
@@ -68,8 +71,13 @@ void print_data_assoc(clara::data_association<N> & da, int color)
         double mean_x = cs._mean_vec[0];
         double mean_y = cs._mean_vec[1];
         double cov_xx = cs._cov_mat[0];
-        double cov_xy = cs._cov_mat[1];
         double cov_yy = cs._cov_mat[3];
+        if (cs._observations.size() < 4)
+        {
+            cov_xx -= 0.25;
+            cov_yy -= 0.25;
+        }
+        double cov_xy = cs._cov_mat[1];
 
         std::string np_b = "np.array([";
         std::string np_e = "])";
@@ -87,10 +95,32 @@ void print_data_assoc(clara::data_association<N> & da, int color)
     std::cout << "]);\n";
 }
 
+template< size_t N >
+void print_ground_truth(std::vector< std::vector< typename clara::data_association< N >::raw_cone_data> > & cones, std::string id)
+{
+
+    std::cout << '\n' << id << "_cone_ground_truth = np.array([";
+
+    for(auto cur_timestamp : cones)
+    {
+        for(auto cone : cur_timestamp)
+        {
+            std::cout << '[' << std::get<0>(cone) << ", " << std::get<1>(cone) << "],\n";
+        }
+    }
+
+    std::cout << "]);\n";
+}
+
 int main(int argc, char *argv[])
 {   
     UNUSED(argc);
     UNUSED(argv);
+
+    std::random_device rd;
+    std::mt19937 e2(rd());
+    std::uniform_real_distribution<> dist(-1, 1);
+
     // maximum 250 clusters currently for each color, this is up to test the
     // performance of vector on unbounded data
     const size_t N = 250;
@@ -133,12 +163,16 @@ int main(int argc, char *argv[])
 
         // watch out for this encoding, this is just for ease of use. Should
         // change depending on the object type from darknet
+
+        double x_noisy = x + dist(e2);
+        double y_noisy = y + dist(e2);
+
         if ( color == 0 ) // yellow
-            yellow_cone_data.back( ).push_back( raw_cone_data( x, y ) );
-//      if ( color == 1 ) // blue
-//            blue_cone_data.back( ).push_back( raw_cone_data( x, y ) );
-//      if ( color == 2 ) // red
-//            red_cone_data.back( ).push_back( raw_cone_data( x, y ) );
+            yellow_cone_data.back( ).push_back( raw_cone_data(x_noisy, y_noisy ) );
+        if ( color == 1 ) // blue
+              blue_cone_data.back( ).push_back( raw_cone_data(x_noisy, y_noisy ) );
+        if ( color == 2 ) // red
+              red_cone_data.back( ).push_back( raw_cone_data(x_noisy, y_noisy ) );
     }
 
     // create our association object which holds all the clusters
@@ -152,15 +186,12 @@ int main(int argc, char *argv[])
              const std::vector< raw_cone_data > &cur_red_cones ) {
             // create or update the cluster for each color
 
-            //if (yellow_data_association._detected_cones <= ) {
             const std::array< clara::cone_state< double >, N > &current_yellow_clusters =
                 yellow_data_association.classify_new_data( cur_yellow_cones );
-            //}
-
-   //         const std::array< clara::cone_state< double >, N > &current_blue_clusters =
-   //             blue_data_association.classify_new_data( cur_blue_cones );
-   //         const std::array< clara::cone_state< double >, N > &current_red_clusters =
-   //             red_data_association.classify_new_data( cur_red_cones );
+            const std::array< clara::cone_state< double >, N > &current_blue_clusters =
+                blue_data_association.classify_new_data( cur_blue_cones );
+            const std::array< clara::cone_state< double >, N > &current_red_clusters =
+                red_data_association.classify_new_data( cur_red_cones );
         },
         yellow_cone_data.begin( ), yellow_cone_data.end( ), blue_cone_data.begin( ),
         red_cone_data.begin( )
@@ -170,6 +201,10 @@ int main(int argc, char *argv[])
     print_data_assoc< N >(yellow_data_association, 0);
     print_data_assoc< N >(blue_data_association, 1);
     print_data_assoc< N >(red_data_association, 2);
+
+    print_ground_truth< N >(yellow_cone_data, "yellow");
+    print_ground_truth< N >(blue_cone_data, "blue");
+    print_ground_truth< N >(red_cone_data, "red");
 
     return EXIT_SUCCESS;
 }

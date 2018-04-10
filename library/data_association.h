@@ -64,7 +64,7 @@ namespace clara {
             , _probs {}
             , _cone_states { }
             {
-                std::fill_n(_cone_states.begin(), N, cone_state<double>(0.2, 0.2, 2));
+                std::fill_n(_cone_states.begin(), N, cone_state<double>(0, 0, 0));
             };
 
             //! deleted copy constructor, we don't want anybody to move or copy this object
@@ -81,14 +81,16 @@ namespace clara {
               */
             const std::array<cone_state<double>, N> &
             classify_new_data(const std::vector<raw_cone_data> & new_cones)
-            {   std::cerr << "-----------------------------------Timestep----------------------------------\n";
+            {   //std::cerr << "-----------------------------------Timestep----------------------------------\n";
                 // when we start the car, we will take every visible cone as a ground truth cluster, we have the assumption that we don't see cones twice in a single image
                 if (_detected_cones == 0)
                 {
                     for(auto cone : new_cones)
                     {
                         _cone_states[_detected_cones].add_observation(cone);
+                        //std::cerr << "added new observation!\n";
                         _cone_states[_detected_cones].update_state();
+                        //std::cerr << "updated_state...hopefully!\n";
                         _detected_cones++;
                     }
                 }
@@ -106,35 +108,35 @@ namespace clara {
                     size_t _detected_cones_copy = _detected_cones;
                     // iterate over all the cones
                     for(auto cone : new_cones){
-                        std::cerr << "-------------------------------------------------------------------------------" << '\n';
-                        std::cerr << "Detected cone: (" << std::get<0>(cone) << ", "
-                                                        << std::get<1>(cone) << ")\n";
-                        std::cerr << "Currently classified cones: " << _detected_cones << '\n';
+                        //std::cerr << "-------------------------------------------------------------------------------" << '\n';
+                        //std::cerr << "Detected cone: (" << std::get<0>(cone) << ", "
+                        //                                << std::get<1>(cone) << ")\n";
+                        //std::cerr << "Currently classified cones: " << _detected_cones << '\n';
                         // for all clusters, calculate their pdfs and probabilities
                         for (size_t i = 0; i < _detected_cones_copy; ++i)
                         {   
-                            std::cerr << "Nr. " << i << '\n';
-                            std::cerr << "    x: " << _cone_states[i]._mean_vec[0] << ", y: " << _cone_states[i]._mean_vec[1] << '\n';
+                            //std::cerr << "Nr. " << i << '\n';
+                            //std::cerr << "    x: " << _cone_states[i]._mean_vec[0] << ", y: " << _cone_states[i]._mean_vec[1] << '\n';
                             _pdfs[i]  = _cone_states[i].pdf(cone);
                //             _probs[i] = _cone_states[i].pdf(cone) * cone_weights[i];
-                            std::cerr << "    pdf  :" << _pdfs[i] << '\n';
-               //             std::cerr << "    probs:" << _probs[i] << '\n';
+                            //std::cerr << "    pdf  :" << _pdfs[i] << '\n';
+               //             //std::cerr << "    probs:" << _probs[i] << '\n';
                             // probs_sum += _probs[i];
                         }
 
                         // find the maximum pdf value, if it's below our threshold, it's a new cluster \todo test this rigorously 
                         auto it = std::max_element(_pdfs.begin(), _pdfs.end());
-                        std::cerr << "Calculation:\n";
-                        std::cerr << "    best-pdf: " << *it << '\n'; 
+                        //std::cerr << "Calculation:\n";
+                        //std::cerr << "    best-pdf: " << *it << '\n'; 
                         auto ix = std::distance(_pdfs.begin(), it);
-                        std::cerr << "    index: " << ix << '\n';
+                        //std::cerr << "    index: " << ix << '\n';
                         double epsilon_m = 2; // 1 meter range is the biggest error we allow 
 
-                        std::cerr << "    picked best cone - x:" << _cone_states[ix]._mean_vec[0] << ", y: " << _cone_states[ix]._mean_vec[1] << '\n';
-                        std::cerr << "    distance_greater_than: " << _cone_states[ix].distance_greater_than(cone, epsilon_m) << '\n';
+                        //std::cerr << "    picked best cone - x:" << _cone_states[ix]._mean_vec[0] << ", y: " << _cone_states[ix]._mean_vec[1] << '\n';
+                        //std::cerr << "    distance_greater_than: " << _cone_states[ix].distance_greater_than(cone, epsilon_m) << '\n';
                         if (_cone_states[ix].distance_greater_than(cone, epsilon_m))
                         {
-                            std::cerr << "    New cluster detected, adding to list\n";
+                            //std::cerr << "    New cluster detected, adding to list\n";
                             _cone_states[_detected_cones].add_observation(cone);
                             _cone_states[_detected_cones].update_state();
                             _detected_cones++;
@@ -149,9 +151,9 @@ namespace clara {
                             // add the cone to the clusters
                             _cone_states[pdf_ix].add_observation(cone);
                             _cone_states[pdf_ix].update_state();
-                            std::cerr << "    Added cone to this cluster Nr." << pdf_ix
-                                      << " with mean: (" << _cone_states[pdf_ix]._mean_vec[0] << ", "
-                                                         << _cone_states[pdf_ix]._mean_vec[1] << ")\n";
+                            //std::cerr << "    Added cone to this cluster Nr." << pdf_ix
+                            //          << " with mean: (" << _cone_states[pdf_ix]._mean_vec[0] << ", "
+                            //                             << _cone_states[pdf_ix]._mean_vec[1] << ")\n";
                         }
                     }
                 }

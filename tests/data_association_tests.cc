@@ -57,7 +57,7 @@ void print_clusters( const std::array< clara::cone_state< double >, N > &cluster
 template< size_t N >
 void print_data_assoc(clara::data_association<N> & da, int color)
 {   
-    const std::array<clara::cone_state<double>, N> & cluster = da.get_current_cluster();
+    const std::array<clara::cone_state<double>, N> & cluster = da.get_cluster();
     const std::array<double, N> & weights = da.get_cone_state_weights();
 
     if (color == 0) { std::cout << "yellow_cone_data = np.array([\n"; }
@@ -91,86 +91,86 @@ void print_data_assoc(clara::data_association<N> & da, int color)
 
 TEST_CASE( "data association tests", "[data]" ) {
 
-    SECTION( "example track 1 - full data test" ) {
-        // maximum 250 clusters currently for each color, this is up to test the
-        // performance of vector on unbounded data
-        const size_t N = 250;
-        // define how many sample points to evaluate
-        const double MAX_SAMPLE_POINTS = 1200;
-        // the data format, our data_association works with
-        using raw_cone_data = typename clara::data_association< N >::raw_cone_data;
+    // SECTION( "example track 1 - full data test" ) {
+    //     // maximum 250 clusters currently for each color, this is up to test the
+    //     // performance of vector on unbounded data
+    //     const size_t N = 250;
+    //     // define how many sample points to evaluate
+    //     const double MAX_SAMPLE_POINTS = 1200;
+    //     // the data format, our data_association works with
+    //     using raw_cone_data = typename clara::data_association< N >::raw_cone_data;
 
-        // read the data in exactly this format
-        std::string csv_path = "../tests/example-data/"
-                               "wemding-map-ground-truth-cones-d-a-x-y-c-t.csv";
+    //     // read the data in exactly this format
+    //     std::string csv_path = "../tests/example-data/"
+    //                            "wemding-map-ground-truth-cones-d-a-x-y-c-t.csv";
 
-        io::CSVReader< 6 > in( csv_path );
-        // please provide exactly this header, separated by ','
-        //      in.read_header(io::ignore_extra_column, "distance[m]",
-        //      "angle[rad]", "x[m]", "y[m]", "color[int]", "timestamp[int]");
+    //     io::CSVReader< 6 > in( csv_path );
+    //     // please provide exactly this header, separated by ','
+    //     //      in.read_header(io::ignore_extra_column, "distance[m]",
+    //     //      "angle[rad]", "x[m]", "y[m]", "color[int]", "timestamp[int]");
 
-        // every inner vector is a single timestamp, starting from 0
-        std::vector< std::vector< raw_cone_data > > yellow_cone_data;
-        std::vector< std::vector< raw_cone_data > > blue_cone_data;
-        std::vector< std::vector< raw_cone_data > > red_cone_data;
+    //     // every inner vector is a single timestamp, starting from 0
+    //     std::vector< std::vector< raw_cone_data > > yellow_cone_data;
+    //     std::vector< std::vector< raw_cone_data > > blue_cone_data;
+    //     std::vector< std::vector< raw_cone_data > > red_cone_data;
 
-        // read the data in the vector
-        double distance, angle, x, y, color, timestamp;
-        int    timestamp_old = -1;
+    //     // read the data in the vector
+    //     double distance, angle, x, y, color, timestamp;
+    //     int    timestamp_old = -1;
         
-        while ( in.read_row( distance, angle, x, y, color, timestamp ) ) {
-            // if we already have enough sample points, stop the reading
-            if ( timestamp >= MAX_SAMPLE_POINTS ) {
-                break;
-            }
-            // will currently only use x, y and color for the classification
-            if ( timestamp != timestamp_old ) {
-                // create new vectors for every cone color
-                yellow_cone_data.push_back( std::vector< raw_cone_data >( ) );
-                blue_cone_data.push_back( std::vector< raw_cone_data >( ) );
-                red_cone_data.push_back( std::vector< raw_cone_data >( ) );
-                timestamp_old = timestamp;
-            }
+    //     while ( in.read_row( distance, angle, x, y, color, timestamp ) ) {
+    //         // if we already have enough sample points, stop the reading
+    //         if ( timestamp >= MAX_SAMPLE_POINTS ) {
+    //             break;
+    //         }
+    //         // will currently only use x, y and color for the classification
+    //         if ( timestamp != timestamp_old ) {
+    //             // create new vectors for every cone color
+    //             yellow_cone_data.push_back( std::vector< raw_cone_data >( ) );
+    //             blue_cone_data.push_back( std::vector< raw_cone_data >( ) );
+    //             red_cone_data.push_back( std::vector< raw_cone_data >( ) );
+    //             timestamp_old = timestamp;
+    //         }
 
-            // watch out for this encoding, this is just for ease of use. Should
-            // change depending on the object type from darknet
-            if ( color == 0 )
-                yellow_cone_data.back( ).push_back( raw_cone_data( x, y ) );
-            if ( color == 1 )
-                blue_cone_data.back( ).push_back( raw_cone_data( x, y ) );
-            if ( color == 2 )
-                red_cone_data.back( ).push_back( raw_cone_data( x, y ) );
-        }
+    //         // watch out for this encoding, this is just for ease of use. Should
+    //         // change depending on the object type from darknet
+    //         if ( color == 0 )
+    //             yellow_cone_data.back( ).push_back( raw_cone_data( x, y ) );
+    //         if ( color == 1 )
+    //             blue_cone_data.back( ).push_back( raw_cone_data( x, y ) );
+    //         if ( color == 2 )
+    //             red_cone_data.back( ).push_back( raw_cone_data( x, y ) );
+    //     }
 
-        // create our association object which holds all the clusters
-        clara::data_association< N > yellow_data_association;
-        clara::data_association< N > blue_data_association;
-        clara::data_association< N > red_data_association;
-        int i = 0;
-        clara::util::zipWith_(
-            [&]( const std::vector< raw_cone_data > &cur_yellow_cones,
-                 const std::vector< raw_cone_data > &cur_blue_cones,
-                 const std::vector< raw_cone_data > &cur_red_cones ) {
-                // create or update the cluster for each color
+    //     // create our association object which holds all the clusters
+    //     clara::data_association< N > yellow_data_association;
+    //     clara::data_association< N > blue_data_association;
+    //     clara::data_association< N > red_data_association;
+    //     int i = 0;
+    //     clara::util::zipWith_(
+    //         [&]( const std::vector< raw_cone_data > &cur_yellow_cones,
+    //              const std::vector< raw_cone_data > &cur_blue_cones,
+    //              const std::vector< raw_cone_data > &cur_red_cones ) {
+    //             // create or update the cluster for each color
 
-                //if (yellow_data_association._detected_cones <= ) {
-                const std::array< clara::cone_state< double >, N > &current_yellow_clusters =
-                    yellow_data_association.classify_new_data( cur_yellow_cones );
-                //}
+    //             //if (yellow_data_association._detected_cones <= ) {
+    //             const std::array< clara::cone_state< double >, N > &current_yellow_clusters =
+    //                 yellow_data_association.classify_new_data( cur_yellow_cones );
+    //             //}
 
-       //         const std::array< clara::cone_state< double >, N > &current_blue_clusters =
-       //             blue_data_association.classify_new_data( cur_blue_cones );
-       //         const std::array< clara::cone_state< double >, N > &current_red_clusters =
-       //             red_data_association.classify_new_data( cur_red_cones );
-            },
-            yellow_cone_data.begin( ), yellow_cone_data.end( ), blue_cone_data.begin( ),
-            red_cone_data.begin( )
-        );
+    //    //         const std::array< clara::cone_state< double >, N > &current_blue_clusters =
+    //    //             blue_data_association.classify_new_data( cur_blue_cones );
+    //    //         const std::array< clara::cone_state< double >, N > &current_red_clusters =
+    //    //             red_data_association.classify_new_data( cur_red_cones );
+    //         },
+    //         yellow_cone_data.begin( ), yellow_cone_data.end( ), blue_cone_data.begin( ),
+    //         red_cone_data.begin( )
+    //     );
 
-        std::cout << "import numpy as np\n";
-        print_data_assoc< N >(yellow_data_association, 0);
-        print_data_assoc< N >(blue_data_association, 1);
-        print_data_assoc< N >(red_data_association, 2);
+    //     std::cout << "import numpy as np\n";
+    //     print_data_assoc< N >(yellow_data_association, 0);
+    //     print_data_assoc< N >(blue_data_association, 1);
+    //     print_data_assoc< N >(red_data_association, 2);
 
         //     // use the data for classification
         //     for (int t = 0; t < timestamp; ++t)
@@ -200,7 +200,7 @@ TEST_CASE( "data association tests", "[data]" ) {
         // //           std::cout << "Red clusters - Step #" << t << '\n';
         // //           print_clusters<N>(current_red_clusters, 2);
         //     };
-    }
+    //}
 }
 /*
     SECTION("example track 2 - partial information test") {

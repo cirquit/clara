@@ -25,23 +25,6 @@
 //! unused macro to avoid errors because of nonuse of declared variables
 #define UNUSED(x) (void)(x)
 
-#if !defined(DEBUG_MODE)
-    #error DEBUG_MODE has to be defined through 'cmake .. -DDEBUG_MODE=[0/1]'
-#endif
-
-#if DEBUG_MODE
-//! debug message macro to print out the file, line and the message where something happend 
-#define DEBUG_MSG(msg) fprintf(stderr, \
-                               "[INFO] (%64s:%4d:%16s) %s\n", \
-                               __FILE__, \
-                               __LINE__, \
-                               __func__, \
-                               msg)
-#else
-//! debug message macro to print out the file, line and the message where something happend. Does **nothing** in DEBUG_MODE 
-#define DEBUG_MSG(msg)
-#endif // DEBUG_MODE (in [package-name]/CMakeLists.txt)
-
 namespace clara
 {   /** \brief Utilities namespace so summarize often used functions from different modules
       *
@@ -92,7 +75,6 @@ namespace clara
          * // res = { 3, 6, 11 };
          * \endcode
          */ 
-
         template <typename Function, typename InputIt, typename OutputIt, typename ... Iterators>
         OutputIt zipWith(Function func,
                          InputIt first,
@@ -143,6 +125,13 @@ namespace clara
             for (; first != last; ++first, ++initial)
                 func(initial, *first);
             return func;
+        }
+
+        //! Handy shortcut for simple loops
+        template <class Iterable, typename Function>
+        void for_each_(Iterable container, Function func)
+        {
+            std::for_each(container.begin(), container.end(), func);
         }
 
     } // namespace util

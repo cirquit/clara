@@ -122,11 +122,9 @@ namespace clara {
                 {   //std::cerr << "  Cone is modified, size / max_N_size: " << _observations.size() << ", " << _end_of_noise_ob_count << " \n";
                     update_mean_vec();
                     update_cov_mat();
-
                     if (_observations.size() < 4) // _end_of_noise_ob_count)
                     {    //std::cerr << "_cov_mat[0]: " << _cov_mat[0] << '\n';
                          //std::cerr << "_cov_mat[3]: " << _cov_mat[3] << '\n';
-
                         _cov_mat[0] += 0.25;
                         _cov_mat[3] += 0.25;
                     //     _cov_mat[0] += _noise_xx; // increase the variance radius to allow for a better "association"
@@ -185,15 +183,22 @@ namespace clara {
                 return distance_greater_than(std::get<0>(tup), std::get<1>(tup), epsilon);
             }
 
-            //! checks if the distances is greater than epsilon from the mean position of the cluster _mean_vec
-            constexpr bool distance_greater_than(const T x, const T y, const T epsilon) const
+            //! euclidian distance to the cluster mid point
+            constexpr T distance(const T x, const T y) const
             {
                 const T x_dist = std::pow(x - _mean_vec[0], 2);
                 const T y_dist = std::pow(y - _mean_vec[1], 2);
-                const T res    = std::sqrt(x_dist + y_dist);
-                //std::cerr << "    distance_intrinsics: " << res << " => " << (std::abs(epsilon) < res) << "\n";
-                return std::abs(epsilon) < res; 
+                return std::sqrt(x_dist + y_dist);
             }
+
+            //! checks if the distances is greater than epsilon from the mean position of the cluster _mean_vec
+            constexpr bool distance_greater_than(const T x, const T y, const T epsilon) const
+            {
+                const T dist = distance(x, y);
+                //std::cerr << "    distance_intrinsics: " << res << " => " << (std::abs(epsilon) < res) << "\n";
+                return std::abs(epsilon) < dist; 
+            }
+
 
         // methods
         private:
@@ -201,7 +206,6 @@ namespace clara {
               * Any access to `_mean_vec`, `_cov_mat`, `_det_cov_mat` and `_inv_cov_mat` triggers their recomputation via `update_state()`
               */
             void set_modified(bool b){ _modified = b; }
-
 
             /** \brief This acces to `_inv_cov_mat` can trigger a recalculation of the cone state. *Cached*
               *

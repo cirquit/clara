@@ -57,43 +57,43 @@ void print_clusters( const std::array< clara::cone_state< double >, N > &cluster
                             } );
 }
 
-template< size_t N >
-void print_data_assoc(clara::data_association<N> & da, int color)
-{   
-    const std::array<clara::cone_state<double>, N> & cluster = da.get_current_cluster();
-    const std::array<double, N> & weights = da.get_cone_state_weights();
+// template< size_t N >
+// void print_data_assoc(clara::data_association<N> & da, int color)
+// {   
+//     const std::array<clara::cone_state<double>, N> & cluster = da.get_current_cluster();
+//   //  const std::array<double, N> & weights = da.get_cone_state_weights();
 
-    if (color == 0) { std::cout << "yellow_cone_data = np.array([\n"; }
-    if (color == 1) { std::cout << "blue_cone_data = np.array([\n"; }
-    if (color == 2) { std::cout << "red_cone_data = np.array([\n"; }
-    clara::util::zipWith_([&](const clara::cone_state<double> & cs, double cluster_weight)
-    {
-        double mean_x = cs._mean_vec[0];
-        double mean_y = cs._mean_vec[1];
-        double cov_xx = cs._cov_mat[0];
-        double cov_yy = cs._cov_mat[3];
-        if (cs._observations.size() < 4)
-        {
-            cov_xx -= 0.25;
-            cov_yy -= 0.25;
-        }
-        double cov_xy = cs._cov_mat[1];
+//     if (color == 0) { std::cout << "yellow_cone_data = np.array([\n"; }
+//     if (color == 1) { std::cout << "blue_cone_data = np.array([\n"; }
+//     if (color == 2) { std::cout << "red_cone_data = np.array([\n"; }
+//     clara::util::zipWith_([&](const clara::cone_state<double> & cs) //, double cluster_weight)
+//     {
+//         double mean_x = cs._mean_vec[0];
+//         double mean_y = cs._mean_vec[1];
+//         double cov_xx = cs._cov_mat[0];
+//         double cov_yy = cs._cov_mat[3];
+//         if (cs._observations.size() < 4)
+//         {
+//             cov_xx -= 0.25;
+//             cov_yy -= 0.25;
+//         }
+//         double cov_xy = cs._cov_mat[1];
 
-        std::string np_b = "np.array([";
-        std::string np_e = "])";
-        if ( mean_x != 0 || mean_y != 0 ) {
+//         std::string np_b = "np.array([";
+//         std::string np_e = "])";
+//         if ( mean_x != 0 || mean_y != 0 ) {
 
-            std::cout << np_b
-                      << "[" << mean_x << ", " << mean_y << "]"  << ", "
-                      << "[[" << cov_xx << ", " << cov_xy << "]" << ", "
-                      << "[" << cov_xy << ", " << cov_yy << "]]" << ", "
-                      << "["  << cluster_weight << "]"
-                      << np_e << ",\n"; 
-        }
-    }, cluster.begin(), cluster.end(), weights.begin());
+//             std::cout << np_b
+//                       << "[" << mean_x << ", " << mean_y << "]"  << ", "
+//                       << "[[" << cov_xx << ", " << cov_xy << "]" << ", "
+//                       << "[" << cov_xy << ", " << cov_yy << "]]" << ", "
+//                      // << "["  << cluster_weight << "]"
+//                       << np_e << ",\n"; 
+//         }
+//     }, cluster.begin(), cluster.end()); //, weights.begin());
 
-    std::cout << "]);\n";
-}
+//     std::cout << "]);\n";
+// }
 
 template< size_t N >
 void print_ground_truth(std::vector< std::vector< typename clara::data_association< N >::raw_cone_data> > & cones, std::string id)
@@ -198,9 +198,9 @@ int main(int argc, char *argv[])
     );
 
     std::cout << "import numpy as np\n";
-    print_data_assoc< N >(yellow_data_association, 0);
-    print_data_assoc< N >(blue_data_association, 1);
-    print_data_assoc< N >(red_data_association, 2);
+    // print_data_assoc< N >(yellow_data_association, 0);
+    // print_data_assoc< N >(blue_data_association, 1);
+    // print_data_assoc< N >(red_data_association, 2);
 
     print_ground_truth< N >(yellow_cone_data, "yellow");
     print_ground_truth< N >(blue_cone_data, "blue");

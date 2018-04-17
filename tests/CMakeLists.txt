@@ -23,6 +23,13 @@ set(SOURCES_DA catch.h csv.h main.cc data_association_tests.cc)
 add_executable(${TEST_NAME_DA} ${SOURCES_DA})
 target_link_libraries(${TEST_NAME_DA} ${LIB_NAME})
 
+# custom data association test for debugging purposes
+set(TEST_NAME_UTIL clara_util_test)
+set(SOURCES_UTIL catch.h csv.h main.cc util_tests.cc)
+add_executable(${TEST_NAME_UTIL} ${SOURCES_UTIL})
+target_link_libraries(${TEST_NAME_UTIL} ${LIB_NAME})
+
+
 file(COPY example-data DESTINATION .)  # execute ./clara_test
 file(COPY example-data DESTINATION ..) # execute ./tests/clara_test
 file(COPY visualization DESTINATION ..) #

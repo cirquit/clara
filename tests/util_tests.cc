@@ -43,7 +43,7 @@ TEST_CASE( "util.h:custom iterator functions", "[iterators]" ) {
         std::vector< double > double_vec( 200, 0 );
         std::fill( double_vec.begin( ), double_vec.end( ), 1 );
         double for_each_sum = 0.0;
-        clara::util::for_each_( double_vec, [&]( double d ) { for_each_sum += d; } );
+        clara::util::for_each_( double_vec, [&]( double & d ) { for_each_sum += d; } );
         REQUIRE( for_each_sum == 200 );
     };
 
@@ -75,5 +75,23 @@ TEST_CASE( "util.h:custom iterator functions", "[iterators]" ) {
         }
         clara::util::enumerate( double_vec.begin( ), double_vec.end( ), 0,
                                 [&]( size_t ix, double d ) { REQUIRE( ix == d ); } );
+    };
+
+    SECTION( "transform_" ) {
+        std::vector< double > double_vec_A( 200, 0 );
+        for ( size_t i = 0; i < double_vec_A.size( ); ++i ) {
+            double_vec_A[ i ] = static_cast< double >( i );
+        }
+
+        std::vector< double > double_vec_B( 200, 0);
+        size_t i = 0;
+        clara::util::transform_(double_vec_B, [&](double & val)
+        {
+            return i++;
+        });
+
+        for ( size_t i = 0; i < double_vec_A.size( ); ++i ) {
+            REQUIRE(double_vec_A[ i ] == double_vec_B[ i ]);
+        }
     };
 }

@@ -20,6 +20,7 @@
  *  @{
  */
 #include <iostream>
+#include <algorithm>
 #include <blaze/Math.h>
 
 //! unused macro to avoid errors because of nonuse of declared variables
@@ -129,9 +130,16 @@ namespace clara
 
         //! Handy shortcut for simple loops
         template <class Iterable, typename Function>
-        void for_each_(Iterable container, Function func)
+        void for_each_(Iterable & container, Function func)
         {
             std::for_each(container.begin(), container.end(), func);
+        }
+
+        //! Handy shortcut for simple loops
+        template <class Iterable, typename Function>
+        void transform_(Iterable & container, Function func)
+        {
+            std::transform(container.begin(), container.end(), container.begin(), func);
         }
 
     } // namespace util

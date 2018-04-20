@@ -86,7 +86,7 @@ TEST_CASE( "util.h:custom iterator functions", "[iterators]" ) {
         std::vector< double > double_vec_B( 200, 0);
         size_t i = 0;
         clara::util::transform_(double_vec_B, [&](double & val)
-        {
+        {   UNUSED(val);
             return i++;
         });
 

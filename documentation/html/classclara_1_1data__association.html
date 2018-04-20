@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CLARA: clara::data_association&lt; N &gt; Class Template Reference</title>
+<title>CLARA: clara::data_association&lt; T &gt; Class Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,11 +65,13 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classclara_1_1data__association-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">clara::data_association&lt; N &gt; Class Template Reference</div>  </div>
+<div class="title">clara::data_association&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -78,35 +80,311 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="data__association_8h_source.html">data_association.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a3d00cd85107ac291ba6e3ec5fcec2ff0"><td class="memItemLeft" align="right" valign="top"><a id="a3d00cd85107ac291ba6e3ec5fcec2ff0"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a3d00cd85107ac291ba6e3ec5fcec2ff0">self_t</a> = <a class="el" href="classclara_1_1data__association.html">data_association</a>&lt; T &gt;</td></tr>
+<tr class="memdesc:a3d00cd85107ac291ba6e3ec5fcec2ff0"><td class="mdescLeft">&#160;</td><td class="mdescRight">for convenience purposes <br /></td></tr>
+<tr class="separator:a3d00cd85107ac291ba6e3ec5fcec2ff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8232de58bbfc0b4897e4efa62ca97ccc"><td class="memItemLeft" align="right" valign="top"><a id="a8232de58bbfc0b4897e4efa62ca97ccc"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a8232de58bbfc0b4897e4efa62ca97ccc">raw_cone_data</a> = std::tuple&lt; T, T &gt;</td></tr>
+<tr class="memdesc:a8232de58bbfc0b4897e4efa62ca97ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">noisy <code>x</code>, <code>y</code> position <br /></td></tr>
+<tr class="separator:a8232de58bbfc0b4897e4efa62ca97ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f261851d4dafc8c9d2a197c16be6ad6"><td class="memItemLeft" align="right" valign="top"><a id="a2f261851d4dafc8c9d2a197c16be6ad6"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a2f261851d4dafc8c9d2a197c16be6ad6">cluster_it</a> = typename std::vector&lt; <a class="el" href="classclara_1_1cone__state.html">cone_state</a>&lt; T &gt; &gt;::iterator</td></tr>
+<tr class="memdesc:a2f261851d4dafc8c9d2a197c16be6ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterator for _cone_states <br /></td></tr>
+<tr class="separator:a2f261851d4dafc8c9d2a197c16be6ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aea67f1fd9ae7d96f7dd502774fc45828"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#aea67f1fd9ae7d96f7dd502774fc45828">data_association</a> (size_t preallocated_cluster_count, size_t preallocated_detected_cones_per_step, double max_dist_btw_cones_m, double variance_xx, double variance_yy, size_t apply_variance_step_count)</td></tr>
+<tr class="memdesc:aea67f1fd9ae7d96f7dd502774fc45828"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor which allocates multiple preallocated_cluster_count-sized vectors Currently we use add a some variance in both x and y directions until several observations have been made to allow better association Args:  <a href="#aea67f1fd9ae7d96f7dd502774fc45828">More...</a><br /></td></tr>
+<tr class="separator:aea67f1fd9ae7d96f7dd502774fc45828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c91ace8a61fa96a922dd588edc5088"><td class="memItemLeft" align="right" valign="top"><a id="ad2c91ace8a61fa96a922dd588edc5088"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#ad2c91ace8a61fa96a922dd588edc5088">data_association</a> (const <a class="el" href="classclara_1_1data__association.html#a3d00cd85107ac291ba6e3ec5fcec2ff0">self_t</a> &amp;other)=delete</td></tr>
+<tr class="memdesc:ad2c91ace8a61fa96a922dd588edc5088"><td class="mdescLeft">&#160;</td><td class="mdescRight">deleted copy constructor, we don't want anybody to move or copy this object <br /></td></tr>
+<tr class="separator:ad2c91ace8a61fa96a922dd588edc5088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aeffb04c5b2fc9c2610a4c763e720a1"><td class="memItemLeft" align="right" valign="top"><a id="a4aeffb04c5b2fc9c2610a4c763e720a1"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a4aeffb04c5b2fc9c2610a4c763e720a1">data_association</a> (const <a class="el" href="classclara_1_1data__association.html#a3d00cd85107ac291ba6e3ec5fcec2ff0">self_t</a> &amp;&amp;other)=delete</td></tr>
+<tr class="memdesc:a4aeffb04c5b2fc9c2610a4c763e720a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">deleted move constructor, we don't want anybody to move or copy this object <br /></td></tr>
+<tr class="separator:a4aeffb04c5b2fc9c2610a4c763e720a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e03c0b8425a004866c059283be5eeef"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classclara_1_1cone__state.html">cone_state</a>&lt; T &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a4e03c0b8425a004866c059283be5eeef">classify_new_data</a> (const std::vector&lt; <a class="el" href="classclara_1_1data__association.html#a8232de58bbfc0b4897e4efa62ca97ccc">raw_cone_data</a> &gt; &amp;new_cones)</td></tr>
+<tr class="memdesc:a4e03c0b8425a004866c059283be5eeef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates new clusters based on low PDF score on all clusters, otherwise appends to the one with the highest probability Returns:  <a href="#a4e03c0b8425a004866c059283be5eeef">More...</a><br /></td></tr>
+<tr class="separator:a4e03c0b8425a004866c059283be5eeef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaccbc2c618ca8b272278954585722abb"><td class="memItemLeft" align="right" valign="top"><a id="aaccbc2c618ca8b272278954585722abb"></a>
+constexpr std::vector&lt; <a class="el" href="classclara_1_1cone__state.html">cone_state</a>&lt; T &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#aaccbc2c618ca8b272278954585722abb">get_cluster</a> ()</td></tr>
+<tr class="memdesc:aaccbc2c618ca8b272278954585722abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the current clusters. <br /></td></tr>
+<tr class="separator:aaccbc2c618ca8b272278954585722abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1547077bb5ff74179acee932911db500"><td class="memItemLeft" align="right" valign="top"><a id="a1547077bb5ff74179acee932911db500"></a>
+const std::vector&lt; size_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a1547077bb5ff74179acee932911db500">get_detected_cluster_ixs</a> () const</td></tr>
+<tr class="memdesc:a1547077bb5ff74179acee932911db500"><td class="mdescLeft">&#160;</td><td class="mdescRight">convenient naming <br /></td></tr>
+<tr class="separator:a1547077bb5ff74179acee932911db500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8258daa7db2fabd9b5f28175412015e4"><td class="memItemLeft" align="right" valign="top"><a id="a8258daa7db2fabd9b5f28175412015e4"></a>
+std::vector&lt; <a class="el" href="classclara_1_1cone__state.html">cone_state</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a8258daa7db2fabd9b5f28175412015e4">get_detected_cluster</a> () const</td></tr>
+<tr class="memdesc:a8258daa7db2fabd9b5f28175412015e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">allocates a new vector and returns all currently "seen" cluster <br /></td></tr>
+<tr class="separator:a8258daa7db2fabd9b5f28175412015e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52355e49cb8d3a48dbc9ddd5e40bb6fd"><td class="memItemLeft" align="right" valign="top"><a id="a52355e49cb8d3a48dbc9ddd5e40bb6fd"></a>
+const std::vector&lt; <a class="el" href="classclara_1_1cone__state.html">cone_state</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a52355e49cb8d3a48dbc9ddd5e40bb6fd">get_detected_cluster_sorted</a> (const std::tuple&lt; double, double &gt; car_pos) const</td></tr>
+<tr class="memdesc:a52355e49cb8d3a48dbc9ddd5e40bb6fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls get_detectd_cluster, sorts them by nearest to the car position (x,y) <br /></td></tr>
+<tr class="separator:a52355e49cb8d3a48dbc9ddd5e40bb6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0107c7f137ed245fec1818aa9c7f63d5"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a0107c7f137ed245fec1818aa9c7f63d5">get_cone_count_all</a> ()</td></tr>
+<tr class="memdesc:a0107c7f137ed245fec1818aa9c7f63d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of all seen cones which is described in the the competition handbook DE7.4 (2018) This assumes that every visible object is a cone and <b>we don't have outliers</b>  <a href="#a0107c7f137ed245fec1818aa9c7f63d5">More...</a><br /></td></tr>
+<tr class="separator:a0107c7f137ed245fec1818aa9c7f63d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d662633442073068680426a9e2509e1"><td class="memItemLeft" align="right" valign="top"><a id="a8d662633442073068680426a9e2509e1"></a>
+constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a8d662633442073068680426a9e2509e1">get_cone_count_actual</a> ()</td></tr>
+<tr class="memdesc:a8d662633442073068680426a9e2509e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of actual detected cones without duplicates, which is described in the competition handbook DE7.4 (2018) <br /></td></tr>
+<tr class="separator:a8d662633442073068680426a9e2509e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a50e3471d0e0ae81acb13596e07c8b154"><td class="memItemLeft" align="right" valign="top"><a id="a50e3471d0e0ae81acb13596e07c8b154"></a>
-std::array&lt; <a class="el" href="classclara_1_1data__association.html#a8bd65eee5fba8dcaa35d96b1c3c6daa2">cone_data</a>, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>cone_states</b></td></tr>
-<tr class="separator:a50e3471d0e0ae81acb13596e07c8b154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a943d1f6bda23692fa925652286328a75"><td class="memItemLeft" align="right" valign="top"><a id="a943d1f6bda23692fa925652286328a75"></a>
+std::vector&lt; <a class="el" href="classclara_1_1cone__state.html">cone_state</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a943d1f6bda23692fa925652286328a75">_cone_states</a></td></tr>
+<tr class="memdesc:a943d1f6bda23692fa925652286328a75"><td class="mdescLeft">&#160;</td><td class="mdescRight">saving all cluster here (this might not be filled to the brink), _detected_cones saves how many are actually used <br /></td></tr>
+<tr class="separator:a943d1f6bda23692fa925652286328a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0107b53a2e35060afe9ad45b348e786a"><td class="memItemLeft" align="right" valign="top"><a id="a0107b53a2e35060afe9ad45b348e786a"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a0107b53a2e35060afe9ad45b348e786a">_variance_xx</a></td></tr>
+<tr class="memdesc:a0107b53a2e35060afe9ad45b348e786a"><td class="mdescLeft">&#160;</td><td class="mdescRight">additional variance for sparse clusters in x <br /></td></tr>
+<tr class="separator:a0107b53a2e35060afe9ad45b348e786a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ecfbabbc7c8e2297e908180108e3d8b"><td class="memItemLeft" align="right" valign="top"><a id="a3ecfbabbc7c8e2297e908180108e3d8b"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a3ecfbabbc7c8e2297e908180108e3d8b">_variance_yy</a></td></tr>
+<tr class="memdesc:a3ecfbabbc7c8e2297e908180108e3d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">additional variance for sparse clusters in y <br /></td></tr>
+<tr class="separator:a3ecfbabbc7c8e2297e908180108e3d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ab865389d263f59c9fa916ab840555"><td class="memItemLeft" align="right" valign="top"><a id="a91ab865389d263f59c9fa916ab840555"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a91ab865389d263f59c9fa916ab840555">_apply_variance_step_count</a></td></tr>
+<tr class="memdesc:a91ab865389d263f59c9fa916ab840555"><td class="mdescLeft">&#160;</td><td class="mdescRight">how often should we apply additional variance in x,y dim <br /></td></tr>
+<tr class="separator:a91ab865389d263f59c9fa916ab840555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b00208be9b91fa243cad3bec7ec3982"><td class="memItemLeft" align="right" valign="top"><a id="a1b00208be9b91fa243cad3bec7ec3982"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a1b00208be9b91fa243cad3bec7ec3982">_current_cone_ix</a></td></tr>
+<tr class="memdesc:a1b00208be9b91fa243cad3bec7ec3982"><td class="mdescLeft">&#160;</td><td class="mdescRight">what cluster is the last observed, we use that to span the association window <br /></td></tr>
+<tr class="separator:a1b00208be9b91fa243cad3bec7ec3982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6fa8a0a838466029189534c94ce1443"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#aa6fa8a0a838466029189534c94ce1443">_max_dist_btw_cones_m</a></td></tr>
+<tr class="separator:aa6fa8a0a838466029189534c94ce1443"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa83713106643b0191b770b072f2ee16"><td class="memItemLeft" align="right" valign="top"><a id="aaa83713106643b0191b770b072f2ee16"></a>
+std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#aaa83713106643b0191b770b072f2ee16">_pdfs</a></td></tr>
+<tr class="memdesc:aaa83713106643b0191b770b072f2ee16"><td class="mdescLeft">&#160;</td><td class="mdescRight">temporary storage for all pdf scores <br /></td></tr>
+<tr class="separator:aaa83713106643b0191b770b072f2ee16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b4443f07de5a2b4747c869855f09d61"><td class="memItemLeft" align="right" valign="top"><a id="a9b4443f07de5a2b4747c869855f09d61"></a>
+std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a9b4443f07de5a2b4747c869855f09d61">_detected_cluster_ix</a></td></tr>
+<tr class="memdesc:a9b4443f07de5a2b4747c869855f09d61"><td class="mdescLeft">&#160;</td><td class="mdescRight">holds all currently used clusters, needed for future analysis <br /></td></tr>
+<tr class="separator:a9b4443f07de5a2b4747c869855f09d61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
-Private Types</h2></td></tr>
-<tr class="memitem:a8bd65eee5fba8dcaa35d96b1c3c6daa2"><td class="memItemLeft" align="right" valign="top"><a id="a8bd65eee5fba8dcaa35d96b1c3c6daa2"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a8bd65eee5fba8dcaa35d96b1c3c6daa2">cone_data</a> = std::tuple&lt; double, double &gt;</td></tr>
-<tr class="memdesc:a8bd65eee5fba8dcaa35d96b1c3c6daa2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>x</code> and <code>y</code> position <br /></td></tr>
-<tr class="separator:a8bd65eee5fba8dcaa35d96b1c3c6daa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a1d39b4c8958e92ddd724b70ed78565a9"><td class="memItemLeft" align="right" valign="top"><a id="a1d39b4c8958e92ddd724b70ed78565a9"></a>
+<a class="el" href="classclara_1_1data__association.html#a2f261851d4dafc8c9d2a197c16be6ad6">cluster_it</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a1d39b4c8958e92ddd724b70ed78565a9">_get_most_probable_cluster_it</a> (const <a class="el" href="classclara_1_1data__association.html#a8232de58bbfc0b4897e4efa62ca97ccc">raw_cone_data</a> &amp;cone)</td></tr>
+<tr class="memdesc:a1d39b4c8958e92ddd724b70ed78565a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the iterator at the element with the highest association probability based on the pdf <br /></td></tr>
+<tr class="separator:a1d39b4c8958e92ddd724b70ed78565a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24a852f872de092b9684a313e48e4172"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a24a852f872de092b9684a313e48e4172">_add_new_cluster_with_ob</a> (const <a class="el" href="classclara_1_1data__association.html#a8232de58bbfc0b4897e4efa62ca97ccc">raw_cone_data</a> &amp;observation)</td></tr>
+<tr class="separator:a24a852f872de092b9684a313e48e4172"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae51ae05891717ac34fea70e1846beb8a"><td class="memItemLeft" align="right" valign="top"><a id="ae51ae05891717ac34fea70e1846beb8a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#ae51ae05891717ac34fea70e1846beb8a">_add_observation</a> (typename std::vector&lt; <a class="el" href="classclara_1_1cone__state.html">cone_state</a>&lt; T &gt;&gt;::iterator &amp;it, const <a class="el" href="classclara_1_1data__association.html#a8232de58bbfc0b4897e4efa62ca97ccc">raw_cone_data</a> &amp;observation)</td></tr>
+<tr class="memdesc:ae51ae05891717ac34fea70e1846beb8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">updated the cone with an observation, adds the <br /></td></tr>
+<tr class="separator:ae51ae05891717ac34fea70e1846beb8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765be6bb5ee79926b15bc709431f640e"><td class="memItemLeft" align="right" valign="top"><a id="a765be6bb5ee79926b15bc709431f640e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclara_1_1data__association.html#a765be6bb5ee79926b15bc709431f640e">_add_detected_cone_ix</a> (const typename std::vector&lt; <a class="el" href="classclara_1_1cone__state.html">cone_state</a>&lt; T &gt;&gt;::iterator &amp;it)</td></tr>
+<tr class="memdesc:a765be6bb5ee79926b15bc709431f640e"><td class="mdescLeft">&#160;</td><td class="mdescRight">convenient naming <br /></td></tr>
+<tr class="separator:a765be6bb5ee79926b15bc709431f640e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;size_t N&gt;<br />
-class clara::data_association&lt; N &gt;</h3>
+<div class="textblock"><h3>template&lt;class T&gt;<br />
+class clara::data_association&lt; T &gt;</h3>
 
 <p>A class which handles the data association task for CLARA. </p>
 <p>The task of clara is to return the <em>best</em> estimate of the current world position</p>
 <p>To do this, we detect cones based on some sensors which return:</p><ul>
 <li><b>relative distance</b> to the current position</li>
-<li><b>yaw angle</b> to the car direction. This is in the range of<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000007">Todo:</a></b></dt><dd>ask sheldon for yaw angle</dd></dl>
+<li><b>yaw angle</b> to the car direction. This is in rad, positive means it's left of us, negative means right<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>create a nice image</dd></dl>
 </li>
 </ul>
 <p>Cones are saved by their absolute position (x,y), based on the starting point of the car (usually <code>(0,0)</code>)</p>
 <p>Template arguments:</p><ul>
-<li><code>N</code> = maximum amount of cones which we'll be able to identify </li>
+<li><code>T</code> = type of the cones (has to support floating point caluclationsfloat / double) </li>
 </ul>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="aea67f1fd9ae7d96f7dd502774fc45828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea67f1fd9ae7d96f7dd502774fc45828">&#9670;&nbsp;</a></span>data_association()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classclara_1_1data__association.html">clara::data_association</a>&lt; T &gt;::<a class="el" href="classclara_1_1data__association.html">data_association</a> </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>preallocated_cluster_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>preallocated_detected_cones_per_step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max_dist_btw_cones_m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>variance_xx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>variance_yy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>apply_variance_step_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor which allocates multiple preallocated_cluster_count-sized vectors Currently we use add a some variance in both x and y directions until several observations have been made to allow better association Args: </p>
+<ul>
+<li>preallocated_cluster_count - how many cluster do we want to allocate</li>
+<li>detected_cones_per_step - how many cluster do we match on runtime (preallocation of index-vector)</li>
+<li>max_dist_btwn_cones - maximum distance between cones where we cut off</li>
+<li>variance_xx - applied variance in X dimension for apply_variance_step_count to the clusters</li>
+<li>variance_yy - applied variance in Y dimension for apply_variance_step_count to the clusters</li>
+<li>apply_variance_step_count - applies variance for this amount of steps to every new cluster </li>
+</ul>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a24a852f872de092b9684a313e48e4172"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24a852f872de092b9684a313e48e4172">&#9670;&nbsp;</a></span>_add_new_cluster_with_ob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classclara_1_1data__association.html">clara::data_association</a>&lt; T &gt;::_add_new_cluster_with_ob </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classclara_1_1data__association.html#a8232de58bbfc0b4897e4efa62ca97ccc">raw_cone_data</a> &amp;&#160;</td>
+          <td class="paramname"><em>observation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>creates a default cluster with _variance_xx, _variance_yy and _apply_variance_step_count at the end of _cone_states adds the observation and updates it </p>
+
+</div>
+</div>
+<a id="a4e03c0b8425a004866c059283be5eeef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e03c0b8425a004866c059283be5eeef">&#9670;&nbsp;</a></span>classify_new_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;<a class="el" href="classclara_1_1cone__state.html">cone_state</a>&lt;T&gt; &gt;&amp; <a class="el" href="classclara_1_1data__association.html">clara::data_association</a>&lt; T &gt;::classify_new_data </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classclara_1_1data__association.html#a8232de58bbfc0b4897e4efa62ca97ccc">raw_cone_data</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>new_cones</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates new clusters based on low PDF score on all clusters, otherwise appends to the one with the highest probability Returns: </p>
+<ul>
+<li>current state of all clusters </li>
+</ul>
+
+</div>
+</div>
+<a id="a0107c7f137ed245fec1818aa9c7f63d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0107c7f137ed245fec1818aa9c7f63d5">&#9670;&nbsp;</a></span>get_cone_count_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t <a class="el" href="classclara_1_1data__association.html">clara::data_association</a>&lt; T &gt;::get_cone_count_all </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the count of all seen cones which is described in the the competition handbook DE7.4 (2018) This assumes that every visible object is a cone and <b>we don't have outliers</b> </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo:</a></b></dt><dd>Current runtime complexity <em>O(N)</em> </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa6fa8a0a838466029189534c94ce1443"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6fa8a0a838466029189534c94ce1443">&#9670;&nbsp;</a></span>_max_dist_btw_cones_m</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classclara_1_1data__association.html">clara::data_association</a>&lt; T &gt;::_max_dist_btw_cones_m</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo:</a></b></dt><dd></dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>library/<a class="el" href="data__association_8h_source.html">data_association.h</a></li>
 </ul>
 </div><!-- contents -->

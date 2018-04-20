@@ -84,10 +84,182 @@ constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceclara_1_1util.html#ae062b8c2441737886151170147747c18">angle_to_rad</a> (const double angle)</td></tr>
 <tr class="memdesc:ae062b8c2441737886151170147747c18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts angles to radians. Does not do <code>modulo 6.2830...</code> <br /></td></tr>
 <tr class="separator:ae062b8c2441737886151170147747c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3e0d514883d6ffde9a1099e779bc094"><td class="memTemplParams" colspan="2"><a id="ad3e0d514883d6ffde9a1099e779bc094"></a>
+template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:ad3e0d514883d6ffde9a1099e779bc094"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceclara_1_1util.html#ad3e0d514883d6ffde9a1099e779bc094">advance_all</a> (Iterator &amp;iterator)</td></tr>
+<tr class="memdesc:ad3e0d514883d6ffde9a1099e779bc094"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialized advance_all for a single iterator which is incremented. <br /></td></tr>
+<tr class="separator:ad3e0d514883d6ffde9a1099e779bc094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a91effd68bdcd381158dc56616849b3"><td class="memTemplParams" colspan="2"><a id="a2a91effd68bdcd381158dc56616849b3"></a>
+template&lt;typename Iterator , typename ... Iterators&gt; </td></tr>
+<tr class="memitem:a2a91effd68bdcd381158dc56616849b3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceclara_1_1util.html#a2a91effd68bdcd381158dc56616849b3">advance_all</a> (Iterator &amp;iterator, Iterators &amp;... iterators)</td></tr>
+<tr class="memdesc:a2a91effd68bdcd381158dc56616849b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increments all iterators by one. Defined for any amount of iterators. <br /></td></tr>
+<tr class="separator:a2a91effd68bdcd381158dc56616849b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2e7a0cd942934cacd30db84c8095cc"><td class="memTemplParams" colspan="2">template&lt;typename Function , typename InputIt , typename OutputIt , typename ... Iterators&gt; </td></tr>
+<tr class="memitem:a0c2e7a0cd942934cacd30db84c8095cc"><td class="memTemplItemLeft" align="right" valign="top">OutputIt&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceclara_1_1util.html#a0c2e7a0cd942934cacd30db84c8095cc">zipWith</a> (Function func, InputIt first, InputIt last, OutputIt d_first, Iterators ... iterators)</td></tr>
+<tr class="memdesc:a0c2e7a0cd942934cacd30db84c8095cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all iterators with a function that appends its result to OutputIt Iterators have to have the <b>same size</b>! Example:  <a href="#a0c2e7a0cd942934cacd30db84c8095cc">More...</a><br /></td></tr>
+<tr class="separator:a0c2e7a0cd942934cacd30db84c8095cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb41a8f553acc4a836cabbcad96e1007"><td class="memTemplParams" colspan="2">template&lt;typename Function , typename InputIt , typename ... Iterators&gt; </td></tr>
+<tr class="memitem:aeb41a8f553acc4a836cabbcad96e1007"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceclara_1_1util.html#aeb41a8f553acc4a836cabbcad96e1007">zipWith_</a> (Function func, InputIt first, InputIt last, Iterators ... iterators)</td></tr>
+<tr class="memdesc:aeb41a8f553acc4a836cabbcad96e1007"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all iterators with a function that returns void Iterators have to have the <b>same size</b>! Example:  <a href="#aeb41a8f553acc4a836cabbcad96e1007">More...</a><br /></td></tr>
+<tr class="separator:aeb41a8f553acc4a836cabbcad96e1007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab84781d3b94b3ed04f195eab5bb3d02c"><td class="memTemplParams" colspan="2">template&lt;typename InputT , typename Function &gt; </td></tr>
+<tr class="memitem:ab84781d3b94b3ed04f195eab5bb3d02c"><td class="memTemplItemLeft" align="right" valign="top">Function&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceclara_1_1util.html#ab84781d3b94b3ed04f195eab5bb3d02c">enumerate</a> (InputT first, InputT last, typename std::iterator_traits&lt; InputT &gt;::difference_type initial, Function func)</td></tr>
+<tr class="memdesc:ab84781d3b94b3ed04f195eab5bb3d02c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an index to every element in an iterators.  <a href="#ab84781d3b94b3ed04f195eab5bb3d02c">More...</a><br /></td></tr>
+<tr class="separator:ab84781d3b94b3ed04f195eab5bb3d02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e0e5139ee6278da7f25b7ea8dd365c1"><td class="memTemplParams" colspan="2"><a id="a6e0e5139ee6278da7f25b7ea8dd365c1"></a>
+template&lt;class Iterable , typename Function &gt; </td></tr>
+<tr class="memitem:a6e0e5139ee6278da7f25b7ea8dd365c1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceclara_1_1util.html#a6e0e5139ee6278da7f25b7ea8dd365c1">for_each_</a> (Iterable &amp;container, Function func)</td></tr>
+<tr class="memdesc:a6e0e5139ee6278da7f25b7ea8dd365c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handy shortcut for simple loops. <br /></td></tr>
+<tr class="separator:a6e0e5139ee6278da7f25b7ea8dd365c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae295389eee432a78c061a26ad2d373a6"><td class="memTemplParams" colspan="2"><a id="ae295389eee432a78c061a26ad2d373a6"></a>
+template&lt;class Iterable , typename Function &gt; </td></tr>
+<tr class="memitem:ae295389eee432a78c061a26ad2d373a6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceclara_1_1util.html#ae295389eee432a78c061a26ad2d373a6">transform_</a> (Iterable &amp;container, Function func)</td></tr>
+<tr class="memdesc:ae295389eee432a78c061a26ad2d373a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handy shortcut for simple loops. <br /></td></tr>
+<tr class="separator:ae295389eee432a78c061a26ad2d373a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Utilities namespace so summarize often used functions from different modules. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="ab84781d3b94b3ed04f195eab5bb3d02c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab84781d3b94b3ed04f195eab5bb3d02c">&#9670;&nbsp;</a></span>enumerate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename InputT , typename Function &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Function clara::util::enumerate </td>
+          <td>(</td>
+          <td class="paramtype">InputT&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputT&#160;</td>
+          <td class="paramname"><em>last</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename std::iterator_traits&lt; InputT &gt;::difference_type&#160;</td>
+          <td class="paramname"><em>initial</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Function&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds an index to every element in an iterators. </p>
+<p>Source: blatantly copied from <a href="http://stackoverflow.com/questions/3752019/how-to-get-the-index-of-a-value-in-a-vector-using-for-each">http://stackoverflow.com/questions/3752019/how-to-get-the-index-of-a-value-in-a-vector-using-for-each</a> </p>
+
+</div>
+</div>
+<a id="a0c2e7a0cd942934cacd30db84c8095cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2e7a0cd942934cacd30db84c8095cc">&#9670;&nbsp;</a></span>zipWith()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Function , typename InputIt , typename OutputIt , typename ... Iterators&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">OutputIt clara::util::zipWith </td>
+          <td>(</td>
+          <td class="paramtype">Function&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputIt&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputIt&#160;</td>
+          <td class="paramname"><em>last</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">OutputIt&#160;</td>
+          <td class="paramname"><em>d_first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iterators ...&#160;</td>
+          <td class="paramname"><em>iterators</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iterates over all iterators with a function that appends its result to OutputIt Iterators have to have the <b>same size</b>! Example: </p>
+<div class="fragment"><div class="line"> std::vector&lt;int&gt; xs { 1, 2, 3 };</div><div class="line"> std::vector&lt;int&gt; ys { 2, 4, 8 };</div><div class="line"> std::vector&lt;int&gt; res { 0, 0, 0 };</div><div class="line"></div><div class="line"> <a class="code" href="namespaceclara_1_1util.html#a0c2e7a0cd942934cacd30db84c8095cc">zipWith</a>([](<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y){ <span class="keywordflow">return</span> x+y; }),</div><div class="line">            xs.begin(),</div><div class="line">            xs.end(),</div><div class="line">            res.begin(),</div><div class="line">            ys.begin());</div><div class="line"></div><div class="line"><span class="comment">// res = { 3, 6, 11 };</span></div></div><!-- fragment --> 
+</div>
+</div>
+<a id="aeb41a8f553acc4a836cabbcad96e1007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb41a8f553acc4a836cabbcad96e1007">&#9670;&nbsp;</a></span>zipWith_()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Function , typename InputIt , typename ... Iterators&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void clara::util::zipWith_ </td>
+          <td>(</td>
+          <td class="paramtype">Function&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputIt&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InputIt&#160;</td>
+          <td class="paramname"><em>last</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iterators ...&#160;</td>
+          <td class="paramname"><em>iterators</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Iterates over all iterators with a function that returns void Iterators have to have the <b>same size</b>! Example: </p>
+<div class="fragment"><div class="line">std::vector&lt;int&gt; xs { 1, 2, 3 };</div><div class="line">std::vector&lt;int&gt; ys { 2, 4, 8 };</div><div class="line">std::vector&lt;int&gt; res { 0, 0, 0 };</div><div class="line"></div><div class="line"><a class="code" href="namespaceclara_1_1util.html#aeb41a8f553acc4a836cabbcad96e1007">zipWith_</a>([](<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y){ std::cout &lt;&lt; x &lt;&lt; y &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>; }),</div><div class="line">         xs.begin(),</div><div class="line">         xs.end(),</div><div class="line">         ys.begin());</div></div><!-- fragment --> 
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

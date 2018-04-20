@@ -1,0 +1,103 @@
+\hypertarget{classio_1_1LineReader}{}\section{io\+:\+:Line\+Reader Class Reference}
+\label{classio_1_1LineReader}\index{io\+::\+Line\+Reader@{io\+::\+Line\+Reader}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a84f2957de769bb701eaaddfd8bc004dd}\label{classio_1_1LineReader_a84f2957de769bb701eaaddfd8bc004dd}} 
+{\bfseries Line\+Reader} (const \hyperlink{classio_1_1LineReader}{Line\+Reader} \&)=delete
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a9ebd7beca16060ffc0ea8df3c0c6ff25}\label{classio_1_1LineReader_a9ebd7beca16060ffc0ea8df3c0c6ff25}} 
+\hyperlink{classio_1_1LineReader}{Line\+Reader} \& {\bfseries operator=} (const \hyperlink{classio_1_1LineReader}{Line\+Reader} \&)=delete
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a81a75d3f53725d35822f490007520e29}\label{classio_1_1LineReader_a81a75d3f53725d35822f490007520e29}} 
+{\bfseries Line\+Reader} (const char $\ast$file\+\_\+name)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_ab0eb26f44fa6b18f9c39dfb2561ac882}\label{classio_1_1LineReader_ab0eb26f44fa6b18f9c39dfb2561ac882}} 
+{\bfseries Line\+Reader} (const std\+::string \&file\+\_\+name)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_af4ebb130a7d6c78356573f6d0304266c}\label{classio_1_1LineReader_af4ebb130a7d6c78356573f6d0304266c}} 
+{\bfseries Line\+Reader} (const char $\ast$file\+\_\+name, std\+::unique\+\_\+ptr$<$ \hyperlink{classio_1_1ByteSourceBase}{Byte\+Source\+Base} $>$byte\+\_\+source)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_ab625b3a8001dca811b0e211c6cfc1b28}\label{classio_1_1LineReader_ab625b3a8001dca811b0e211c6cfc1b28}} 
+{\bfseries Line\+Reader} (const std\+::string \&file\+\_\+name, std\+::unique\+\_\+ptr$<$ \hyperlink{classio_1_1ByteSourceBase}{Byte\+Source\+Base} $>$byte\+\_\+source)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_ad5a65d6f23474884061a77ea858c042b}\label{classio_1_1LineReader_ad5a65d6f23474884061a77ea858c042b}} 
+{\bfseries Line\+Reader} (const char $\ast$file\+\_\+name, const char $\ast$data\+\_\+begin, const char $\ast$data\+\_\+end)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a0a52d864b46442a253443cac1367366e}\label{classio_1_1LineReader_a0a52d864b46442a253443cac1367366e}} 
+{\bfseries Line\+Reader} (const std\+::string \&file\+\_\+name, const char $\ast$data\+\_\+begin, const char $\ast$data\+\_\+end)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_ad2a8943ba0848ae5052e2f5ad30c010e}\label{classio_1_1LineReader_ad2a8943ba0848ae5052e2f5ad30c010e}} 
+{\bfseries Line\+Reader} (const char $\ast$file\+\_\+name, F\+I\+LE $\ast$file)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a93fa2e3ae98b0e7a7391714d6395c552}\label{classio_1_1LineReader_a93fa2e3ae98b0e7a7391714d6395c552}} 
+{\bfseries Line\+Reader} (const std\+::string \&file\+\_\+name, F\+I\+LE $\ast$file)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a301c08eb9ca5d3fdccf4e9a8e5ac82f8}\label{classio_1_1LineReader_a301c08eb9ca5d3fdccf4e9a8e5ac82f8}} 
+{\bfseries Line\+Reader} (const char $\ast$file\+\_\+name, std\+::istream \&in)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a3eacf4d1539a24122c6897fce4e72f06}\label{classio_1_1LineReader_a3eacf4d1539a24122c6897fce4e72f06}} 
+{\bfseries Line\+Reader} (const std\+::string \&file\+\_\+name, std\+::istream \&in)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a1a0763d491dec16cebc33134e965dfee}\label{classio_1_1LineReader_a1a0763d491dec16cebc33134e965dfee}} 
+void {\bfseries set\+\_\+file\+\_\+name} (const std\+::string \&file\+\_\+name)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a81c56ac68497da5ec874333ce063fd83}\label{classio_1_1LineReader_a81c56ac68497da5ec874333ce063fd83}} 
+void {\bfseries set\+\_\+file\+\_\+name} (const char $\ast$file\+\_\+name)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_ad5817da6af1ae77daddec7aeaeebf2f8}\label{classio_1_1LineReader_ad5817da6af1ae77daddec7aeaeebf2f8}} 
+const char $\ast$ {\bfseries get\+\_\+truncated\+\_\+file\+\_\+name} () const
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a581b55d4ced6adb964de50fa8ac6eb08}\label{classio_1_1LineReader_a581b55d4ced6adb964de50fa8ac6eb08}} 
+void {\bfseries set\+\_\+file\+\_\+line} (unsigned file\+\_\+line)
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a3f3459e22ed8e459238c290050b6722e}\label{classio_1_1LineReader_a3f3459e22ed8e459238c290050b6722e}} 
+unsigned {\bfseries get\+\_\+file\+\_\+line} () const
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a97f4e0129611d9da2b8c966ffe670be5}\label{classio_1_1LineReader_a97f4e0129611d9da2b8c966ffe670be5}} 
+char $\ast$ {\bfseries next\+\_\+line} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a68ac92cedd46d25cbc4e205eb3a2833f}\label{classio_1_1LineReader_a68ac92cedd46d25cbc4e205eb3a2833f}} 
+void {\bfseries init} (std\+::unique\+\_\+ptr$<$ \hyperlink{classio_1_1ByteSourceBase}{Byte\+Source\+Base} $>$byte\+\_\+source)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a036adce726096bca1db7ccceea938595}\label{classio_1_1LineReader_a036adce726096bca1db7ccceea938595}} 
+static std\+::unique\+\_\+ptr$<$ \hyperlink{classio_1_1ByteSourceBase}{Byte\+Source\+Base} $>$ {\bfseries open\+\_\+file} (const char $\ast$file\+\_\+name)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_afd45c8f7175a4094a469f5764816d181}\label{classio_1_1LineReader_afd45c8f7175a4094a469f5764816d181}} 
+std\+::unique\+\_\+ptr$<$ char\mbox{[}$\,$\mbox{]}$>$ {\bfseries buffer}
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_abfd04ef491b6515a26b1b17aab9430b0}\label{classio_1_1LineReader_abfd04ef491b6515a26b1b17aab9430b0}} 
+\hyperlink{classio_1_1detail_1_1AsynchronousReader}{detail\+::\+Asynchronous\+Reader} {\bfseries reader}
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a20676a014d14bfa566591d8cfeed0f29}\label{classio_1_1LineReader_a20676a014d14bfa566591d8cfeed0f29}} 
+int {\bfseries data\+\_\+begin}
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a16829b470aa908981d4799401d42a85b}\label{classio_1_1LineReader_a16829b470aa908981d4799401d42a85b}} 
+int {\bfseries data\+\_\+end}
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a8b853ac45c1eae0afc36d49630e949d8}\label{classio_1_1LineReader_a8b853ac45c1eae0afc36d49630e949d8}} 
+char {\bfseries file\+\_\+name} \mbox{[}error\+::max\+\_\+file\+\_\+name\+\_\+length+1\mbox{]}
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a5c29ad60208bca6475af54e54eff80b7}\label{classio_1_1LineReader_a5c29ad60208bca6475af54e54eff80b7}} 
+unsigned {\bfseries file\+\_\+line}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classio_1_1LineReader_a04db9ad3b956347b48136dbe5751469d}\label{classio_1_1LineReader_a04db9ad3b956347b48136dbe5751469d}} 
+static const int {\bfseries block\+\_\+len} = 1$<$$<$24
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+library/csv.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,79 @@
+\hypertarget{classio_1_1CSVReader}{}\section{io\+:\+:C\+S\+V\+Reader$<$ column\+\_\+count, trim\+\_\+policy, quote\+\_\+policy, overflow\+\_\+policy, comment\+\_\+policy $>$ Class Template Reference}
+\label{classio_1_1CSVReader}\index{io\+::\+C\+S\+V\+Reader$<$ column\+\_\+count, trim\+\_\+policy, quote\+\_\+policy, overflow\+\_\+policy, comment\+\_\+policy $>$@{io\+::\+C\+S\+V\+Reader$<$ column\+\_\+count, trim\+\_\+policy, quote\+\_\+policy, overflow\+\_\+policy, comment\+\_\+policy $>$}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a0507ac5abe201969a15df76795e13c28}\label{classio_1_1CSVReader_a0507ac5abe201969a15df76795e13c28}} 
+{\bfseries C\+S\+V\+Reader} (const \hyperlink{classio_1_1CSVReader}{C\+S\+V\+Reader} \&)=delete
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a37046e6629cf4254037c14440f14141d}\label{classio_1_1CSVReader_a37046e6629cf4254037c14440f14141d}} 
+\hyperlink{classio_1_1CSVReader}{C\+S\+V\+Reader} \& {\bfseries operator=} (const \hyperlink{classio_1_1CSVReader}{C\+S\+V\+Reader} \&)
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a189debf95672e7cd7582e9f73d7203e5}\label{classio_1_1CSVReader_a189debf95672e7cd7582e9f73d7203e5}} 
+{\footnotesize template$<$class ... Args$>$ }\\{\bfseries C\+S\+V\+Reader} (Args \&\&...args)
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a9fec7797cb27f64360cc48adc5f32c72}\label{classio_1_1CSVReader_a9fec7797cb27f64360cc48adc5f32c72}} 
+char $\ast$ {\bfseries next\+\_\+line} ()
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a9fad9ae02aa243dba6bc78156c5ce7e5}\label{classio_1_1CSVReader_a9fad9ae02aa243dba6bc78156c5ce7e5}} 
+{\footnotesize template$<$class ... Col\+Names$>$ }\\void {\bfseries read\+\_\+header} (ignore\+\_\+column ignore\+\_\+policy, Col\+Names...\+cols)
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_ab68eedff1bd59a49fa4ddb160dff94e0}\label{classio_1_1CSVReader_ab68eedff1bd59a49fa4ddb160dff94e0}} 
+{\footnotesize template$<$class ... Col\+Names$>$ }\\void {\bfseries set\+\_\+header} (Col\+Names...\+cols)
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_aaba91fff6faea12e451943e8d32a5a17}\label{classio_1_1CSVReader_aaba91fff6faea12e451943e8d32a5a17}} 
+bool {\bfseries has\+\_\+column} (const std\+::string \&name) const
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a4096c1e43a4fba2b4f5ae21d047b5fbc}\label{classio_1_1CSVReader_a4096c1e43a4fba2b4f5ae21d047b5fbc}} 
+void {\bfseries set\+\_\+file\+\_\+name} (const std\+::string \&file\+\_\+name)
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a5f1dc083a8fa8661f5ecdcf6aebc7b24}\label{classio_1_1CSVReader_a5f1dc083a8fa8661f5ecdcf6aebc7b24}} 
+void {\bfseries set\+\_\+file\+\_\+name} (const char $\ast$file\+\_\+name)
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_abc6321895152f5a34959b499da6512ee}\label{classio_1_1CSVReader_abc6321895152f5a34959b499da6512ee}} 
+const char $\ast$ {\bfseries get\+\_\+truncated\+\_\+file\+\_\+name} () const
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a1303bd6a2eb0d3d7c743212e52839ac4}\label{classio_1_1CSVReader_a1303bd6a2eb0d3d7c743212e52839ac4}} 
+void {\bfseries set\+\_\+file\+\_\+line} (unsigned file\+\_\+line)
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a065f805596018d1568b81152e6a22e0c}\label{classio_1_1CSVReader_a065f805596018d1568b81152e6a22e0c}} 
+unsigned {\bfseries get\+\_\+file\+\_\+line} () const
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a61ecdcaa62c024bf97c4e5d133478d7e}\label{classio_1_1CSVReader_a61ecdcaa62c024bf97c4e5d133478d7e}} 
+{\footnotesize template$<$class ... Col\+Type$>$ }\\bool {\bfseries read\+\_\+row} (Col\+Type \&...cols)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_af0f3df423977925fd22acadbdbc4cdcd}\label{classio_1_1CSVReader_af0f3df423977925fd22acadbdbc4cdcd}} 
+{\footnotesize template$<$class ... Col\+Names$>$ }\\void {\bfseries set\+\_\+column\+\_\+names} (std\+::string s, Col\+Names...\+cols)
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a48a56e02ae597ae3506e1b24dc0718ef}\label{classio_1_1CSVReader_a48a56e02ae597ae3506e1b24dc0718ef}} 
+void {\bfseries set\+\_\+column\+\_\+names} ()
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_ada16395fbaedad5fcda248b50cd12da0}\label{classio_1_1CSVReader_ada16395fbaedad5fcda248b50cd12da0}} 
+void {\bfseries parse\+\_\+helper} (std\+::size\+\_\+t)
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a6e2cb67ff14a62cee48fb9042c1bfff9}\label{classio_1_1CSVReader_a6e2cb67ff14a62cee48fb9042c1bfff9}} 
+{\footnotesize template$<$class T , class ... Col\+Type$>$ }\\void {\bfseries parse\+\_\+helper} (std\+::size\+\_\+t r, T \&t, Col\+Type \&...cols)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a26da3892b5c4606617d9daadc0886501}\label{classio_1_1CSVReader_a26da3892b5c4606617d9daadc0886501}} 
+\hyperlink{classio_1_1LineReader}{Line\+Reader} {\bfseries in}
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a48ab5773a4295f7969453838b4115e42}\label{classio_1_1CSVReader_a48ab5773a4295f7969453838b4115e42}} 
+char $\ast$ {\bfseries row} \mbox{[}column\+\_\+count\mbox{]}
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a7b97f929cea543f83e61173ea435fdde}\label{classio_1_1CSVReader_a7b97f929cea543f83e61173ea435fdde}} 
+std\+::string {\bfseries column\+\_\+names} \mbox{[}column\+\_\+count\mbox{]}
+\item 
+\mbox{\Hypertarget{classio_1_1CSVReader_a1a59e51b74c2d6056821a5e499379884}\label{classio_1_1CSVReader_a1a59e51b74c2d6056821a5e499379884}} 
+std\+::vector$<$ int $>$ {\bfseries col\+\_\+order}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+library/csv.\+h\end{DoxyCompactItemize}

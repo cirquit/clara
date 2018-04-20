@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['maximum_5flikelihood_5festimate',['maximum_likelihood_estimate',['../classclara_1_1cone__state.html#a331360538f2fc8ccaaa37db2a71cc1a8',1,'clara::cone_state']]]
+  ['enumerate',['enumerate',['../namespaceclara_1_1util.html#ab84781d3b94b3ed04f195eab5bb3d02c',1,'clara::util']]]
 ];

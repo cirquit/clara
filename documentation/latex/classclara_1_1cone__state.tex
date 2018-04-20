@@ -21,22 +21,70 @@ using {\bfseries coords\+\_\+t} = std\+::array$<$ T, 2 $>$
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classclara_1_1cone__state_ae8c7feebfc46bd183d93db3245c43a3d}\label{classclara_1_1cone__state_ae8c7feebfc46bd183d93db3245c43a3d}} 
-\hyperlink{classclara_1_1cone__state_ae8c7feebfc46bd183d93db3245c43a3d}{cone\+\_\+state} (const \hyperlink{classclara_1_1cone__state_a74ce83ddac5e4056fd4bb1e7d217f9f8}{self\+\_\+t} \&other)=delete
-\begin{DoxyCompactList}\small\item\em deleted copy constructor, we don\textquotesingle{}t want anybody to move or copy this object \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classclara_1_1cone__state_ad70f9d4e537af05a549853f276813ce6}\label{classclara_1_1cone__state_ad70f9d4e537af05a549853f276813ce6}} 
-\hyperlink{classclara_1_1cone__state_ad70f9d4e537af05a549853f276813ce6}{cone\+\_\+state} (const \hyperlink{classclara_1_1cone__state_a74ce83ddac5e4056fd4bb1e7d217f9f8}{self\+\_\+t} \&\&other)=delete
-\begin{DoxyCompactList}\small\item\em deleted move constructor, we don\textquotesingle{}t want anybody to move or copy this object \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_ae5d6874f1cadb2db4253e10ee09a225b}\label{classclara_1_1cone__state_ae5d6874f1cadb2db4253e10ee09a225b}} 
+\hyperlink{classclara_1_1cone__state_ae5d6874f1cadb2db4253e10ee09a225b}{cone\+\_\+state} ()
+\begin{DoxyCompactList}\small\item\em default constructor without noisy initialization \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_a1bb8472c6d3149945484a5bf68fde09f}\label{classclara_1_1cone__state_a1bb8472c6d3149945484a5bf68fde09f}} 
+\hyperlink{classclara_1_1cone__state_a1bb8472c6d3149945484a5bf68fde09f}{cone\+\_\+state} (T variance\+\_\+xx, T variance\+\_\+yy, size\+\_\+t apply\+\_\+variance\+\_\+step\+\_\+count)
+\begin{DoxyCompactList}\small\item\em noisy constructor, we apply the \+\_\+variance\+\_\+xx and \+\_\+variance\+\_\+yy to the covarianceiance matrix until we have at least seen \+\_\+apply\+\_\+variance\+\_\+step\+\_\+count observations \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_ad98e1336401b69e680c42b0959a827a5}\label{classclara_1_1cone__state_ad98e1336401b69e680c42b0959a827a5}} 
+\hyperlink{classclara_1_1cone__state_ad98e1336401b69e680c42b0959a827a5}{cone\+\_\+state} (const \hyperlink{classclara_1_1cone__state_a74ce83ddac5e4056fd4bb1e7d217f9f8}{self\+\_\+t} \&other)=default
+\begin{DoxyCompactList}\small\item\em allow copies \end{DoxyCompactList}\item 
+void \hyperlink{classclara_1_1cone__state_aee0e3d2bf97a5b06b8a052bf4c93f6ed}{add\+\_\+observation} (std\+::tuple$<$ T, T $>$ tup)
+\begin{DoxyCompactList}\small\item\em allow moves \end{DoxyCompactList}\item 
 void \hyperlink{classclara_1_1cone__state_a7cd7364ca787c25b0ca333d0cb1c3081}{add\+\_\+observation} (T x, T y)
 \begin{DoxyCompactList}\small\item\em Adds an observation of coordiantes to the cone state. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classclara_1_1cone__state_ae8642cde249796203a906df935e35f39}\label{classclara_1_1cone__state_ae8642cde249796203a906df935e35f39}} 
 bool \hyperlink{classclara_1_1cone__state_ae8642cde249796203a906df935e35f39}{is\+\_\+modified} ()
 \begin{DoxyCompactList}\small\item\em just for a naming convenience \end{DoxyCompactList}\item 
+bool \hyperlink{classclara_1_1cone__state_ae3ea1ca7a6af262f71493f45c0734322}{is\+\_\+used} ()
+\item 
 \mbox{\Hypertarget{classclara_1_1cone__state_a8cb6454f6a731f69d3e85382b0ae40b4}\label{classclara_1_1cone__state_a8cb6454f6a731f69d3e85382b0ae40b4}} 
 void \hyperlink{classclara_1_1cone__state_a8cb6454f6a731f69d3e85382b0ae40b4}{update\+\_\+state} ()
 \begin{DoxyCompactList}\small\item\em Updates the {\ttfamily \+\_\+mean\+\_\+vec}, {\ttfamily \+\_\+cov\+\_\+mat}, {\ttfamily \+\_\+det\+\_\+cov\+\_\+mat} and {\ttfamily \+\_\+inv\+\_\+cov\+\_\+mat} if {\ttfamily is\+\_\+modified} returns true These calculations have to be done in {\bfseries this exact order}, because they are all dependent on each other Results in a cached access to every member after recalculation for the current {\ttfamily \+\_\+observations} \end{DoxyCompactList}\item 
-double \hyperlink{classclara_1_1cone__state_a331360538f2fc8ccaaa37db2a71cc1a8}{maximum\+\_\+likelihood\+\_\+estimate} (T x, T y)
-\begin{DoxyCompactList}\small\item\em Maximum likelihood estimate for this parametrization Linearized gaussian multiplication for 2x2 matrizes of the mahalanobis distance in the exponent of {\ttfamily e} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\Hypertarget{classclara_1_1cone__state_aa437f32412e7b38d40a8bbc054615ef7}\label{classclara_1_1cone__state_aa437f32412e7b38d40a8bbc054615ef7}} 
+double \hyperlink{classclara_1_1cone__state_aa437f32412e7b38d40a8bbc054615ef7}{pdf} (std\+::tuple$<$ T, T $>$ tup)
+\begin{DoxyCompactList}\small\item\em Helper function for currying, calls \hyperlink{classclara_1_1cone__state_a90b1ae9171e6196c19da0d883a8c2fdb}{pdf(\+T x, T y)} \end{DoxyCompactList}\item 
+double \hyperlink{classclara_1_1cone__state_a90b1ae9171e6196c19da0d883a8c2fdb}{pdf} (T x, T y)
+\begin{DoxyCompactList}\small\item\em Probability density function of this multivarianceiate gaussian Linearized gaussian multiplication for 2x2 matrizes of the mahalanobis distance in the exponent of {\ttfamily e} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_a939e8407c5c42bbe9c857e9079a41cc2}\label{classclara_1_1cone__state_a939e8407c5c42bbe9c857e9079a41cc2}} 
+double \hyperlink{classclara_1_1cone__state_a939e8407c5c42bbe9c857e9079a41cc2}{get\+\_\+observations\+\_\+size} ()
+\begin{DoxyCompactList}\small\item\em Needed to calculate the weighting parameter for this pdf in accordance to all other weights of clusters. Returing double, because we need to divide later. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_aac7c79a85642847ee138fcbaf40ea3f6}\label{classclara_1_1cone__state_aac7c79a85642847ee138fcbaf40ea3f6}} 
+constexpr bool \hyperlink{classclara_1_1cone__state_aac7c79a85642847ee138fcbaf40ea3f6}{distance\+\_\+greater\+\_\+than} (const std\+::tuple$<$ T, T $>$ tup, const T epsilon) const
+\begin{DoxyCompactList}\small\item\em Helper function for currying, calls distance\+\_\+greater\+\_\+than(\+T x, T y, T epsilon) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_aea1594d473b810becb527419a8bddbdb}\label{classclara_1_1cone__state_aea1594d473b810becb527419a8bddbdb}} 
+constexpr T \hyperlink{classclara_1_1cone__state_aea1594d473b810becb527419a8bddbdb}{distance} (const T x, const T y) const
+\begin{DoxyCompactList}\small\item\em euclidian distance to the cluster mid point \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_a884712e142ddbb9901f708f739eaa8a0}\label{classclara_1_1cone__state_a884712e142ddbb9901f708f739eaa8a0}} 
+constexpr bool \hyperlink{classclara_1_1cone__state_a884712e142ddbb9901f708f739eaa8a0}{distance\+\_\+greater\+\_\+than} (const T x, const T y, const T epsilon) const
+\begin{DoxyCompactList}\small\item\em checks if the distances is greater than epsilon from the mean position of the cluster \+\_\+mean\+\_\+vec \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_a0e08ed1150f22d7edffbcb2152cf4d29}\label{classclara_1_1cone__state_a0e08ed1150f22d7edffbcb2152cf4d29}} 
+bool \hyperlink{classclara_1_1cone__state_a0e08ed1150f22d7edffbcb2152cf4d29}{\+\_\+modified}
+\begin{DoxyCompactList}\small\item\em modification flag, if this is true, we need to recompute {\ttfamily \+\_\+cov\+\_\+mat}, {\ttfamily \+\_\+inv\+\_\+cov\+\_\+mat} and {\ttfamily \+\_\+mean\+\_\+vec}. {\ttfamily \hyperlink{classclara_1_1cone__state_aee0e3d2bf97a5b06b8a052bf4c93f6ed}{add\+\_\+observation()}} triggers this \end{DoxyCompactList}\item 
+std\+::vector$<$ coords\+\_\+t $>$ \hyperlink{classclara_1_1cone__state_ae5c8c1ba05533a80ab1874fb878888b9}{\+\_\+observations}
+\begin{DoxyCompactList}\small\item\em List of the observations of this particular cone, {\ttfamily \hyperlink{classclara_1_1cone__state_aee0e3d2bf97a5b06b8a052bf4c93f6ed}{add\+\_\+observation()}} can add elements to this list {\ttfamily \+\_\+observations} is preallocated in the constructor to a certain size. \end{DoxyCompactList}\item 
+std\+::array$<$ T, 4 $>$ \hyperlink{classclara_1_1cone__state_a2a5e7dc2078a6d5ef80b1bac25354e2f}{\+\_\+cov\+\_\+mat}
+\begin{DoxyCompactList}\small\item\em Linearized representation of a 2x2 matrix. \end{DoxyCompactList}\item 
+std\+::array$<$ T, 4 $>$ \hyperlink{classclara_1_1cone__state_af36bb866c831dfc5b7b199d6434511f4}{\+\_\+inv\+\_\+cov\+\_\+mat}
+\begin{DoxyCompactList}\small\item\em Linearized representation of a 2x2 matrix. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_aa42f4654a82f825dc3b89d4ec0b03deb}\label{classclara_1_1cone__state_aa42f4654a82f825dc3b89d4ec0b03deb}} 
+T \hyperlink{classclara_1_1cone__state_aa42f4654a82f825dc3b89d4ec0b03deb}{\+\_\+det\+\_\+cov\+\_\+mat}
+\begin{DoxyCompactList}\small\item\em Determinand of \+\_\+cov\+\_\+mat. \end{DoxyCompactList}\item 
+std\+::array$<$ T, 2 $>$ \hyperlink{classclara_1_1cone__state_abf600e69be6a3791caefb93b214bb3b5}{\+\_\+mean\+\_\+vec}
+\begin{DoxyCompactList}\small\item\em mean vector of x and y (0 and 1 index respectivly) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_ad3795d8f4b1e8d2fb7143ec4e9d03621}\label{classclara_1_1cone__state_ad3795d8f4b1e8d2fb7143ec4e9d03621}} 
+T \hyperlink{classclara_1_1cone__state_ad3795d8f4b1e8d2fb7143ec4e9d03621}{\+\_\+variance\+\_\+xx}
+\begin{DoxyCompactList}\small\item\em if set in special constructor, we apply variance to the \+\_\+cov\+\_\+mat for xx (index 0) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_ad0e89eea333ec4a94b94fd9833a7774f}\label{classclara_1_1cone__state_ad0e89eea333ec4a94b94fd9833a7774f}} 
+T \hyperlink{classclara_1_1cone__state_ad0e89eea333ec4a94b94fd9833a7774f}{\+\_\+variance\+\_\+yy}
+\begin{DoxyCompactList}\small\item\em if set in special constructor, we apply variance to the \+\_\+cov\+\_\+mat for yy (index 3) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classclara_1_1cone__state_a7d772b5d8599c5dda01d78221f3e4d73}\label{classclara_1_1cone__state_a7d772b5d8599c5dda01d78221f3e4d73}} 
+size\+\_\+t \hyperlink{classclara_1_1cone__state_a7d772b5d8599c5dda01d78221f3e4d73}{\+\_\+apply\+\_\+variance\+\_\+step\+\_\+count}
+\begin{DoxyCompactList}\small\item\em if set in special constructor, we apply \+\_\+variance\+\_\+xx and \+\_\+variance\+\_\+yy to the \+\_\+cov\+\_\+mat until we have seen at least \+\_\+apply\+\_\+variance\+\_\+step\+\_\+count observations \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -47,33 +95,16 @@ const std\+::array$<$ T, 4 $>$ \& \hyperlink{classclara_1_1cone__state_a7a0584b8
 \begin{DoxyCompactList}\small\item\em This acces to {\ttfamily \+\_\+inv\+\_\+cov\+\_\+mat} can trigger a recalculation of the cone state. {\itshape Cached} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classclara_1_1cone__state_a5775993f75df93a3121c1fb53ef48777}\label{classclara_1_1cone__state_a5775993f75df93a3121c1fb53ef48777}} 
 const T \& \hyperlink{classclara_1_1cone__state_a5775993f75df93a3121c1fb53ef48777}{get\+\_\+det\+\_\+cov\+\_\+mat} ()
-\begin{DoxyCompactList}\small\item\em This access to {\ttfamily \+\_\+det\+\_\+cov\+\_\+mat} can trigger a recalulation of the cone state. {\itshape Cached} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em This access to {\ttfamily \+\_\+det\+\_\+cov\+\_\+mat} can trigger a recalculation of the cone state. {\itshape Cached} \end{DoxyCompactList}\item 
 void \hyperlink{classclara_1_1cone__state_a7b0d6ab972d3d003eaad439c630c1c73}{update\+\_\+inv\+\_\+cov\+\_\+mat} ()
-\begin{DoxyCompactList}\small\item\em Inverse matrix calculation of the 2x2 {\ttfamily \+\_\+cov\+\_\+mat}, saved in {\ttfamily \+\_\+inv\+\_\+cov\+\_\+mat} {\bfseries Invariant\+:} \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inverse matrix calculation of the 2x2 {\ttfamily \+\_\+cov\+\_\+mat}, saved in {\ttfamily \+\_\+inv\+\_\+cov\+\_\+mat} {\bfseries Invarianceiant\+:} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classclara_1_1cone__state_ac04710abc3eba0e3688c70eaeab3f2ce}\label{classclara_1_1cone__state_ac04710abc3eba0e3688c70eaeab3f2ce}} 
 void \hyperlink{classclara_1_1cone__state_ac04710abc3eba0e3688c70eaeab3f2ce}{update\+\_\+det\+\_\+cov\+\_\+mat} ()
-\begin{DoxyCompactList}\small\item\em Cached determinant calculation of a 2x2 matrix {\ttfamily \+\_\+cov\+\_\+mat}, saved in {\ttfamily \+\_\+det\+\_\+cov\+\_\+mat} Property\+: {\ttfamily \+\_\+det\+\_\+cov\+\_\+mat} will never be 0, because the gaussian sampling in the EM algorithm is not defined for a zero covariance in all dimensions. We then set it to {\ttfamily 1} {\bfseries Invariant\+:} {\ttfamily \+\_\+cov\+\_\+mat} is up to date. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Cached determinant calculation of a 2x2 matrix {\ttfamily \+\_\+cov\+\_\+mat}, saved in {\ttfamily \+\_\+det\+\_\+cov\+\_\+mat} Property\+: {\ttfamily \+\_\+det\+\_\+cov\+\_\+mat} will never be 0, because the gaussian sampling in the EM algorithm is not defined for a zero covarianceiance in all dimensions. We then set it to {\ttfamily 1} {\bfseries Invarianceiant\+:} {\ttfamily \+\_\+cov\+\_\+mat} is up to date. \end{DoxyCompactList}\item 
 void \hyperlink{classclara_1_1cone__state_ada683dbedcee79d84db8255ee5e71e6e}{update\+\_\+mean\+\_\+vec} ()
-\begin{DoxyCompactList}\small\item\em Updates the {\ttfamily \+\_\+mean\+\_\+vec} with the current {\ttfamily \+\_\+observations} {\bfseries Invariant\+:} {\ttfamily \+\_\+observations} is up to date. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Updates the {\ttfamily \+\_\+mean\+\_\+vec} with the current {\ttfamily \+\_\+observations} {\bfseries Invarianceiant\+:} {\ttfamily \+\_\+observations} is up to date. \end{DoxyCompactList}\item 
 void \hyperlink{classclara_1_1cone__state_a946bca664d068d7a82e3740eb736e948}{update\+\_\+cov\+\_\+mat} ()
-\begin{DoxyCompactList}\small\item\em Updates the {\ttfamily \+\_\+cov\+\_\+mat} with the current {\ttfamily \+\_\+observations} and {\ttfamily \+\_\+mean\+\_\+vec} {\bfseries Invariant\+:} {\ttfamily \+\_\+mean\+\_\+vec}, {\ttfamily \+\_\+observations} is up to date. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Private Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classclara_1_1cone__state_a0e08ed1150f22d7edffbcb2152cf4d29}\label{classclara_1_1cone__state_a0e08ed1150f22d7edffbcb2152cf4d29}} 
-bool \hyperlink{classclara_1_1cone__state_a0e08ed1150f22d7edffbcb2152cf4d29}{\+\_\+modified}
-\begin{DoxyCompactList}\small\item\em modification flag, if this is true, we need to recompute {\ttfamily \+\_\+cov\+\_\+mat}, {\ttfamily \+\_\+inv\+\_\+cov\+\_\+mat} and {\ttfamily \+\_\+mean\+\_\+vec}. {\ttfamily \hyperlink{classclara_1_1cone__state_a7cd7364ca787c25b0ca333d0cb1c3081}{add\+\_\+observation()}} triggers this \end{DoxyCompactList}\item 
-std\+::vector$<$ coords\+\_\+t $>$ \hyperlink{classclara_1_1cone__state_ae5c8c1ba05533a80ab1874fb878888b9}{\+\_\+observations}
-\begin{DoxyCompactList}\small\item\em List of the observations of this particular cone, {\ttfamily \hyperlink{classclara_1_1cone__state_a7cd7364ca787c25b0ca333d0cb1c3081}{add\+\_\+observation()}} can add elements to this list {\ttfamily \+\_\+observations} is preallocated in the constructor to a certain size. \end{DoxyCompactList}\item 
-std\+::array$<$ T, 4 $>$ \hyperlink{classclara_1_1cone__state_a2a5e7dc2078a6d5ef80b1bac25354e2f}{\+\_\+cov\+\_\+mat}
-\begin{DoxyCompactList}\small\item\em Linearized representation of a 2x2 matrix. \end{DoxyCompactList}\item 
-std\+::array$<$ T, 4 $>$ \hyperlink{classclara_1_1cone__state_af36bb866c831dfc5b7b199d6434511f4}{\+\_\+inv\+\_\+cov\+\_\+mat}
-\begin{DoxyCompactList}\small\item\em Linearized representation of a 2x2 matrix. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classclara_1_1cone__state_aa42f4654a82f825dc3b89d4ec0b03deb}\label{classclara_1_1cone__state_aa42f4654a82f825dc3b89d4ec0b03deb}} 
-T \hyperlink{classclara_1_1cone__state_aa42f4654a82f825dc3b89d4ec0b03deb}{\+\_\+det\+\_\+cov\+\_\+mat}
-\begin{DoxyCompactList}\small\item\em Determinand of \+\_\+cov\+\_\+mat. \end{DoxyCompactList}\item 
-std\+::array$<$ T, 2 $>$ \hyperlink{classclara_1_1cone__state_abf600e69be6a3791caefb93b214bb3b5}{\+\_\+mean\+\_\+vec}
-\begin{DoxyCompactList}\small\item\em mean vector of x and y (0 and 1 index respectivly) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Updates the {\ttfamily \+\_\+cov\+\_\+mat} with the current {\ttfamily \+\_\+observations} and {\ttfamily \+\_\+mean\+\_\+vec} {\bfseries Invarianceiant\+:} {\ttfamily \+\_\+mean\+\_\+vec}, {\ttfamily \+\_\+observations} is up to date. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -82,32 +113,43 @@ class clara\+::cone\+\_\+state$<$ T $>$}
 
 A wrapper for the cone state. 
 
-This class servers as the full knowledge base of a cone from the start of the detection We use this for the \href{data_association.h}{\tt data\+\_\+association} task, which in turn uses the \mbox{[}Expectation Maximization algorithm\mbox{]})(\href{https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Expectation\%\+E2\%80\%93maximization\+\_\+algorithm}) to associate detected cones to the known cones.
+This class servers as the full knowledge base of a cone from the start of the detection We use this for the \href{data_association.h}{\tt data\+\_\+association} task, which in turn uses the (Expectation Maximization algorithm)\mbox{[}\href{https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Expectation\%\+E2\%80\%93maximization\+\_\+algorithm}\mbox{]} to associate detected cones to the known cones.
 
-To do EM, we need to calculate the mean und covariance matrix over {\ttfamily x, y}. Because we know we only have a 2-\/dimensional state, we provide the needed functionality to do a gauss-\/sampling. See {\ttfamily \hyperlink{classclara_1_1cone__state_a7a0584b86ba125a2c232f26d4d1e4a38}{get\+\_\+inv\+\_\+cov\+\_\+mat()}} and {\ttfamily \hyperlink{classclara_1_1cone__state_a5775993f75df93a3121c1fb53ef48777}{get\+\_\+det\+\_\+cov\+\_\+mat()}}
+To do EM, we need to calculate the mean und covarianceiance matrix over {\ttfamily x, y}. Because we know we only have a 2-\/dimensional state, we provide the needed functionality to do a gauss-\/sampling. See {\ttfamily \hyperlink{classclara_1_1cone__state_a7a0584b86ba125a2c232f26d4d1e4a38}{get\+\_\+inv\+\_\+cov\+\_\+mat()}} and {\ttfamily \hyperlink{classclara_1_1cone__state_a5775993f75df93a3121c1fb53ef48777}{get\+\_\+det\+\_\+cov\+\_\+mat()}}
 
 Because of the assumption that new cones
 
 Template arguments\+:
 \begin{DoxyItemize}
-\item {\ttfamily T} is the type of the interal coordinates
+\item {\ttfamily T} is the type of the cone x,y coordinates
 \end{DoxyItemize}
 
 Restrictions\+:
 \begin{DoxyItemize}
-\item {\ttfamily T} has to be moveable
+\item {\ttfamily T} has to be moveable and allow floating point calculations
 \end{DoxyItemize}
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000001}{Todo}]add {\ttfamily is\+\_\+integral} test for template {\ttfamily T} \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000003}{Todo}]add {\ttfamily is\+\_\+integral} test for template {\ttfamily T} \end{DoxyRefDesc}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classclara_1_1cone__state_a7cd7364ca787c25b0ca333d0cb1c3081}\label{classclara_1_1cone__state_a7cd7364ca787c25b0ca333d0cb1c3081}} 
+\mbox{\Hypertarget{classclara_1_1cone__state_aee0e3d2bf97a5b06b8a052bf4c93f6ed}\label{classclara_1_1cone__state_aee0e3d2bf97a5b06b8a052bf4c93f6ed}} 
 \index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!add\+\_\+observation@{add\+\_\+observation}}
 \index{add\+\_\+observation@{add\+\_\+observation}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
-\subsubsection{\texorpdfstring{add\+\_\+observation()}{add\_observation()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
+\subsubsection{\texorpdfstring{add\+\_\+observation()}{add\_observation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+void \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::add\+\_\+observation (\begin{DoxyParamCaption}\item[{std\+::tuple$<$ T, T $>$}]{tup }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+allow moves 
+
+Helper function for currying, calls \hyperlink{classclara_1_1cone__state_a7cd7364ca787c25b0ca333d0cb1c3081}{add\+\_\+observation(\+T x, T y)} \mbox{\Hypertarget{classclara_1_1cone__state_a7cd7364ca787c25b0ca333d0cb1c3081}\label{classclara_1_1cone__state_a7cd7364ca787c25b0ca333d0cb1c3081}} 
+\index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!add\+\_\+observation@{add\+\_\+observation}}
+\index{add\+\_\+observation@{add\+\_\+observation}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
+\subsubsection{\texorpdfstring{add\+\_\+observation()}{add\_observation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
 void \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::add\+\_\+observation (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -117,56 +159,65 @@ Adds an observation of coordiantes to the cone state.
 This should be called if the EM algorithm determined with a sufficient probability that those coordiantes are in fact associated with this cone For the thoughful people, we use {\ttfamily \hyperlink{classclara_1_1cone__state_ac9712fb4aee53df62da1cd320a45f813}{set\+\_\+modified()}} and don\textquotesingle{}t recalculate the {\ttfamily \+\_\+cov\+\_\+mat} and {\ttfamily \+\_\+mean\+\_\+vec} because we can have multiple observations of the same cone at the same time This highly depends on the detection algorithm
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000002}{Todo}]test emplace\+\_\+back instead of push\+\_\+back 
-
-test streaming mean / covariance functions so we don\textquotesingle{}t need to accumulate all observations \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000004}{Todo}]test streaming mean / covariance functions so we don\textquotesingle{}t need to accumulate all observations \end{DoxyRefDesc}
 \mbox{\Hypertarget{classclara_1_1cone__state_a7a0584b86ba125a2c232f26d4d1e4a38}\label{classclara_1_1cone__state_a7a0584b86ba125a2c232f26d4d1e4a38}} 
 \index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!get\+\_\+inv\+\_\+cov\+\_\+mat@{get\+\_\+inv\+\_\+cov\+\_\+mat}}
 \index{get\+\_\+inv\+\_\+cov\+\_\+mat@{get\+\_\+inv\+\_\+cov\+\_\+mat}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
 \subsubsection{\texorpdfstring{get\+\_\+inv\+\_\+cov\+\_\+mat()}{get\_inv\_cov\_mat()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
+{\footnotesize\ttfamily template$<$typename T$>$ \\
 const std\+::array$<$T, 4$>$\& \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::get\+\_\+inv\+\_\+cov\+\_\+mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
 This acces to {\ttfamily \+\_\+inv\+\_\+cov\+\_\+mat} can trigger a recalculation of the cone state. {\itshape Cached} 
 
-\mbox{\Hypertarget{classclara_1_1cone__state_a331360538f2fc8ccaaa37db2a71cc1a8}\label{classclara_1_1cone__state_a331360538f2fc8ccaaa37db2a71cc1a8}} 
-\index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!maximum\+\_\+likelihood\+\_\+estimate@{maximum\+\_\+likelihood\+\_\+estimate}}
-\index{maximum\+\_\+likelihood\+\_\+estimate@{maximum\+\_\+likelihood\+\_\+estimate}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
-\subsubsection{\texorpdfstring{maximum\+\_\+likelihood\+\_\+estimate()}{maximum\_likelihood\_estimate()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-double \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::maximum\+\_\+likelihood\+\_\+estimate (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-Maximum likelihood estimate for this parametrization Linearized gaussian multiplication for 2x2 matrizes of the mahalanobis distance in the exponent of {\ttfamily e} 
+\mbox{\Hypertarget{classclara_1_1cone__state_ae3ea1ca7a6af262f71493f45c0734322}\label{classclara_1_1cone__state_ae3ea1ca7a6af262f71493f45c0734322}} 
+\index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!is\+\_\+used@{is\+\_\+used}}
+\index{is\+\_\+used@{is\+\_\+used}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
+\subsubsection{\texorpdfstring{is\+\_\+used()}{is\_used()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+bool \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::is\+\_\+used (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000003}{Todo}]make a nice image for the explanation {\bfseries Invariant\+:} All the members are updated \end{DoxyRefDesc}
-\mbox{\Hypertarget{classclara_1_1cone__state_a946bca664d068d7a82e3740eb736e948}\label{classclara_1_1cone__state_a946bca664d068d7a82e3740eb736e948}} 
+\item[\hyperlink{todo__todo000005}{Todo}]\end{DoxyRefDesc}
+\mbox{\Hypertarget{classclara_1_1cone__state_a90b1ae9171e6196c19da0d883a8c2fdb}\label{classclara_1_1cone__state_a90b1ae9171e6196c19da0d883a8c2fdb}} 
+\index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!pdf@{pdf}}
+\index{pdf@{pdf}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
+\subsubsection{\texorpdfstring{pdf()}{pdf()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+double \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::pdf (\begin{DoxyParamCaption}\item[{T}]{x,  }\item[{T}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Probability density function of this multivarianceiate gaussian Linearized gaussian multiplication for 2x2 matrizes of the mahalanobis distance in the exponent of {\ttfamily e} 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]make a nice image for the explanation\end{DoxyRefDesc}
+
+
+{\bfseries Invariant\+:} All the members are updated \mbox{\Hypertarget{classclara_1_1cone__state_a946bca664d068d7a82e3740eb736e948}\label{classclara_1_1cone__state_a946bca664d068d7a82e3740eb736e948}} 
 \index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!update\+\_\+cov\+\_\+mat@{update\+\_\+cov\+\_\+mat}}
 \index{update\+\_\+cov\+\_\+mat@{update\+\_\+cov\+\_\+mat}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
 \subsubsection{\texorpdfstring{update\+\_\+cov\+\_\+mat()}{update\_cov\_mat()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
+{\footnotesize\ttfamily template$<$typename T$>$ \\
 void \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::update\+\_\+cov\+\_\+mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
-Updates the {\ttfamily \+\_\+cov\+\_\+mat} with the current {\ttfamily \+\_\+observations} and {\ttfamily \+\_\+mean\+\_\+vec} {\bfseries Invariant\+:} {\ttfamily \+\_\+mean\+\_\+vec}, {\ttfamily \+\_\+observations} is up to date. 
+Updates the {\ttfamily \+\_\+cov\+\_\+mat} with the current {\ttfamily \+\_\+observations} and {\ttfamily \+\_\+mean\+\_\+vec} {\bfseries Invarianceiant\+:} {\ttfamily \+\_\+mean\+\_\+vec}, {\ttfamily \+\_\+observations} is up to date. 
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000005}{Todo}]parallelize this loop and test the performance time \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000008}{Todo}]parallelize this loop and test the performance time \end{DoxyRefDesc}
 \mbox{\Hypertarget{classclara_1_1cone__state_a7b0d6ab972d3d003eaad439c630c1c73}\label{classclara_1_1cone__state_a7b0d6ab972d3d003eaad439c630c1c73}} 
 \index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!update\+\_\+inv\+\_\+cov\+\_\+mat@{update\+\_\+inv\+\_\+cov\+\_\+mat}}
 \index{update\+\_\+inv\+\_\+cov\+\_\+mat@{update\+\_\+inv\+\_\+cov\+\_\+mat}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
 \subsubsection{\texorpdfstring{update\+\_\+inv\+\_\+cov\+\_\+mat()}{update\_inv\_cov\_mat()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
+{\footnotesize\ttfamily template$<$typename T$>$ \\
 void \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::update\+\_\+inv\+\_\+cov\+\_\+mat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
-Inverse matrix calculation of the 2x2 {\ttfamily \+\_\+cov\+\_\+mat}, saved in {\ttfamily \+\_\+inv\+\_\+cov\+\_\+mat} {\bfseries Invariant\+:} 
+Inverse matrix calculation of the 2x2 {\ttfamily \+\_\+cov\+\_\+mat}, saved in {\ttfamily \+\_\+inv\+\_\+cov\+\_\+mat} {\bfseries Invarianceiant\+:} 
 
 
 \begin{DoxyItemize}
@@ -176,15 +227,15 @@ Inverse matrix calculation of the 2x2 {\ttfamily \+\_\+cov\+\_\+mat}, saved in {
 \index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!update\+\_\+mean\+\_\+vec@{update\+\_\+mean\+\_\+vec}}
 \index{update\+\_\+mean\+\_\+vec@{update\+\_\+mean\+\_\+vec}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
 \subsubsection{\texorpdfstring{update\+\_\+mean\+\_\+vec()}{update\_mean\_vec()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
+{\footnotesize\ttfamily template$<$typename T$>$ \\
 void \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::update\+\_\+mean\+\_\+vec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 
 
-Updates the {\ttfamily \+\_\+mean\+\_\+vec} with the current {\ttfamily \+\_\+observations} {\bfseries Invariant\+:} {\ttfamily \+\_\+observations} is up to date. 
+Updates the {\ttfamily \+\_\+mean\+\_\+vec} with the current {\ttfamily \+\_\+observations} {\bfseries Invarianceiant\+:} {\ttfamily \+\_\+observations} is up to date. 
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000004}{Todo}]parallelize this loop and test the performance time \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000007}{Todo}]parallelize this loop and test the performance time \end{DoxyRefDesc}
 
 
 \subsection{Member Data Documentation}
@@ -192,8 +243,8 @@ Updates the {\ttfamily \+\_\+mean\+\_\+vec} with the current {\ttfamily \+\_\+ob
 \index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!\+\_\+cov\+\_\+mat@{\+\_\+cov\+\_\+mat}}
 \index{\+\_\+cov\+\_\+mat@{\+\_\+cov\+\_\+mat}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
 \subsubsection{\texorpdfstring{\+\_\+cov\+\_\+mat}{\_cov\_mat}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-std\+::array$<$T, 4$>$ \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::\+\_\+cov\+\_\+mat\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+std\+::array$<$T, 4$>$ \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::\+\_\+cov\+\_\+mat}
 
 
 
@@ -217,8 +268,8 @@ d = \hyperlink{classclara_1_1cone__state_a2a5e7dc2078a6d5ef80b1bac25354e2f}{\_co
 \index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!\+\_\+inv\+\_\+cov\+\_\+mat@{\+\_\+inv\+\_\+cov\+\_\+mat}}
 \index{\+\_\+inv\+\_\+cov\+\_\+mat@{\+\_\+inv\+\_\+cov\+\_\+mat}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
 \subsubsection{\texorpdfstring{\+\_\+inv\+\_\+cov\+\_\+mat}{\_inv\_cov\_mat}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-std\+::array$<$T, 4$>$ \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::\+\_\+inv\+\_\+cov\+\_\+mat\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+std\+::array$<$T, 4$>$ \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::\+\_\+inv\+\_\+cov\+\_\+mat}
 
 
 
@@ -242,8 +293,8 @@ d = \hyperlink{classclara_1_1cone__state_af36bb866c831dfc5b7b199d6434511f4}{\_in
 \index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!\+\_\+mean\+\_\+vec@{\+\_\+mean\+\_\+vec}}
 \index{\+\_\+mean\+\_\+vec@{\+\_\+mean\+\_\+vec}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
 \subsubsection{\texorpdfstring{\+\_\+mean\+\_\+vec}{\_mean\_vec}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-std\+::array$<$T, 2$>$ \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::\+\_\+mean\+\_\+vec\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+std\+::array$<$T, 2$>$ \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::\+\_\+mean\+\_\+vec}
 
 
 
@@ -258,15 +309,15 @@ y = \hyperlink{classclara_1_1cone__state_abf600e69be6a3791caefb93b214bb3b5}{\_me
 \index{clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}!\+\_\+observations@{\+\_\+observations}}
 \index{\+\_\+observations@{\+\_\+observations}!clara\+::cone\+\_\+state@{clara\+::cone\+\_\+state}}
 \subsubsection{\texorpdfstring{\+\_\+observations}{\_observations}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-std\+::vector$<$coords\+\_\+t$>$ \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::\+\_\+observations\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+std\+::vector$<$coords\+\_\+t$>$ \hyperlink{classclara_1_1cone__state}{clara\+::cone\+\_\+state}$<$ T $>$\+::\+\_\+observations}
 
 
 
-List of the observations of this particular cone, {\ttfamily \hyperlink{classclara_1_1cone__state_a7cd7364ca787c25b0ca333d0cb1c3081}{add\+\_\+observation()}} can add elements to this list {\ttfamily \+\_\+observations} is preallocated in the constructor to a certain size. 
+List of the observations of this particular cone, {\ttfamily \hyperlink{classclara_1_1cone__state_aee0e3d2bf97a5b06b8a052bf4c93f6ed}{add\+\_\+observation()}} can add elements to this list {\ttfamily \+\_\+observations} is preallocated in the constructor to a certain size. 
 
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000006}{Todo}]make the preallocation configurable \end{DoxyRefDesc}
+\item[\hyperlink{todo__todo000009}{Todo}]make the preallocation configurable \end{DoxyRefDesc}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

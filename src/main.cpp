@@ -24,6 +24,7 @@
 #include "../library/csv.h"
 #include "../library/data_association.h"
 #include "../library/util.h"
+#include "../library/cone_state.h"
 
 // void print_clusters( const std::vector< clara::cone_state< double > > &clusters, int color ) {
 //     UNUSED(color);
@@ -110,11 +111,41 @@
 //     std::cout << "]);\n";
 // }
 
+
+void print_vec(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+    std::cout << "Searching: " << '\n';
+    std::for_each(begin, end, [](int x){ std::cout << x << " "; });
+    std::cout << "\n";
+}
+
+
+
 int main(int argc, char *argv[])
 {   
     UNUSED(argc);
     UNUSED(argv);
 
+    // const double _variance_xx                          = 0.01;
+    // const double _variance_yy                          = 0.01;
+    // const size_t _apply_variance_step_count            = 4;
+
+    // clara::cone_state<double> c_1(_variance_xx, _variance_yy, _apply_variance_step_count);
+
+
+    // c_1.add_observation({ 1, 1 });
+    // c_1.add_observation({ 1.01, 0.99});
+    // c_1.update_state();
+
+    // std::cout << "mean_: " << c_1._mean_vec[0] << ", " << c_1._mean_vec[1] << '\n';
+    // std::cout << "cov_: "  << c_1._cov_mat[0] << ", " << c_1._cov_mat[3] << '\n';
+    // std::cout << "det_: "  << c_1._det_cov_mat << '\n';
+
+    // std::cout << "pdf - 1,1: " << c_1.pdf({1, 1}) << '\n';
+    // std::cout << "pdf - 0.9,1: " << c_1.pdf({0.9, 1}) << '\n';
+    // std::cout << "pdf - 1,0.9: " << c_1.pdf({1, 0.9}) << '\n';
+
+    
     // std::random_device rd;
     // std::mt19937 e2(rd());
     // std::uniform_real_distribution<> dist(-1, 1);

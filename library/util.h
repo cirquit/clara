@@ -22,6 +22,8 @@
 #include <iostream>
 #include <algorithm>
 #include <blaze/Math.h>
+#include <functional>
+#include <ctime>
 
 //! unused macro to avoid errors because of nonuse of declared variables
 #define UNUSED(x) (void)(x)

@@ -95,3 +95,4 @@ TEST_CASE( "util.h:custom iterator functions", "[iterators]" ) {
         }
     };
 }
+

@@ -4,6 +4,7 @@ import csv
 from matplotlib.patches import Ellipse
 
 from cppdebuginfo import yellow_cone_data, blue_cone_data, red_cone_data 
+from cppdebuginfo import yellow_obs_cone_data, blue_obs_cone_data, red_obs_cone_data 
 
 def draw_ellipse(position, covariance, ax=None, **kwargs):
     """Draw an ellipse with a given position and covariance"""
@@ -41,7 +42,7 @@ def plot_cluster_intrinsics(data, ax=None, color="black"):
 
     ax.scatter(pos_x, pos_y, color=color)
     for pos, covar, w in zip(positions, covariances, weights):
-        draw_ellipse(np.array(pos), np.array(covar), ax=ax, alpha=w[0])
+        draw_ellipse(np.array(pos), np.array(covar), ax=ax, alpha=0.1)
 
 
 def read_ground_truth(path):
@@ -77,20 +78,23 @@ def read_ground_truth(path):
 
 
 
-path = '../example-data/wemding-map-ground-truth-cones-d-a-x-y-c-t.csv'
-yellow_cone_ground_truth_x,   yellow_cone_ground_truth_y, blue_cone_ground_truth_x, blue_cone_ground_truth_y, red_cone_ground_truth_x,  red_cone_ground_truth_y = read_ground_truth(path)
+# path = '../example-data/wemding-map-ground-truth-cones-d-a-x-y-c-t.csv'
+# yellow_cone_ground_truth_x,   yellow_cone_ground_truth_y, blue_cone_ground_truth_x, blue_cone_ground_truth_y, red_cone_ground_truth_x,  red_cone_ground_truth_y = read_ground_truth(path)
 
 # create a big figure
 plt.figure(figsize=(12,12))
 ax = plt.gca()
 
 # plot the ground truth data
-ax.scatter(yellow_cone_ground_truth_x, yellow_cone_ground_truth_y, color='black')
-ax.scatter(blue_cone_ground_truth_x, blue_cone_ground_truth_y, color='black')
-ax.scatter(red_cone_ground_truth_x, red_cone_ground_truth_y, color='black')
+# ax.scatter(yellow_cone_ground_truth_x, yellow_cone_ground_truth_y, color='black')
+# ax.scatter(blue_cone_ground_truth_x, blue_cone_ground_truth_y, color='black')
+# ax.scatter(red_cone_ground_truth_x, red_cone_ground_truth_y, color='black')
+# plot observations
+ax.scatter(yellow_obs_cone_data[:, 0], yellow_obs_cone_data[:, 1], color='black')
+ax.scatter(blue_obs_cone_data[:, 0], blue_obs_cone_data[:, 1], color='black')
 
 # plot the calculated data
 plot_cluster_intrinsics(yellow_cone_data, ax=ax, color='#D5D106')
-# plot_cluster_intrinsics(blue_cone_data, ax=ax, color='#898AEF')
+plot_cluster_intrinsics(blue_cone_data, ax=ax, color='#898AEF')
 # plot_cluster_intrinsics(red_cone_data, ax=ax)
 plt.show()

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-set(SOURCES cone_state.h data_association.h util.h csv.h)
+set(SOURCES util.h cone_state.h data_association.h csv.h ../external/object-list/include/object.h)
 
 find_package(LAPACK REQUIRED)
 link_directories(${LAPACK_LIBRARIES})

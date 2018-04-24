@@ -12,15 +12,22 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "catch.h"
-#include "csv.h"
+
 #include <blaze/Math.h>
 #include <iostream>
 #include <math.h>
 #include <vector>
+#include <chrono>
+#include <thread>
+#include <random>
 
+#include "../external/Connector/library/client.h"
+#include "../external/Connector/library/server.h"
 #include "../library/data_association.h"
-#include "../library/util.h"
+// #include "catch.h"
+
+// #include "../external/json.hpp"
+#include "csv.h"
 
 template< class T >
 void print_data_assoc(clara::data_association<T> & da, int color)
@@ -35,9 +42,9 @@ void print_data_assoc(clara::data_association<T> & da, int color)
     {
         double mean_x = cs._mean_vec[0];
         double mean_y = cs._mean_vec[1];
-        double cov_xx = cs._cov_mat[0];
+        double cov_xx = cs._cov_mat[0];// - 0.45;
         double cov_xy = cs._cov_mat[1];
-        double cov_yy = cs._cov_mat[3];
+        double cov_yy = cs._cov_mat[3];// - 0.45;
 
         std::string np_b = "np.array([";
         std::string np_e = "])";
@@ -50,131 +57,198 @@ void print_data_assoc(clara::data_association<T> & da, int color)
                       << np_e << ",\n"; 
         }
     });
-
     std::cout << "]);\n";
 }
 
 
+template < class T >
+void print_observations(clara::data_association<T> & da, int color)
+{
+    const std::vector<clara::cone_state<T>> & cluster = da.get_cluster();
 
-TEST_CASE( "data association tests", "[data]" ) {
+    if (color == 0) { std::cout << "yellow_obs_cone_data = np.array([\n"; }
+    if (color == 1) { std::cout << "blue_obs_cone_data = np.array([\n"; }
+    if (color == 2) { std::cout << "red_obs_cone_data = np.array([\n"; }
+    clara::util::for_each_(cluster, [&](const clara::cone_state<double> & cs)
+    {
+        double mean_x = cs._mean_vec[0];
+        double mean_y = cs._mean_vec[1];
 
-    SECTION( "example track 1 - full data test" ) {
-        // define how many sample points to evaluate
-        const double MAX_SAMPLE_POINTS = 1200;
-        // the data format, our data_association works with
-        using raw_cone_data = typename clara::data_association< double >::raw_cone_data;
-
-        // read the data
-        std::string csv_path = "../tests/example-data/"
-                               "wemding-map-ground-truth-cones-d-a-x-y-c-t.csv";
-        io::CSVReader< 6 > in( csv_path );
-
-        // every inner vector is a single timestamp, starting from 0
-        std::vector< std::vector< raw_cone_data > > yellow_cone_data;
-        std::vector< std::vector< raw_cone_data > > blue_cone_data;
-        std::vector< std::vector< raw_cone_data > > red_cone_data;
-
-        // read the data in the vector
-        double distance, angle, x, y, color, timestamp;
-        int    timestamp_old = -1;
-        
-        while ( in.read_row( distance, angle, x, y, color, timestamp ) ) {
-            // if we already have enough sample points, stop the reading
-            if ( timestamp >= MAX_SAMPLE_POINTS ) { break; }
-            // group by timestamp
-            if ( timestamp != timestamp_old )
+        if ( mean_x != 0 || mean_y != 0 ) {
+            for(auto obs : cs._observations)
             {
-                yellow_cone_data.push_back( std::vector< raw_cone_data >( ) );
-                blue_cone_data.push_back( std::vector< raw_cone_data >( ) );
-                red_cone_data.push_back( std::vector< raw_cone_data >( ) );
-                timestamp_old = timestamp;
+                std::cout << "[" << obs[0] << ", " << obs[1] << "],\n"; 
             }
-            // watch out for this encoding, this is just for ease of use. Should
-            // change depending on the object type from darknet
-            if ( color == 0 )
-                yellow_cone_data.back( ).push_back( raw_cone_data( x, y ) );
-            if ( color == 1 )
-                blue_cone_data.back( ).push_back( raw_cone_data( x, y ) );
-            if ( color == 2 )
-                red_cone_data.back( ).push_back( raw_cone_data( x, y ) );
         }
-
-        // parametrization of data associtaion
-        const size_t preallocated_cluster_count           = 500;
-        const size_t preallocated_detected_cones_per_step = 10;
-        const double max_distance_btw_cones_m             = 2;  // meter
-        const double variance_xx                          = 0.25;
-        const double variance_yy                          = 0.25;
-        const size_t apply_variance_step_count            = 4;
-
-        // data association for each color
-        clara::data_association< double > yellow_data_association(
-            preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
-            variance_xx, variance_yy, apply_variance_step_count );
-        clara::data_association< double > blue_data_association(
-            preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
-            variance_xx, variance_yy, apply_variance_step_count );
-        clara::data_association< double > red_data_association(
-            preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
-            variance_xx, variance_yy, apply_variance_step_count );
-
-        // do the association
-        clara::util::zipWith_(
-            [&]( const std::vector< raw_cone_data > &cur_yellow_cones,
-                 const std::vector< raw_cone_data > &cur_blue_cones,
-                 const std::vector< raw_cone_data > &cur_red_cones ) {
-                
-                    yellow_data_association.classify_new_data( cur_yellow_cones );
-                    blue_data_association.classify_new_data( cur_blue_cones );
-                    red_data_association.classify_new_data( cur_red_cones );
-            },
-            yellow_cone_data.begin( ), yellow_cone_data.end( ), blue_cone_data.begin( ),
-            red_cone_data.begin( )
-        );
-
-        // print out the python file
-        std::cout << "import numpy as np\n";
-        print_data_assoc< double >(yellow_data_association, 0);
-        print_data_assoc< double >(blue_data_association, 1);
-        print_data_assoc< double >(red_data_association, 2);
-    }
+    });
+    std::cout << "]);\n";
 }
-/*
-    SECTION("example track 2 - partial information test") {
-        // maximum 250 clusters currently for each color, this is up to test the
-   performance of vector on unbounded data
-        const size_t N = 250;
-        // define how many sample points are to evaluate
-        const double MAX_SAMPLE_POINTS = 10;
-        // the data format our data_association works with
-        using raw_cone_data = typename
-   clara::data_association<N>::raw_cone_data;
 
-        // read data from file
-        std::string csv_path = "test-data/large-map-randomized-cones-xy.csv";
-        io::CSVReader<2> in(csv_path);
+int main(){ 
+    // define how many sample points to evaluate
+    //const double MAX_SAMPLE_POINTS = 1200;
+    
+    // the data format, our data_association works with
+    using raw_cone_data = typename clara::data_association< double >::raw_cone_data;
 
-        // init the data association pipeline
-        clara::data_association<N> cone_data_association;
+    // read the data
+    std::string csv_path = "../tests/example-data/"
+                          // "wemding-map-ground-truth-cones-d-a-x-y-c-t.csv";
+                           "small-map-cm-cones-d-a-x-y-c-t.csv";
+    io::CSVReader< 6 > in( csv_path );
 
-        // read the data in the vector
-        double x, y, timestamp;
-        timestamp = 0;
-        while(in.read_row(x, y))
+    std::uniform_real_distribution<double> unif(-0.5, +0.5);
+    std::default_random_engine re;
+
+    // every inner vector is a single timestamp, starting from 0
+    std::vector< std::vector< raw_cone_data > > yellow_cone_data;
+    std::vector< std::vector< raw_cone_data > > blue_cone_data;
+    std::vector< std::vector< raw_cone_data > > red_cone_data;
+
+    // connector::client< connector::UDP > to_visualizing_client( 33333, "10.158.78.232" ); // , "127.0.0.1" );
+    // to_visualizing_client.init( );
+
+    // read the data in the vector
+    double distance, angle, x, y, color, timestamp;
+    int    timestamp_old = -1;
+    
+    while ( in.read_row( distance, angle, x, y, color, timestamp ) ) {
+        // if we already have enough sample points, stop the reading
+      //  if ( timestamp >= MAX_SAMPLE_POINTS ) { break; }
+        // group by timestamp
+        if ( timestamp != timestamp_old )
         {
-            // if we already have enough sample points, stop the reading
-            if ( timestamp >= MAX_SAMPLE_POINTS ) { break; }
-            timestamp++;
-
-            // construct a single observation, because we don't have timestamps
-            const std::vector<std::tuple<double, double>> new_cones {
-   raw_cone_data(x, y) };
-            const std::array<clara::cone_state<double>, N> & current_clusters =
-                cone_data_association.classify_new_data(new_cones);
-
-            // print clusters
-            std::cout << "Clusters - Step #" << timestamp << '\n';
-            print_clusters<N>(current_clusters);
+            yellow_cone_data.push_back( std::vector< raw_cone_data >( ) );
+            blue_cone_data.push_back( std::vector< raw_cone_data >( ) );
+            red_cone_data.push_back( std::vector< raw_cone_data >( ) );
+            timestamp_old = timestamp;
         }
+
+        // x = unif(re) + x;
+        // y = unif(re) + y;
+
+        // watch out for this encoding, this is just for ease of use. Should
+        // change depending on the object type from darknet
+        if ( color == 0 )
+            yellow_cone_data.back( ).push_back( raw_cone_data( x, y ) );
+        if ( color == 1 )
+            blue_cone_data.back( ).push_back( raw_cone_data( x, y ) );
+        if ( color == 2 )
+            red_cone_data.back( ).push_back( raw_cone_data( x, y ) );
     }
-    */
+
+    // parametrization of data associtaion
+    const size_t preallocated_cluster_count           = 500;
+    const size_t preallocated_detected_cones_per_step = 10;
+    const double max_distance_btw_cones_m             = 2;  // meter
+    const double variance_xx                          = 0.45;
+    const double variance_yy                          = 0.45;
+    const size_t apply_variance_step_count            = 100;
+    const int    cluster_search_range                 = 5; // +/- to the min/max used cluster-index
+
+    // data association for each color
+
+    clara::data_association< double > yellow_data_association(
+        preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
+        variance_xx, variance_yy, apply_variance_step_count, cluster_search_range );
+    clara::data_association< double > blue_data_association(
+        preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
+        variance_xx, variance_yy, apply_variance_step_count, cluster_search_range );
+    clara::data_association< double > red_data_association(
+        preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
+        variance_xx, variance_yy, apply_variance_step_count, cluster_search_range );
+
+
+    // do the association
+    clara::util::zipWith_(
+        [&]( const std::vector< raw_cone_data > &cur_yellow_cones,
+             const std::vector< raw_cone_data > &cur_blue_cones,
+             const std::vector< raw_cone_data > &cur_red_cones ) {
+                // std::cerr << "cur_yellow_cones.size: " << cur_yellow_cones.size() << '\n';
+                // std::cerr << "cur_blue_cones.size: " << cur_blue_cones.size() << '\n';
+                // int y_s = static_cast<int>(cur_yellow_cones.size());
+                // int b_s = static_cast<int>(cur_blue_cones.size());
+                // std::string stuff = std::to_string(y_s) + ", " + std::to_string(b_s);
+                // to_python_client.send_udp<const char>(stuff.c_str()[0], sizeof(char) * stuff.size());
+                // std::cout << "cur_yellow_cones.size(): " << cur_yellow_cones.size() << '\n';
+                auto & y_cluster = yellow_data_association.classify_new_data( cur_yellow_cones );
+                auto & b_cluster = blue_data_association.classify_new_data( cur_blue_cones );
+                // red_data_association.classify_new_data( cur_red_cones );
+
+                auto & y_cluster_index = yellow_data_association.get_detected_cluster_ixs();
+                auto & b_cluster_index = blue_data_association.get_detected_cluster_ixs();
+
+
+                // for( auto observed : cur_yellow_cones )
+                // {
+                //     std::cerr << std::get<0>(observed) << "," << std::get<1>(observed) << ';';
+                // }
+                // for( auto observed : cur_blue_cones )
+                // {
+                //     std::cerr << std::get<0>(observed) << "," << std::get<1>(observed) << ';';
+                // }
+                // std::cerr << "|";
+                // for( auto cluster_ix : y_cluster_index )
+                // {
+                //     auto cluster = y_cluster[cluster_ix];
+                //     std::cerr << cluster._mean_vec[0] << "," << cluster._mean_vec[1] << ","
+                //               << cluster._cov_mat[0]  << "," << cluster._cov_mat[1]  << "," << cluster._cov_mat[3] << ","
+                //               << cluster_ix           << "," << "0;";
+                // }
+                // for( auto cluster_ix : b_cluster_index )
+                // {
+                //     auto cluster = b_cluster[cluster_ix];
+                //     std::cerr << cluster._mean_vec[0] << "," << cluster._mean_vec[1] << ","
+                //               << cluster._cov_mat[0]  << "," << cluster._cov_mat[1]  << "," << cluster._cov_mat[3] << ","
+                //               << cluster_ix           << "," << "1;";
+                // }
+                // // no localization yet
+                // std::cerr << "|0,0|\n";
+
+
+                // std::cerr << "Counter: " << counter++ << '\n';
+                // std::this_thread::sleep_for(std::chrono::milliseconds(5));
+                // if(counter++ % 50 == 0){
+                //     for(auto & c : y_cluster)
+                //     {   
+                //         std::string stuff = std::to_string(c._mean_vec[0]) + ", " + std::to_string(c._mean_vec[1]) + ", 0";
+                //         std::cerr << "Sending - " << stuff << '\n';
+                //         std::string size = std::to_string(stuff.size());
+
+                //         to_python_client.send_tcp<const char>(size.c_str()[0], sizeof(char) * size.size());
+                //         to_python_client.send_tcp<const char>(stuff.c_str()[0], sizeof(char) * stuff.size());
+                     
+                //         std::this_thread::sleep_for(std::chrono::milliseconds(10));
+                //     }
+                //     for(auto & c : b_cluster)
+                //     {   
+                //         std::string stuff = std::to_string(c._mean_vec[0]) + ", " + std::to_string(c._mean_vec[1]) + ", 1";
+                //         std::cerr << "Sending - " << stuff << '\n';
+                //         std::string size = std::to_string(stuff.size());
+
+                //         to_python_client.send_tcp<const char>(size.c_str()[0], sizeof(char) * size.size());
+                //         to_python_client.send_tcp<const char>(stuff.c_str()[0], sizeof(char) * stuff.size());
+                     
+                //         std::this_thread::sleep_for(std::chrono::milliseconds(10));
+                //     }
+                // }
+
+
+        },
+        yellow_cone_data.begin( ), yellow_cone_data.end( ), blue_cone_data.begin( ),
+        red_cone_data.begin( )
+    );
+
+    // print out the python file
+    std::cout << "import numpy as np\n";
+    print_data_assoc< double >(yellow_data_association, 0);
+    print_data_assoc< double >(blue_data_association, 1);
+    print_data_assoc< double >(red_data_association, 2);
+    print_observations< double >(yellow_data_association, 0);
+    print_observations< double >(blue_data_association, 1);
+    print_observations< double >(red_data_association, 2);
+
+
+//    }
+}
+

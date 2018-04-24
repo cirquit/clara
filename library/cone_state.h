@@ -37,7 +37,7 @@ namespace clara {
      *  to associate detected cones to the known cones. 
      *
      *  To do EM, we need to calculate the mean und covarianceiance matrix over `x, y`. Because we know we only have a 2-dimensional state, we provide
-     *  the needed functionality to do a gauss-sampling. See `get_inv_cov_mat()` and `get_det_cov_mat()`
+     *  the needed functionality to do a gauss-sampling. See `_get_inv_cov_mat()` and `_get_det_cov_mat()`
      *
      *  Because of the assumption that new cones 
      *
@@ -94,7 +94,7 @@ namespace clara {
             /** \brief Adds an observation of coordiantes to the cone state
               *
               * This should be called if the EM algorithm determined with a sufficient probability that those coordiantes are in fact associated with this cone
-              * For the thoughful people, we use `set_modified()` and don't recalculate the `_cov_mat` and `_mean_vec` because we can have multiple observations of the same cone at the same time
+              * For the thoughful people, we use `_set_modified()` and don't recalculate the `_cov_mat` and `_mean_vec` because we can have multiple observations of the same cone at the same time
               * This highly depends on the detection algorithm
               * 
               * \todo test streaming mean / covariance functions so we don't need to accumulate all observations
@@ -102,7 +102,7 @@ namespace clara {
             void add_observation(T x, T y)
             {   
                 _observations.emplace_back( coords_t { { x, y } } );
-                set_modified(true);
+                _set_modified(true);
             }
 
             //! just for a naming convenience
@@ -119,21 +119,22 @@ namespace clara {
             {   //std::cerr << "  Updating state, is_modified: " << is_modified() << '\n';
                 if (is_modified())
                 {   //std::cerr << "  Cone is modified, size / max_N_size: " << _observations.size() << ", " << _apply_variance_step_count << " \n";
-                    update_mean_vec();
-                    update_cov_mat();
+                    _update_mean_vec();
+                    _update_cov_mat();
                     if (_observations.size() < _apply_variance_step_count) // _apply_variance_step_count)
-                    {    //std::cerr << "_cov_mat[0]: " << _cov_mat[0] << '\n';
-                         //std::cerr << "_cov_mat[3]: " << _cov_mat[3] << '\n';
-                        _cov_mat[0] += _variance_xx;
-                        _cov_mat[3] += _variance_yy;
-                    //     _cov_mat[0] += _variance_xx; // increase the varianceiance radius to allow for a better "association"
-                    //     _cov_mat[3] += _variance_yy; // increase the varianceiance radius to allow for a better "association"
-                         //std::cerr << "_cov_mat[0]: " << _cov_mat[0] << '\n';
-                         //std::cerr << "_cov_mat[3]: " << _cov_mat[3] << '\n';
+                    {    
+                         // std::cerr << "Before:\n";
+                         // std::cerr << "_cov_mat[0]: " << _cov_mat[0] << '\n';
+                         // std::cerr << "_cov_mat[3]: " << _cov_mat[3] << '\n';
+                        _cov_mat[0] += _variance_xx; // increase the variance radius to allow for a better "association"
+                        _cov_mat[3] += _variance_yy; // increase the variance radius to allow for a better "association"
+                         // std::cerr << "After:\n";
+                         // std::cerr << "_cov_mat[0]: " << _cov_mat[0] << '\n';
+                         // std::cerr << "_cov_mat[3]: " << _cov_mat[3] << '\n';
                     }
-                    update_det_cov_mat();
-                    update_inv_cov_mat();
-                    set_modified(false);
+                    _update_det_cov_mat();
+                    _update_inv_cov_mat();
+                    _set_modified(false);
                 }
             }
 
@@ -153,7 +154,6 @@ namespace clara {
             double pdf(T x, T y)
             {  
                 update_state();
-
                 const double fraction = 1 / std::sqrt(std::pow(2*M_PI, 2) * _det_cov_mat);
 
                 const T xx = _inv_cov_mat[0];
@@ -180,6 +180,12 @@ namespace clara {
             }
 
             //! euclidian distance to the cluster mid point
+            constexpr T distance(const std::tuple<T,T> tup) const
+            {
+                return distance(std::get<0>(tup), std::get<1>(tup));
+            }
+
+            //! euclidian distance to the cluster mid point
             constexpr T distance(const T x, const T y) const
             {
                 const T x_dist = std::pow(x - _mean_vec[0], 2);
@@ -195,18 +201,24 @@ namespace clara {
                 return std::abs(epsilon) < dist; 
             }
 
+            //! \todo
+            constexpr std::tuple<T, T> get_approx_position() const
+            { 
+                return { _mean_vec[0], _mean_vec[1] };
+            }
+
 
         // methods
         private:
             /** \brief setter for our modification flag, this is used to show if we got new information about our position
               * Any access to `_mean_vec`, `_cov_mat`, `_det_cov_mat` and `_inv_cov_mat` triggers their recomputation via `update_state()`
               */
-            void set_modified(bool b){ _modified = b; }
+            void _set_modified(bool b){ _modified = b; }
 
             /** \brief This acces to `_inv_cov_mat` can trigger a recalculation of the cone state. *Cached*
               *
               */ 
-            const std::array<T, 4> & get_inv_cov_mat()
+            const std::array<T, 4> & _get_inv_cov_mat()
             {
                 if (is_modified()) {
                     update_state();
@@ -216,7 +228,7 @@ namespace clara {
 
             /** \brief This access to `_det_cov_mat` can trigger a recalculation of the cone state. *Cached*
               */
-            const T & get_det_cov_mat()
+            const T & _get_det_cov_mat()
             {
                 if (is_modified()) {
                     update_state();
@@ -227,9 +239,9 @@ namespace clara {
             /** \brief Inverse matrix calculation of the 2x2 `_cov_mat`, saved in `_inv_cov_mat`
               * **Invarianceiant:**
               * * `_det_cov_mat` and `_cov_mat` is up to date
-              * * `_det_cov_mat` != 0, this is taken care of in `update_det_cov_mat()`
+              * * `_det_cov_mat` != 0, this is taken care of in `_update_det_cov_mat()`
               */
-            void update_inv_cov_mat()
+            void _update_inv_cov_mat()
             {
                 const T a = _cov_mat[0];
                 const T b = _cov_mat[1];
@@ -246,17 +258,13 @@ namespace clara {
               * Property: `_det_cov_mat` will never be 0, because the gaussian sampling in the EM algorithm is not defined for a zero covarianceiance in all dimensions. We then set it to `1`
               * **Invarianceiant:** `_cov_mat` is up to date
               */
-            void update_det_cov_mat()
+            void _update_det_cov_mat()
             {
                 const T a = _cov_mat[0];
                 const T b = _cov_mat[1];
                 const T c = _cov_mat[2];
                 const T d = _cov_mat[3];
                 _det_cov_mat = a * d - c * b;
-                //std::cerr << "cov-mat: " << a << ", " << b << ", " << c << ", " << d << ", " << _det_cov_mat <<'\n';
-               // if (std::abs(_det_cov_mat) < 0.0000000000000000000001) {
-                // std::cout << "< 0.000000001 triggered\n";
-                 // _det_cov_mat = 1; }
             }
 
             /** \brief Updates the `_mean_vec` with the current `_observations`
@@ -264,7 +272,7 @@ namespace clara {
               *
               * \todo parallelize this loop and test the performance time
               */
-            void update_mean_vec()
+            void _update_mean_vec()
             {
                 const coords_t sums = 
                     std::accumulate(_observations.begin(), _observations.end()
@@ -291,7 +299,7 @@ namespace clara {
               *
               * \todo parallelize this loop and test the performance time
               */
-            void update_cov_mat()
+            void _update_cov_mat()
             {
                 const T      mean_x             = _mean_vec[0];
                 const T      mean_y             = _mean_vec[1];
@@ -382,4 +390,4 @@ namespace clara {
 } // namespace clara
 
 /*! @} End of Doxygen Groups*/
-#endif // DATA_ASSOCIATION_H
+#endif // CONE_STATE_H

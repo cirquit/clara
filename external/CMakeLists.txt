@@ -14,5 +14,4 @@
 
 # add the external libraries
 # add_subdirectory (KaFi)
-add_subdirectory(object_methods)
 add_subdirectory(Connector)

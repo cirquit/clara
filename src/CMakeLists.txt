@@ -24,5 +24,5 @@
 add_executable(${EXEC_NAME} main.cpp)
 target_link_libraries(${EXEC_NAME} ${LIB_NAME})
 
-add_executable(tcp-carmaker tcp-carmaker.cc)
-target_link_libraries(tcp-carmaker ${LIB_NAME} objectlist)
+add_executable(carmaker-connection carmaker-connection.cc)
+target_link_libraries(carmaker-connection ${LIB_NAME})

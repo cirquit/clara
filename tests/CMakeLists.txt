@@ -12,14 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-set(SOURCES catch.h csv.h main.cc cone_state_tests.cc util_tests.cc data_association_tests.cc)
+set(SOURCES catch.h csv.h main.cc cone_state_tests.cc util_tests.cc)
 
 add_executable(${TEST_NAME} ${SOURCES})
 target_link_libraries(${TEST_NAME} ${LIB_NAME})
 
 # custom data association test for debugging purposes
 set(TEST_NAME_DA clara_data_assoc_test)
-set(SOURCES_DA catch.h csv.h main.cc data_association_tests.cc)
+set(SOURCES_DA csv.h data_association_tests.cc)
 add_executable(${TEST_NAME_DA} ${SOURCES_DA})
 target_link_libraries(${TEST_NAME_DA} ${LIB_NAME})
 
@@ -29,6 +29,11 @@ set(SOURCES_UTIL catch.h csv.h main.cc util_tests.cc)
 add_executable(${TEST_NAME_UTIL} ${SOURCES_UTIL})
 target_link_libraries(${TEST_NAME_UTIL} ${LIB_NAME})
 
+# custom data association test for debugging purposes
+set(TEST_NAME_UTIL clara_looping_test)
+set(SOURCES_UTIL catch.h main.cc looping_tests.cc)
+add_executable(${TEST_NAME_UTIL} ${SOURCES_UTIL})
+target_link_libraries(${TEST_NAME_UTIL} ${LIB_NAME})
 
 file(COPY example-data DESTINATION .)  # execute ./clara_test
 file(COPY example-data DESTINATION ..) # execute ./tests/clara_test

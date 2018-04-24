@@ -52,15 +52,12 @@ namespace clara {
         , red_data_association {
             preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
             variance_xx, variance_yy, apply_variance_step_count }
-        }
-
+        { }
 
         void add_observation(double v_x, double v_y, object_list_t * obj_list)
         {
-
+            
         }
-
-
 
 
         const std::tuple< double, double > parse_object_t( object_t *obj ) {

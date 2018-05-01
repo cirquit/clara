@@ -95,12 +95,12 @@ namespace clara {
             {  
 
                 // if somehow we get no observations, we don't do anything
-                if (new_cones.empty()) return _cone_states;
-
-                // copy detected cluster from previous steps for search bounds calculation
-                std::copy(_detected_cluster_ix.begin(), _detected_cluster_ix.end(), std::back_inserter(_detected_cluster_ix_copy));
-                _detected_cluster_ix.clear();
-
+                if (new_cones.empty()) {
+                    no_observations = true;
+                    return _cone_states;
+                }
+                // set flag to allow access to _detected_cluster_ixs_copy
+                no_observations = false;
                 // when we start the car, we will take every visible cone as a new cluster, we have the assumption that we don't see cones twice in a single image
                 if (_cone_states.size() == 0)
                 {
@@ -113,20 +113,23 @@ namespace clara {
                 else
                 {
                     for(auto cone : new_cones){
-                        auto cluster_it = _get_most_probable_cluster_it(cone);
-                        if ((*cluster_it).distance_greater_than(cone, _max_dist_btw_cones_m))
+                        cluster_it prob_cluster_it = _get_most_probable_cluster_it(cone);
+                        if ((*prob_cluster_it).distance_greater_than(cone, _max_dist_btw_cones_m))
                         {
                             _add_new_cluster_with_ob(cone);
                         }
                         // if it's not below the threshold, we need to put it in an existing cluster
                         else
                         {   
-                            _add_observation(cluster_it, cone);
+                            _add_observation(prob_cluster_it, cone);
                         }
                     }
                 }
                 // finished with detection, clear for the next step
+                // copy detected cluster from current step for search bounds calculation
                 _detected_cluster_ix_copy.clear();
+                std::copy(_detected_cluster_ix.begin(), _detected_cluster_ix.end(), std::back_inserter(_detected_cluster_ix_copy));
+                _detected_cluster_ix.clear();
                 return _cone_states;
             }
 
@@ -136,20 +139,14 @@ namespace clara {
                 return _cone_states;
             }
 
-            //! convenient naming
+            //! if there was no data observed this step, return an empty list of "used" clusters
             const std::vector<size_t> & get_detected_cluster_ixs() const
             {
-                return _detected_cluster_ix;
-            }
-
-            //! convenient naming
-            const std::vector<size_t> & get_previously_detected_cluster_ixs() const
-            {
-                return _detected_cluster_ix_copy;
+                return no_observations ? _detected_cluster_ix_empty : _detected_cluster_ix_copy;
             }
 
 
-            //! allocates a new vector and returns all currently "seen" cluster
+            //! allocates a new vector and returns all currently "seen" cluster **BAD for performance**
             std::vector<cone_state<T>> get_detected_cluster() const
             {
                 const std::vector<size_t> & detected_cluster_ix = get_detected_cluster_ixs();
@@ -159,7 +156,7 @@ namespace clara {
                 return cone_vec;
             }
 
-            //! calls get_detectd_cluster, sorts them by nearest to the car position (x,y)
+            //! calls get_detected_cluster, sorts them by nearest to the car position (x,y) **BAD for performance**
             const std::vector<cone_state<T>> get_detected_cluster_sorted(const std::tuple<double, double> car_pos) const
             {
                 std::vector<cone_state<T>> detected_cluster = get_detected_cluster();
@@ -197,14 +194,13 @@ namespace clara {
             //! returns the iterator at the element with the highest association probability based on the pdf \todo single pass min-max
             cluster_it _get_most_probable_cluster_it(const raw_cone_data & cone)
             {   
-
-                auto ixs = get_previously_detected_cluster_ixs();
+                auto ixs = get_detected_cluster_ixs();
                 int min_ix = static_cast<int>(*std::min_element(ixs.begin(), ixs.end()));
                 int max_ix = static_cast<int>(*std::max_element(ixs.begin(), ixs.end()));
                 
                 // ugly looping of indices, adapted for future possibilty of #pramga omp fun - needs to be a ringbuffer
+                // this is tested in tests/looping_tests.cc
                 int distance = max_ix - min_ix + 2 * _cluster_search_range;
-                int max_elem = 0;
                 int ix       = 0;
                 int min_diff = min_ix - _cluster_search_range;
                 if (min_diff < 0)
@@ -222,77 +218,6 @@ namespace clara {
 
                 return _cone_states.begin() + best_cone_ix;
 
-                // // partial application of _compare_clusters_by_probability
-                // std::function<bool(cone_state<T>&, cone_state<T>&)> cmp = [&](cone_state<T> & a
-                //                                                           , cone_state<T> & b)
-                // {
-                //     return _compare_clusters_by_probability(cone, a, b);
-                // };
-
-                // // default init to compare them later
-                // cluster_it min_cluster = _cone_states.begin();
-                // cluster_it max_cluster = _cone_states.begin();
-
-                // // Case 1: min overflows into negative (bounds too big, or min is too small)
-                // int min_diff = min_ix - _cluster_search_range;
-                // if (min_diff < 0)
-                // {
-                //     cluster_it min_bnds_01 = std::max_element(_cone_states.begin(),          _cone_states.begin() + min_ix + 1,
-                //          [&](cone_state<T> & a, cone_state<T> & b)
-                //          {
-                //              return a.pdf(cone) < b.pdf(cone); 
-                //          }
-                //     );
-                //     cluster_it min_bnds_02 = std::max_element(_cone_states.end() - min_diff, _cone_states.end(),
-                //          [&](cone_state<T> & a, cone_state<T> & b)
-                //          {
-                //              return a.pdf(cone) < b.pdf(cone); 
-                //          }
-                //     );
-                //     min_cluster = _return_cluster_by_probability(cone, min_bnds_01, min_bnds_02);
-                // } 
-                // // Case 2: min doesn't overflow
-                // else
-                // {
-                //     min_cluster = std::max_element(_cone_states.begin() + min_diff, _cone_states.begin() + min_ix + 1,
-                //          [&](cone_state<T> & a, cone_state<T> & b)
-                //          {
-                //              return a.pdf(cone) < b.pdf(cone); 
-                //          }
-                //     );
-                // }
-
-                // // Case 3: max overflows into size-1 (bounds too big, or max too big)
-                // int max_sum  = max_ix + _cluster_search_range;
-                // int max_diff = max_sum - (_cone_states.size()-1);
-                // if (max_diff > 0)
-                // {
-                //     cluster_it max_bnds_01 = std::max_element(_cone_states.begin() + max_ix, _cone_states.end(),
-                //          [&](cone_state<T> & a, cone_state<T> & b)
-                //          {
-                //              return a.pdf(cone) < b.pdf(cone); 
-                //          }
-                //     );
-                //     cluster_it max_bnds_02 = std::max_element(_cone_states.begin(),          _cone_states.begin() + max_diff + 1,
-                //          [&](cone_state<T> & a, cone_state<T> & b)
-                //          {
-                //              return a.pdf(cone) < b.pdf(cone); 
-                //          }
-                //     );
-                //     max_cluster = _return_cluster_by_probability(cone, max_bnds_01, max_bnds_02);
-                // }
-                // // Case 4: max doesn't overflow
-                // else
-                // {
-                //     max_cluster = std::max_element(_cone_states.begin() + max_ix, _cone_states.begin() + max_sum + 1,
-                //          [&](cone_state<T> & a, cone_state<T> & b)
-                //          {
-                //              return a.pdf(cone) < b.pdf(cone); 
-                //          }
-                //     );
-                // }
-
-                // return _return_cluster_by_probability(cone, min_cluster, max_cluster);
                 // return std::max_element(_cone_states.begin(), _cone_states.end(), [&](cone_state<T> & a, cone_state<T> & b)
                 // {
                 //     return a.pdf(cone) < b.pdf(cone);
@@ -352,13 +277,16 @@ namespace clara {
             size_t _max_dist_btw_cones_m;
             //! temporary storage for all pdf scores
             std::vector<double>  _pdfs;
-            //! holds all currently used clusters, needed for future analysis
+            //! holds all currently used clusters, is filled in for classify_new_data
             std::vector<size_t>  _detected_cluster_ix;
-            //! holds all previously used clusters, needed for bounds caluclation from previous steps
+            //! holds all currently used clusters, copied from the last step and overwritten at the end of classify_new_data. used to hold windowed bounds for cluster
             std::vector<size_t>  _detected_cluster_ix_copy;
+            //! because we return everyting by const reference, we need to have a empty static member for get_detected_cluster_ixs
+            std::vector<size_t>  _detected_cluster_ix_empty;
             //! how far do we search infront and back of the min/max index of _detected_cluster_ix
             int _cluster_search_range;
-
+            //! because we need to hold our _detected_cluster_ix_copy for the next classification, we need to be able to distinguish "no detected cones" steps
+            bool no_observations = false;
     };
 
 } // namespace clara

@@ -25,6 +25,7 @@
 #include "../library/data_association.h"
 #include "../library/util.h"
 #include "../library/cone_state.h"
+#include "../library/clara.h"
 
 // void print_clusters( const std::vector< clara::cone_state< double > > &clusters, int color ) {
 //     UNUSED(color);

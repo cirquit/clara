@@ -14,8 +14,8 @@
 
 set(SOURCES catch.h csv.h main.cc cone_state_tests.cc util_tests.cc)
 
-add_executable(${TEST_NAME} ${SOURCES})
-target_link_libraries(${TEST_NAME} ${LIB_NAME})
+# add_executable(${TEST_NAME} ${SOURCES})
+# target_link_libraries(${TEST_NAME} ${LIB_NAME})
 
 # custom data association test for debugging purposes
 set(TEST_NAME_DA clara_data_assoc_test)
@@ -24,16 +24,21 @@ add_executable(${TEST_NAME_DA} ${SOURCES_DA})
 target_link_libraries(${TEST_NAME_DA} ${LIB_NAME})
 
 # custom data association test for debugging purposes
+set(TEST_NAME_CLARA clara_csv_test)
+set(SOURCES_CLARA csv.h clara_tests.cc)
+add_executable(${TEST_NAME_CLARA} ${SOURCES_CLARA})
+target_link_libraries(${TEST_NAME_CLARA} ${LIB_NAME})
+
 set(TEST_NAME_UTIL clara_util_test)
 set(SOURCES_UTIL catch.h csv.h main.cc util_tests.cc)
 add_executable(${TEST_NAME_UTIL} ${SOURCES_UTIL})
 target_link_libraries(${TEST_NAME_UTIL} ${LIB_NAME})
 
 # custom data association test for debugging purposes
-set(TEST_NAME_UTIL clara_looping_test)
-set(SOURCES_UTIL catch.h main.cc looping_tests.cc)
-add_executable(${TEST_NAME_UTIL} ${SOURCES_UTIL})
-target_link_libraries(${TEST_NAME_UTIL} ${LIB_NAME})
+set(TEST_NAME_LOOPING clara_looping_test)
+set(SOURCES_LOOPING catch.h main.cc looping_tests.cc)
+add_executable(${TEST_NAME_LOOPING} ${SOURCES_LOOPING})
+target_link_libraries(${TEST_NAME_LOOPING} ${LIB_NAME})
 
 file(COPY example-data DESTINATION .)  # execute ./clara_test
 file(COPY example-data DESTINATION ..) # execute ./tests/clara_test

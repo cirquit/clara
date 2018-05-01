@@ -13,5 +13,5 @@
 # limitations under the License.
 
 # add the external libraries
-# add_subdirectory (KaFi)
+add_subdirectory (KaFi)
 add_subdirectory(Connector)

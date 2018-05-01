@@ -17,6 +17,8 @@
 #include <iostream>
 #include <random>
 #include <vector>
+#include <chrono>
+#include <thread>
 
 #include "../library/util.h"
 
@@ -94,5 +96,33 @@ TEST_CASE( "util.h:custom iterator functions", "[iterators]" ) {
             REQUIRE(double_vec_A[ i ] == double_vec_B[ i ]);
         }
     };
+
+    SECTION( "timer test" ) {
+        using namespace std::chrono_literals;
+        auto start = std::chrono::high_resolution_clock::now();
+        std::this_thread::sleep_for(0.51s);
+        auto end   = std::chrono::high_resolution_clock::now();
+
+        std::chrono::duration<double, std::ratio<1,1>> elapsed = (end - start);
+        int ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+        std::cout << ms / 1000.0 << '\n';
+        std::cout << elapsed.count() << '\n';
+        REQUIRE(ms / 1000.0 == 0.51);
+    }
+
+    SECTION( "tuple add test" ) {
+
+        std::vector<std::tuple<double, double>> velocities;
+        for(int i = 0; i < 10; i++)
+        {
+            velocities.push_back(std::make_tuple(i,i));
+        }
+        double v_x_mean = 0;
+        double v_y_mean = 0;
+        std::tie(v_x_mean, v_y_mean) = clara::util::mean_accumulate(velocities);
+        REQUIRE(v_x_mean == 4.5);
+        REQUIRE(v_y_mean == 4.5);
+    } 
 }
 

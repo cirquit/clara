@@ -12,7 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 #include <blaze/Math.h>
 #include <iostream>
 #include <math.h>
@@ -24,9 +23,6 @@
 #include "../external/Connector/library/client.h"
 #include "../external/Connector/library/server.h"
 #include "../library/data_association.h"
-// #include "catch.h"
-
-// #include "../external/json.hpp"
 #include "csv.h"
 
 template< class T >
@@ -84,6 +80,16 @@ void print_observations(clara::data_association<T> & da, int color)
     std::cout << "]);\n";
 }
 
+const std::tuple< double, double > parse_object_t( double angle, double distance, double x_car, double y_car, double yaw_angle ) {
+    const double x_ = std::cos( angle ) * distance;
+    const double y_ = std::sin( angle ) * distance;
+
+    const double x = x_ * std::cos( yaw_angle ) - y_ * std::sin( yaw_angle );
+    const double y = x_ * std::sin( yaw_angle ) + y_ * std::cos( yaw_angle );
+    return {x + x_car, y + y_car};
+}
+
+
 int main(){ 
     // define how many sample points to evaluate
     //const double MAX_SAMPLE_POINTS = 1200;
@@ -93,9 +99,11 @@ int main(){
 
     // read the data
     std::string csv_path = "../tests/example-data/"
-                          // "wemding-map-ground-truth-cones-d-a-x-y-c-t.csv";
-                           "small-map-cm-cones-d-a-x-y-c-t.csv";
+                           "wemding-map-ground-truth-cones-d-a-x-y-c-t.csv";
+                          // "small-map-cm-cones-d-a-x-y-c-t.csv";
+                          //   "round-map-10-rounds-d-a-x-y-yaw-c-t.csv";
     io::CSVReader< 6 > in( csv_path );
+    // io::CSVReader< 7 > in( csv_path );
 
     std::uniform_real_distribution<double> unif(-0.5, +0.5);
     std::default_random_engine re;
@@ -110,11 +118,12 @@ int main(){
 
     // read the data in the vector
     double distance, angle, x, y, color, timestamp;
+    // double distance, angle, x, y, yaw_angle, color, timestamp;
     int    timestamp_old = -1;
     
     while ( in.read_row( distance, angle, x, y, color, timestamp ) ) {
-        // if we already have enough sample points, stop the reading
-      //  if ( timestamp >= MAX_SAMPLE_POINTS ) { break; }
+    // while ( in.read_row( distance, angle, x, y, yaw_angle, color, timestamp ) ) {
+       
         // group by timestamp
         if ( timestamp != timestamp_old )
         {
@@ -123,18 +132,19 @@ int main(){
             red_cone_data.push_back( std::vector< raw_cone_data >( ) );
             timestamp_old = timestamp;
         }
-
         // x = unif(re) + x;
         // y = unif(re) + y;
+        raw_cone_data raw_cone = { x , y };
+        // raw_cone_data raw_cone = parse_object_t(angle, distance, x, y, yaw_angle);
 
         // watch out for this encoding, this is just for ease of use. Should
         // change depending on the object type from darknet
         if ( color == 0 )
-            yellow_cone_data.back( ).push_back( raw_cone_data( x, y ) );
+            yellow_cone_data.back( ).push_back( raw_cone );
         if ( color == 1 )
-            blue_cone_data.back( ).push_back( raw_cone_data( x, y ) );
+            blue_cone_data.back( ).push_back( raw_cone );
         if ( color == 2 )
-            red_cone_data.back( ).push_back( raw_cone_data( x, y ) );
+            red_cone_data.back( ).push_back( raw_cone );
     }
 
     // parametrization of data associtaion
@@ -147,7 +157,6 @@ int main(){
     const int    cluster_search_range                 = 5; // +/- to the min/max used cluster-index
 
     // data association for each color
-
     clara::data_association< double > yellow_data_association(
         preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
         variance_xx, variance_yy, apply_variance_step_count, cluster_search_range );
@@ -157,28 +166,23 @@ int main(){
     clara::data_association< double > red_data_association(
         preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
         variance_xx, variance_yy, apply_variance_step_count, cluster_search_range );
-
-
     // do the association
     clara::util::zipWith_(
         [&]( const std::vector< raw_cone_data > &cur_yellow_cones,
              const std::vector< raw_cone_data > &cur_blue_cones,
              const std::vector< raw_cone_data > &cur_red_cones ) {
-                // std::cerr << "cur_yellow_cones.size: " << cur_yellow_cones.size() << '\n';
-                // std::cerr << "cur_blue_cones.size: " << cur_blue_cones.size() << '\n';
-                // int y_s = static_cast<int>(cur_yellow_cones.size());
-                // int b_s = static_cast<int>(cur_blue_cones.size());
-                // std::string stuff = std::to_string(y_s) + ", " + std::to_string(b_s);
-                // to_python_client.send_udp<const char>(stuff.c_str()[0], sizeof(char) * stuff.size());
-                // std::cout << "cur_yellow_cones.size(): " << cur_yellow_cones.size() << '\n';
+
+                UNUSED(cur_red_cones);
                 auto & y_cluster = yellow_data_association.classify_new_data( cur_yellow_cones );
                 auto & b_cluster = blue_data_association.classify_new_data( cur_blue_cones );
                 // red_data_association.classify_new_data( cur_red_cones );
-
                 auto & y_cluster_index = yellow_data_association.get_detected_cluster_ixs();
                 auto & b_cluster_index = blue_data_association.get_detected_cluster_ixs();
 
-
+                UNUSED(y_cluster);
+                UNUSED(y_cluster_index);
+                UNUSED(b_cluster);
+                UNUSED(b_cluster_index);
                 // for( auto observed : cur_yellow_cones )
                 // {
                 //     std::cerr << std::get<0>(observed) << "," << std::get<1>(observed) << ';';
@@ -232,8 +236,6 @@ int main(){
                 //         std::this_thread::sleep_for(std::chrono::milliseconds(10));
                 //     }
                 // }
-
-
         },
         yellow_cone_data.begin( ), yellow_cone_data.end( ), blue_cone_data.begin( ),
         red_cone_data.begin( )

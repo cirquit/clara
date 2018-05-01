@@ -18,7 +18,11 @@
 #include <functional>
 #include <iostream>
 #include <tuple>
+#include <memory>
 #include <algorithm>
+
+#include "../external/object-list/include/object.h"
+#include "../external/KaFi/library/kafi.h"
 #include "cone_state.h"
 #include "util.h"
 
@@ -32,51 +36,433 @@
  */
 namespace clara {
     /** \brief
-     *
+     * Main fusion point between Data Association and Localization. Wrapper for everything
      */
     class clara
     {
-        //! \todo
+
+    // typedefs
+    public:
+        using raw_cone_data = std::tuple<double, double>;
+    // constructor
+    public:
+
+        //! contructor with default starting position at 0,0
         clara(size_t preallocated_cluster_count
             , size_t preallocated_detected_cones_per_step
             , double max_dist_btw_cones_m
             , double variance_xx
             , double variance_yy
-            , size_t apply_variance_step_count)
-        : yellow_data_association {
-            preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
-            variance_xx, variance_yy, apply_variance_step_count }
-        , blue_data_association {
-            preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
-            variance_xx, variance_yy, apply_variance_step_count }
-        , red_data_association {
-            preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
-            variance_xx, variance_yy, apply_variance_step_count }
-        { }
+            , size_t apply_variance_step_count
+            , int cluster_search_range)
+        : clara(preallocated_cluster_count
+            , preallocated_detected_cones_per_step
+            , max_dist_btw_cones_m
+            , variance_xx
+            , variance_yy
+            , apply_variance_step_count
+            , cluster_search_range
+            , std::make_tuple(0.0, 0.0)) { }
 
-        void add_observation(double v_x, double v_y, object_list_t * obj_list)
+        //! constructor
+        clara(size_t preallocated_cluster_count
+            , size_t preallocated_detected_cones_per_step
+            , double max_dist_btw_cones_m
+            , double variance_xx
+            , double variance_yy
+            , size_t apply_variance_step_count
+            , int cluster_search_range
+            , std::tuple<double, double> starting_position)
+        : _yellow_data_association {
+            preallocated_cluster_count, preallocated_detected_cones_per_step, max_dist_btw_cones_m,
+            variance_xx, variance_yy, apply_variance_step_count, cluster_search_range }
+        , _blue_data_association {
+            preallocated_cluster_count, preallocated_detected_cones_per_step, max_dist_btw_cones_m,
+            variance_xx, variance_yy, apply_variance_step_count, cluster_search_range }
+        , _red_data_association {
+            preallocated_cluster_count, preallocated_detected_cones_per_step, max_dist_btw_cones_m,
+            variance_xx, variance_yy, apply_variance_step_count, cluster_search_range }
+        { 
+            // observation preallocation
+            _new_yellow_cones.reserve(preallocated_detected_cones_per_step);
+            _new_blue_cones.reserve(preallocated_detected_cones_per_step);
+            _new_red_cones.reserve(preallocated_detected_cones_per_step);
+            // used cluster index preallocation to compare in the next step
+            _yellow_detected_cluster_ixs_old.reserve(preallocated_detected_cones_per_step);
+            _blue_detected_cluster_ixs_old.reserve(preallocated_detected_cones_per_step);
+            _red_detected_cluster_ixs_old.reserve(preallocated_detected_cones_per_step);
+            // used vector to hold all currently calculated cone velocities (2* because of both yellow and blue)
+            _velocities.reserve(2 * preallocated_detected_cones_per_step);
+            // we start at the zero position
+            _estimated_position = starting_position;
+            _estimated_position_old = starting_position;
+            // init kafi
+            _init_kafi();
+            // init clock for velocity to distance calculation
+            _start_clock();
+        }
+
+        //! main function - parse obj_list and use all external sensor data to do the data association and localization
+        const std::tuple<double, double> & add_observation(const object_list_t & obj_list
+                                                         , double v_x_sensor
+                                                         , double v_y_sensor
+                                                         , double yaw_rad
+                                                         , double timestep_s = 0)
         {
-            
+            // prepare preallocated raw cone lists for new cones
+            _new_yellow_cones.clear();
+            _new_blue_cones.clear();
+            _new_red_cones.clear();
+            std::cerr << "    [clara.h::add_observation()]\n";
+            // calculate difference from last call to start_clock(), if it's zero, we have to calculate it by ourselves
+            if (timestep_s == 0){
+                std::cerr << "        measuring time: ";
+                timestep_s = _get_diff_time_s();
+                std::cerr << timestep_s << "s\n";
+            } else 
+            {
+                std::cerr << "        got time: " << timestep_s << "s\n";
+            }
+            // iterate over the c-style array and apped cones based on their color
+            for(uint32_t i = 0; i < obj_list.size; ++i)
+            {
+                if (obj_list.element[i].type == 0) _new_yellow_cones.emplace_back(_parse_object_t(obj_list.element[i], yaw_rad));
+                if (obj_list.element[i].type == 1) _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], yaw_rad));
+                if (obj_list.element[i].type == 2) _new_red_cones.emplace_back(   _parse_object_t(obj_list.element[i], yaw_rad));
+            }
+            // do the data association (\todo parallelize me with openmp tasks)
+            _yellow_data_association.classify_new_data(_new_yellow_cones);
+            _blue_data_association.classify_new_data(_new_blue_cones);
+            _red_data_association.classify_new_data(_new_red_cones);
+            // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
+            const std::tuple<double, double, double> velocity_t = std::make_tuple(v_x_sensor, v_y_sensor, timestep_s); // _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
+            // update the position based on the estimated v_x, v_y and the time
+            const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
+            _update_estimated_position(new_position);
+            std::cerr << "        prev position: " << std::get<0>(_estimated_position_old) << ", " << std::get<1>(_estimated_position_old) << '\n' \
+                      << "        calc velocity: " << std::get<0>(velocity_t) << ", " << std::get<1>(velocity_t) << '\n' \
+                      << "        new  position: " << std::get<0>(new_position) << ", " << std::get<1>(new_position) << '\n' \
+                      << "        real position: " << obj_list.element[0].x_car << ", " << obj_list.element[0].y_car << '\n';
+            // _log_visualization(obj_list.element[0].x_car, obj_list.element[0].y_car, yaw_rad);
+            std::cout << obj_list.element[0].x_car << ", " << obj_list.element[0].y_car << ", "
+                      << std::get<0>(new_position) << ", " << std::get<1>(new_position) << '\n';
+            return _estimated_position;
         }
 
 
-        const std::tuple< double, double > parse_object_t( object_t *obj ) {
-            const double x_ = std::cos( obj->angle ) * obj->distance;
-            const double y_ = std::sin( obj->angle ) * obj->distance;
-            const double x = x_ * std::cos( obj->angle_yaw ) - y_ * std::sin( obj->angle_yaw );
-            const double y = x_ * std::sin( obj->angle_yaw ) + y_ * std::cos( obj->angle_yaw );
-        return {x + obj->x_car, y + obj->y_car};
+    // methods
+    private:
+        //! logging in the predefined scheme
+        void _log_visualization(const double & x_pos
+                              , const double & y_pos
+                              , const double & yaw_rad)
+        {
+            std::cout << "CLARA|";
+            for(auto & y : _new_yellow_cones)
+            {
+                std::cout << std::get<0>(y) << "," << std::get<1>(y) << ";";
+            }
+            for(auto & b : _new_blue_cones)
+            {
+                std::cout << std::get<0>(b) << "," << std::get<1>(b) << ";";
+            }
+            std::cout << "|";
+            auto & yellow_cones       = _yellow_data_association.get_cluster();
+            auto & yellow_cluster_ixs = _yellow_data_association.get_detected_cluster_ixs();
+            for(auto & y_ix : yellow_cluster_ixs)
+            {
+                const auto & yc = yellow_cones[y_ix];
+                std::cout << yc._mean_vec[0] << "," \
+                          << yc._mean_vec[1] << "," \
+                          << yc._cov_mat[0]  << "," \
+                          << yc._cov_mat[1]  << "," \
+                          << yc._cov_mat[3]  << "," \
+                          << y_ix            << "," \
+                          << 0               << ";";
+            }
+            auto & blue_cones       = _blue_data_association.get_cluster();
+            auto & blue_cluster_ixs = _blue_data_association.get_detected_cluster_ixs();
+            for(auto & b_ix : blue_cluster_ixs)
+            {
+                const auto & bc = blue_cones[b_ix];
+                std::cout << bc._mean_vec[0] << "," \
+                          << bc._mean_vec[1] << "," \
+                          << bc._cov_mat[0]  << "," \
+                          << bc._cov_mat[1]  << "," \
+                          << bc._cov_mat[3]  << "," \
+                          << b_ix            << "," \
+                          << 1               << ";";
+            }
+            std::cout << "|";
+            std::cout << x_pos << ","
+                      << y_pos << ","
+                      << yaw_rad << '\n';
+        }
+
+        //! how to parse an object_t to get from the relative distance and angle position to the absolute localization
+        const std::tuple< double, double > _parse_object_t( const object_t & obj
+                                                          , const double & yaw_rad ) const
+        { 
+            const double x_car   = std::get<0>(_estimated_position); // obj.x_car; // update with v_x_sensor
+            const double y_car   = std::get<1>(_estimated_position); // obj.y_car; // update with v_y_sensor
+            // apply local velocity if we are too slow
+            // const double x_car = x_car_old + v_x_sensor / timestep_s;
+            // const double y_car = y_car_old + v_y_sensor / timestep_s;
+
+            // trigonometry - get x,y position from angle and distance
+            const double x_ = std::cos( obj.angle ) * obj.distance;
+            const double y_ = std::sin( obj.angle ) * obj.distance;
+            // rotate the x,y coordiantes with the yaw of the car (rotation around y in car model)
+            const double x = x_ * std::cos( yaw_rad ) - y_ * std::sin( yaw_rad );
+            const double y = x_ * std::sin( yaw_rad ) + y_ * std::cos( yaw_rad );
+            return { x + x_car, y + y_car };
+        }
+
+        //! returns the estimated velocity_t (x,y, timestep_s)
+        const std::tuple<double, double, double> _estimate_velocity(double v_x_sensor
+                                                                  , double v_y_sensor
+                                                                  , double timestep_s)
+        {
+            std::cerr << "    [clara.h:estimate_velocity()]\n";
+            using nx1_vector = typename kafi::jacobian_function<N,M>::nx1_vector;
+            using mx1_vector = typename kafi::jacobian_function<N,M>::mx1_vector;
+            using return_t   = typename kafi::kafi<N,M>::return_t;
+            // get cluster by reference to not change ownership
+            auto & yellow_cluster = _yellow_data_association.get_cluster();
+            auto & blue_cluster   = _blue_data_association.get_cluster();
+            // get currently seen cluster indexes by reference
+            const auto & yellow_detected_cluster_ix = _yellow_data_association.get_detected_cluster_ixs();
+            const auto & blue_detected_cluster_ix   = _blue_data_association.get_detected_cluster_ixs();
+            // delete previous velocities
+            _velocities.clear();
+            // for each newly detected yellow cluster
+            for(const size_t & y_ix : yellow_detected_cluster_ix)
+            {
+                // if we saw it in the previous step
+                if (util::contains(_yellow_detected_cluster_ixs_old, y_ix))
+                {
+                    auto y_velocity = _calculate_velocity(y_ix, yellow_cluster, timestep_s);
+                    _velocities.emplace_back( y_velocity );
+                }
+            }
+            // for each newly detected blue cluster
+            for(const size_t & b_ix : blue_detected_cluster_ix)
+            {
+                // if we saw it in the previous step
+                if (util::contains(_blue_detected_cluster_ixs_old, b_ix))
+                {
+                    auto b_velocity = _calculate_velocity(b_ix, blue_cluster, timestep_s);
+                    _velocities.emplace_back( b_velocity );
+                }
+            }
+            // update the newly seen cluster indicies
+            _update_detected_cluster(yellow_detected_cluster_ix, blue_detected_cluster_ix);
+            // if we don't see any new cones, we can't update the kalman filter
+            if (_velocities.empty())
+            {   
+                std::cerr << "        - no matched cluster observations, returning velocities from correvit\n";
+                return { v_x_sensor, v_y_sensor, timestep_s };
+            }
+            // calculate mean velocity changes for every cone
+            const std::tuple<double, double> cone_velocites = _get_mean_velocities(_velocities);
+            const double v_x_cones = std::get<0>(cone_velocites);
+            const double v_y_cones = std::get<1>(cone_velocites);
+            // for debugging purposes
+            if (true) // v_x_sensor == 0 && v_y_sensor == 0)
+            {   
+                std::cerr << "        - vx/vy_sensor are zero, returning velocities from cones\n";
+                return { v_x_cones, v_y_cones, timestep_s };
+            }
+            // run the kalman filter with sensor and cone velocities
+            mx1_vector observation( { { v_x_sensor }, { v_y_sensor }
+                                    , { v_x_cones }, { v_y_cones } } );
+            (*_kafi).set_current_observation(observation);
+            const return_t   result          = (*_kafi).step();
+            const nx1_vector estimated_state = std::get<0>(result);
+            const double estimated_v_x = estimated_state(0, 0);
+            const double estimated_v_y = estimated_state(1, 0);
+            //
+            return { estimated_v_x, estimated_v_y, timestep_s };
+        }
+
+        //! unsafe function, should only be called if we can access cone._observations[last/last-1] and cluster[ix]
+        const std::tuple<double, double> _calculate_velocity(const size_t ix
+                                                           , const std::vector<cone_state<double>> & cluster
+                                                           , const double timestep_s) const
+        {   
+            const cone_state<double> & cone = cluster[ix];
+            const cone_state<double>::coords_t o_2 = cone._observations.back();
+            const cone_state<double>::coords_t o_1 = *(cone._observations.end() - 2);
+            // subtract the last positional information
+            const double pos_cur_x = std::get<0>(_estimated_position);
+            const double pos_cur_y = std::get<1>(_estimated_position);
+            const double pos_old_x = std::get<0>(_estimated_position_old);
+            const double pos_old_y = std::get<1>(_estimated_position_old);
+
+            const double v_x = ((o_1[0] - pos_old_x) - (o_2[0] - pos_cur_x)) / timestep_s; 
+            const double v_y = ((o_1[1] - pos_old_y) - (o_2[1] - pos_cur_y)) / timestep_s;
+            std::cerr << "    [clara.h:calculate_velocity()]\n"
+                      << "        ix: " << ix << ", time: " << timestep_s << "s\n" \
+                      << "        pos_old:         ( " << pos_old_x << ", " << pos_old_y << " )\n" \
+                      << "        pos_cur:         ( " << pos_cur_x << ", " << pos_cur_y << " )\n" \
+                      << "        observation-t:   ( " <<  (o_1[0] - pos_old_x) << ", " << (o_1[1] - pos_old_y) << " )\n" \
+                      << "        observation-t-1: ( " <<  (o_2[0] - pos_cur_x) << ", " << (o_2[1] - pos_cur_y) << " )\n" \
+                      << "        distance_x: " << ((o_1[0] - pos_old_x) - (o_2[0] - pos_cur_x)) << "m\n" \
+                      << "        distance_y: " << ((o_1[1] - pos_old_y) - (o_2[1] - pos_cur_y)) << "m\n" \
+                      << "            vx: " << v_x << " m/s\n" \
+                      << "            vy: " << v_y << " m/s\n";
+            return { v_x, v_y }; 
+        }
+
+        //! replaces _yellow_detected_cluster_ixs, _blue_detected_cluster_ixs and with the new detected cluster indices 
+        void _update_detected_cluster(const std::vector<size_t> & yellow_detected_cluster_ixs,
+                                      const std::vector<size_t> & blue_detected_cluster_ixs)
+        {
+            _yellow_detected_cluster_ixs_old.clear();
+            _blue_detected_cluster_ixs_old.clear();
+            std::copy(yellow_detected_cluster_ixs.begin(), yellow_detected_cluster_ixs.end(), std::back_inserter(_yellow_detected_cluster_ixs_old));
+            std::copy(blue_detected_cluster_ixs.begin(), blue_detected_cluster_ixs.end(), std::back_inserter(_blue_detected_cluster_ixs_old));
+        }
+
+        //! handy naming
+        void _update_estimated_position(const std::tuple<double, double> & new_position)
+        {
+            _estimated_position_old = _estimated_position;
+            _estimated_position     = new_position;
+        }
+
+        //! inizialize the velocity kalman filter
+        void _init_kafi()
+        {
+            // typedefs
+            using mx1_vector = typename kafi::jacobian_function<N,M>::mx1_vector;
+            using nx1_vector = typename kafi::jacobian_function<N,M>::nx1_vector;
+            using mxm_matrix = typename kafi::jacobian_function<N,M>::mxm_matrix;
+            using nxn_matrix = typename kafi::jacobian_function<N,M>::nxn_matrix;
+            using h_func          = std::function<void(nx1_vector &, mx1_vector &)>;
+            using par_jacobi_func = std::function<double(const nx1_vector &)>;
+            using h_jacobi_func   = kafi::jacobian_function<N,M>::jacobi_func;
+            // state transition does nothing (we don't know)
+            kafi::jacobian_function<N,N> f(
+                std::move(kafi::util::create_identity_jacobian<N,N>()));
+            // propagte the estimated v_x and v_y to both sensors
+            const h_func _h = [](nx1_vector & in, mx1_vector & out)
+            {
+                out(0,0) = in(0,0); // estimated v_x
+                out(1,0) = in(1,0); // estimated v_y
+                out(2,0) = in(0,0); // estimated v_x
+                out(3,0) = in(1,0); // estimated v_y
+            };
+            // simple constant functions
+            const par_jacobi_func dh_one  = kafi::util::identity_derivative<N>(1);
+            const par_jacobi_func dh_zero = kafi::util::identity_derivative<N>(0);
+            const h_jacobi_func _H
+            {
+                { dh_one,  dh_zero }
+             ,  { dh_zero, dh_one  }
+             ,  { dh_one,  dh_zero }
+             ,  { dh_zero, dh_one  }
+            };
+            // state to observation mapping (state -> observations)
+            kafi::jacobian_function<N,M> h(_h, _H);
+            // read as "the real world velocity fluctuates between 0.1m/s" (0.1**2 = 0.01)
+            nxn_matrix process_noise( { { 0.01, 0    }
+                                      , { 0,    0.01 } } );
+            /* read as
+             *
+             * * v_x / v_y from the correvit have a noise of +/-0.5% of 1.25km/h (datasheet)-> 0.347m/s -> (^2) -> 0.121
+             * * v_x / v_y from the cones have a noise of (\todo - let's try a bigger offset ~ 0.5m/s -> (^2) 0.25)
+             */ 
+            mxm_matrix sensor_noise( { { 0.121,     0,    0,     0 }
+                                     , { 0,     0.121,    0,     0 } 
+                                     , { 0,         0, 0.25,     0 }
+                                     , { 0,         0,    0,  0.25 } });
+            // read as "the first reading of the velocity is 0 in both x and y for both sensors"
+            mx1_vector first_observation(0);
+            // we start at velocity 0 in both x and y
+            nx1_vector starting_state(0);
+            // init kalman filter
+            _kafi = std::make_unique<kafi::kafi<N, M>>(std::move(f)
+                                                     , std::move(h)
+                                                     , starting_state
+                                                     , first_observation
+                                                     , process_noise
+                                                     , sensor_noise);
+        }
+
+        /** \brief calculate the mean velocities
+          * INVARIANT: velocities is nonempty
+          */
+        const std::tuple<double, double> _get_mean_velocities(const std::vector<std::tuple<double, double>> & velocities) const
+        {
+            return util::mean_accumulate(velocities);
+        }
+
+        //! starts the clock to use with get_diff_time_s
+        void _start_clock()
+        {
+            _start = std::chrono::high_resolution_clock::now();
+        }
+
+        //! get time difference from last call to start_clock in seconds. Restarts the clock
+        double _get_diff_time_s()
+        {
+            auto end = std::chrono::high_resolution_clock::now();
+            int elapsed_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - _start).count();
+            _start_clock();
+            return elapsed_ms / 1000.0;
+        }
+
+        //! calculates the new position based on the estimated v_x, v_y and the elapsed time
+        const std::tuple<double, double> _apply_physics_model(const std::tuple<double, double, double> & velocity_t) const
+        {
+            const double v_x        = std::get<0>(velocity_t);
+            const double v_y        = std::get<1>(velocity_t);
+            const double timestep_s = std::get<2>(velocity_t);
+
+            const double pos_x = (v_x * timestep_s) + std::get<0>(_estimated_position);
+            const double pos_y = (v_y * timestep_s) + std::get<1>(_estimated_position);
+
+            return { pos_x, pos_y };
+        }
 
     // member
-    private:
+    public:
+        //! data association 
+        data_association< double > _yellow_data_association;
+        //! data association 
+        data_association< double > _blue_data_association;
+        //! data association 
+        data_association< double > _red_data_association;
 
-        clara::data_association< double > yellow_data_association;
-        clara::data_association< double > blue_data_association;
-        clara::data_association< double > red_data_association;
+        //! temporary storage for the observations
+        std::vector<raw_cone_data> _new_yellow_cones;
+        //! temporary storage for the observations
+        std::vector<raw_cone_data> _new_blue_cones;
+        //! temporary storage for the observations
+        std::vector<raw_cone_data> _new_red_cones;
 
-}
+        //! temporary storage for last classified cluster index
+        std::vector<size_t> _yellow_detected_cluster_ixs_old;
+        std::vector<size_t> _blue_detected_cluster_ixs_old;
+        std::vector<size_t> _red_detected_cluster_ixs_old;
 
-    }
+        //! holds the caluculated velocities of the current observation 
+        std::vector<std::tuple<double, double>> _velocities;
+
+        //! estimated world position
+        std::tuple<double, double> _estimated_position;
+        //! estimated world position from the last timestep
+        std::tuple<double, double> _estimated_position_old;
+        //! we estimate `v_x` and `v_y` with kafi (2x1)
+        static const size_t N = 2;
+        //! we observe `v_x` and `v_y` from cones and from the correvit (2x2)
+        static const size_t M = 4;
+        //! pointer to the velocity kalman filter which estimates the velocity in `x` and `y` from the correvit and cone velocity
+        std::unique_ptr<kafi::kafi<N, M>> _kafi;
+        //! clock to apply velocities from last observed model
+        std::chrono::time_point<std::chrono::high_resolution_clock> _start;
+    };
 } // namespace clara
 
 #endif // CLARA_H

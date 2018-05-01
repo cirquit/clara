@@ -163,13 +163,10 @@ int main( ) {
             const raw_cone_data cone = parse_object_t( el );
 
             if ( el->type == 0 ) {
-               // yellow_cone_data.back( ).push_back( cone );
                 raw_yellow_cones.emplace_back( cone );
             } else if ( el->type == 1 ) {
-               // blue_cone_data.back( ).push_back( cone );
                 raw_blue_cones.emplace_back( cone );
             } else {
-               // red_cone_data.back( ).push_back( cone );
                 raw_red_cones.emplace_back( cone );
             }
         }
@@ -181,7 +178,8 @@ int main( ) {
 
         const auto & all_yellow_cones = yellow_data_association.classify_new_data( raw_yellow_cones );
         const auto & all_blue_cones = blue_data_association.classify_new_data( raw_blue_cones );
-
+        UNUSED(all_yellow_cones);
+        UNUSED(all_blue_cones);
 
         // const std::tuple<double, double> car_pos = get_car_pos(&objectlist_to_receive.element[ 0 ]);
 

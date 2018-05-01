@@ -144,6 +144,43 @@ namespace clara
             std::transform(container.begin(), container.end(), container.begin(), func);
         }
 
+        template<class T>
+        T timeit(std::function<T> f) {
+            std::clock_t start = std::clock();
+            T res = f();
+            std::cerr << "Elapsed time: " << (std::clock() - start) / static_cast<double>(CLOCKS_PER_SEC / 1000) << "ms\n";
+            return res;
+        }
+
+        //! Handy shortcut for "is the element in this container"
+        template<class Iterable, class Element>
+        bool contains(Iterable & container, Element & elem)
+        {
+            return std::find(container.begin(), container.end(), elem) != container.end();
+        }
+
+        //! calculate the mean of a tuple<double, double> container
+        template< class Iterable >  
+        std::tuple<double, double> mean_accumulate(Iterable container)
+        {
+            std::tuple<double, double> start = { 0, 0 };
+            double x_sum, y_sum;
+            std::tie(x_sum, y_sum) = std::accumulate(container.begin(), container.end(), start
+                        , [](std::tuple<double, double> acc
+                            ,std::tuple<double, double> elem)
+                        {
+                            double acc_x = 0;
+                            double acc_y = 0;
+                            double elem_x = 0;
+                            double elem_y = 0;
+                            std::tie(acc_x, acc_y) = acc;
+                            std::tie(elem_x, elem_y) = elem;
+                            return std::make_tuple(acc_x + elem_x, acc_y + elem_y);
+                        });
+            return std::make_tuple(x_sum / static_cast<double>(container.size())
+                                  ,y_sum / static_cast<double>(container.size()) );
+        }
+
     } // namespace util
 } // namespace clara
 /*! @} End of Doxygen Groups*/

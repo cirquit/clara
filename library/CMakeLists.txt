@@ -12,12 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-set(SOURCES util.h cone_state.h data_association.h csv.h ../external/object-list/include/object.h)
+set(SOURCES util.h cone_state.h data_association.h csv.h clara.h ../external/object-list/include/object.h)
 
 find_package(LAPACK REQUIRED)
 link_directories(${LAPACK_LIBRARIES})
 include_directories(${LAPACK_INCLUDE_DIRS})
 
 add_library(${LIB_NAME} ${SOURCES})
-target_link_libraries(${LIB_NAME} ${LAPACK_LIBRARIES})
+target_link_libraries(${LIB_NAME} ${LAPACK_LIBRARIES} kafi)
 set_target_properties(${LIB_NAME} PROPERTIES LINKER_LANGUAGE CXX)

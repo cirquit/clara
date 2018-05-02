@@ -44,8 +44,8 @@ namespace clara {
         public:
             //! for convenience purposes
             using self_t        = data_association<T>;
-            //! noisy `x`, `y` position
-            using raw_cone_data = std::tuple<T, T>;
+            //! noisy `x`, `y` position and relative `x`, `y` position rotated by the respective yaw at the time (normalized)
+            using raw_cone_data = std::tuple<T, T, T, T>;
             //! iterator for _cone_states
             using cluster_it    = typename std::vector<cone_state<T>>::iterator;
         // constructors
@@ -194,34 +194,34 @@ namespace clara {
             //! returns the iterator at the element with the highest association probability based on the pdf \todo single pass min-max
             cluster_it _get_most_probable_cluster_it(const raw_cone_data & cone)
             {   
-                auto ixs = get_detected_cluster_ixs();
-                int min_ix = static_cast<int>(*std::min_element(ixs.begin(), ixs.end()));
-                int max_ix = static_cast<int>(*std::max_element(ixs.begin(), ixs.end()));
+                // auto ixs = get_detected_cluster_ixs();
+                // int min_ix = static_cast<int>(*std::min_element(ixs.begin(), ixs.end()));
+                // int max_ix = static_cast<int>(*std::max_element(ixs.begin(), ixs.end()));
                 
-                // ugly looping of indices, adapted for future possibilty of #pramga omp fun - needs to be a ringbuffer
-                // this is tested in tests/looping_tests.cc
-                int distance = max_ix - min_ix + 2 * _cluster_search_range;
-                int ix       = 0;
-                int min_diff = min_ix - _cluster_search_range;
-                if (min_diff < 0)
-                    ix = std::max(0, static_cast<int>(_cone_states.size()) + min_diff);
-                else
-                    ix = min_diff;
+                // // ugly looping of indices, adapted for future possibilty of #pramga omp fun - needs to be a ringbuffer
+                // // this is tested in tests/looping_tests.cc
+                // int distance = max_ix - min_ix + 2 * _cluster_search_range;
+                // int ix       = 0;
+                // int min_diff = min_ix - _cluster_search_range;
+                // if (min_diff < 0)
+                //     ix = std::max(0, static_cast<int>(_cone_states.size()) + min_diff);
+                // else
+                //     ix = min_diff;
 
-                int best_cone_ix = ix;
-                for(int i = 0; i < distance; i++)
-                {
-                    int my_ix = (ix + i) % _cone_states.size();
-                    if(_cone_states[best_cone_ix].pdf(cone) < _cone_states[my_ix].pdf(cone))
-                        best_cone_ix = my_ix;
-                }
-
-                return _cone_states.begin() + best_cone_ix;
-
-                // return std::max_element(_cone_states.begin(), _cone_states.end(), [&](cone_state<T> & a, cone_state<T> & b)
+                // int best_cone_ix = ix;
+                // for(int i = 0; i < distance; i++)
                 // {
-                //     return a.pdf(cone) < b.pdf(cone);
-                // });
+                //     int my_ix = (ix + i) % _cone_states.size();
+                //     if(_cone_states[best_cone_ix].pdf(cone) < _cone_states[my_ix].pdf(cone))
+                //         best_cone_ix = my_ix;
+                // }
+
+                // return _cone_states.begin() + best_cone_ix;
+
+                return std::max_element(_cone_states.begin(), _cone_states.end(), [&](cone_state<T> & a, cone_state<T> & b)
+                {
+                    return a.pdf(cone) < b.pdf(cone);
+                });
             }
 
             //! \todo
@@ -246,7 +246,7 @@ namespace clara {
                 _add_observation(last_it, observation);
             }
 
-            //! updated the cone with an observation, adds the 
+            //! updated the cone with an observation, saves the index for the next step
             void _add_observation(typename std::vector<cone_state<T>>::iterator & it, const raw_cone_data & observation)
             {
                 (*it).add_observation(observation);

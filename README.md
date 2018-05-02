@@ -45,6 +45,26 @@ Update documentation:
 > make
 ```
 
+### Visualization
+
+Done with python and anaconda. [Install anaconda](https://docs.anaconda.com/anaconda/install/) and follow the further steps.
+
+```bash
+> conda create --name clara python=3.6
+> source activate clara
+> conda install numpy matplotlib ipython
+> conda install --channel=conda-forge nb_conda_kernels
+> pip install mpld3 
+```
+
+After creating an appropriate `.csv` or `.py` file, run:
+
+```bash
+> ipython notebook --NotebookApp.iopub_data_rate_limit=10000000000
+```
+
+in the `clara/build-debug/visualization` directory and run the `plot_loggings.ipynb` file.
+
 ### Dependencies
 
 * [fast-cpp-csv-parser](https://github.com/ben-strasser/fast-cpp-csv-parser)

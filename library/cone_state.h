@@ -55,8 +55,8 @@ namespace clara {
         public:
             //! for convenience purposes
             using self_t   = cone_state<T>;
-            //! 
-            using coords_t = std::array<T,2>;
+            //! noisy `x`, `y` position and relative `x`, `y` position rotated by the respective yaw at the time (normalized) 
+            using coords_t = std::array<T,4>;
         // constructors
         public:
             //! default constructor without noisy initialization
@@ -85,10 +85,13 @@ namespace clara {
         // methods
         public:
 
-            //! Helper function for currying, calls add_observation(T x, T y)
-            void add_observation(std::tuple<T, T> tup)
+            //! Helper function for currying, calls add_observation(T x, T y, T x_rel, T y_rel)
+            void add_observation(std::tuple<T, T, T, T> tup)
             {   
-                add_observation(std::get<0>(tup), std::get<1>(tup));
+                add_observation(std::get<0>(tup)
+                              , std::get<1>(tup)
+                              , std::get<2>(tup)
+                              , std::get<3>(tup));
             }
 
             /** \brief Adds an observation of coordiantes to the cone state
@@ -99,9 +102,9 @@ namespace clara {
               * 
               * \todo test streaming mean / covariance functions so we don't need to accumulate all observations
               */
-            void add_observation(T x, T y)
+            void add_observation(T x, T y, T x_rel, T y_rel)
             {   
-                _observations.emplace_back( coords_t { { x, y } } );
+                _observations.emplace_back( coords_t { { x, y, x_rel, y_rel } } );
                 _set_modified(true);
             }
 
@@ -139,7 +142,7 @@ namespace clara {
             }
 
             //! Helper function for currying, calls pdf(T x, T y)
-            double pdf(std::tuple<T, T> tup)
+            double pdf(std::tuple<T, T, T, T> tup)
             {
                 return pdf(std::get<0>(tup), std::get<1>(tup));
             }
@@ -174,13 +177,13 @@ namespace clara {
             double get_observations_size(){ return static_cast<double>(_observations.size()); }
 
             //! Helper function for currying, calls distance_greater_than(T x, T y, T epsilon)
-            constexpr bool distance_greater_than(const std::tuple<T, T> tup, const T epsilon) const
+            constexpr bool distance_greater_than(const std::tuple<T, T, T, T> tup, const T epsilon) const
             {
                 return distance_greater_than(std::get<0>(tup), std::get<1>(tup), epsilon);
             }
 
             //! euclidian distance to the cluster mid point
-            constexpr T distance(const std::tuple<T,T> tup) const
+            constexpr T distance(const std::tuple<T, T, T, T> tup) const
             {
                 return distance(std::get<0>(tup), std::get<1>(tup));
             }
@@ -201,12 +204,25 @@ namespace clara {
                 return std::abs(epsilon) < dist; 
             }
 
-            //! \todo
+            //! returns the cluster middle, calculated by `_update_mean_vec()`
             constexpr std::tuple<T, T> get_approx_position() const
             { 
                 return { _mean_vec[0], _mean_vec[1] };
             }
 
+            /** \brief Calcualted the relative positional difference of the last 2 observations
+              * **Important:** only callable if we have 2 or more _observations
+              */
+            constexpr std::tuple<T, T> get_relative_pos_difference() const
+            {
+                const coords_t & o_2 = _observations.back();
+                const coords_t & o_1 = *(_observations.end() - 2);
+                std::cerr << "        > get_rel_pos_diff():\n" \
+                          << "          mean_vec:" << _mean_vec[0] << ", " << _mean_vec[1] << '\n'
+                          << "          o_2:"      << o_2[0]       << ", " << o_2[1]       << ", " << o_2[2] << ", " << o_2[3] << '\n'
+                          << "          o_1:"      << o_1[0]       << ", " << o_1[1]       << ", " << o_1[2] << ", " << o_1[3] << '\n';
+                return std::make_tuple(o_1[2] - o_2[2], o_1[3] - o_2[3]);
+            }
 
         // methods
         private:
@@ -340,7 +356,6 @@ namespace clara {
             bool _modified;
             /** \brief List of the observations of this particular cone, `add_observation()` can add elements to this list 
               * `_observations` is preallocated in the constructor to a certain size
-              * \todo make the preallocation configurable
               */
             std::vector<coords_t> _observations;
             /** \brief Linearized representation of a 2x2 matrix

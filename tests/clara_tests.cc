@@ -170,7 +170,7 @@ int main(){
         // std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw_rad, t_s);
         UNUSED(pos);
-        if (counter > 500) { break; }
+        if (counter > 600) { break; }
     }
 
     // python logging data

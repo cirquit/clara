@@ -134,7 +134,7 @@ int main(){
         }
         // x = unif(re) + x;
         // y = unif(re) + y;
-        raw_cone_data raw_cone = { x , y };
+        raw_cone_data raw_cone = { x , y, 0, 0};
         // raw_cone_data raw_cone = parse_object_t(angle, distance, x, y, yaw_angle);
 
         // watch out for this encoding, this is just for ease of use. Should

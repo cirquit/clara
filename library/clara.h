@@ -43,7 +43,8 @@ namespace clara {
 
     // typedefs
     public:
-        using raw_cone_data = std::tuple<double, double>;
+        //! noisy `x`, `y` position and relative `x`, `y` position rotated by the respective yaw at the time (normalized) 
+        using raw_cone_data = std::tuple<double, double, double, double>;
     // constructor
     public:
 
@@ -126,16 +127,17 @@ namespace clara {
             // iterate over the c-style array and apped cones based on their color
             for(uint32_t i = 0; i < obj_list.size; ++i)
             {
-                if (obj_list.element[i].type == 0) _new_yellow_cones.emplace_back(_parse_object_t(obj_list.element[i], yaw_rad));
-                if (obj_list.element[i].type == 1) _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], yaw_rad));
-                if (obj_list.element[i].type == 2) _new_red_cones.emplace_back(   _parse_object_t(obj_list.element[i], yaw_rad));
+                if (obj_list.element[i].type == 0) _new_yellow_cones.emplace_back(_parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
+                if (obj_list.element[i].type == 1) _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
+                if (obj_list.element[i].type == 2) _new_red_cones.emplace_back(   _parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
             }
             // do the data association (\todo parallelize me with openmp tasks)
             _yellow_data_association.classify_new_data(_new_yellow_cones);
             _blue_data_association.classify_new_data(_new_blue_cones);
             _red_data_association.classify_new_data(_new_red_cones);
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            const std::tuple<double, double, double> velocity_t = std::make_tuple(v_x_sensor, v_y_sensor, timestep_s); // _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
+            //const std::tuple<double, double, double> velocity_t = { v_x_sensor, v_y_sensor, timestep_s };
+            const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
             // update the position based on the estimated v_x, v_y and the time
             const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
             _update_estimated_position(new_position);
@@ -200,14 +202,17 @@ namespace clara {
         }
 
         //! how to parse an object_t to get from the relative distance and angle position to the absolute localization
-        const std::tuple< double, double > _parse_object_t( const object_t & obj
-                                                          , const double & yaw_rad ) const
+        const std::tuple< double, double, double, double > _parse_object_t( const object_t & obj
+                                                                          , const double & v_x_sensor
+                                                                          , const double & v_y_sensor
+                                                                          , const double & timestep_s
+                                                                          , const double & yaw_rad ) const
         { 
-            const double x_car   = std::get<0>(_estimated_position); // obj.x_car; // update with v_x_sensor
-            const double y_car   = std::get<1>(_estimated_position); // obj.y_car; // update with v_y_sensor
+            const double x_car_old = std::get<0>(_estimated_position); // obj.x_car; // update with v_x_sensor
+            const double y_car_old = std::get<1>(_estimated_position); // obj.y_car; // update with v_y_sensor
             // apply local velocity if we are too slow
-            // const double x_car = x_car_old + v_x_sensor / timestep_s;
-            // const double y_car = y_car_old + v_y_sensor / timestep_s;
+            const double x_car = x_car_old + (v_x_sensor * timestep_s);
+            const double y_car = y_car_old + (v_y_sensor * timestep_s);
 
             // trigonometry - get x,y position from angle and distance
             const double x_ = std::cos( obj.angle ) * obj.distance;
@@ -215,7 +220,12 @@ namespace clara {
             // rotate the x,y coordiantes with the yaw of the car (rotation around y in car model)
             const double x = x_ * std::cos( yaw_rad ) - y_ * std::sin( yaw_rad );
             const double y = x_ * std::sin( yaw_rad ) + y_ * std::cos( yaw_rad );
-            return { x + x_car, y + y_car };
+            std::cerr << "    [clara.h:parse_object_t()]\n"
+                      << "    x_car_old: " << x_car_old << ", y_car_old: " << y_car_old << '\n'
+                      << "        x_car: " << x_car     << ",     y_car: " << y_car << '\n'
+                      << "            x: " << x         << ",         y: " << y     << '\n'
+                      << "        x_abs: " << x + x_car << ",     y_abs: " << y + y_car << '\n';
+            return { x + x_car, y + y_car, x, y };
         }
 
         //! returns the estimated velocity_t (x,y, timestep_s)
@@ -291,24 +301,17 @@ namespace clara {
                                                            , const double timestep_s) const
         {   
             const cone_state<double> & cone = cluster[ix];
-            const cone_state<double>::coords_t o_2 = cone._observations.back();
-            const cone_state<double>::coords_t o_1 = *(cone._observations.end() - 2);
-            // subtract the last positional information
-            const double pos_cur_x = std::get<0>(_estimated_position);
-            const double pos_cur_y = std::get<1>(_estimated_position);
-            const double pos_old_x = std::get<0>(_estimated_position_old);
-            const double pos_old_y = std::get<1>(_estimated_position_old);
+            double distance_x = 0;
+            double distance_y = 0;
+            std::tie(distance_x, distance_y) = cone.get_relative_pos_difference();
 
-            const double v_x = ((o_1[0] - pos_old_x) - (o_2[0] - pos_cur_x)) / timestep_s; 
-            const double v_y = ((o_1[1] - pos_old_y) - (o_2[1] - pos_cur_y)) / timestep_s;
+            const double v_x = distance_x / timestep_s;
+            const double v_y = distance_y / timestep_s;
+
             std::cerr << "    [clara.h:calculate_velocity()]\n"
                       << "        ix: " << ix << ", time: " << timestep_s << "s\n" \
-                      << "        pos_old:         ( " << pos_old_x << ", " << pos_old_y << " )\n" \
-                      << "        pos_cur:         ( " << pos_cur_x << ", " << pos_cur_y << " )\n" \
-                      << "        observation-t:   ( " <<  (o_1[0] - pos_old_x) << ", " << (o_1[1] - pos_old_y) << " )\n" \
-                      << "        observation-t-1: ( " <<  (o_2[0] - pos_cur_x) << ", " << (o_2[1] - pos_cur_y) << " )\n" \
-                      << "        distance_x: " << ((o_1[0] - pos_old_x) - (o_2[0] - pos_cur_x)) << "m\n" \
-                      << "        distance_y: " << ((o_1[1] - pos_old_y) - (o_2[1] - pos_cur_y)) << "m\n" \
+                      << "        distance_x: " << distance_x << "m\n" \
+                      << "        distance_y: " << distance_y << "m\n" \
                       << "            vx: " << v_x << " m/s\n" \
                       << "            vy: " << v_y << " m/s\n";
             return { v_x, v_y }; 

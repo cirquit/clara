@@ -87,7 +87,7 @@ const std::vector< std::tuple<object_list_t, double> > parse_csv()
     // read the data
     std::string csv_path = "../tests/example-data/"
                              // "round-map-10-rounds-d-a-x-y-yaw-c-t.csv";
-                             "log-dist-angle-x_car-y_car-yaw_angle-vx-vy-type-time-timestamp.csv";
+                             "log-dist-angle-x_car-y_car-yaw_angle-vx-vy-type-time-timestamp--realtime.csv";
     io::CSVReader< 10 > in( csv_path );
     double distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp;
     // double distance, angle, x_car, y_car, yaw_rad, color, timestamp;
@@ -170,7 +170,7 @@ int main(){
         // std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw_rad, t_s);
         UNUSED(pos);
-        if (counter > 600) { break; }
+    //    if (counter > 600) { break; }
     }
 
     // python logging data

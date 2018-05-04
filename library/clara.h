@@ -136,24 +136,36 @@ namespace clara {
             _blue_data_association.classify_new_data(_new_blue_cones);
             _red_data_association.classify_new_data(_new_red_cones);
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            //const std::tuple<double, double, double> velocity_t = { v_x_sensor, v_y_sensor, timestep_s };
-            const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
+            const std::tuple<double, double, double> velocity_t = { v_x_sensor, v_y_sensor, timestep_s };
+            // const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
             // update the position based on the estimated v_x, v_y and the time
             const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
             _update_estimated_position(new_position);
-            std::cerr << "        prev position: " << std::get<0>(_estimated_position_old) << ", " << std::get<1>(_estimated_position_old) << '\n' \
-                      << "        calc velocity: " << std::get<0>(velocity_t) << ", " << std::get<1>(velocity_t) << '\n' \
+            std::cerr << "        calc velocity: " << std::get<0>(velocity_t) << "m/s, " << std::get<1>(velocity_t) << "m/s\n" \
+                      << "        real velocity: " << obj_list.element[0].vx << "m/s, " << obj_list.element[0].vy << "m/s\n" \
+                      << "        prev position: " << std::get<0>(_estimated_position_old) << ", " << std::get<1>(_estimated_position_old) << '\n' \
                       << "        new  position: " << std::get<0>(new_position) << ", " << std::get<1>(new_position) << '\n' \
                       << "        real position: " << obj_list.element[0].x_car << ", " << obj_list.element[0].y_car << '\n';
             // _log_visualization(obj_list.element[0].x_car, obj_list.element[0].y_car, yaw_rad);
-            std::cout << obj_list.element[0].x_car << ", " << obj_list.element[0].y_car << ", "
-                      << std::get<0>(new_position) << ", " << std::get<1>(new_position) << '\n';
+            //_log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
             return _estimated_position;
         }
 
 
     // methods
     private:
+
+        void _log_position(const double & ground_truth_x_car
+                         , const double & ground_truth_y_car
+                         , const double & estimated_x_car
+                         , const double & estimated_y_car) 
+        {
+            std::cout << ground_truth_x_car << ","
+                      << ground_truth_y_car << ","
+                      << estimated_x_car    << ","
+                      << estimated_y_car    << '\n';
+        }
+
         //! logging in the predefined scheme
         void _log_visualization(const double & x_pos
                               , const double & y_pos
@@ -221,10 +233,10 @@ namespace clara {
             const double x = x_ * std::cos( yaw_rad ) - y_ * std::sin( yaw_rad );
             const double y = x_ * std::sin( yaw_rad ) + y_ * std::cos( yaw_rad );
             std::cerr << "    [clara.h:parse_object_t()]\n"
-                      << "    x_car_old: " << x_car_old << ", y_car_old: " << y_car_old << '\n'
-                      << "        x_car: " << x_car     << ",     y_car: " << y_car << '\n'
-                      << "            x: " << x         << ",         y: " << y     << '\n'
-                      << "        x_abs: " << x + x_car << ",     y_abs: " << y + y_car << '\n';
+                      << "        x_car_old: " << x_car_old << ", y_car_old: " << y_car_old << '\n'
+                      << "            x_car: " << x_car     << ",     y_car: " << y_car << '\n'
+                      << "                x: " << x         << ",         y: " << y     << '\n'
+                      << "            x_abs: " << x + x_car << ",     y_abs: " << y + y_car << '\n';
             return { x + x_car, y + y_car, x, y };
         }
 
@@ -278,14 +290,19 @@ namespace clara {
             const double v_x_cones = std::get<0>(cone_velocites);
             const double v_y_cones = std::get<1>(cone_velocites);
             // for debugging purposes
-            if (true) // v_x_sensor == 0 && v_y_sensor == 0)
+            if (v_x_sensor == 0 && v_y_sensor == 0)
             {   
                 std::cerr << "        - vx/vy_sensor are zero, returning velocities from cones\n";
                 return { v_x_cones, v_y_cones, timestep_s };
             }
             // run the kalman filter with sensor and cone velocities
-            mx1_vector observation( { { v_x_sensor }, { v_y_sensor }
-                                    , { v_x_cones }, { v_y_cones } } );
+            std::shared_ptr< mx1_vector > observation = std::make_shared< mx1_vector >(
+                            mx1_vector( { { v_x_sensor }, { v_y_sensor }
+                                        , { v_x_cones }, { v_y_cones } } ));
+            std::cerr << "       - observation: " << v_x_sensor << '\n'
+                      << "                      " << v_y_sensor << '\n'
+                      << "                      " << v_x_cones << '\n'
+                      << "                      " << v_y_cones << '\n';
             (*_kafi).set_current_observation(observation);
             const return_t   result          = (*_kafi).step();
             const nx1_vector estimated_state = std::get<0>(result);
@@ -380,15 +397,12 @@ namespace clara {
                                      , { 0,     0.121,    0,     0 } 
                                      , { 0,         0, 0.25,     0 }
                                      , { 0,         0,    0,  0.25 } });
-            // read as "the first reading of the velocity is 0 in both x and y for both sensors"
-            mx1_vector first_observation(0);
             // we start at velocity 0 in both x and y
             nx1_vector starting_state(0);
             // init kalman filter
             _kafi = std::make_unique<kafi::kafi<N, M>>(std::move(f)
                                                      , std::move(h)
                                                      , starting_state
-                                                     , first_observation
                                                      , process_noise
                                                      , sensor_noise);
         }

@@ -53,7 +53,9 @@ Done with python and anaconda. [Install anaconda](https://docs.anaconda.com/anac
 > conda create --name clara python=3.6
 > source activate clara
 > conda install numpy matplotlib ipython
+> conda install -c anaconda ipywidgets
 > conda install --channel=conda-forge nb_conda_kernels
+> jupyter nbextension enable --py widgetsnbextension
 > pip install mpld3 
 ```
 

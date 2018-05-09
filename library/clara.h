@@ -20,11 +20,13 @@
 #include <tuple>
 #include <memory>
 #include <algorithm>
+#include <kafi-1.0/kafi.h>
 
 #include "../external/object-list/include/object.h"
-#include "../external/KaFi/library/kafi.h"
 #include "cone_state.h"
+#include "data_association.h"
 #include "util.h"
+#include "lap_counter.h"
 
 /*!
  *  \addtogroup clara
@@ -45,9 +47,12 @@ namespace clara {
     public:
         //! noisy `x`, `y` position and relative `x`, `y` position rotated by the respective yaw at the time (normalized) 
         using raw_cone_data = std::tuple<double, double, double, double>;
+        //! a cone position (x,y)
+        using cone_position = std::array<double, 2>;
+        //! 4 cones with positional information
+        using near_cones    = std::array<cone_position, 2>;
     // constructor
     public:
-
         //! contructor with default starting position at 0,0
         clara(size_t preallocated_cluster_count
             , size_t preallocated_detected_cones_per_step
@@ -55,7 +60,9 @@ namespace clara {
             , double variance_xx
             , double variance_yy
             , size_t apply_variance_step_count
-            , int cluster_search_range)
+            , int cluster_search_range
+            , int min_driven_distance_m
+            , double lap_epsilon_m)
         : clara(preallocated_cluster_count
             , preallocated_detected_cones_per_step
             , max_dist_btw_cones_m
@@ -63,7 +70,9 @@ namespace clara {
             , variance_yy
             , apply_variance_step_count
             , cluster_search_range
-            , std::make_tuple(0.0, 0.0)) { }
+            , std::make_tuple(0.0, 0.0)
+            , min_driven_distance_m
+            , lap_epsilon_m) { }
 
         //! constructor
         clara(size_t preallocated_cluster_count
@@ -73,7 +82,9 @@ namespace clara {
             , double variance_yy
             , size_t apply_variance_step_count
             , int cluster_search_range
-            , std::tuple<double, double> starting_position)
+            , std::tuple<double, double> starting_position
+            , int min_driven_distance_m
+            , double lap_epsilon_m) 
         : _yellow_data_association {
             preallocated_cluster_count, preallocated_detected_cones_per_step, max_dist_btw_cones_m,
             variance_xx, variance_yy, apply_variance_step_count, cluster_search_range }
@@ -83,6 +94,7 @@ namespace clara {
         , _red_data_association {
             preallocated_cluster_count, preallocated_detected_cones_per_step, max_dist_btw_cones_m,
             variance_xx, variance_yy, apply_variance_step_count, cluster_search_range }
+        , _lap_counter(starting_position, min_driven_distance_m, lap_epsilon_m)
         { 
             // observation preallocation
             _new_yellow_cones.reserve(preallocated_detected_cones_per_step);
@@ -114,15 +126,15 @@ namespace clara {
             _new_yellow_cones.clear();
             _new_blue_cones.clear();
             _new_red_cones.clear();
-            std::cerr << "    [clara.h::add_observation()]\n";
+            // std::cerr << "    [clara.h::add_observation()]\n";
             // calculate difference from last call to start_clock(), if it's zero, we have to calculate it by ourselves
             if (timestep_s == 0){
-                std::cerr << "        measuring time: ";
+                // std::cerr << "        measuring time: ";
                 timestep_s = _get_diff_time_s();
-                std::cerr << timestep_s << "s\n";
+                // std::cerr << timestep_s << "s\n";
             } else 
             {
-                std::cerr << "        got time: " << timestep_s << "s\n";
+                // std::cerr << "        got time: " << timestep_s << "s\n";
             }
             // iterate over the c-style array and apped cones based on their color
             for(uint32_t i = 0; i < obj_list.size; ++i)
@@ -137,24 +149,30 @@ namespace clara {
             _red_data_association.classify_new_data(_new_red_cones);
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
             const std::tuple<double, double, double> velocity_t = { v_x_sensor, v_y_sensor, timestep_s };
-            // const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
+            //const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
             // update the position based on the estimated v_x, v_y and the time
             const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
             _update_estimated_position(new_position);
+            // update the travelled distance to check if we are close enough to the start
+            _lap_counter.add_positions(_estimated_position_old, _estimated_position);
             std::cerr << "        calc velocity: " << std::get<0>(velocity_t) << "m/s, " << std::get<1>(velocity_t) << "m/s\n" \
                       << "        real velocity: " << obj_list.element[0].vx << "m/s, " << obj_list.element[0].vy << "m/s\n" \
                       << "        prev position: " << std::get<0>(_estimated_position_old) << ", " << std::get<1>(_estimated_position_old) << '\n' \
                       << "        new  position: " << std::get<0>(new_position) << ", " << std::get<1>(new_position) << '\n' \
                       << "        real position: " << obj_list.element[0].x_car << ", " << obj_list.element[0].y_car << '\n';
             // _log_visualization(obj_list.element[0].x_car, obj_list.element[0].y_car, yaw_rad);
-            //_log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
+            // _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
             return _estimated_position;
         }
 
+        //! return the current amount of laps
+        int get_lap() const {
+            return _lap_counter.count();
+        }
 
     // methods
     private:
-
+        //! csv position logging function
         void _log_position(const double & ground_truth_x_car
                          , const double & ground_truth_y_car
                          , const double & estimated_x_car
@@ -232,11 +250,11 @@ namespace clara {
             // rotate the x,y coordiantes with the yaw of the car (rotation around y in car model)
             const double x = x_ * std::cos( yaw_rad ) - y_ * std::sin( yaw_rad );
             const double y = x_ * std::sin( yaw_rad ) + y_ * std::cos( yaw_rad );
-            std::cerr << "    [clara.h:parse_object_t()]\n"
-                      << "        x_car_old: " << x_car_old << ", y_car_old: " << y_car_old << '\n'
-                      << "            x_car: " << x_car     << ",     y_car: " << y_car << '\n'
-                      << "                x: " << x         << ",         y: " << y     << '\n'
-                      << "            x_abs: " << x + x_car << ",     y_abs: " << y + y_car << '\n';
+            // std::cerr << "    [clara.h:parse_object_t()]\n"
+            //           << "        x_car_old: " << x_car_old << ", y_car_old: " << y_car_old << '\n'
+            //           << "            x_car: " << x_car     << ",     y_car: " << y_car << '\n'
+            //           << "                x: " << x         << ",         y: " << y     << '\n'
+            //           << "            x_abs: " << x + x_car << ",     y_abs: " << y + y_car << '\n';
             return { x + x_car, y + y_car, x, y };
         }
 
@@ -290,7 +308,7 @@ namespace clara {
             const double v_x_cones = std::get<0>(cone_velocites);
             const double v_y_cones = std::get<1>(cone_velocites);
             // for debugging purposes
-            if (v_x_sensor == 0 && v_y_sensor == 0)
+            if (true) // v_x_sensor == 0 && v_y_sensor == 0)
             {   
                 std::cerr << "        - vx/vy_sensor are zero, returning velocities from cones\n";
                 return { v_x_cones, v_y_cones, timestep_s };
@@ -479,6 +497,8 @@ namespace clara {
         std::unique_ptr<kafi::kafi<N, M>> _kafi;
         //! clock to apply velocities from last observed model
         std::chrono::time_point<std::chrono::high_resolution_clock> _start;
+        //! counts the lap based on the travelled distance and the set start_position 
+        lap_counter _lap_counter;
     };
 } // namespace clara
 

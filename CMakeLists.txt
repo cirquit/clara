@@ -41,6 +41,8 @@ else()
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -pthread -Wall -Wextra -Werror -Wfatal-errors -pedantic -fPIC -Wno-reorder")
 endif()
 
+find_package(kafi 1.0 REQUIRED)
+
 # add the actual code
 add_subdirectory (library)
 add_subdirectory (src)

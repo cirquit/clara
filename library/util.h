@@ -181,6 +181,26 @@ namespace clara
                                   ,y_sum / static_cast<double>(container.size()) );
         }
 
+
+        //! distance, defined between 0 and MAX_DOUBLE
+        template< class T >
+        double distance(const T & a, const T & b)
+        {
+            return std::abs(static_cast<double>(a) - static_cast<double>(b));
+        }
+
+        //! euclidean distance, casting every type to double
+        template< class T >
+        double euclidean_distance(const std::tuple<T, T> & a
+                                , const std::tuple<T, T> & b)
+        {
+            const double & x_old = static_cast<double>(std::get<0>(a));
+            const double & y_old = static_cast<double>(std::get<1>(a));
+            const double & x_new = static_cast<double>(std::get<0>(b));
+            const double & y_new = static_cast<double>(std::get<1>(b));
+            return std::sqrt(std::pow(x_old - x_new, 2) +  std::pow(y_old - y_new, 2));
+        }
+
     } // namespace util
 } // namespace clara
 /*! @} End of Doxygen Groups*/

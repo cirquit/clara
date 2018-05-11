@@ -18,7 +18,7 @@
 #include <memory>
 
 /*!
- *  \addtogroup clara
+ *  \addtogroup modi-scheduler
  *  @{
  */
 
@@ -41,7 +41,7 @@ namespace concept {
     public:
         //! constructor with value initialization
         maybe(T value)
-        : _value_p(std::make_unique<T>(value))
+        : _value(value)
         , _valid(true) 
         { }
 
@@ -55,20 +55,18 @@ namespace concept {
         //! checks if we have a value
         bool has_value() { return _valid; }
         //! unsafe value get. use has_value to insure correctness
-        value_t get_value() { return *_value_p; }
-
+        value_t get_value() { return _value; }
+        //! set value, set valid = true
+        void set_value(value_t value)
+        {
+            _value = value;
+            _valid = true;
+        }
     // member
     private:
-        std::unique_ptr<value_t> _value_p;
-        const bool _valid;
+        value_t _value;
+        bool    _valid;
     };
-
-    template < class T >
-    maybe<T> nothing(){ return maybe<T>(); }
-
-    template < class T >
-    maybe<T> just(T value){ return maybe<T>(value); }
-
 } // namespace concept
 
 #endif // MAYBE_H

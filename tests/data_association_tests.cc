@@ -87,7 +87,7 @@ const std::tuple< double, double > parse_object_t( double angle, double distance
 
     const double x = x_ * std::cos( yaw_angle ) - y_ * std::sin( yaw_angle );
     const double y = x_ * std::sin( yaw_angle ) + y_ * std::cos( yaw_angle );
-    return {x + x_car, y + y_car};
+    return std::make_tuple(x + x_car, y + y_car);
 }
 
 

@@ -268,7 +268,7 @@ namespace clara {
             //           << "            x_car: " << x_car     << ",     y_car: " << y_car << '\n'
             //           << "                x: " << x         << ",         y: " << y     << '\n'
             //           << "            x_abs: " << x + x_car << ",     y_abs: " << y + y_car << '\n';
-            return { x + x_car, y + y_car, x, y };
+            return std::make_tuple(x + x_car, y + y_car, x, y);
         }
 
         //! returns the estimated velocity_t (x,y, timestep_s)

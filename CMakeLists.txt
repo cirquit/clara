@@ -42,9 +42,10 @@ else()
 endif()
 
 find_package(kafi 1.0 REQUIRED)
+find_package(connector 1.0 REQUIRED)
 
 # add the actual code
 add_subdirectory (library)
 add_subdirectory (src)
 add_subdirectory (tests)
-add_subdirectory (external)
+# add_subdirectory (external)

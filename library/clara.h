@@ -27,6 +27,8 @@
 #include "data_association.h"
 #include "util.h"
 #include "lap_counter.h"
+#include "maybe.h"
+#include "search_cones.h"
 
 /*!
  *  \addtogroup clara
@@ -51,6 +53,8 @@ namespace clara {
         using cone_position = std::array<double, 2>;
         //! 4 cones with positional information
         using near_cones    = std::array<cone_position, 2>;
+        //! maybe returns 4 cones, if we have enough objects to create it
+        using maybe_cones = typename concept::maybe<std::tuple<near_cones, near_cones>>;
     // constructor
     public:
         //! contructor with default starting position at 0,0
@@ -62,7 +66,8 @@ namespace clara {
             , size_t apply_variance_step_count
             , int cluster_search_range
             , int min_driven_distance_m
-            , double lap_epsilon_m)
+            , double lap_epsilon_m
+            , double set_start_after_m)
         : clara(preallocated_cluster_count
             , preallocated_detected_cones_per_step
             , max_dist_btw_cones_m
@@ -70,9 +75,10 @@ namespace clara {
             , variance_yy
             , apply_variance_step_count
             , cluster_search_range
-            , std::make_tuple(0.0, 0.0)
             , min_driven_distance_m
-            , lap_epsilon_m) { }
+            , lap_epsilon_m
+            , set_start_after_m
+            , std::make_tuple(0.0, 0.0)) { }
 
         //! constructor
         clara(size_t preallocated_cluster_count
@@ -82,9 +88,10 @@ namespace clara {
             , double variance_yy
             , size_t apply_variance_step_count
             , int cluster_search_range
-            , std::tuple<double, double> starting_position
             , int min_driven_distance_m
-            , double lap_epsilon_m) 
+            , double lap_epsilon_m
+            , double set_start_after_m
+            , std::tuple<double, double> starting_position) 
         : _yellow_data_association {
             preallocated_cluster_count, preallocated_detected_cones_per_step, max_dist_btw_cones_m,
             variance_xx, variance_yy, apply_variance_step_count, cluster_search_range }
@@ -94,7 +101,7 @@ namespace clara {
         , _red_data_association {
             preallocated_cluster_count, preallocated_detected_cones_per_step, max_dist_btw_cones_m,
             variance_xx, variance_yy, apply_variance_step_count, cluster_search_range }
-        , _lap_counter(starting_position, min_driven_distance_m, lap_epsilon_m)
+        , _lap_counter(starting_position, min_driven_distance_m, lap_epsilon_m, set_start_after_m)
         { 
             // observation preallocation
             _new_yellow_cones.reserve(preallocated_detected_cones_per_step);
@@ -168,6 +175,12 @@ namespace clara {
         //! return the current amount of laps
         int get_lap() const {
             return _lap_counter.count();
+        }
+
+        //! returns the cone infront of us and then behind us, respectivly yellow and blue, can fail if we don't have enough observations
+        maybe_cones get_basecase_cones()
+        {
+            return util::get_basecase_cones(_estimated_position, _yellow_data_association, _blue_data_association);
         }
 
     // methods

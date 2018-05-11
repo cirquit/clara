@@ -189,6 +189,12 @@ namespace clara {
             }
 
             //! euclidian distance to the cluster mid point
+            constexpr T distance(const std::tuple<T, T> tup) const
+            {
+                return distance(std::get<0>(tup), std::get<1>(tup));
+            }
+
+            //! euclidian distance to the cluster mid point
             constexpr T distance(const T x, const T y) const
             {
                 const T x_dist = std::pow(x - _mean_vec[0], 2);

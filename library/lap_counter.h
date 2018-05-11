@@ -27,23 +27,34 @@
  *
  */
 namespace clara {
-    /// Counts the lap, starting from 0
+    //! Counts the lap, starting from 0
     class lap_counter
     {
 
     // constructor
     public:
+
+        //! uses the start position without a travelled distance
+        lap_counter(std::tuple<double, double> start_pos
+                  , double min_driven_distance_m
+                  , double lap_epsilon_m)
+        : lap_counter(start_pos, min_driven_distance_m, lap_epsilon_m, 0) { }
+
+
         /** \brief Counts the laps, always checking after the min_driven_distance_m is surpassed
           * After each lap, the driven distance is resetted
           */
         lap_counter(std::tuple<double, double> start_pos
                   , double min_driven_distance_m
-                  , double lap_epsilon_m)
+                  , double lap_epsilon_m
+                  , double set_start_after_m)
         : _distance_cnt { }
         , _min_driven_distance_m(min_driven_distance_m)
         , _lap_epsilon_m(lap_epsilon_m)
         , _start_pos(start_pos)
-        , _laps(0)
+        , _set_start_after_m(set_start_after_m)
+        , _lap(0)
+        , _unset_start(true)
         { }
 
     // methods
@@ -51,21 +62,23 @@ namespace clara {
         //! const distance getter
         int count() const
         {
-            return _laps;
-        }
-
-        //! sets the starting position, if we need to update it
-        void set_start_pos(const std::tuple<double, double> start_pos)
-        {
-            _start_pos = start_pos;
+            return _lap;
         }
 
         //! updates the driven distance, checks after _min_driven_distance_m is passed and checks the distance to the start point
         int add_positions(std::tuple<double, double> & old_pos
-                              , std::tuple<double, double> & new_pos)
+                        , std::tuple<double, double> & new_pos)
         {
             _distance_cnt.update_distance(old_pos, new_pos);
             const double & driven_distance = _distance_cnt.get_distance();
+
+            // we set the new start position to the position after travelling at least _set_start_after_m
+            if (_unset_start && _lap == 0 && driven_distance > _set_start_after_m)
+            {   
+                _unset_start = false;
+                _start_pos = new_pos;
+            }
+
             // if we moved away enough, check for distance to start_point
             if ( driven_distance >= _min_driven_distance_m)
             {
@@ -74,11 +87,11 @@ namespace clara {
                 // if we are close enough to the _start_pos, it counts as a lap
                 if (to_start_distance <= _lap_epsilon_m)
                 {
-                    _laps++;
+                    _lap++;
                     _distance_cnt.reset_distance();
                 }
             }
-            return _laps;
+            return _lap;
         }
 
     // member
@@ -86,8 +99,10 @@ namespace clara {
         std::tuple<double, double> _start_pos;
         const double               _lap_epsilon_m;
         const double               _min_driven_distance_m;
+        const double               _set_start_after_m;
         distance_counter           _distance_cnt;
-        int                        _laps;
+        int                        _lap;
+        bool                       _unset_start;
     };
 } // namespace clara
 

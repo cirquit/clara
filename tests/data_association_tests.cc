@@ -20,8 +20,9 @@
 #include <thread>
 #include <random>
 
-#include "../external/Connector/library/client.h"
-#include "../external/Connector/library/server.h"
+#include <connector-1.0/client.h>
+#include <connector-1.0/server.h>
+
 #include "../library/data_association.h"
 #include "csv.h"
 

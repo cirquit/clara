@@ -32,6 +32,7 @@ namespace clara {
 
     // constructor
     public:
+        //! default constructor, starting with a zero distance
         distance_counter()
         : _distance_m(0) { }
 

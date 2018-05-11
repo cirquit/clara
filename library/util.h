@@ -181,6 +181,74 @@ namespace clara
                                   ,y_sum / static_cast<double>(container.size()) );
         }
 
+        //! prints the cluster to the std::cout as a valid python library
+        // template< class T >
+        // void print_data_assoc(clara::data_association<T> & da, int color)
+        // {   
+        //     const std::vector<clara::cone_state<T>> & cluster = da.get_cluster();
+        //     const double cluster_weight = 0; // deprecated, numpy needs this value to have a valid matrix \todo fix python script
+
+        //     if (color == 0) { std::cout << "yellow_cone_data = np.array([\n"; }
+        //     if (color == 1) { std::cout << "blue_cone_data = np.array([\n"; }
+        //     if (color == 2) { std::cout << "red_cone_data = np.array([\n"; }
+        //     clara::util::for_each_(cluster, [&](const clara::cone_state<double> & cs)
+        //     {
+        //         double mean_x = cs._mean_vec[0];
+        //         double mean_y = cs._mean_vec[1];
+        //         double cov_xx = cs._cov_mat[0];// - 0.45;
+        //         double cov_xy = cs._cov_mat[1];
+        //         double cov_yy = cs._cov_mat[3];// - 0.45;
+
+        //         std::string np_b = "np.array([";
+        //         std::string np_e = "])";
+        //         if ( mean_x != 0 || mean_y != 0 ) {
+        //             std::cout << np_b
+        //                       << "[" << mean_x << ", " << mean_y << "]"  << ", "
+        //                       << "[[" << cov_xx << ", " << cov_xy << "]" << ", "
+        //                       << "[" << cov_xy << ", " << cov_yy << "]]" << ", "
+        //                       << "["  << cluster_weight << "]"
+        //                       << np_e << ",\n"; 
+        //         }
+        //     });
+        //     std::cout << "]);\n";
+        // }
+
+        // //! prints the observations to the std::cout as a valid python library
+        // template < class T >
+        // void print_observations(clara::data_association<T> & da, int color)
+        // {
+        //     const std::vector<clara::cone_state<T>> & cluster = da.get_cluster();
+
+        //     if (color == 0) { std::cout << "yellow_obs_cone_data = np.array([\n"; }
+        //     if (color == 1) { std::cout << "blue_obs_cone_data = np.array([\n"; }
+        //     if (color == 2) { std::cout << "red_obs_cone_data = np.array([\n"; }
+        //     clara::util::for_each_(cluster, [&](const clara::cone_state<double> & cs)
+        //     {
+        //         double mean_x = cs._mean_vec[0];
+        //         double mean_y = cs._mean_vec[1];
+
+        //         if ( mean_x != 0 || mean_y != 0 ) {
+        //             for(auto obs : cs._observations)
+        //             {
+        //                 std::cout << "[" << obs[0] << ", " << obs[1] << "],\n"; 
+        //             }
+        //         }
+        //     });
+        //     std::cout << "]);\n";
+        // }
+
+        //! equal with an epsilon bound, explicitly casting any type to double
+        template< class T >
+        bool approx(const T & a, const T & b, const double epsilon)
+        {
+            const double _a = static_cast<double>(a);
+            const double _b = static_cast<double>(b);
+            const double _eps = std::abs(epsilon);
+
+            const double small_bounds = _b - _eps;
+            const double high_bounds  = _b + _eps;
+            return _a >= small_bounds && _a <= high_bounds;
+        }
 
         //! distance, defined between 0 and MAX_DOUBLE
         template< class T >

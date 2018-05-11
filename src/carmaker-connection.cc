@@ -7,9 +7,9 @@
 #include <sys/types.h>
 #include <thread>
 #include <unistd.h>
+#include <connector-v1.0/client.h>
+#include <connector-v1.0/server.h>
 
-#include "../external/Connector/library/client.h"
-#include "../external/Connector/library/server.h"
 #include "../external/object-list/include/object.h"
 
 #include "../library/data_association.h"

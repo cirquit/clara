@@ -101,14 +101,15 @@ namespace clara {
             auto near_yellow_ixs = get_nearest_cones(yellow_detected_cluster_ix, yellow_cluster, pos);
             // find the two nearest blue cones
             auto near_blue_ixs   = get_nearest_cones(blue_detected_cluster_ix, blue_cluster, pos);
-            
+           
+            // fill the types
             cone_position y_c_01;
             y_c_01[0] = yellow_cluster[near_yellow_ixs.first]._mean_vec[0];
             y_c_01[1] = yellow_cluster[near_yellow_ixs.first]._mean_vec[1];
             cone_position y_c_02;
             y_c_02[0] = yellow_cluster[near_yellow_ixs.second]._mean_vec[0];
             y_c_02[1] = yellow_cluster[near_yellow_ixs.second]._mean_vec[1];
-            near_cones y_cs = { y_c_01, y_c_02 };
+            near_cones y_cs = {{ y_c_01, y_c_02 }};
 
             cone_position b_c_01;
             b_c_01[0] = blue_cluster[near_blue_ixs.first]._mean_vec[0];
@@ -116,11 +117,11 @@ namespace clara {
             cone_position b_c_02;
             b_c_02[0] = blue_cluster[near_blue_ixs.second]._mean_vec[0];
             b_c_02[1] = blue_cluster[near_blue_ixs.second]._mean_vec[1];
-            near_cones b_cs = { b_c_01, b_c_02 };
+            near_cones b_cs = {{ b_c_01, b_c_02 }};
 
-            return concept::just<cones_tuple>(std::make_tuple(y_cs, b_cs));
+            return concept::maybe<cones_tuple>(std::make_tuple(y_cs, b_cs));
         } else {
-            return concept::nothing<cones_tuple>();
+            return concept::maybe<cones_tuple>();
         }
 
     }

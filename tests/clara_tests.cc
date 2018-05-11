@@ -65,8 +65,8 @@ const std::vector< std::tuple<object_list_t, double> > parse_csv()
     return observations;
 }
 
-void log_da(clara::clara & clara)
-{
+// void log_da(clara::clara & clara)
+// {
 
 //    clara::data_association<double> & yellow_data_association = clara._yellow_data_association;
 //    clara::data_association<double> & blue_data_association = clara._blue_data_association;
@@ -79,7 +79,7 @@ void log_da(clara::clara & clara)
 //    clara::util::print_observations< double >(yellow_data_association, 0);
 //    clara::util::print_observations< double >(blue_data_association, 1);
 //    clara::util::print_observations< double >(red_data_association, 2);
-}
+// }
 
 int main(){ 
     // 

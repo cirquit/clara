@@ -155,7 +155,7 @@ namespace clara {
             _blue_data_association.classify_new_data(_new_blue_cones);
             _red_data_association.classify_new_data(_new_red_cones);
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            const std::tuple<double, double, double> velocity_t = { v_x_sensor, v_y_sensor, timestep_s };
+            const std::tuple<double, double, double> velocity_t = std::make_tuple(v_x_sensor, v_y_sensor, timestep_s);
             //const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
             // update the position based on the estimated v_x, v_y and the time
             const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
@@ -314,7 +314,7 @@ namespace clara {
             if (_velocities.empty())
             {   
                 std::cerr << "        - no matched cluster observations, returning velocities from correvit\n";
-                return { v_x_sensor, v_y_sensor, timestep_s };
+                return std::make_tuple(v_x_sensor, v_y_sensor, timestep_s);
             }
             // calculate mean velocity changes for every cone
             const std::tuple<double, double> cone_velocites = _get_mean_velocities(_velocities);
@@ -340,7 +340,7 @@ namespace clara {
             const double estimated_v_x = estimated_state(0, 0);
             const double estimated_v_y = estimated_state(1, 0);
             //
-            return { estimated_v_x, estimated_v_y, timestep_s };
+            return std::make_tuple(estimated_v_x, estimated_v_y, timestep_s);
         }
 
         //! unsafe function, should only be called if we can access cone._observations[last/last-1] and cluster[ix]
@@ -362,7 +362,7 @@ namespace clara {
                       << "        distance_y: " << distance_y << "m\n" \
                       << "            vx: " << v_x << " m/s\n" \
                       << "            vy: " << v_y << " m/s\n";
-            return { v_x, v_y }; 
+            return std::make_tuple(v_x, v_y); 
         }
 
         //! replaces _yellow_detected_cluster_ixs, _blue_detected_cluster_ixs and with the new detected cluster indices 
@@ -471,7 +471,7 @@ namespace clara {
             const double pos_x = (v_x * timestep_s) + std::get<0>(_estimated_position);
             const double pos_y = (v_y * timestep_s) + std::get<1>(_estimated_position);
 
-            return { pos_x, pos_y };
+            return std::make_tuple(pos_x, pos_y);
         }
 
     // member

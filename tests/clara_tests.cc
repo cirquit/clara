@@ -46,7 +46,7 @@ const std::vector< std::tuple<object_list_t, double> > parse_csv()
             list.size = 0;
             double t = timestamp - timestamp_old;
             timestamp_old = timestamp;
-            observations.push_back( { list, t } );
+            observations.push_back( std::make_tuple(list, t) );
             time_old = time;
         }
 

@@ -163,7 +163,7 @@ namespace clara
         template< class Iterable >  
         std::tuple<double, double> mean_accumulate(Iterable container)
         {
-            std::tuple<double, double> start = { 0, 0 };
+            std::tuple<double, double> start = std::make_tuple(0, 0);
             double x_sum, y_sum;
             std::tie(x_sum, y_sum) = std::accumulate(container.begin(), container.end(), start
                         , [](std::tuple<double, double> acc

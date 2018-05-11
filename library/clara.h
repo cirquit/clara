@@ -324,7 +324,7 @@ namespace clara {
             if (true) // v_x_sensor == 0 && v_y_sensor == 0)
             {   
                 std::cerr << "        - vx/vy_sensor are zero, returning velocities from cones\n";
-                return { v_x_cones, v_y_cones, timestep_s };
+                return std::make_tuple(v_x_cones, v_y_cones, timestep_s);
             }
             // run the kalman filter with sensor and cone velocities
             std::shared_ptr< mx1_vector > observation = std::make_shared< mx1_vector >(

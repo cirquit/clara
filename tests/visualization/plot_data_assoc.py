@@ -24,7 +24,7 @@ def draw_ellipse(position, covariance, ax=None, **kwargs):
         ax.add_patch(Ellipse(position, nsig * width, nsig * height,
                              angle, facecolor='black', **kwargs))
 
-def plot_cluster_intrinsics(data, ax=None, color="black"):
+def plot_cluster_intrinsics(data, ax=None, color="black", print_ix=False):
     """Use the data with the following format to plot the map
     
     yellow_cone_data = np.array([
@@ -41,7 +41,8 @@ def plot_cluster_intrinsics(data, ax=None, color="black"):
     pos_y = [e[1] for e in positions]
 
     ax.scatter(pos_x, pos_y, color=color)
-    for pos, covar, w in zip(positions, covariances, weights):
+    for i, (pos, covar, w) in enumerate(zip(positions, covariances, weights)):
+        if print_ix: ax.annotate("ix_" + str(i), (pos[0], pos[1]))
         draw_ellipse(np.array(pos), np.array(covar), ax=ax, alpha=0.1)
 
 
@@ -92,9 +93,14 @@ ax = plt.gca()
 # plot observations
 ax.scatter(yellow_obs_cone_data[:, 0], yellow_obs_cone_data[:, 1], color='black')
 ax.scatter(blue_obs_cone_data[:, 0], blue_obs_cone_data[:, 1], color='black')
+print('Yellow observations: {}'.format(len(yellow_obs_cone_data)))
+print('Blue observations: {}'.format(len(blue_obs_cone_data)))
 
 # plot the calculated data
-plot_cluster_intrinsics(yellow_cone_data, ax=ax, color='#D5D106')
+plot_cluster_intrinsics(yellow_cone_data, ax=ax, color='#D5D106', print_ix=True)
 plot_cluster_intrinsics(blue_cone_data, ax=ax, color='#898AEF')
+print('Yellow cones: {}'.format(len(yellow_cone_data)))
+print('Blue cones: {}'.format(len(blue_cone_data)))
+
 # plot_cluster_intrinsics(red_cone_data, ax=ax)
 plt.show()

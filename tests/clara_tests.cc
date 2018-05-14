@@ -65,21 +65,21 @@ const std::vector< std::tuple<object_list_t, double> > parse_csv()
     return observations;
 }
 
-// void log_da(clara::clara & clara)
-// {
+void log_da(clara::clara & clara)
+{
 
-//    clara::data_association<double> & yellow_data_association = clara._yellow_data_association;
-//    clara::data_association<double> & blue_data_association = clara._blue_data_association;
-//    clara::data_association<double> & red_data_association = clara._red_data_association; 
-//    // print out the python file
-//    std::cout << "import numpy as np\n";
-//    clara::util::print_data_assoc< double >(yellow_data_association, 0);
-//    clara::util::print_data_assoc< double >(blue_data_association, 1);
-//    clara::util::print_data_assoc< double >(red_data_association, 2);
-//    clara::util::print_observations< double >(yellow_data_association, 0);
-//    clara::util::print_observations< double >(blue_data_association, 1);
-//    clara::util::print_observations< double >(red_data_association, 2);
-// }
+   clara::data_association<double> & yellow_data_association = clara._yellow_data_association;
+   clara::data_association<double> & blue_data_association = clara._blue_data_association;
+   clara::data_association<double> & red_data_association = clara._red_data_association; 
+   // print out the python file
+   std::cout << "import numpy as np\n";
+   yellow_data_association.print_data_assoc(0);
+   blue_data_association.print_data_assoc(1);
+   red_data_association.print_data_assoc(2);
+   yellow_data_association.print_observations(0);
+   blue_data_association.print_observations(1);
+   red_data_association.print_observations(2);
+}
 
 int main(){ 
     // 
@@ -132,7 +132,7 @@ int main(){
     }
 
     // python logging data
-    // log_da(clara);
+    log_da(clara);
 
     return EXIT_SUCCESS;
 }

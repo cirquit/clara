@@ -20,7 +20,7 @@
 #include <chrono>
 #include <thread>
 
-#include "../library/util.h"
+#include "../library/clara-util.h"
 
 TEST_CASE( "util.h:angle-radians convertion", "[rad]" ) {
 

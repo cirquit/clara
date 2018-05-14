@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include "catch.h"
-#include "../library/util.h"
+#include "../library/clara-util.h"
 
 std::vector<int> loop(std::vector<int> & vec, int min_ix, int max_ix, int bounds)
 {

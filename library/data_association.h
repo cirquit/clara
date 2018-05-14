@@ -20,7 +20,7 @@
 #include <tuple>
 #include <algorithm>
 #include "cone_state.h"
-#include "util.h"
+#include "clara-util.h"
 
 /*!
  *  \addtogroup clara
@@ -93,7 +93,6 @@ namespace clara {
             const std::vector<cone_state<T>> &
             classify_new_data(const std::vector<raw_cone_data> & new_cones)
             {  
-
                 // if somehow we get no observations, we don't do anything
                 if (new_cones.empty()) {
                     no_observations = true;
@@ -103,7 +102,7 @@ namespace clara {
                 no_observations = false;
                 // when we start the car, we will take every visible cone as a new cluster, we have the assumption that we don't see cones twice in a single image
                 if (_cone_states.size() == 0)
-                {
+                {   
                     for(auto cone : new_cones)
                     {
                         _add_new_cluster_with_ob(cone);
@@ -112,6 +111,7 @@ namespace clara {
                 // otherwise, we need to detect new cones and associate current clusters to our observations
                 else
                 {
+
                     for(auto cone : new_cones){
                         cluster_it prob_cluster_it = _get_most_probable_cluster_it(cone);
                         if ((*prob_cluster_it).distance_greater_than(cone, _max_dist_btw_cones_m))
@@ -188,40 +188,94 @@ namespace clara {
                 return _cone_states.size();
             }
 
+
+            //! prints the cluster to the std::cout as a valid python library
+            void print_data_assoc ( int color ) {
+                const std::vector<clara::cone_state<T>> & cluster = get_cluster();
+                const double cluster_weight = 0; // deprecated, numpy needs this value to have a valid matrix \todo fix python script
+
+                if (color == 0) { std::cout << "yellow_cone_data = np.array([\n"; }
+                if (color == 1) { std::cout << "blue_cone_data = np.array([\n"; }
+                if (color == 2) { std::cout << "red_cone_data = np.array([\n"; }
+                clara::util::for_each_(cluster, [&](const clara::cone_state<double> & cs)
+                {
+                    double mean_x = cs._mean_vec[0];
+                    double mean_y = cs._mean_vec[1];
+                    double cov_xx = cs._cov_mat[0];// - 0.45;
+                    double cov_xy = cs._cov_mat[1];
+                    double cov_yy = cs._cov_mat[3];// - 0.45;
+
+                    std::string np_b = "np.array([";
+                    std::string np_e = "])";
+                    if ( mean_x != 0 || mean_y != 0 ) {
+                        std::cout << np_b
+                                  << "["  << mean_x << ", " << mean_y << "]"  << ", "
+                                  << "[[" << cov_xx << ", " << cov_xy << "]" << ", "
+                                  << "["  << cov_xy << ", " << cov_yy << "]]" << ", "
+                                  << "["  << cluster_weight << "]"
+                                  << np_e << ",\n"; 
+                    }
+                });
+                std::cout << "]);\n";
+            }
+
+        //! prints the observations to the std::cout as a valid python library
+        void print_observations( int color )
+        {
+            const std::vector<clara::cone_state<T>> & cluster = get_cluster();
+
+            if (color == 0) { std::cout << "yellow_obs_cone_data = np.array([\n"; }
+            if (color == 1) { std::cout << "blue_obs_cone_data = np.array([\n"; }
+            if (color == 2) { std::cout << "red_obs_cone_data = np.array([\n"; }
+            clara::util::for_each_(cluster, [&](const clara::cone_state<double> & cs)
+            {
+                double mean_x = cs._mean_vec[0];
+                double mean_y = cs._mean_vec[1];
+
+                if ( mean_x != 0 || mean_y != 0 ) {
+                    for(auto obs : cs._observations)
+                    {
+                        std::cout << "[" << obs[0] << ", " << obs[1] << "],\n"; 
+                    }
+                }
+            });
+            std::cout << "]);\n";
+        }
+
         // methods
         private:
             
             //! returns the iterator at the element with the highest association probability based on the pdf \todo single pass min-max
             cluster_it _get_most_probable_cluster_it(const raw_cone_data & cone)
             {   
-                // auto ixs = get_detected_cluster_ixs();
-                // int min_ix = static_cast<int>(*std::min_element(ixs.begin(), ixs.end()));
-                // int max_ix = static_cast<int>(*std::max_element(ixs.begin(), ixs.end()));
+                auto ixs = get_detected_cluster_ixs();
+                int min_ix = static_cast<int>(*std::min_element(ixs.begin(), ixs.end()));
+                int max_ix = static_cast<int>(*std::max_element(ixs.begin(), ixs.end()));
                 
-                // // ugly looping of indices, adapted for future possibilty of #pramga omp fun - needs to be a ringbuffer
-                // // this is tested in tests/looping_tests.cc
-                // int distance = max_ix - min_ix + 2 * _cluster_search_range;
-                // int ix       = 0;
-                // int min_diff = min_ix - _cluster_search_range;
-                // if (min_diff < 0)
-                //     ix = std::max(0, static_cast<int>(_cone_states.size()) + min_diff);
-                // else
-                //     ix = min_diff;
+                // ugly looping of indices, adapted for future possibilty of #pramga omp fun - needs to be a ringbuffer
+                // this is tested in tests/looping_tests.cc
+                int distance = max_ix - min_ix + 2 * _cluster_search_range;
+                int ix       = 0;
+                int min_diff = min_ix - _cluster_search_range;
+                if (min_diff < 0)
+                    ix = std::max(0, static_cast<int>(_cone_states.size()) + min_diff);
+                else
+                    ix = min_diff;
 
-                // int best_cone_ix = ix;
-                // for(int i = 0; i < distance; i++)
-                // {
-                //     int my_ix = (ix + i) % _cone_states.size();
-                //     if(_cone_states[best_cone_ix].pdf(cone) < _cone_states[my_ix].pdf(cone))
-                //         best_cone_ix = my_ix;
-                // }
-
-                // return _cone_states.begin() + best_cone_ix;
-
-                return std::max_element(_cone_states.begin(), _cone_states.end(), [&](cone_state<T> & a, cone_state<T> & b)
+                int best_cone_ix = ix;
+                for(int i = 0; i < distance; i++)
                 {
-                    return a.pdf(cone) < b.pdf(cone);
-                });
+                    int my_ix = (ix + i) % _cone_states.size();
+                    if(_cone_states[best_cone_ix].pdf(cone) < _cone_states[my_ix].pdf(cone))
+                        best_cone_ix = my_ix;
+                }
+
+                return _cone_states.begin() + best_cone_ix;
+
+                // return std::max_element(_cone_states.begin(), _cone_states.end(), [&](cone_state<T> & a, cone_state<T> & b)
+                // {
+                //     return a.pdf(cone) < b.pdf(cone);
+                // });
             }
 
             //! \todo

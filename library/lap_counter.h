@@ -15,7 +15,7 @@
 #ifndef LAP_CNT_H
 #define LAP_CNT_H
 
-#include "util.h"
+#include "clara-util.h"
 #include "distance_counter.h"
 
 /*!

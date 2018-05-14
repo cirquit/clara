@@ -15,7 +15,7 @@
 #ifndef DISTANCE_CNT_H
 #define DISTANCE_CNT_H
 
-#include "util.h"
+#include "clara-util.h"
 
 /*!
  *  \addtogroup clara

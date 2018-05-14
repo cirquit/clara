@@ -25,7 +25,7 @@
 #include "../external/object-list/include/object.h"
 #include "cone_state.h"
 #include "data_association.h"
-#include "util.h"
+#include "clara-util.h"
 #include "lap_counter.h"
 #include "maybe.h"
 #include "search_cones.h"
@@ -150,6 +150,10 @@ namespace clara {
                 if (obj_list.element[i].type == 1) _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
                 if (obj_list.element[i].type == 2) _new_red_cones.emplace_back(   _parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
             }
+            // sort by relative distance to our current position, so the mapping step has some ordering and can do sanity checks
+            _sort_by_rel_distance(_new_yellow_cones, v_x_sensor, v_y_sensor, timestep_s);
+            _sort_by_rel_distance(_new_blue_cones, v_x_sensor, v_y_sensor, timestep_s);
+            _sort_by_rel_distance(_new_red_cones, v_x_sensor, v_y_sensor, timestep_s);
             // do the data association (\todo parallelize me with openmp tasks)
             _yellow_data_association.classify_new_data(_new_yellow_cones);
             _blue_data_association.classify_new_data(_new_blue_cones);
@@ -251,11 +255,9 @@ namespace clara {
                                                                           , const double & timestep_s
                                                                           , const double & yaw_rad ) const
         { 
-            const double x_car_old = std::get<0>(_estimated_position); // obj.x_car; // update with v_x_sensor
-            const double y_car_old = std::get<1>(_estimated_position); // obj.y_car; // update with v_y_sensor
-            // apply local velocity if we are too slow
-            const double x_car = x_car_old + (v_x_sensor * timestep_s);
-            const double y_car = y_car_old + (v_y_sensor * timestep_s);
+            // apply local velocity to the previously estimated position
+            double x_car, y_car;
+            std::tie(x_car, y_car) = _predict_position_single_shot(v_x_sensor, v_y_sensor, timestep_s);
 
             // trigonometry - get x,y position from angle and distance
             const double x_ = std::cos( obj.angle ) * obj.distance;
@@ -472,6 +474,33 @@ namespace clara {
             const double pos_y = (v_y * timestep_s) + std::get<1>(_estimated_position);
 
             return std::make_tuple(pos_x, pos_y);
+        }
+
+        //! apply local velocity if we are too slow
+        std::tuple<double, double> _predict_position_single_shot(const double & v_x_sensor
+                                                               , const double & v_y_sensor
+                                                               , const double & timestep_s) const
+        {
+            const double x_car_old = std::get<0>(_estimated_position); // obj.x_car; // update with v_x_sensor
+            const double y_car_old = std::get<1>(_estimated_position); // obj.y_car; // update with v_y_sensor
+            const double x_car = x_car_old + (v_x_sensor * timestep_s);
+            const double y_car = y_car_old + (v_y_sensor * timestep_s); 
+            return std::make_tuple(x_car, y_car);
+        }
+
+        //! sort by relative distance to our currently best estimated position
+        void _sort_by_rel_distance(std::vector<raw_cone_data> & cones
+                                 , const double & v_x_sensor
+                                 , const double & v_y_sensor
+                                 , const double & timestep_s)
+        {
+            std::tuple<double, double> car_pos = _predict_position_single_shot(v_x_sensor, v_y_sensor, timestep_s);
+            std::sort(cones.begin(), cones.end(), [&](raw_cone_data & a, raw_cone_data & b)
+            {
+                const std::tuple<double, double> _a = std::make_tuple( std::get<0>(a), std::get<1>(a) );
+                const std::tuple<double, double> _b = std::make_tuple( std::get<0>(b), std::get<1>(b) );
+                return util::euclidean_distance(_a, car_pos) < util::euclidean_distance(_b, car_pos);
+            });
         }
 
     // member

@@ -11,9 +11,8 @@
 #include <connector-v1.0/server.h>
 
 #include "../external/object-list/include/object.h"
-
 #include "../library/data_association.h"
-#include "../library/util.h"
+#include "../library/clara-util.h"
 
 const std::tuple< double, double > get_car_pos( object_t *obj )
 {   // add yaw
@@ -27,43 +26,6 @@ const std::tuple< double, double > parse_object_t( object_t *obj ) {
     const double x = x_ * std::cos( obj->angle_yaw ) - y_ * std::sin( obj->angle_yaw );
     const double y = x_ * std::sin( obj->angle_yaw ) + y_ * std::cos( obj->angle_yaw );
     return {x + obj->x_car, y + obj->y_car};
-}
-
-template < typename T >
-void print_data_assoc( clara::data_association< T > &da, int color ) {
-    const std::vector< clara::cone_state< double > > &cluster = da.get_cluster( );
-
-    if ( color == 0 ) {
-        std::cout << "yellow_cone_data = np.array([\n";
-    }
-    if ( color == 1 ) {
-        std::cout << "blue_cone_data = np.array([\n";
-    }
-    if ( color == 2 ) {
-        std::cout << "red_cone_data = np.array([\n";
-    }
-    clara::util::for_each_( cluster, [&]( const clara::cone_state< T > &cs ) {
-        const T mean_x = cs._mean_vec[ 0 ];
-        const T mean_y = cs._mean_vec[ 1 ];
-        const T cov_xx = cs._cov_mat[ 0 ];
-        const T cov_yy = cs._cov_mat[ 3 ];
-        const T cov_xy = cs._cov_mat[ 1 ];
-
-        std::string np_b = "np.array([";
-        std::string np_e = "])";
-        if ( mean_x != 0 || mean_y != 0 ) {
-
-            std::cout << np_b << "[" << mean_x << ", " << mean_y << "]"
-                      << ", "
-                      << "[[" << cov_xx << ", " << cov_xy << "]"
-                      << ", "
-                      << "[" << cov_xy << ", " << cov_yy << "]]"
-                      << ", "
-                      << "[" << 0 << "]" << np_e << ",\n";
-        }
-    } );
-
-    std::cout << "]);\n";
 }
 
 template< typename T >
@@ -272,7 +234,7 @@ int main( ) {
     }
         // print out the python file
     std::cout << "import numpy as np\n";
-    print_data_assoc< double >(yellow_data_association, 0);
-    print_data_assoc< double >(blue_data_association, 1);
-    print_data_assoc< double >(red_data_association, 2);
+    yellow_data_association.print_data_assoc(0);
+    blue_data_association.print_data_assoc(1);
+    red_data_association.print_data_assoc(2);
 }

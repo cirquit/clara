@@ -31,8 +31,9 @@ const std::vector< std::tuple<object_list_t, double> > parse_csv()
     std::vector< std::tuple<object_list_t, double> > observations;
     // read the data
     std::string csv_path = "../tests/example-data/"
+                           "wemding-log.csv";
                              // "round-map-10-rounds-d-a-x-y-yaw-c-t.csv";
-                             "log-dist-angle-x_car-y_car-yaw_angle-vx-vy-type-time-timestamp--realtime.csv";
+                             // "log-dist-angle-x_car-y_car-yaw_angle-vx-vy-type-time-timestamp--realtime.csv";
     io::CSVReader< 10 > in( csv_path );
     double distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp;
     // double distance, angle, x_car, y_car, yaw_rad, color, timestamp;
@@ -94,7 +95,7 @@ int main(){
     const int    cluster_search_range                 = 5; // +/- to the min/max used cluster-index
     const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
     const double lap_epsilon_m                        = 0.5; // if we're 0.5m near the starting point, increment the lap counter
-    const double set_start_after_m                    = 6;   // we travel at least some distance until setting our start point
+    const double set_start_after_m                    = 0;   // we travel at least some distance until setting our start point
 
     clara::clara clara(
         preallocated_cluster_count
@@ -106,8 +107,8 @@ int main(){
       , cluster_search_range
       , min_driven_distance_m
       , lap_epsilon_m
-      , set_start_after_m
-      , std::make_tuple(0.888982, -1.50739));
+      , set_start_after_m);
+      //, std::make_tuple(0.888982, -1.50739));
 
     int counter  = 0;
     for(const auto & o : observations)

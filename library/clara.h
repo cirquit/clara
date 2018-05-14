@@ -150,6 +150,10 @@ namespace clara {
                 if (obj_list.element[i].type == 1) _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
                 if (obj_list.element[i].type == 2) _new_red_cones.emplace_back(   _parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
             }
+            // erase cones by maximum allowed distance
+            _erase_by_distance(_new_yellow_cones, v_x_sensor, v_y_sensor, timestep_s);
+            _erase_by_distance(_new_blue_cones, v_x_sensor, v_y_sensor, timestep_s);
+            _erase_by_distance(_new_red_cones, v_x_sensor, v_y_sensor, timestep_s);
             // sort by relative distance to our current position, so the mapping step has some ordering and can do sanity checks
             _sort_by_rel_distance(_new_yellow_cones, v_x_sensor, v_y_sensor, timestep_s);
             _sort_by_rel_distance(_new_blue_cones, v_x_sensor, v_y_sensor, timestep_s);
@@ -501,6 +505,23 @@ namespace clara {
                 const std::tuple<double, double> _b = std::make_tuple( std::get<0>(b), std::get<1>(b) );
                 return util::euclidean_distance(_a, car_pos) < util::euclidean_distance(_b, car_pos);
             });
+        }
+
+        //! erase cones by distance
+        void _erase_by_distance(std::vector<raw_cone_data> & cones
+                              , const double & v_x_sensor
+                              , const double & v_y_sensor
+                              , const double & timestep_s)
+        {
+            std::tuple<double, double> car_pos = _predict_position_single_shot(v_x_sensor, v_y_sensor, timestep_s);
+            cones.erase(std::remove_if(cones.begin(), 
+                                       cones.end(),
+                [&](raw_cone_data c)
+                {
+                    const std::tuple<double, double> _a = std::make_tuple( std::get<0>(c), std::get<1>(c) );
+                    return util::euclidean_distance(_a, car_pos) > 10;
+                }),
+            cones.end());
         }
 
     // member

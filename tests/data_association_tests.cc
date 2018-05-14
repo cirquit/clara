@@ -20,8 +20,9 @@
 #include <thread>
 #include <random>
 
-#include "../external/Connector/library/client.h"
-#include "../external/Connector/library/server.h"
+#include <connector-1.0/client.h>
+#include <connector-1.0/server.h>
+
 #include "../library/data_association.h"
 #include "csv.h"
 
@@ -86,7 +87,7 @@ const std::tuple< double, double > parse_object_t( double angle, double distance
 
     const double x = x_ * std::cos( yaw_angle ) - y_ * std::sin( yaw_angle );
     const double y = x_ * std::sin( yaw_angle ) + y_ * std::cos( yaw_angle );
-    return {x + x_car, y + y_car};
+    return std::make_tuple(x + x_car, y + y_car);
 }
 
 
@@ -134,7 +135,7 @@ int main(){
         }
         // x = unif(re) + x;
         // y = unif(re) + y;
-        raw_cone_data raw_cone = { x , y, 0, 0};
+        raw_cone_data raw_cone = std::make_tuple(x, y, 0, 0);
         // raw_cone_data raw_cone = parse_object_t(angle, distance, x, y, yaw_angle);
 
         // watch out for this encoding, this is just for ease of use. Should

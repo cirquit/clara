@@ -19,67 +19,12 @@
 #include <chrono>
 #include <thread>
 #include <random>
+#include <connector-1.0/client.h>
+#include <connector-1.0/server.h>
 
-#include "../external/Connector/library/client.h"
-#include "../external/Connector/library/server.h"
 #include "../library/data_association.h"
 #include "../library/clara.h"
 #include "csv.h"
-
-template< class T >
-void print_data_assoc(clara::data_association<T> & da, int color)
-{   
-    const std::vector<clara::cone_state<T>> & cluster = da.get_cluster();
-    const double cluster_weight = 0; // deprecated, numpy needs this value to have a valid matrix \todo fix python script
-
-    if (color == 0) { std::cout << "yellow_cone_data = np.array([\n"; }
-    if (color == 1) { std::cout << "blue_cone_data = np.array([\n"; }
-    if (color == 2) { std::cout << "red_cone_data = np.array([\n"; }
-    clara::util::for_each_(cluster, [&](const clara::cone_state<double> & cs)
-    {
-        double mean_x = cs._mean_vec[0];
-        double mean_y = cs._mean_vec[1];
-        double cov_xx = cs._cov_mat[0];// - 0.45;
-        double cov_xy = cs._cov_mat[1];
-        double cov_yy = cs._cov_mat[3];// - 0.45;
-
-        std::string np_b = "np.array([";
-        std::string np_e = "])";
-        if ( mean_x != 0 || mean_y != 0 ) {
-            std::cout << np_b
-                      << "[" << mean_x << ", " << mean_y << "]"  << ", "
-                      << "[[" << cov_xx << ", " << cov_xy << "]" << ", "
-                      << "[" << cov_xy << ", " << cov_yy << "]]" << ", "
-                      << "["  << cluster_weight << "]"
-                      << np_e << ",\n"; 
-        }
-    });
-    std::cout << "]);\n";
-}
-
-
-template < class T >
-void print_observations(clara::data_association<T> & da, int color)
-{
-    const std::vector<clara::cone_state<T>> & cluster = da.get_cluster();
-
-    if (color == 0) { std::cout << "yellow_obs_cone_data = np.array([\n"; }
-    if (color == 1) { std::cout << "blue_obs_cone_data = np.array([\n"; }
-    if (color == 2) { std::cout << "red_obs_cone_data = np.array([\n"; }
-    clara::util::for_each_(cluster, [&](const clara::cone_state<double> & cs)
-    {
-        double mean_x = cs._mean_vec[0];
-        double mean_y = cs._mean_vec[1];
-
-        if ( mean_x != 0 || mean_y != 0 ) {
-            for(auto obs : cs._observations)
-            {
-                std::cout << "[" << obs[0] << ", " << obs[1] << "],\n"; 
-            }
-        }
-    });
-    std::cout << "]);\n";
-}
 
 const std::vector< std::tuple<object_list_t, double> > parse_csv()
 {
@@ -101,7 +46,7 @@ const std::vector< std::tuple<object_list_t, double> > parse_csv()
             list.size = 0;
             double t = timestamp - timestamp_old;
             timestamp_old = timestamp;
-            observations.push_back( { list, t } );
+            observations.push_back( std::make_tuple(list, t) );
             time_old = time;
         }
 
@@ -120,37 +65,49 @@ const std::vector< std::tuple<object_list_t, double> > parse_csv()
     return observations;
 }
 
-void log_da(clara::clara & clara)
-{
+// void log_da(clara::clara & clara)
+// {
 
-    clara::data_association<double> & yellow_data_association = clara._yellow_data_association;
-    clara::data_association<double> & blue_data_association = clara._blue_data_association;
-    clara::data_association<double> & red_data_association = clara._red_data_association; 
-    // print out the python file
-    std::cout << "import numpy as np\n";
-    print_data_assoc< double >(yellow_data_association, 0);
-    print_data_assoc< double >(blue_data_association, 1);
-    print_data_assoc< double >(red_data_association, 2);
-    print_observations< double >(yellow_data_association, 0);
-    print_observations< double >(blue_data_association, 1);
-    print_observations< double >(red_data_association, 2);
-}
+//    clara::data_association<double> & yellow_data_association = clara._yellow_data_association;
+//    clara::data_association<double> & blue_data_association = clara._blue_data_association;
+//    clara::data_association<double> & red_data_association = clara._red_data_association; 
+//    // print out the python file
+//    std::cout << "import numpy as np\n";
+//    clara::util::print_data_assoc< double >(yellow_data_association, 0);
+//    clara::util::print_data_assoc< double >(blue_data_association, 1);
+//    clara::util::print_data_assoc< double >(red_data_association, 2);
+//    clara::util::print_observations< double >(yellow_data_association, 0);
+//    clara::util::print_observations< double >(blue_data_association, 1);
+//    clara::util::print_observations< double >(red_data_association, 2);
+// }
 
 int main(){ 
     // 
     const std::vector< std::tuple<object_list_t, double> > observations = parse_csv();
-    // parametrization of data associtaion
+    // parametrization of data associtaion in clara
     const size_t preallocated_cluster_count           = 500;
     const size_t preallocated_detected_cones_per_step = 10;
     const double max_distance_btw_cones_m             = 2;  // meter
     const double variance_xx                          = 0.45;
     const double variance_yy                          = 0.45;
-    const size_t apply_variance_step_count            = 100;
+    const size_t apply_variance_step_count            = 1000; // apply custom variance for this amount of observations
     const int    cluster_search_range                 = 5; // +/- to the min/max used cluster-index
-        
+    const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
+    const double lap_epsilon_m                        = 0.5; // if we're 0.5m near the starting point, increment the lap counter
+    const double set_start_after_m                    = 6;   // we travel at least some distance until setting our start point
+
     clara::clara clara(
-        preallocated_cluster_count, preallocated_detected_cones_per_step, max_distance_btw_cones_m,
-        variance_xx, variance_yy, apply_variance_step_count, cluster_search_range, std::make_tuple(0.888982, -1.50739));
+        preallocated_cluster_count
+      , preallocated_detected_cones_per_step
+      , max_distance_btw_cones_m
+      , variance_xx
+      , variance_yy
+      , apply_variance_step_count
+      , cluster_search_range
+      , min_driven_distance_m
+      , lap_epsilon_m
+      , set_start_after_m
+      , std::make_tuple(0.888982, -1.50739));
 
     int counter  = 0;
     for(const auto & o : observations)
@@ -169,12 +126,13 @@ int main(){
 
         // std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw_rad, t_s);
+        std::cerr << "    lap: #" << clara.get_lap() << '\n';
         UNUSED(pos);
     //    if (counter > 600) { break; }
     }
 
     // python logging data
-    log_da(clara);
+    // log_da(clara);
 
     return EXIT_SUCCESS;
 }

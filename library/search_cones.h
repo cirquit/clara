@@ -93,14 +93,46 @@ namespace clara {
         const auto & yellow_detected_cluster_ix = yellow_data_association.get_detected_cluster_ixs();
         const auto & blue_detected_cluster_ix   = blue_data_association.get_detected_cluster_ixs();
 
+
+        std::vector<size_t> yellow_detected_cluster_ix_copy;
+        std::vector<size_t> blue_detected_cluster_ix_copy;
+        std::copy(yellow_detected_cluster_ix.begin(), yellow_detected_cluster_ix.end(),
+              std::back_inserter(yellow_detected_cluster_ix_copy));
+        std::copy(blue_detected_cluster_ix.begin(), blue_detected_cluster_ix.end(),
+              std::back_inserter(blue_detected_cluster_ix_copy));
+
+
+        if (yellow_detected_cluster_ix_copy.size() > 0
+           && blue_detected_cluster_ix_copy.size() > 0)
+        {
+            size_t min_y_ix = *std::min_element(yellow_detected_cluster_ix_copy.begin()
+                                              , yellow_detected_cluster_ix_copy.end());
+            size_t min_b_ix = *std::min_element(blue_detected_cluster_ix_copy.begin()
+                                              , blue_detected_cluster_ix_copy.end());
+
+            for(int i = 1; i < 3; ++i)
+            {
+                int y_ix = static_cast<int>(min_y_ix) - i;
+                int b_ix = static_cast<int>(min_b_ix) - i;
+                if (y_ix > -1)
+                {
+                    yellow_detected_cluster_ix_copy.push_back(static_cast<size_t>(y_ix));
+                }
+                if (b_ix > -1)
+                {
+                    blue_detected_cluster_ix_copy.push_back(static_cast<size_t>(b_ix));
+                }
+            }
+        }
+
         // if we have at least detected one cones for each color
-        if (yellow_detected_cluster_ix.size() >= 2
-           && blue_detected_cluster_ix.size() >= 2)
+        if (yellow_detected_cluster_ix_copy.size() >= 2
+           && blue_detected_cluster_ix_copy.size() >= 2)
         {
             // find the two nearest yellow cones
-            auto near_yellow_ixs = get_nearest_cones(yellow_detected_cluster_ix, yellow_cluster, pos);
+            auto near_yellow_ixs = get_nearest_cones(yellow_detected_cluster_ix_copy, yellow_cluster, pos);
             // find the two nearest blue cones
-            auto near_blue_ixs   = get_nearest_cones(blue_detected_cluster_ix, blue_cluster, pos);
+            auto near_blue_ixs   = get_nearest_cones(blue_detected_cluster_ix_copy, blue_cluster, pos);
            
             // fill the types
             cone_position y_c_01;

@@ -230,7 +230,7 @@ namespace clara {
                           << yc._cov_mat[0]  << "," \
                           << yc._cov_mat[1]  << "," \
                           << yc._cov_mat[3]  << "," \
-                          << y_ix            << "," \
+                          << "y" << y_ix     << "," \
                           << 0               << ";";
             }
             auto & blue_cones       = _blue_data_association.get_cluster();
@@ -243,7 +243,7 @@ namespace clara {
                           << bc._cov_mat[0]  << "," \
                           << bc._cov_mat[1]  << "," \
                           << bc._cov_mat[3]  << "," \
-                          << b_ix            << "," \
+                          << "b" << b_ix     << "," \
                           << 1               << ";";
             }
             std::cout << "|";

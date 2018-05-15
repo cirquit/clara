@@ -177,6 +177,7 @@ namespace clara {
                       << "        real position: " << obj_list.element[0].x_car << ", " << obj_list.element[0].y_car << '\n';
             // _log_visualization(obj_list.element[0].x_car, obj_list.element[0].y_car, yaw_rad);
             // _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
+            // 
             return _estimated_position;
         }
 

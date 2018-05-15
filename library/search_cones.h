@@ -102,23 +102,29 @@ namespace clara {
               std::back_inserter(blue_detected_cluster_ix_copy));
 
 
-        if (yellow_detected_cluster_ix_copy.size() > 0
-           && blue_detected_cluster_ix_copy.size() > 0)
+        if (yellow_detected_cluster_ix_copy.size() > 0)
         {
             size_t min_y_ix = *std::min_element(yellow_detected_cluster_ix_copy.begin()
                                               , yellow_detected_cluster_ix_copy.end());
-            size_t min_b_ix = *std::min_element(blue_detected_cluster_ix_copy.begin()
-                                              , blue_detected_cluster_ix_copy.end());
-
             for(int i = 1; i < 3; ++i)
             {
                 int y_ix = static_cast<int>(min_y_ix) - i;
-                int b_ix = static_cast<int>(min_b_ix) - i;
-                if (y_ix > -1)
+                if (y_ix > -1) // \todo looping
                 {
                     yellow_detected_cluster_ix_copy.push_back(static_cast<size_t>(y_ix));
                 }
-                if (b_ix > -1)
+            }
+        }
+
+
+        if (blue_detected_cluster_ix_copy.size() > 0)
+        {
+            size_t min_b_ix = *std::min_element(blue_detected_cluster_ix_copy.begin()
+                                              , blue_detected_cluster_ix_copy.end());
+            for(int i = 1; i < 3; ++i)
+            {
+                int b_ix = static_cast<int>(min_b_ix) - i;
+                if (b_ix > -1) // \todo looping
                 {
                     blue_detected_cluster_ix_copy.push_back(static_cast<size_t>(b_ix));
                 }

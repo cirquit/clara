@@ -61,6 +61,7 @@ const std::vector< std::tuple<object_list_t, double> > parse_csv()
         cur_object.vy    = v_y;
         cur_object.angle_yaw = yaw_rad;
         cur_object.type  = static_cast<int>(color);
+        cur_object.time_s = timestamp;
         cur_list.size++;
     }
     return observations;
@@ -88,10 +89,10 @@ int main(){
     // parametrization of data associtaion in clara
     const size_t preallocated_cluster_count           = 500;
     const size_t preallocated_detected_cones_per_step = 10;
-    const double max_distance_btw_cones_m             = 2;  // meter
-    const double variance_xx                          = 0.45;
-    const double variance_yy                          = 0.45;
-    const size_t apply_variance_step_count            = 1000; // apply custom variance for this amount of observations
+    const double max_distance_btw_cones_m             = 1.5;  // meter
+    const double variance_xx                          = 0.05;
+    const double variance_yy                          = 0.05;
+    const size_t apply_variance_step_count            = 100000; // apply custom variance for this amount of observations
     const int    cluster_search_range                 = 5; // +/- to the min/max used cluster-index
     const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
     const double lap_epsilon_m                        = 0.5; // if we're 0.5m near the starting point, increment the lap counter
@@ -119,7 +120,7 @@ int main(){
         double yaw_rad = l.element[0].angle_yaw;
         double vx      = l.element[0].vx;
         double vy      = l.element[0].vy;
-
+        std::cout << vx << ", " << vy << ", " << yaw_rad << ", " << l.element[0].time_s << '\n';
         std::cerr << "Observation [ " << counter++ << "/" << observations.size() << "]:\n"
                   << "    Rec. time: " << t_s  << "s\n"
                   << "    velocity: "  << vx << ", " << vy << " m/s\n"
@@ -133,7 +134,7 @@ int main(){
     }
 
     // python logging data
-    log_da(clara);
+    // log_da(clara);
 
     return EXIT_SUCCESS;
 }

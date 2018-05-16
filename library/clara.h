@@ -21,6 +21,7 @@
 #include <memory>
 #include <algorithm>
 #include <kafi-1.0/kafi.h>
+#include <connector-1.0/client.h>
 
 #include "../external/object-list/include/object.h"
 #include "cone_state.h"
@@ -67,7 +68,8 @@ namespace clara {
             , int cluster_search_range
             , int min_driven_distance_m
             , double lap_epsilon_m
-            , double set_start_after_m)
+            , double set_start_after_m
+            , std::tuple<std::string, int> log_ip_port)
         : clara(preallocated_cluster_count
             , preallocated_detected_cones_per_step
             , max_dist_btw_cones_m
@@ -78,6 +80,7 @@ namespace clara {
             , min_driven_distance_m
             , lap_epsilon_m
             , set_start_after_m
+            , log_ip_port
             , std::make_tuple(0.0, 0.0)) { }
 
         //! constructor
@@ -91,6 +94,7 @@ namespace clara {
             , int min_driven_distance_m
             , double lap_epsilon_m
             , double set_start_after_m
+            , std::tuple<std::string, int> log_ip_port
             , std::tuple<double, double> starting_position) 
         : _yellow_data_association {
             preallocated_cluster_count, preallocated_detected_cones_per_step, max_dist_btw_cones_m,
@@ -102,7 +106,10 @@ namespace clara {
             preallocated_cluster_count, preallocated_detected_cones_per_step, max_dist_btw_cones_m,
             variance_xx, variance_yy, apply_variance_step_count, cluster_search_range }
         , _lap_counter(starting_position, min_driven_distance_m, lap_epsilon_m, set_start_after_m)
+        , _log_client(std::get<1>(log_ip_port), std::get<0>(log_ip_port))
         { 
+            // initialize the logging server
+            _log_client.init();
             // observation preallocation
             _new_yellow_cones.reserve(preallocated_detected_cones_per_step);
             _new_blue_cones.reserve(preallocated_detected_cones_per_step);
@@ -175,7 +182,7 @@ namespace clara {
                       << "        prev position: " << std::get<0>(_estimated_position_old) << ", " << std::get<1>(_estimated_position_old) << '\n' \
                       << "        new  position: " << std::get<0>(new_position) << ", " << std::get<1>(new_position) << '\n' \
                       << "        real position: " << obj_list.element[0].x_car << ", " << obj_list.element[0].y_car << '\n';
-            // _log_visualization(obj_list.element[0].x_car, obj_list.element[0].y_car, yaw_rad);
+            _log_visualization_udp(obj_list.element[0].x_car, obj_list.element[0].y_car, yaw_rad);
             // _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
             // 
             return _estimated_position;
@@ -206,27 +213,47 @@ namespace clara {
                       << estimated_y_car    << '\n';
         }
 
-        //! logging in the predefined scheme
+        //! create a string from the logs and send them to the udp logger server \todo make parallel
+        void _log_visualization_udp(const double & x_pos
+                                  , const double & y_pos
+                                  , const double & yaw_rad)
+        {
+            std::ostringstream os;
+            _log_visualization(x_pos, y_pos, yaw_rad, os);
+            std::string msg(os.str());
+            _log_client.send_udp<const char>(msg.c_str()[0], msg.size());
+        }
+
+        //! log the clara visualization to cout
+        void _log_visualization_cout(const double & x_pos
+                                   , const double & y_pos
+                                   , const double & yaw_rad)
+        {
+            _log_visualization(x_pos, y_pos, yaw_rad, std::cout);
+        }
+
+        //! logging in the predefined scheme to a stream object
         void _log_visualization(const double & x_pos
                               , const double & y_pos
-                              , const double & yaw_rad)
+                              , const double & yaw_rad
+                              , std::ostream & stream)
         {
-            std::cout << "CLARA|";
+            stream << "CLARA|";
             for(auto & y : _new_yellow_cones)
             {
-                std::cout << std::get<0>(y) << "," << std::get<1>(y) << ";";
+                stream << std::get<0>(y) << "," << std::get<1>(y) << ";";
             }
             for(auto & b : _new_blue_cones)
             {
-                std::cout << std::get<0>(b) << "," << std::get<1>(b) << ";";
+                stream << std::get<0>(b) << "," << std::get<1>(b) << ";";
             }
-            std::cout << "|";
+            stream << "|";
             auto & yellow_cones       = _yellow_data_association.get_cluster();
             auto & yellow_cluster_ixs = _yellow_data_association.get_detected_cluster_ixs();
             for(auto & y_ix : yellow_cluster_ixs)
             {
                 const auto & yc = yellow_cones[y_ix];
-                std::cout << yc._mean_vec[0] << "," \
+                stream << yc._mean_vec[0] << "," \
                           << yc._mean_vec[1] << "," \
                           << yc._cov_mat[0]  << "," \
                           << yc._cov_mat[1]  << "," \
@@ -239,7 +266,7 @@ namespace clara {
             for(auto & b_ix : blue_cluster_ixs)
             {
                 const auto & bc = blue_cones[b_ix];
-                std::cout << bc._mean_vec[0] << "," \
+                stream << bc._mean_vec[0] << "," \
                           << bc._mean_vec[1] << "," \
                           << bc._cov_mat[0]  << "," \
                           << bc._cov_mat[1]  << "," \
@@ -247,8 +274,8 @@ namespace clara {
                           << "b" << b_ix     << "," \
                           << 1               << ";";
             }
-            std::cout << "|";
-            std::cout << x_pos << ","
+            stream << "|";
+            stream << x_pos << ","
                       << y_pos << ","
                       << yaw_rad << '\n';
         }
@@ -563,6 +590,9 @@ namespace clara {
         std::chrono::time_point<std::chrono::high_resolution_clock> _start;
         //! counts the lap based on the travelled distance and the set start_position 
         lap_counter _lap_counter;
+
+        //! log client which accepts the clara logs
+        connector::client< connector::UDP > _log_client;
     };
 } // namespace clara
 

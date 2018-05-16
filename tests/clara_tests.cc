@@ -98,6 +98,8 @@ int main(){
     const double lap_epsilon_m                        = 0.5; // if we're 0.5m near the starting point, increment the lap counter
     const double set_start_after_m                    = 0;   // we travel at least some distance until setting our start point
 
+    std::tuple<std::string, int> log_ip_port = std::make_tuple("0.0.0.0", 1111);
+
     clara::clara clara(
         preallocated_cluster_count
       , preallocated_detected_cones_per_step
@@ -108,7 +110,8 @@ int main(){
       , cluster_search_range
       , min_driven_distance_m
       , lap_epsilon_m
-      , set_start_after_m);
+      , set_start_after_m
+      , log_ip_port);
       //, std::make_tuple(0.888982, -1.50739));
 
     int counter  = 0;

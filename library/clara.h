@@ -169,8 +169,8 @@ namespace clara {
             _blue_data_association.classify_new_data(_new_blue_cones);
             _red_data_association.classify_new_data(_new_red_cones);
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            const std::tuple<double, double, double> velocity_t = std::make_tuple(v_x_sensor, v_y_sensor, timestep_s);
-            //const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
+            // const std::tuple<double, double, double> velocity_t = std::make_tuple(v_x_sensor, v_y_sensor, timestep_s);
+            const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
             // update the position based on the estimated v_x, v_y and the time
             const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
             _update_estimated_position(new_position);

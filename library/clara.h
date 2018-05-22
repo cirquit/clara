@@ -69,7 +69,8 @@ namespace clara {
             , int min_driven_distance_m
             , double lap_epsilon_m
             , double set_start_after_m
-            , std::tuple<std::string, int> log_ip_port)
+            , std::tuple<std::string, int> log_ip_port
+            , double max_accepted_distance_m)
         : clara(preallocated_cluster_count
             , preallocated_detected_cones_per_step
             , max_dist_btw_cones_m
@@ -81,6 +82,7 @@ namespace clara {
             , lap_epsilon_m
             , set_start_after_m
             , log_ip_port
+            , max_accepted_distance_m
             , std::make_tuple(0.0, 0.0)) { }
 
         //! constructor
@@ -95,6 +97,7 @@ namespace clara {
             , double lap_epsilon_m
             , double set_start_after_m
             , std::tuple<std::string, int> log_ip_port
+            , double max_accepted_distance_m
             , std::tuple<double, double> starting_position) 
         : _yellow_data_association {
             preallocated_cluster_count, preallocated_detected_cones_per_step, max_dist_btw_cones_m,
@@ -107,6 +110,7 @@ namespace clara {
             variance_xx, variance_yy, apply_variance_step_count, cluster_search_range }
         , _lap_counter(starting_position, min_driven_distance_m, lap_epsilon_m, set_start_after_m)
         , _log_client(std::get<1>(log_ip_port), std::get<0>(log_ip_port))
+        , _max_accepted_distance_m(max_accepted_distance_m)
         { 
             // initialize the logging server
             _log_client.init();
@@ -136,11 +140,11 @@ namespace clara {
                                                          , double yaw_rad
                                                          , double timestep_s = 0)
         {
+            // std::cerr << "    [clara.h::add_observation()]\n";
             // prepare preallocated raw cone lists for new cones
             _new_yellow_cones.clear();
             _new_blue_cones.clear();
             _new_red_cones.clear();
-            // std::cerr << "    [clara.h::add_observation()]\n";
             // calculate difference from last call to start_clock(), if it's zero, we have to calculate it by ourselves
             if (timestep_s == 0){
                 // std::cerr << "        measuring time: ";
@@ -151,20 +155,15 @@ namespace clara {
                 // std::cerr << "        got time: " << timestep_s << "s\n";
             }
             // iterate over the c-style array and apped cones based on their color
-            for(uint32_t i = 0; i < obj_list.size; ++i)
-            {
-                if (obj_list.element[i].type == 0) _new_yellow_cones.emplace_back(_parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
-                if (obj_list.element[i].type == 1) _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
-                if (obj_list.element[i].type == 2) _new_red_cones.emplace_back(   _parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
-            }
+            _append_cones_by_type(obj_list, v_x_sensor, v_y_sensor, timestep_s, yaw_rad);
             // erase cones by maximum allowed distance
             _erase_by_distance(_new_yellow_cones, v_x_sensor, v_y_sensor, timestep_s);
             _erase_by_distance(_new_blue_cones, v_x_sensor, v_y_sensor, timestep_s);
             _erase_by_distance(_new_red_cones, v_x_sensor, v_y_sensor, timestep_s);
             // sort by relative distance to our current position, so the mapping step has some ordering and can do sanity checks
-            _sort_by_rel_distance(_new_yellow_cones, v_x_sensor, v_y_sensor, timestep_s);
-            _sort_by_rel_distance(_new_blue_cones, v_x_sensor, v_y_sensor, timestep_s);
-            _sort_by_rel_distance(_new_red_cones, v_x_sensor, v_y_sensor, timestep_s);
+            _sort_by_distance_to_cur_pos(_new_yellow_cones, v_x_sensor, v_y_sensor, timestep_s);
+            _sort_by_distance_to_cur_pos(_new_blue_cones, v_x_sensor, v_y_sensor, timestep_s);
+            _sort_by_distance_to_cur_pos(_new_red_cones, v_x_sensor, v_y_sensor, timestep_s);
             // do the data association (\todo parallelize me with openmp tasks)
             _yellow_data_association.classify_new_data(_new_yellow_cones);
             _blue_data_association.classify_new_data(_new_blue_cones);
@@ -177,14 +176,10 @@ namespace clara {
             _update_estimated_position(new_position);
             // update the travelled distance to check if we are close enough to the start
             _lap_counter.add_positions(_estimated_position_old, _estimated_position);
-            std::cerr << "        calc velocity: " << std::get<0>(velocity_t) << "m/s, " << std::get<1>(velocity_t) << "m/s\n" \
-                      << "        real velocity: " << obj_list.element[0].vx << "m/s, " << obj_list.element[0].vy << "m/s\n" \
-                      << "        prev position: " << std::get<0>(_estimated_position_old) << ", " << std::get<1>(_estimated_position_old) << '\n' \
-                      << "        new  position: " << std::get<0>(new_position) << ", " << std::get<1>(new_position) << '\n' \
-                      << "        real position: " << obj_list.element[0].x_car << ", " << obj_list.element[0].y_car << '\n';
-            _log_visualization_udp(obj_list.element[0].x_car, obj_list.element[0].y_car, yaw_rad);
-            // _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
-            // 
+            // logging
+            _log_velocity_position_dirty(velocity_t, obj_list, new_position);
+            // _log_visualization_udp(obj_list.element[0].x_car, obj_list.element[0].y_car, yaw_rad);
+            _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
             return _estimated_position;
         }
 
@@ -201,6 +196,22 @@ namespace clara {
 
     // methods
     private:
+
+        //! appends the object_list by type to the according list (_new_yellow_cones / _new_blue_cones / _new_red_cones)
+        void _append_cones_by_type(const object_list_t & obj_list
+                                 , const double & v_x_sensor
+                                 , const double & v_y_sensor
+                                 , const double & yaw_rad
+                                 , const double & timestep_s = 0)
+        {
+            for(uint32_t i = 0; i < obj_list.size; ++i)
+            {
+                if (obj_list.element[i].type == 0) _new_yellow_cones.emplace_back(_parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
+                if (obj_list.element[i].type == 1) _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
+                if (obj_list.element[i].type == 2) _new_red_cones.emplace_back(   _parse_object_t(obj_list.element[i], v_x_sensor, v_y_sensor, timestep_s, yaw_rad));
+            }
+        }
+
         //! csv position logging function
         void _log_position(const double & ground_truth_x_car
                          , const double & ground_truth_y_car
@@ -211,6 +222,18 @@ namespace clara {
                       << ground_truth_y_car << ","
                       << estimated_x_car    << ","
                       << estimated_y_car    << '\n';
+        }
+
+        //! simple log for position and velocity comparisson by hand to std::cerr
+        void _log_velocity_position_dirty(const std::tuple<double, double, double> & velocity_t
+                                        , const object_list_t                      & obj_list
+                                        , const std::tuple<double, double>         & new_position)
+        {
+            std::cerr << "        calc velocity: " << std::get<0>(velocity_t) << "m/s, " << std::get<1>(velocity_t) << "m/s\n" \
+                      << "        real velocity: " << obj_list.element[0].vx << "m/s, " << obj_list.element[0].vy << "m/s\n" \
+                      << "        prev position: " << std::get<0>(_estimated_position_old) << ", " << std::get<1>(_estimated_position_old) << '\n' \
+                      << "        new  position: " << std::get<0>(new_position) << ", " << std::get<1>(new_position) << '\n' \
+                      << "        real position: " << obj_list.element[0].x_car << ", " << obj_list.element[0].y_car << '\n';
         }
 
         //! create a string from the logs and send them to the udp logger server \todo make parallel
@@ -290,7 +313,6 @@ namespace clara {
             // apply local velocity to the previously estimated position
             double x_car, y_car;
             std::tie(x_car, y_car) = _predict_position_single_shot(v_x_sensor, v_y_sensor, timestep_s);
-
             // trigonometry - get x,y position from angle and distance
             const double x_ = std::cos( obj.angle ) * obj.distance;
             const double y_ = std::sin( obj.angle ) * obj.distance;
@@ -314,6 +336,68 @@ namespace clara {
             using nx1_vector = typename kafi::jacobian_function<N,M>::nx1_vector;
             using mx1_vector = typename kafi::jacobian_function<N,M>::mx1_vector;
             using return_t   = typename kafi::kafi<N,M>::return_t;
+            // calculate cone velocities based on the recurring observations, may be nothing if we have zero recurring cones
+            concept::maybe<std::tuple<double, double>> m_cone_velocity = _calculate_cone_velocities(timestep_s);
+            // if we don't see any new cones, we can't update the kalman filter
+            if (m_cone_velocity.has_no_value())
+            {   
+                std::cerr << "       - no matched cluster observations, returning velocities from correvit\n";
+                return std::make_tuple(v_x_sensor, v_y_sensor, timestep_s);
+            }
+            const double v_x_cones = std::get<0>(m_cone_velocity.get_value());
+            const double v_y_cones = std::get<1>(m_cone_velocity.get_value());
+            // for debugging purposes
+            if (true) // v_x_sensor == 0 && v_y_sensor == 0)
+            {   
+                std::cerr << "       - vx/vy_sensor are zero, returning velocities from cones\n";
+                return std::make_tuple(v_x_cones, v_y_cones, timestep_s);
+            }
+            // run the kalman filter with sensor and cone velocities
+            std::shared_ptr< mx1_vector > observation = std::make_shared< mx1_vector >(
+                            mx1_vector( { { v_x_sensor }, { v_y_sensor }
+                                        , { v_x_cones }, { v_y_cones } } ));
+            std::cerr << "       - observation: " << v_x_sensor << '\n'
+                      << "                      " << v_y_sensor << '\n'
+                      << "                      " << v_x_cones << '\n'
+                      << "                      " << v_y_cones << '\n';
+            (*_kafi).set_current_observation(observation);
+            const return_t   result          = (*_kafi).step();
+            const nx1_vector estimated_state = std::get<0>(result);
+            const double estimated_v_x = estimated_state(0, 0);
+            const double estimated_v_y = estimated_state(1, 0);
+            std::cerr << "       - estimation: " << estimated_v_x << '\n'
+                      << "                     " << estimated_v_y << '\n';
+            //
+            return std::make_tuple(estimated_v_x, estimated_v_y, timestep_s);
+        }
+
+        //! unsafe function, should only be called if we can access cone._observations[last/last-1] and cluster[ix]
+        const std::tuple<double, double> _calculate_velocity(const size_t & ix
+                                                                           , const std::vector<cone_state<double>> & cluster
+                                                                           , const double & timestep_s) const
+        {   
+            const cone_state<double> & cone = cluster[ix];
+            double distance_x = 0;
+            double distance_y = 0;
+            std::tie(distance_x, distance_y) = cone.get_relative_pos_difference();
+
+            const double v_x = distance_x / timestep_s;
+            const double v_y = distance_y / timestep_s;
+
+            std::cerr << "    [clara.h:calculate_velocity()]\n"
+                      << "        ix: " << ix << ", time: " << timestep_s << "s\n" \
+                      << "        distance_x: " << distance_x << "m\n" \
+                      << "        distance_y: " << distance_y << "m\n" \
+                      << "            vx: " << v_x << " m/s\n" \
+                      << "            vy: " << v_y << " m/s\n";
+            return std::make_tuple(v_x, v_y); 
+        }
+
+        /** \brief calculate the cone velocities by meaning every recurring cone observation and resulting velocity calculation of relative coordinates
+          * May be nothing if we didn't see any recurring cones
+          */ 
+        concept::maybe<std::tuple<double, double>> _calculate_cone_velocities(const double & timestep_s)
+        {
             // get cluster by reference to not change ownership
             auto & yellow_cluster = _yellow_data_association.get_cluster();
             auto & blue_cluster   = _blue_data_association.get_cluster();
@@ -344,59 +428,10 @@ namespace clara {
             }
             // update the newly seen cluster indicies
             _update_detected_cluster(yellow_detected_cluster_ix, blue_detected_cluster_ix);
-            // if we don't see any new cones, we can't update the kalman filter
-            if (_velocities.empty())
-            {   
-                std::cerr << "        - no matched cluster observations, returning velocities from correvit\n";
-                return std::make_tuple(v_x_sensor, v_y_sensor, timestep_s);
-            }
-            // calculate mean velocity changes for every cone
-            const std::tuple<double, double> cone_velocites = _get_mean_velocities(_velocities);
-            const double v_x_cones = std::get<0>(cone_velocites);
-            const double v_y_cones = std::get<1>(cone_velocites);
-            // for debugging purposes
-            if (true) // v_x_sensor == 0 && v_y_sensor == 0)
-            {   
-                std::cerr << "        - vx/vy_sensor are zero, returning velocities from cones\n";
-                return std::make_tuple(v_x_cones, v_y_cones, timestep_s);
-            }
-            // run the kalman filter with sensor and cone velocities
-            std::shared_ptr< mx1_vector > observation = std::make_shared< mx1_vector >(
-                            mx1_vector( { { v_x_sensor }, { v_y_sensor }
-                                        , { v_x_cones }, { v_y_cones } } ));
-            std::cerr << "       - observation: " << v_x_sensor << '\n'
-                      << "                      " << v_y_sensor << '\n'
-                      << "                      " << v_x_cones << '\n'
-                      << "                      " << v_y_cones << '\n';
-            (*_kafi).set_current_observation(observation);
-            const return_t   result          = (*_kafi).step();
-            const nx1_vector estimated_state = std::get<0>(result);
-            const double estimated_v_x = estimated_state(0, 0);
-            const double estimated_v_y = estimated_state(1, 0);
-            //
-            return std::make_tuple(estimated_v_x, estimated_v_y, timestep_s);
-        }
-
-        //! unsafe function, should only be called if we can access cone._observations[last/last-1] and cluster[ix]
-        const std::tuple<double, double> _calculate_velocity(const size_t ix
-                                                           , const std::vector<cone_state<double>> & cluster
-                                                           , const double timestep_s) const
-        {   
-            const cone_state<double> & cone = cluster[ix];
-            double distance_x = 0;
-            double distance_y = 0;
-            std::tie(distance_x, distance_y) = cone.get_relative_pos_difference();
-
-            const double v_x = distance_x / timestep_s;
-            const double v_y = distance_y / timestep_s;
-
-            std::cerr << "    [clara.h:calculate_velocity()]\n"
-                      << "        ix: " << ix << ", time: " << timestep_s << "s\n" \
-                      << "        distance_x: " << distance_x << "m\n" \
-                      << "        distance_y: " << distance_y << "m\n" \
-                      << "            vx: " << v_x << " m/s\n" \
-                      << "            vy: " << v_y << " m/s\n";
-            return std::make_tuple(v_x, v_y); 
+            // if we didn't see any recurring cones, return nothing
+            if (_velocities.empty()) return concept::maybe<std::tuple<double, double>>();
+            // otherwise, calculate mean velocity changes for every cone
+            return concept::maybe<std::tuple<double, double>>(_summarize_velocities(_velocities));
         }
 
         //! replaces _yellow_detected_cluster_ixs, _blue_detected_cluster_ixs and with the new detected cluster indices 
@@ -472,12 +507,13 @@ namespace clara {
                                                      , sensor_noise);
         }
 
-        /** \brief calculate the mean velocities
+        /** \brief summarizes the velocities, may be mean or median \todo make configurable
           * INVARIANT: velocities is nonempty
           */
-        const std::tuple<double, double> _get_mean_velocities(const std::vector<std::tuple<double, double>> & velocities) const
+        const std::tuple<double, double> _summarize_velocities(std::vector<std::tuple<double, double>> & velocities) const
         {
             return util::mean_accumulate(velocities);
+            // return util::median(velocities);
         }
 
         //! starts the clock to use with get_diff_time_s
@@ -520,8 +556,8 @@ namespace clara {
             return std::make_tuple(x_car, y_car);
         }
 
-        //! sort by relative distance to our currently best estimated position
-        void _sort_by_rel_distance(std::vector<raw_cone_data> & cones
+        //! sort by distance to our currently best estimated position via the velocity_sensor
+        void _sort_by_distance_to_cur_pos(std::vector<raw_cone_data> & cones
                                  , const double & v_x_sensor
                                  , const double & v_y_sensor
                                  , const double & timestep_s)
@@ -535,7 +571,7 @@ namespace clara {
             });
         }
 
-        //! erase cones by distance
+        //! erase cones if they are greater than _max_accepted_distance_m
         void _erase_by_distance(std::vector<raw_cone_data> & cones
                               , const double & v_x_sensor
                               , const double & v_y_sensor
@@ -547,7 +583,7 @@ namespace clara {
                 [&](raw_cone_data c)
                 {
                     const std::tuple<double, double> _a = std::make_tuple( std::get<0>(c), std::get<1>(c) );
-                    return util::euclidean_distance(_a, car_pos) > 10;
+                    return util::euclidean_distance(_a, car_pos) > _max_accepted_distance_m;
                 }),
             cones.end());
         }
@@ -593,6 +629,9 @@ namespace clara {
 
         //! log client which accepts the clara logs
         connector::client< connector::UDP > _log_client;
+
+        //! maximum accepted distance, everything else will be deleted from the object_list_t by _erase_by_distance()
+        double _max_accepted_distance_m;
     };
 } // namespace clara
 

@@ -223,10 +223,10 @@ namespace clara {
             {
                 const coords_t & o_2 = _observations.back();
                 const coords_t & o_1 = *(_observations.end() - 2);
-                std::cerr << "        > get_rel_pos_diff():\n" \
-                          << "          mean_vec:" << _mean_vec[0] << ", " << _mean_vec[1] << '\n'
-                          << "          o_2:"      << o_2[0]       << ", " << o_2[1]       << ", " << o_2[2] << ", " << o_2[3] << '\n'
-                          << "          o_1:"      << o_1[0]       << ", " << o_1[1]       << ", " << o_1[2] << ", " << o_1[3] << '\n';
+                // std::cerr << "        > get_rel_pos_diff():\n" 
+                //           << "          mean_vec:" << _mean_vec[0] << ", " << _mean_vec[1] << '\n'
+                //           << "          o_2:"      << o_2[0]       << ", " << o_2[1]       << ", " << o_2[2] << ", " << o_2[3] << '\n'
+                //           << "          o_1:"      << o_1[0]       << ", " << o_1[1]       << ", " << o_1[2] << ", " << o_1[3] << '\n';
                 return std::make_tuple(o_1[2] - o_2[2], o_1[3] - o_2[3]);
             }
 

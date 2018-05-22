@@ -97,7 +97,7 @@ int main(){
     const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
     const double lap_epsilon_m                        = 0.5; // if we're 0.5m near the starting point, increment the lap counter
     const double set_start_after_m                    = 0;   // we travel at least some distance until setting our start point
-
+    const double max_accepted_distance_m              = 10;  // we delete every observation if it's farther than 10m
     std::tuple<std::string, int> log_ip_port = std::make_tuple("0.0.0.0", 1111);
 
     clara::clara clara(
@@ -111,7 +111,8 @@ int main(){
       , min_driven_distance_m
       , lap_epsilon_m
       , set_start_after_m
-      , log_ip_port);
+      , log_ip_port
+      , max_accepted_distance_m);
       //, std::make_tuple(0.888982, -1.50739));
 
     int counter  = 0;
@@ -123,7 +124,7 @@ int main(){
         double yaw_rad = l.element[0].angle_yaw;
         double vx      = l.element[0].vx;
         double vy      = l.element[0].vy;
-        std::cout << vx << ", " << vy << ", " << yaw_rad << ", " << l.element[0].time_s << '\n';
+        // std::cout << vx << ", " << vy << ", " << yaw_rad << ", " << l.element[0].time_s << '\n';
         std::cerr << "Observation [ " << counter++ << "/" << observations.size() << "]:\n"
                   << "    Rec. time: " << t_s  << "s\n"
                   << "    velocity: "  << vx << ", " << vy << " m/s\n"

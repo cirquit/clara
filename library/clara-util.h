@@ -162,7 +162,7 @@ namespace clara
             return std::find(container.begin(), container.end(), elem) != container.end();
         }
 
-        //! calculate the mean of a tuple<double, double> container
+        //! calculate the mean of a tuple<double, double> container \todo use SFINAE to check that
         template< class Iterable >  
         std::tuple<double, double> mean_accumulate(Iterable container)
         {
@@ -183,6 +183,16 @@ namespace clara
             return std::make_tuple(x_sum / static_cast<double>(container.size())
                                  , y_sum / static_cast<double>(container.size()) );
         }
+
+        //! calculate the median of a tuple<double, double> container \todo use SFINAE to check that
+        template< class Iterable >  
+        std::tuple<double, double> median(Iterable container)
+        {
+            std::nth_element(container.begin(), container.begin() + container.size()/2, container.end());
+            return container[container.size()/2];
+        }
+
+
 
         //! equal with an epsilon bound, explicitly casting any type to double
         template< class T >

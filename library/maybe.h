@@ -54,6 +54,8 @@ namespace concept {
     public:
         //! checks if we have a value
         bool has_value() { return _valid; }
+        //! inverse of has_value()
+        bool has_no_value() { return !has_value(); }
         //! unsafe value get. use has_value to insure correctness
         value_t get_value() { return _value; }
         //! set value, set valid = true

@@ -48,11 +48,11 @@ namespace clara {
                   , double min_driven_distance_m
                   , double lap_epsilon_m
                   , double set_start_after_m)
-        : _distance_cnt { }
-        , _min_driven_distance_m(min_driven_distance_m)
+        : _start_pos(start_pos)
         , _lap_epsilon_m(lap_epsilon_m)
-        , _start_pos(start_pos)
+        , _min_driven_distance_m(min_driven_distance_m)
         , _set_start_after_m(set_start_after_m)
+        , _distance_cnt { }
         , _lap(0)
         , _unset_start(true)
         { }

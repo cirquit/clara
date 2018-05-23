@@ -188,7 +188,7 @@ namespace clara {
             return _lap_counter.count();
         }
 
-        //! returns the cone infront of us and then behind us, respectivly yellow and blue, can fail if we don't have enough observations
+        //! returns the cones infront and behind us, respectivly yellow and blue, can fail if we don't have enough observations
         maybe_cones get_basecase_cones()
         {
             return util::get_basecase_cones(_estimated_position, _yellow_data_association, _blue_data_association);
@@ -373,8 +373,8 @@ namespace clara {
 
         //! unsafe function, should only be called if we can access cone._observations[last/last-1] and cluster[ix]
         const std::tuple<double, double> _calculate_velocity(const size_t & ix
-                                                                           , const std::vector<cone_state<double>> & cluster
-                                                                           , const double & timestep_s) const
+                                                           , const std::vector<cone_state<double>> & cluster
+                                                           , const double & timestep_s) const
         {   
             const cone_state<double> & cone = cluster[ix];
             double distance_x = 0;
@@ -434,7 +434,7 @@ namespace clara {
             return concept::maybe<std::tuple<double, double>>(_summarize_velocities(_velocities));
         }
 
-        //! replaces _yellow_detected_cluster_ixs, _blue_detected_cluster_ixs and with the new detected cluster indices 
+        //! replaces _yellow_detected_cluster_ixs and _blue_detected_cluster_ixs with the new detected cluster indices 
         void _update_detected_cluster(const std::vector<size_t> & yellow_detected_cluster_ixs,
                                       const std::vector<size_t> & blue_detected_cluster_ixs)
         {
@@ -531,7 +531,7 @@ namespace clara {
             return elapsed_ms / 1000.0;
         }
 
-        //! calculates the new position based on the estimated v_x, v_y and the elapsed time
+        //! calculates the new position based on the estimated v_x, v_y and the elapsed time, this has to be the world-vx/y, not the vehicle model
         const std::tuple<double, double> _apply_physics_model(const std::tuple<double, double, double> & velocity_t) const
         {
             const double v_x        = std::get<0>(velocity_t);
@@ -544,19 +544,22 @@ namespace clara {
             return std::make_tuple(pos_x, pos_y);
         }
 
-        //! apply local velocity if we are too slow
+        //! apply local vehicle model velocity if we are too slow or the sample rate is too small
         std::tuple<double, double> _predict_position_single_shot(const double & v_x_sensor
                                                                , const double & v_y_sensor
                                                                , const double & yaw_rad
                                                                , const double & timestep_s) const
         {
+            // old car position
             const double x_car_old = std::get<0>(_estimated_position); // obj.x_car; // update with v_x_sensor
             const double y_car_old = std::get<1>(_estimated_position); // obj.y_car; // update with v_y_sensor
-            
-            const double x_ = v_x * timestep_s;  
-            const double y_ = v_y * timestep_s;
+            // local vehicle distance 
+            const double x_ = v_x_sensor * timestep_s;  
+            const double y_ = v_y_sensor * timestep_s;
+            // local world distance
             const double x  = x_ * std::cos( yaw_rad ) - y_ * std::sin( yaw_rad );
             const double y  = x_ * std::sin( yaw_rad ) + y_ * std::cos( yaw_rad );
+            // new car position
             const double x_car = x_car_old + x;
             const double y_car = y_car_old + y; 
             // const double x_car = x_car_old + (v_x_sensor * timestep_s);
@@ -566,10 +569,10 @@ namespace clara {
 
         //! sort by distance to our currently best estimated position via the velocity_sensor
         void _sort_by_distance_to_cur_pos(std::vector<raw_cone_data> & cones
-                                 , const double & v_x_sensor
-                                 , const double & v_y_sensor
-                                 , const double & yaw_rad
-                                 , const double & timestep_s)
+                                        , const double & v_x_sensor
+                                        , const double & v_y_sensor
+                                        , const double & yaw_rad
+                                        , const double & timestep_s)
         {
             std::tuple<double, double> car_pos = _predict_position_single_shot(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             std::sort(cones.begin(), cones.end(), [&](raw_cone_data & a, raw_cone_data & b)

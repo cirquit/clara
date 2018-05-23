@@ -157,13 +157,13 @@ namespace clara {
             // iterate over the c-style array and apped cones based on their color
             _append_cones_by_type(obj_list, v_x_sensor, v_y_sensor, timestep_s, yaw_rad);
             // erase cones by maximum allowed distance
-            _erase_by_distance(_new_yellow_cones, v_x_sensor, v_y_sensor, timestep_s);
-            _erase_by_distance(_new_blue_cones, v_x_sensor, v_y_sensor, timestep_s);
-            _erase_by_distance(_new_red_cones, v_x_sensor, v_y_sensor, timestep_s);
+            _erase_by_distance(_new_yellow_cones, v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+            _erase_by_distance(_new_blue_cones, v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+            _erase_by_distance(_new_red_cones, v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             // sort by relative distance to our current position, so the mapping step has some ordering and can do sanity checks
-            _sort_by_distance_to_cur_pos(_new_yellow_cones, v_x_sensor, v_y_sensor, timestep_s);
-            _sort_by_distance_to_cur_pos(_new_blue_cones, v_x_sensor, v_y_sensor, timestep_s);
-            _sort_by_distance_to_cur_pos(_new_red_cones, v_x_sensor, v_y_sensor, timestep_s);
+            _sort_by_distance_to_cur_pos(_new_yellow_cones, v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+            _sort_by_distance_to_cur_pos(_new_blue_cones, v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+            _sort_by_distance_to_cur_pos(_new_red_cones, v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             // do the data association (\todo parallelize me with openmp tasks)
             _yellow_data_association.classify_new_data(_new_yellow_cones);
             _blue_data_association.classify_new_data(_new_blue_cones);
@@ -312,7 +312,7 @@ namespace clara {
         { 
             // apply local velocity to the previously estimated position
             double x_car, y_car;
-            std::tie(x_car, y_car) = _predict_position_single_shot(v_x_sensor, v_y_sensor, timestep_s);
+            std::tie(x_car, y_car) = _predict_position_single_shot(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             // trigonometry - get x,y position from angle and distance
             const double x_ = std::cos( obj.angle ) * obj.distance;
             const double y_ = std::sin( obj.angle ) * obj.distance;
@@ -547,12 +547,20 @@ namespace clara {
         //! apply local velocity if we are too slow
         std::tuple<double, double> _predict_position_single_shot(const double & v_x_sensor
                                                                , const double & v_y_sensor
+                                                               , const double & yaw_rad
                                                                , const double & timestep_s) const
         {
             const double x_car_old = std::get<0>(_estimated_position); // obj.x_car; // update with v_x_sensor
             const double y_car_old = std::get<1>(_estimated_position); // obj.y_car; // update with v_y_sensor
-            const double x_car = x_car_old + (v_x_sensor * timestep_s);
-            const double y_car = y_car_old + (v_y_sensor * timestep_s); 
+            
+            const double x_ = v_x * timestep_s;  
+            const double y_ = v_y * timestep_s;
+            const double x  = x_ * std::cos( yaw_rad ) - y_ * std::sin( yaw_rad );
+            const double y  = x_ * std::sin( yaw_rad ) + y_ * std::cos( yaw_rad );
+            const double x_car = x_car_old + x;
+            const double y_car = y_car_old + y; 
+            // const double x_car = x_car_old + (v_x_sensor * timestep_s);
+            // const double y_car = y_car_old + (v_y_sensor * timestep_s); 
             return std::make_tuple(x_car, y_car);
         }
 
@@ -560,9 +568,10 @@ namespace clara {
         void _sort_by_distance_to_cur_pos(std::vector<raw_cone_data> & cones
                                  , const double & v_x_sensor
                                  , const double & v_y_sensor
+                                 , const double & yaw_rad
                                  , const double & timestep_s)
         {
-            std::tuple<double, double> car_pos = _predict_position_single_shot(v_x_sensor, v_y_sensor, timestep_s);
+            std::tuple<double, double> car_pos = _predict_position_single_shot(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             std::sort(cones.begin(), cones.end(), [&](raw_cone_data & a, raw_cone_data & b)
             {
                 const std::tuple<double, double> _a = std::make_tuple( std::get<0>(a), std::get<1>(a) );
@@ -575,9 +584,10 @@ namespace clara {
         void _erase_by_distance(std::vector<raw_cone_data> & cones
                               , const double & v_x_sensor
                               , const double & v_y_sensor
+                              , const double & yaw_rad
                               , const double & timestep_s)
         {
-            std::tuple<double, double> car_pos = _predict_position_single_shot(v_x_sensor, v_y_sensor, timestep_s);
+            std::tuple<double, double> car_pos = _predict_position_single_shot(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             cones.erase(std::remove_if(cones.begin(), 
                                        cones.end(),
                 [&](raw_cone_data c)

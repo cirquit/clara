@@ -155,7 +155,7 @@ namespace clara {
                 // std::cerr << "        got time: " << timestep_s << "s\n";
             }
             // iterate over the c-style array and apped cones based on their color
-            _append_cones_by_type(obj_list, v_x_sensor, v_y_sensor, timestep_s, yaw_rad);
+            _append_cones_by_type(obj_list, v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             // erase cones by maximum allowed distance
             _erase_by_distance(_new_yellow_cones, v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             _erase_by_distance(_new_blue_cones, v_x_sensor, v_y_sensor, yaw_rad, timestep_s);

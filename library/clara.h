@@ -168,18 +168,19 @@ namespace clara {
             _yellow_data_association.classify_new_data(_new_yellow_cones);
             _blue_data_association.classify_new_data(_new_blue_cones);
             _red_data_association.classify_new_data(_new_red_cones);
+            
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            const std::tuple<double, double, double> velocity_t = std::make_tuple(v_x_sensor, v_y_sensor, timestep_s);
-            // const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
+            const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
             // update the position based on the estimated v_x, v_y and the time
             const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
+            // const std::tuple<double, double> new_position = _predict_position_single_shot(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             _update_estimated_position(new_position);
             // update the travelled distance to check if we are close enough to the start
             _lap_counter.add_positions(_estimated_position_old, _estimated_position);
             // logging
-            _log_velocity_position_dirty(velocity_t, obj_list, new_position);
-            // _log_visualization_udp(obj_list.element[0].x_car, obj_list.element[0].y_car, yaw_rad);
-            _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
+            //_log_velocity_position_dirty(velocity_t, obj_list, new_position);
+            _log_visualization_udp(std::get<0>(new_position), std::get<1>(new_position), yaw_rad);
+            // _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
             return _estimated_position;
         }
 
@@ -332,7 +333,7 @@ namespace clara {
                                                                   , double v_y_sensor
                                                                   , double timestep_s)
         {
-            std::cerr << "    [clara.h:estimate_velocity()]\n";
+            // std::cerr << "    [clara.h:estimate_velocity()]\n";
             using nx1_vector = typename kafi::jacobian_function<N,M>::nx1_vector;
             using mx1_vector = typename kafi::jacobian_function<N,M>::mx1_vector;
             using return_t   = typename kafi::kafi<N,M>::return_t;
@@ -349,7 +350,7 @@ namespace clara {
             // for debugging purposes
             if (true) // v_x_sensor == 0 && v_y_sensor == 0)
             {   
-                std::cerr << "       - vx/vy_sensor are zero, returning velocities from cones\n";
+                // std::cerr << "       - vx/vy_sensor are zero, returning velocities from cones\n";
                 return std::make_tuple(v_x_cones, v_y_cones, timestep_s);
             }
             // run the kalman filter with sensor and cone velocities
@@ -384,12 +385,12 @@ namespace clara {
             const double v_x = distance_x / timestep_s;
             const double v_y = distance_y / timestep_s;
 
-            std::cerr << "    [clara.h:calculate_velocity()]\n"
-                      << "        ix: " << ix << ", time: " << timestep_s << "s\n" \
-                      << "        distance_x: " << distance_x << "m\n" \
-                      << "        distance_y: " << distance_y << "m\n" \
-                      << "            vx: " << v_x << " m/s\n" \
-                      << "            vy: " << v_y << " m/s\n";
+            // std::cerr << "    [clara.h:calculate_velocity()]\n"
+            //           << "        ix: " << ix << ", time: " << timestep_s << "s\n" \
+            //           << "        distance_x: " << distance_x << "m\n" \
+            //           << "        distance_y: " << distance_y << "m\n" \
+            //           << "            vx: " << v_x << " m/s\n" \
+            //           << "            vy: " << v_y << " m/s\n";
             return std::make_tuple(v_x, v_y); 
         }
 

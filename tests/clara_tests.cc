@@ -128,6 +128,7 @@ int main(int argc, char const *argv[]){
         const object_list_t & l   = std::get<0>(o);
         const double        & t_s = std::get<1>(o);
         if (l.size == 0) { continue; }
+        if (t_s == 0)    { continue; }
         double yaw_rad = l.element[0].angle_yaw;
         double vx      = l.element[0].vx;
         double vy      = l.element[0].vy;
@@ -136,7 +137,7 @@ int main(int argc, char const *argv[]){
                   << "    velocity: "  << vx << ", " << vy << " m/s\n"
                   << "    yaw: "       << yaw_rad << "rad\n";
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(1000)); //static_cast<int>(t_s*1000)));
+        std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw_rad, t_s);
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
         UNUSED(pos);

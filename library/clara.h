@@ -386,10 +386,10 @@ namespace clara {
             const double v_y = distance_y / timestep_s;
 
             // std::cerr << "    [clara.h:calculate_velocity()]\n"
-            //           << "        ix: " << ix << ", time: " << timestep_s << "s\n" \
-            //           << "        distance_x: " << distance_x << "m\n" \
-            //           << "        distance_y: " << distance_y << "m\n" \
-            //           << "            vx: " << v_x << " m/s\n" \
+            //           << "        ix: " << ix << ", time: " << timestep_s << "s\n"
+            //           << "        distance_x: " << distance_x << "m\n"
+            //           << "        distance_y: " << distance_y << "m\n"
+            //           << "            vx: " << v_x << " m/s\n"
             //           << "            vy: " << v_y << " m/s\n";
             return std::make_tuple(v_x, v_y); 
         }

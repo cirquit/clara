@@ -170,15 +170,16 @@ namespace clara {
             _red_data_association.classify_new_data(_new_red_cones);
             
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
+            // const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
             // update the position based on the estimated v_x, v_y and the time
-            const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
-            // const std::tuple<double, double> new_position = _predict_position_single_shot(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+            // const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
+            const std::tuple<double, double> new_position = _predict_position_single_shot(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             _update_estimated_position(new_position);
             // update the travelled distance to check if we are close enough to the start
             _lap_counter.add_positions(_estimated_position_old, _estimated_position);
             // logging
             //_log_velocity_position_dirty(velocity_t, obj_list, new_position);
+            _log_position_dirty(obj_list, new_position);
             _log_visualization_udp(std::get<0>(new_position), std::get<1>(new_position), yaw_rad);
             // _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
             return _estimated_position;
@@ -230,10 +231,17 @@ namespace clara {
                                         , const object_list_t                      & obj_list
                                         , const std::tuple<double, double>         & new_position)
         {
-            std::cerr << "        calc velocity: " << std::get<0>(velocity_t) << "m/s, " << std::get<1>(velocity_t) << "m/s\n" \
-                      << "        real velocity: " << obj_list.element[0].vx << "m/s, " << obj_list.element[0].vy << "m/s\n" \
-                      << "        prev position: " << std::get<0>(_estimated_position_old) << ", " << std::get<1>(_estimated_position_old) << '\n' \
-                      << "        new  position: " << std::get<0>(new_position) << ", " << std::get<1>(new_position) << '\n' \
+            std::cerr << "        calc velocity: " << std::get<0>(velocity_t) << "m/s, " << std::get<1>(velocity_t) << "m/s\n"
+                      << "        real velocity: " << obj_list.element[0].vx << "m/s, " << obj_list.element[0].vy << "m/s\n";
+            _log_position_dirty(obj_list, new_position);
+        }
+
+        //! simple log for position comparisson by hand to std::cerr
+        void _log_position_dirty(const object_list_t              & obj_list
+                               , const std::tuple<double, double> & new_position)
+        {
+            std::cerr << "        prev position: " << std::get<0>(_estimated_position_old) << ", " << std::get<1>(_estimated_position_old) << '\n'
+                      << "        new  position: " << std::get<0>(new_position) << ", " << std::get<1>(new_position) << '\n'
                       << "        real position: " << obj_list.element[0].x_car << ", " << obj_list.element[0].y_car << '\n';
         }
 
@@ -565,6 +573,15 @@ namespace clara {
             const double y_car = y_car_old + y; 
             // const double x_car = x_car_old + (v_x_sensor * timestep_s);
             // const double y_car = y_car_old + (v_y_sensor * timestep_s); 
+            std::cerr << "    _predict_position_single_shot:\n"
+                      << "        x_car_old: " << x_car_old << '\n'
+                      << "        y_car_old: " << y_car_old << '\n'
+                      << "               x_: " << x_ << '\n'
+                      << "               y_: " << y_ << '\n'
+                      << "                x: " << x << '\n'
+                      << "                y: " << y << '\n'
+                      << "            x_car: " << x_car << '\n'
+                      << "            y_car: " << y_car << '\n';
             return std::make_tuple(x_car, y_car);
         }
 

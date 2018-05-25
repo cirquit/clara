@@ -170,16 +170,16 @@ namespace clara {
             _red_data_association.classify_new_data(_new_red_cones);
             
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            // const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, timestep_s);
+            // const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+            const std::tuple<double, double, double> velocity_t = _to_world_velocity(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             // update the position based on the estimated v_x, v_y and the time
-            // const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
-            const std::tuple<double, double> new_position = _predict_position_single_shot(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+            const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
             _update_estimated_position(new_position);
             // update the travelled distance to check if we are close enough to the start
             _lap_counter.add_positions(_estimated_position_old, _estimated_position);
             // logging
-            //_log_velocity_position_dirty(velocity_t, obj_list, new_position);
-            _log_position_dirty(obj_list, new_position);
+            // _log_velocity_position_dirty(velocity_t, obj_list, new_position);
+            // _log_position_dirty(obj_list, new_position);
             _log_visualization_udp(std::get<0>(new_position), std::get<1>(new_position), yaw_rad);
             // _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
             return _estimated_position;
@@ -231,8 +231,8 @@ namespace clara {
                                         , const object_list_t                      & obj_list
                                         , const std::tuple<double, double>         & new_position)
         {
-            std::cerr << "        calc velocity: " << std::get<0>(velocity_t) << "m/s, " << std::get<1>(velocity_t) << "m/s\n"
-                      << "        real velocity: " << obj_list.element[0].vx << "m/s, " << obj_list.element[0].vy << "m/s\n";
+            std::cerr << "        calc velocity (wrld): " << std::get<0>(velocity_t) << "m/s, " << std::get<1>(velocity_t) << "m/s\n"
+                      << "        real velocity (vhcl): " << obj_list.element[0].vx << "m/s, " << obj_list.element[0].vy << "m/s\n";
             _log_position_dirty(obj_list, new_position);
         }
 
@@ -336,9 +336,21 @@ namespace clara {
             return std::make_tuple(x + x_car, y + y_car, x, y);
         }
 
+        //! converts the from the vehicle coordinate system (vx is always positive) to the global world coordiante system (vx may be negative)
+        const std::tuple< double, double, double > _to_world_velocity(const double v_x_sensor
+                                                            , const double v_y_sensor
+                                                            , const double yaw_rad
+                                                            , const double timestep_s) const
+        {
+            const double v_x_world = v_x_sensor * std::cos( yaw_rad ) - v_y_sensor * std::sin( yaw_rad );
+            const double v_y_world = v_x_sensor * std::sin( yaw_rad ) + v_y_sensor * std::cos( yaw_rad );
+            return std::make_tuple(v_x_world, v_y_world, timestep_s);
+        }
+
         //! returns the estimated velocity_t (x,y, timestep_s)
         const std::tuple<double, double, double> _estimate_velocity(double v_x_sensor
                                                                   , double v_y_sensor
+                                                                  , double yaw_rad
                                                                   , double timestep_s)
         {
             // std::cerr << "    [clara.h:estimate_velocity()]\n";
@@ -350,8 +362,8 @@ namespace clara {
             // if we don't see any new cones, we can't update the kalman filter
             if (m_cone_velocity.has_no_value())
             {   
-                std::cerr << "       - no matched cluster observations, returning velocities from correvit\n";
-                return std::make_tuple(v_x_sensor, v_y_sensor, timestep_s);
+                std::cerr << "       - no matched cluster observations, returning transformed velocities from correvit to world velocity\n";
+                return _to_world_velocity(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             }
             const double v_x_cones = std::get<0>(m_cone_velocity.get_value());
             const double v_y_cones = std::get<1>(m_cone_velocity.get_value());
@@ -361,10 +373,13 @@ namespace clara {
                 // std::cerr << "       - vx/vy_sensor are zero, returning velocities from cones\n";
                 return std::make_tuple(v_x_cones, v_y_cones, timestep_s);
             }
+            // convert the correvit velocity to world velocity for fusion
+            double v_x_sensor_world, v_y_sensor_world;
+            std::tie(v_x_sensor_world, v_y_sensor_world, std::ignore) = _to_world_velocity(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             // run the kalman filter with sensor and cone velocities
             std::shared_ptr< mx1_vector > observation = std::make_shared< mx1_vector >(
-                            mx1_vector( { { v_x_sensor }, { v_y_sensor }
-                                        , { v_x_cones }, { v_y_cones } } ));
+                            mx1_vector( { { v_x_sensor_world }, { v_y_sensor_world }
+                                        , { v_x_cones },        { v_y_cones } } ));
             std::cerr << "       - observation: " << v_x_sensor << '\n'
                       << "                      " << v_y_sensor << '\n'
                       << "                      " << v_x_cones << '\n'
@@ -573,15 +588,15 @@ namespace clara {
             const double y_car = y_car_old + y; 
             // const double x_car = x_car_old + (v_x_sensor * timestep_s);
             // const double y_car = y_car_old + (v_y_sensor * timestep_s); 
-            std::cerr << "    _predict_position_single_shot:\n"
-                      << "        x_car_old: " << x_car_old << '\n'
-                      << "        y_car_old: " << y_car_old << '\n'
-                      << "               x_: " << x_ << '\n'
-                      << "               y_: " << y_ << '\n'
-                      << "                x: " << x << '\n'
-                      << "                y: " << y << '\n'
-                      << "            x_car: " << x_car << '\n'
-                      << "            y_car: " << y_car << '\n';
+            // std::cerr << "    _predict_position_single_shot:\n"
+            //           << "        x_car_old: " << x_car_old << '\n'
+            //           << "        y_car_old: " << y_car_old << '\n'
+            //           << "               x_: " << x_ << '\n'
+            //           << "               y_: " << y_ << '\n'
+            //           << "                x: " << x << '\n'
+            //           << "                y: " << y << '\n'
+            //           << "            x_car: " << x_car << '\n'
+            //           << "            y_car: " << y_car << '\n';
             return std::make_tuple(x_car, y_car);
         }
 

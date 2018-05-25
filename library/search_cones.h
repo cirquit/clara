@@ -72,7 +72,7 @@ namespace clara {
                 sec_nearest_cluster.first  = nearest_cluster.first;
                 sec_nearest_cluster.second = nearest_cluster.second;
                 nearest_cluster.first = distance_01;
-                nearest_cluster.first = ix;
+                nearest_cluster.second = ix;
             }
         }
         return std::make_pair(nearest_cluster.second, sec_nearest_cluster.second);
@@ -93,15 +93,50 @@ namespace clara {
         const auto & yellow_detected_cluster_ix = yellow_data_association.get_detected_cluster_ixs();
         const auto & blue_detected_cluster_ix   = blue_data_association.get_detected_cluster_ixs();
 
+        std::vector<size_t> yellow_detected_cluster_ix_copy;
+        std::vector<size_t> blue_detected_cluster_ix_copy;
+        std::copy(yellow_detected_cluster_ix.begin(), yellow_detected_cluster_ix.end(),
+              std::back_inserter(yellow_detected_cluster_ix_copy));
+        std::copy(blue_detected_cluster_ix.begin(), blue_detected_cluster_ix.end(),
+              std::back_inserter(blue_detected_cluster_ix_copy));
+
+        if (yellow_detected_cluster_ix_copy.size() > 0)
+        {
+            size_t min_y_ix = *std::min_element(yellow_detected_cluster_ix_copy.begin()
+                                              , yellow_detected_cluster_ix_copy.end());
+            for(int i = 1; i < 3; ++i)
+            {
+                int y_ix = static_cast<int>(min_y_ix) - i;
+                if (y_ix > -1) // \todo looping
+                {
+                    yellow_detected_cluster_ix_copy.push_back(static_cast<size_t>(y_ix));
+                }
+            }
+        }
+
+        if (blue_detected_cluster_ix_copy.size() > 0)
+        {
+            size_t min_b_ix = *std::min_element(blue_detected_cluster_ix_copy.begin()
+                                              , blue_detected_cluster_ix_copy.end());
+            for(int i = 1; i < 3; ++i)
+            {
+                int b_ix = static_cast<int>(min_b_ix) - i;
+                if (b_ix > -1) // \todo looping
+                {
+                    blue_detected_cluster_ix_copy.push_back(static_cast<size_t>(b_ix));
+                }
+            }
+        }
+
         // if we have at least detected one cones for each color
-        if (yellow_detected_cluster_ix.size() >= 2
-           && blue_detected_cluster_ix.size() >= 2)
+       if (yellow_detected_cluster_ix_copy.size() >= 2
+           && blue_detected_cluster_ix_copy.size() >= 2)
         {
             // find the two nearest yellow cones
-            auto near_yellow_ixs = get_nearest_cones(yellow_detected_cluster_ix, yellow_cluster, pos);
+            auto near_yellow_ixs = get_nearest_cones(yellow_detected_cluster_ix_copy, yellow_cluster, pos);
             // find the two nearest blue cones
-            auto near_blue_ixs   = get_nearest_cones(blue_detected_cluster_ix, blue_cluster, pos);
-           
+            auto near_blue_ixs   = get_nearest_cones(blue_detected_cluster_ix_copy, blue_cluster, pos);
+
             // fill the types
             cone_position y_c_01;
             y_c_01[0] = yellow_cluster[near_yellow_ixs.first]._mean_vec[0];
@@ -119,11 +154,17 @@ namespace clara {
             b_c_02[1] = blue_cluster[near_blue_ixs.second]._mean_vec[1];
             near_cones b_cs = {{ b_c_01, b_c_02 }};
 
+            if (euclidean_distance(std::make_tuple(b_c_01[0], b_c_01[1]),
+                                   std::make_tuple(y_c_01[0], y_c_01[1])) > 4) return concept::maybe<cones_tuple>();
+
+            if (euclidean_distance(std::make_tuple(b_c_02[0], b_c_02[1]),
+                       std::make_tuple(y_c_02[0], y_c_02[1])) > 4) return concept::maybe<cones_tuple>();
+
             return concept::maybe<cones_tuple>(std::make_tuple(y_cs, b_cs));
         } else {
             return concept::maybe<cones_tuple>();
         }
-
+        return concept::maybe<cones_tuple>();
     }
 
 } // namespace util

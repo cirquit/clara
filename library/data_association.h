@@ -69,9 +69,9 @@ namespace clara {
                            , size_t apply_variance_step_count
                            , int    cluster_search_range)
             : _max_dist_btw_cones_m(max_dist_btw_cones_m)
+            , _apply_variance_step_count(apply_variance_step_count)
             , _variance_xx(variance_xx)
             , _variance_yy(variance_yy)
-            , _apply_variance_step_count(apply_variance_step_count)
             , _cluster_search_range(cluster_search_range)
             {
                 _cone_states.reserve(preallocated_cluster_count);
@@ -319,16 +319,18 @@ namespace clara {
         public: 
             //! saving all cluster here
             std::vector<cone_state<T>> _cone_states;
-            //! additional variance for sparse clusters in x
-            double _variance_xx;
-            //! additional variance for sparse clusters in y
-            double _variance_yy;
+            //! \todo
+            size_t _max_dist_btw_cones_m;
             //! how often should we apply additional variance in x,y dim
             size_t _apply_variance_step_count;
             //! what cluster is the last observed, we use that to span the association window 
             size_t _current_cone_ix;
-            //! \todo
-            size_t _max_dist_btw_cones_m;
+            //! additional variance for sparse clusters in x
+            double _variance_xx;
+            //! additional variance for sparse clusters in y
+            double _variance_yy;
+            //! how far do we search infront and back of the min/max index of _detected_cluster_ix
+            int _cluster_search_range;
             //! temporary storage for all pdf scores
             std::vector<double>  _pdfs;
             //! holds all currently used clusters, is filled in for classify_new_data
@@ -337,8 +339,6 @@ namespace clara {
             std::vector<size_t>  _detected_cluster_ix_copy;
             //! because we return everyting by const reference, we need to have a empty static member for get_detected_cluster_ixs
             std::vector<size_t>  _detected_cluster_ix_empty;
-            //! how far do we search infront and back of the min/max index of _detected_cluster_ix
-            int _cluster_search_range;
             //! because we need to hold our _detected_cluster_ix_copy for the next classification, we need to be able to distinguish "no detected cones" steps
             bool no_observations = false;
     };

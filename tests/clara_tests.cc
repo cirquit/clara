@@ -95,9 +95,9 @@ int main(int argc, char const *argv[]){
     // parametrization of data associtaion in clara
     const size_t preallocated_cluster_count           = 500;
     const size_t preallocated_detected_cones_per_step = 10;
-    const double max_distance_btw_cones_m             = 1.5;  // meter
-    const double variance_xx                          = 0.05;
-    const double variance_yy                          = 0.05;
+    const double max_distance_btw_cones_m             = 2.5;  // meter
+    const double variance_xx                          = 0.45;
+    const double variance_yy                          = 0.45;
     const size_t apply_variance_step_count            = 100000; // apply custom variance for this amount of observations
     const int    cluster_search_range                 = 5; // +/- to the min/max used cluster-index
     const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
@@ -118,8 +118,8 @@ int main(int argc, char const *argv[]){
       , lap_epsilon_m
       , set_start_after_m
       , log_ip_port
-      , max_accepted_distance_m
-      , std::make_tuple(4.94177, 0.722539)); // hockenheim (+5m in CM)
+      , max_accepted_distance_m); 
+      //  , std::make_tuple(4.94177, 0.722539)); // hockenheim (+5m in CM)
       //, std::make_tuple(0.888982, -1.50739)); //
 
     int counter  = 0;
@@ -137,8 +137,10 @@ int main(int argc, char const *argv[]){
                   << "    velocity: "  << vx << ", " << vy << " m/s\n"
                   << "    yaw: "       << yaw_rad << "rad\n";
 
+        if (t_s > 100) { continue; }
         std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw_rad, t_s);
+        std::cerr << "    pos: " << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
         UNUSED(pos);
     }

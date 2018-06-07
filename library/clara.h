@@ -329,7 +329,6 @@ namespace clara {
             const double x = x_ * std::cos( yaw_rad ) - y_ * std::sin( yaw_rad );
             const double y = x_ * std::sin( yaw_rad ) + y_ * std::cos( yaw_rad );
             // std::cerr << "    [clara.h:parse_object_t()]\n"
-            //           << "        x_car_old: " << x_car_old << ", y_car_old: " << y_car_old << '\n'
             //           << "            x_car: " << x_car     << ",     y_car: " << y_car << '\n'
             //           << "                x: " << x         << ",         y: " << y     << '\n'
             //           << "            x_abs: " << x + x_car << ",     y_abs: " << y + y_car << '\n';

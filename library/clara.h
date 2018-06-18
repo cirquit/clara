@@ -138,6 +138,9 @@ namespace clara {
                                                          , double v_x_sensor
                                                          , double v_y_sensor
                                                          , double yaw_rad
+                                                         , double a_x
+                                                         , double a_y
+                                                         , double steer_angle
                                                          , double timestep_s = 0)
         {
             // std::cerr << "    [clara.h::add_observation()]\n";
@@ -180,7 +183,7 @@ namespace clara {
             // logging
             // _log_velocity_position_dirty(velocity_t, obj_list, new_position);
             // _log_position_dirty(obj_list, new_position);
-            _log_visualization_udp(std::get<0>(new_position), std::get<1>(new_position), yaw_rad);
+            _log_visualization_udp(std::get<0>(new_position), std::get<1>(new_position), yaw_rad, v_x_sensor, v_y_sensor, a_x, a_y, steer_angle);
             // _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
             return _estimated_position;
         }
@@ -248,10 +251,15 @@ namespace clara {
         //! create a string from the logs and send them to the udp logger server \todo make parallel
         void _log_visualization_udp(const double & x_pos
                                   , const double & y_pos
-                                  , const double & yaw_rad)
+                                  , const double & yaw_rad
+                                  , const double & v_x
+                                  , const double & v_y
+                                  , const double & a_x
+                                  , const double & a_y
+                                  , const double & steer_angle)
         {
             std::ostringstream os;
-            _log_visualization(x_pos, y_pos, yaw_rad, os);
+            _log_visualization(x_pos, y_pos, yaw_rad, v_x, v_y, a_x, a_y, steer_angle, os);
             std::string msg(os.str());
             _log_client.send_udp<const char>(msg.c_str()[0], msg.size());
         }
@@ -259,15 +267,25 @@ namespace clara {
         //! log the clara visualization to cout
         void _log_visualization_cout(const double & x_pos
                                    , const double & y_pos
-                                   , const double & yaw_rad)
+                                   , const double & yaw_rad
+                                   , const double & v_x
+                                   , const double & v_y
+                                   , const double & a_x
+                                   , const double & a_y
+                                   , const double & steer_angle)
         {
-            _log_visualization(x_pos, y_pos, yaw_rad, std::cout);
+            _log_visualization(x_pos, y_pos, yaw_rad, v_x, v_y, a_x, a_y, steer_angle, std::cout);
         }
 
         //! logging in the predefined scheme to a stream object
         void _log_visualization(const double & x_pos
                               , const double & y_pos
                               , const double & yaw_rad
+                              , const double & v_x
+                              , const double & v_y
+                              , const double & a_x
+                              , const double & a_y
+                              , const double & steer_angle
                               , std::ostream & stream)
         {
             stream << "CLARA|";
@@ -308,8 +326,13 @@ namespace clara {
             }
             stream << "|";
             stream << x_pos << ","
-                      << y_pos << ","
-                      << yaw_rad << '\n';
+                   << y_pos << ","
+                   << yaw_rad << ","
+                   << v_x     << ","
+                   << v_y     << ","
+                   << a_x     << ","
+                   << a_y     << ","
+                   << steer_angle << '\n';
         }
 
         //! how to parse an object_t to get from the relative distance and angle position to the absolute localization

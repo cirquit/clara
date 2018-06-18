@@ -139,7 +139,7 @@ int main(int argc, char const *argv[]){
 
         if (t_s > 100) { continue; }
         std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
-        std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw_rad, t_s);
+        std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw_rad, 0, 0, 0, t_s);
         std::cerr << "    pos: " << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
         UNUSED(pos);

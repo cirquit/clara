@@ -54,7 +54,7 @@ namespace clara {
         using cone_position = std::array<double, 2>;
         //! 4 cones with positional information
         using near_cones    = std::array<cone_position, 2>;
-        //! maybe returns 4 cones, if we have enough objects to create it
+        //! maybe returns 4 cones with 2 yellow and 2 blues
         using maybe_cones = typename concept::maybe<std::tuple<near_cones, near_cones>>;
     // constructor
     public:

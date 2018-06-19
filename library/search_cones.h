@@ -39,10 +39,27 @@ namespace clara {
     //! maybe returns 4 cones, if we have enough objects to create it
     using maybe_cones   = typename concept::maybe<cones_tuple>;
 
+
+    std::pair<size_t, size_t> get_nearest_cones(std::vector<cone_state<double>> & cluster
+					      , const std::tuple<double, double> & pos)
+    {
+	std::vector<size_t> ixs;
+	ixs.reserve(cluster.size());
+	size_t counter = 0;
+	std::for_each(cluster.begin(), cluster.end(), [&](cone_state<double> & cl){ UNUSED(cl); ixs.push_back(counter++); });
+
+	std::sort(ixs.begin(), ixs.end(), [&](size_t ix_A, size_t ix_B)
+	{
+  	     return cluster[ix_A].distance(pos) < cluster[ix_B].distance(pos);
+	});
+	return std::make_pair(ixs[0], ixs[1]);
+		
+    }
+
     /** \brief Find the two nearest cones in the seen ixs. `.first` is the nearest, `.second` the second nearest
       *
       */ 
-    std::pair<size_t, size_t> get_nearest_cones(const std::vector<size_t>  & ixss
+/*    std::pair<size_t, size_t> get_nearest_cones(const std::vector<size_t>  & ixss
                                               , std::vector<cone_state<double>> & cluster
                                               , const std::tuple<double, double> & pos)
     {
@@ -51,7 +68,11 @@ namespace clara {
         ixs.reserve(cluster.size());
         size_t counter = 0;
         std::for_each(cluster.begin(), cluster.end(), [&](cone_state<double> cl){ UNUSED(cl); ixs.push_back(counter++); });
-
+	std::cout << "[search-cones.h] get_nearest_cones()\n"
+		  << "     - cluster.size: " << cluster.size() << '\n'
+		  << "     - ixs.size:     " << ixs.size() << '\n'
+	   	  << "     - pos:          " << std::get<0>(pos) << ", " << std::get<1>(pos) << '\n'
+ 		  << "     - search (before sorting):\n";
         // find the nearest blue cone, save index and distance
         size_t ix_01       = ixs[0];
         double distance_01 = cluster[ix_01].distance(pos);
@@ -68,6 +89,10 @@ namespace clara {
             nearest_cluster     = std::make_pair(distance_02, ix_02);
             sec_nearest_cluster = std::make_pair(distance_01, ix_01);
         }
+
+	std::cout << "        nearest_cluster: " << nearest_cluster.first << "m, ix: " << nearest_cluster.second << "\n"
+		  << "    sec_nearest_cluster: " << sec_nearest_cluster.first << "m, ix: " << sec_nearest_cluster.second << "\n";
+
         // iterate in O(n) through all but the first element and get the two nearest cluster
         std::for_each(ixs.begin() + 1, ixs.end(), [&](const size_t & ix)
         {
@@ -85,9 +110,13 @@ namespace clara {
             }
         });
 
-        return std::make_pair(nearest_cluster.second, sec_nearest_cluster.second);
-    }
+	std::cout << "    - (after):\n"
+       		  << "        nearest_cluster: " << nearest_cluster.first << "m, ix: " << nearest_cluster.second << "\n"
+       		  << "    sec_nearest_cluster: " << sec_nearest_cluster.first << "m, ix: " << sec_nearest_cluster.second << "\n";
 
+	return std::make_pair(nearest_cluster.second, sec_nearest_cluster.second);
+    }
+*/
 
     maybe_cones get_basecase_cones(const std::tuple< double, double > & pos
                                  , clara::data_association< double > & yellow_data_association
@@ -96,17 +125,14 @@ namespace clara {
         // get cluster by reference to not change ownership
         auto & yellow_cluster = yellow_data_association.get_cluster();
         auto & blue_cluster   = blue_data_association.get_cluster();
-        //
-        std::vector<size_t> yellow_detected_cluster_ix;
-        std::vector<size_t> blue_detected_cluster_ix;
         
         near_cones y_cs;
         near_cones b_cs;
 
         if (yellow_cluster.size() >= 2)
-        {
-            // find the two nearest yellow cones
-            auto near_yellow_ixs = get_nearest_cones(yellow_detected_cluster_ix, yellow_cluster, pos);
+	{   // find the two nearest yellow cones
+	    std::cout << "yellow cones:\n";
+            auto near_yellow_ixs = get_nearest_cones(yellow_cluster, pos);
             // 
             cone_position y_c_01;
             y_c_01[0] = yellow_cluster[near_yellow_ixs.first]._mean_vec[0];
@@ -115,11 +141,15 @@ namespace clara {
             y_c_02[0] = yellow_cluster[near_yellow_ixs.second]._mean_vec[0];
             y_c_02[1] = yellow_cluster[near_yellow_ixs.second]._mean_vec[1];
             y_cs = {{ y_c_01, y_c_02 }};
+	    std::cout << "Nearest: "     << y_c_01[0] << ", " << y_c_01[1] << '\n'
+	    	      << "Sec Nearest: " << y_c_02[0] << ", " << y_c_02[1] << '\n'; 
+	
         }
         if (blue_cluster.size() >= 2)
         {
             // find the two nearest blue cones
-            auto near_blue_ixs   = get_nearest_cones(blue_detected_cluster_ix, blue_cluster, pos);
+	    std::cout << "blue cones:\n";
+            auto near_blue_ixs   = get_nearest_cones(blue_cluster, pos);
             //
             cone_position b_c_01;
             b_c_01[0] = blue_cluster[near_blue_ixs.first]._mean_vec[0];
@@ -128,7 +158,9 @@ namespace clara {
             b_c_02[0] = blue_cluster[near_blue_ixs.second]._mean_vec[0];
             b_c_02[1] = blue_cluster[near_blue_ixs.second]._mean_vec[1];
             b_cs = {{ b_c_01, b_c_02 }};
-            return concept::maybe<cones_tuple>(std::make_tuple(y_cs, b_cs));
+       	    std::cout << "Nearest: "     << b_c_01[0] << ", " << b_c_01[1] << '\n' 
+       	    	      << "Sec Nearest: " << b_c_02[0] << ", " << b_c_02[1] << '\n'; 
+	    return concept::maybe<cones_tuple>(std::make_tuple(y_cs, b_cs));
         } else {
             return concept::maybe<cones_tuple>();
         }

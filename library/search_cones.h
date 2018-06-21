@@ -127,39 +127,41 @@ namespace clara {
                 }
             }
         }
-
+        
+        near_cones y_cs;
+        near_cones b_cs;
         // if we have at least detected one cones for each color
-       if (yellow_detected_cluster_ix_copy.size() >= 2
-           && blue_detected_cluster_ix_copy.size() >= 2)
+        if (yellow_detected_cluster_ix_copy.size() >= 2)
         {
             // find the two nearest yellow cones
             auto near_yellow_ixs = get_nearest_cones(yellow_detected_cluster_ix_copy, yellow_cluster, pos);
-            // find the two nearest blue cones
-            auto near_blue_ixs   = get_nearest_cones(blue_detected_cluster_ix_copy, blue_cluster, pos);
-
-            // fill the types
-            cone_position y_c_01;
+            cone_position y_c_01;                                                 	
             y_c_01[0] = yellow_cluster[near_yellow_ixs.first]._mean_vec[0];
             y_c_01[1] = yellow_cluster[near_yellow_ixs.first]._mean_vec[1];
             cone_position y_c_02;
             y_c_02[0] = yellow_cluster[near_yellow_ixs.second]._mean_vec[0];
             y_c_02[1] = yellow_cluster[near_yellow_ixs.second]._mean_vec[1];
-            near_cones y_cs = {{ y_c_01, y_c_02 }};
+            y_cs = {{ y_c_01, y_c_02 }};
+        }
 
+        if(blue_detected_cluster_ix_copy.size() >= 2)
+        {
+            // find the two nearest blue cones
+            auto near_blue_ixs   = get_nearest_cones(blue_detected_cluster_ix_copy, blue_cluster, pos);
             cone_position b_c_01;
             b_c_01[0] = blue_cluster[near_blue_ixs.first]._mean_vec[0];
             b_c_01[1] = blue_cluster[near_blue_ixs.first]._mean_vec[1];
             cone_position b_c_02;
             b_c_02[0] = blue_cluster[near_blue_ixs.second]._mean_vec[0];
             b_c_02[1] = blue_cluster[near_blue_ixs.second]._mean_vec[1];
-            near_cones b_cs = {{ b_c_01, b_c_02 }};
+            b_cs = {{ b_c_01, b_c_02 }};
 
-            if (euclidean_distance(std::make_tuple(b_c_01[0], b_c_01[1]),
+            /*if (euclidean_distance(std::make_tuple(b_c_01[0], b_c_01[1]),
                                    std::make_tuple(y_c_01[0], y_c_01[1])) > 4) return concept::maybe<cones_tuple>();
 
             if (euclidean_distance(std::make_tuple(b_c_02[0], b_c_02[1]),
                        std::make_tuple(y_c_02[0], y_c_02[1])) > 4) return concept::maybe<cones_tuple>();
-
+            */
             return concept::maybe<cones_tuple>(std::make_tuple(y_cs, b_cs));
         } else {
             return concept::maybe<cones_tuple>();

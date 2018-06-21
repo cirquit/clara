@@ -188,7 +188,6 @@ namespace clara {
                 return _cone_states.size();
             }
 
-
             //! prints the cluster to the std::cout as a valid python library
             void print_data_assoc ( int color ) {
                 const std::vector<clara::cone_state<T>> & cluster = get_cluster();
@@ -308,11 +307,16 @@ namespace clara {
                 _add_detected_cone_ix(it);
             }
 
-            //! convenient naming
+            //! calculating the index of the detected cone and adds this into the _detected_cluster_ix container. Won't be added if it's already detected
             void _add_detected_cone_ix(const typename std::vector<cone_state<T>>::iterator & it)
             {
                 auto ix = std::distance(_cone_states.begin(), it);
-                _detected_cluster_ix.push_back(ix);
+                auto maybe_ix_it = std::find(_detected_cluster_ix.begin(), _detected_cluster_ix.end(), ix);
+                // if it's already detected, don't add it
+                if (maybe_ix_it != _detected_cluster_ix.end())
+                {
+                    _detected_cluster_ix.push_back(ix);
+                }
             }
 
         // member (were private, but for logging purposes we mage them public)

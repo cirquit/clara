@@ -199,6 +199,19 @@ namespace clara {
             return util::get_basecase_cones(_estimated_position, _yellow_data_association, _blue_data_association);
         }
 
+        object_list_t get_clustered_observation()
+        {
+            // get cluster by reference to not change ownership
+            auto & yellow_cluster = _yellow_data_association.get_cluster();
+            auto & blue_cluster   = _blue_data_association.get_cluster();
+            // get currently seen cluster indexes by reference
+            const auto & yellow_detected_cluster_ix = _yellow_data_association.get_detected_cluster_ixs();
+            const auto & blue_detected_cluster_ix   = _blue_data_association.get_detected_cluster_ixs();
+            
+             
+        }
+
+
     // methods
     private:
 

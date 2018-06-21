@@ -312,8 +312,8 @@ namespace clara {
             {
                 auto ix = std::distance(_cone_states.begin(), it);
                 auto maybe_ix_it = std::find(_detected_cluster_ix.begin(), _detected_cluster_ix.end(), ix);
-                // if it's already detected, don't add it
-                if (maybe_ix_it != _detected_cluster_ix.end())
+//                // if it's not detected, add it
+                if (maybe_ix_it == _detected_cluster_ix.end())
                 {
                     _detected_cluster_ix.push_back(ix);
                 }

@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-set(SOURCES clara-util.h distance_counter.h lap_counter.h cone_state.h data_association.h csv.h clara.h ../external/object-list/include/object.h)
+set(SOURCES clara-util.h distance_counter.h refined_cones.h lap_counter.h cone_state.h data_association.h csv.h clara.h ../external/object-list/include/object.h)
 
 find_package(LAPACK REQUIRED)
 link_directories(${LAPACK_LIBRARIES})

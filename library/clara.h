@@ -30,6 +30,7 @@
 #include "lap_counter.h"
 #include "maybe.h"
 #include "search_cones.h"
+#include "refined_cones.h"
 
 /*!
  *  \addtogroup clara
@@ -56,6 +57,7 @@ namespace clara {
         using near_cones    = std::array<cone_position, 2>;
         //! maybe returns 4 cones with 2 yellow and 2 blues
         using maybe_cones = typename concept::maybe<std::tuple<near_cones, near_cones>>;
+
     // constructor
     public:
         //! contructor with default starting position at 0,0
@@ -199,7 +201,8 @@ namespace clara {
             return util::get_basecase_cones(_estimated_position, _yellow_data_association, _blue_data_association);
         }
 
-        object_list_t get_clustered_observation()
+        //! the current observations are transformed into their cluster mid-points and converted back into relative object_t's
+        object_list_t get_clustered_observations(const double x_pos, const double y_pos, const double yaw)
         {
             // get cluster by reference to not change ownership
             auto & yellow_cluster = _yellow_data_association.get_cluster();
@@ -207,10 +210,21 @@ namespace clara {
             // get currently seen cluster indexes by reference
             const auto & yellow_detected_cluster_ix = _yellow_data_association.get_detected_cluster_ixs();
             const auto & blue_detected_cluster_ix   = _blue_data_association.get_detected_cluster_ixs();
-            
-             
+            // "preallocation" of the returning list
+            object_list_t object_list;
+            object_list.size = 0; // resetting for security reasons
+            // append seen yellow cones to the object_list
+            std::for_each(yellow_detected_cluster_ix.begin(), yellow_detected_cluster_ix.end(), [&](size_t y_ix)
+            {
+                util::append_yellow_cone(yellow_cluster[y_ix], x_pos, y_pos, yaw, object_list);
+            });
+            // append seen blue cones to the object_list
+            std::for_each(blue_detected_cluster_ix.begin(), blue_detected_cluster_ix.end(), [&](size_t b_ix)
+            {
+                util::append_blue_cone(blue_cluster[b_ix], x_pos, y_pos, yaw, object_list);
+            });
+            return object_list; 
         }
-
 
     // methods
     private:

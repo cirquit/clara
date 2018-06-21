@@ -127,6 +127,7 @@ namespace clara {
                 }
             }
         }
+        
         near_cones y_cs;
         near_cones b_cs;
         // if we have at least detected one cones for each color
@@ -144,6 +145,7 @@ namespace clara {
         }
 
         if(blue_detected_cluster_ix_copy.size() >= 2)
+        {
             // find the two nearest blue cones
             auto near_blue_ixs   = get_nearest_cones(blue_detected_cluster_ix_copy, blue_cluster, pos);
             cone_position b_c_01;

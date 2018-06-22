@@ -311,12 +311,12 @@ namespace clara {
             void _add_detected_cone_ix(const typename std::vector<cone_state<T>>::iterator & it)
             {
                 auto ix = std::distance(_cone_states.begin(), it);
-                auto maybe_ix_it = std::find(_detected_cluster_ix.begin(), _detected_cluster_ix.end(), ix);
+            //    auto maybe_ix_it = std::find(_detected_cluster_ix.begin(), _detected_cluster_ix.end(), ix);
 //                // if it's not detected, add it
-                if (maybe_ix_it == _detected_cluster_ix.end())
-                {
+            //    if (maybe_ix_it == _detected_cluster_ix.end())
+            //    {
                     _detected_cluster_ix.push_back(ix);
-                }
+            //    }
             }
 
         // member (were private, but for logging purposes we mage them public)

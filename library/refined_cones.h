@@ -59,11 +59,14 @@ namespace clara {
         }
 
         //! appends the object to the object_list, increments the size
-        void append_object(const object_t & object, object_list_t & object_list)
+        void append_object(const object_t object, object_list_t & object_list)
         {
-            object_list.element[ object_list.size - 1 ] = object;
+//            std::cout << "object.type: "     << object.type << '\n';
+//            std::cout << "object.distance: " << object.distance << '\n';
+//            std::cout << "object_list.size: " << object_list.size << '\n';
+            object_list.element[ object_list.size ] = object;
             object_list.size++;
-        } 
+        }
 
         //! appends the blue cone to the object_list by converting it into the object 
         void append_blue_cone(const cone_state<double> & cs

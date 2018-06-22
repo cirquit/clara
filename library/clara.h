@@ -15,6 +15,7 @@
 #ifndef CLARA_H
 #define CLARA_H
 
+#include <set>
 #include <functional>
 #include <iostream>
 #include <tuple>
@@ -210,20 +211,25 @@ namespace clara {
             // get currently seen cluster indexes by reference
             const auto & yellow_detected_cluster_ix = _yellow_data_association.get_detected_cluster_ixs();
             const auto & blue_detected_cluster_ix   = _blue_data_association.get_detected_cluster_ixs();
+            // convert them into sets to remove duplicates (\todo implement this in clara)
+            std::set<size_t> yellow_detected_cluster_ix_set(yellow_detected_cluster_ix.begin(),
+                                                            yellow_detected_cluster_ix.end());
+            std::set<size_t> blue_detected_cluster_ix_set(blue_detected_cluster_ix.begin(),
+                                                          blue_detected_cluster_ix.end());
             // "preallocation" of the returning list
             object_list_t object_list;
             object_list.size = 0; // resetting for security reasons
             // append seen yellow cones to the object_list
-            std::for_each(yellow_detected_cluster_ix.begin(), yellow_detected_cluster_ix.end(), [&](size_t y_ix)
+            std::for_each(yellow_detected_cluster_ix_set.begin(), yellow_detected_cluster_ix_set.end(), [&](size_t y_ix)
             {
                 util::append_yellow_cone(yellow_cluster[y_ix], x_pos, y_pos, yaw, object_list);
             });
             // append seen blue cones to the object_list
-            std::for_each(blue_detected_cluster_ix.begin(), blue_detected_cluster_ix.end(), [&](size_t b_ix)
+            std::for_each(blue_detected_cluster_ix_set.begin(), blue_detected_cluster_ix_set.end(), [&](size_t b_ix)
             {
                 util::append_blue_cone(blue_cluster[b_ix], x_pos, y_pos, yaw, object_list);
             });
-            return object_list; 
+            return object_list;
         }
 
     // methods

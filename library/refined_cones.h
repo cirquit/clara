@@ -51,7 +51,11 @@ namespace clara {
             const struct coord rotated_coord = rotation(shifted_coord ,-yaw);
             double distance = std::sqrt(std::pow(rotated_coord.x, 2) + std::pow(rotated_coord.y, 2));
             double angle = acos( rotated_coord.x / (distance * 1) ); 
-
+            
+            if (-rotated_coord.y < 0)
+            {
+                angle *= -1;
+            }
             object_t obj;
             obj.distance = distance;
             obj.angle    = angle;

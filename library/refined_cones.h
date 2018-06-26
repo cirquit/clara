@@ -52,9 +52,11 @@ namespace clara {
             double distance = std::sqrt(std::pow(rotated_coord.x, 2) + std::pow(rotated_coord.y, 2));
             double angle = acos( rotated_coord.x / (distance * 1) ); 
             
-            if (-rotated_coord.y < 0)
+            if (rotated_coord.y < 0)
             {
-                angle *= -1;
+                angle = -std::abs(angle);
+            } else {
+                angle = std::abs(angle);
             }
             object_t obj;
             obj.distance = distance;
@@ -78,7 +80,7 @@ namespace clara {
                             , const double y_pos
                             , const double yaw
                             , object_list_t & object_list)
-        {   
+        {
             object_t object = to_object_t(cs, x_pos, y_pos, yaw);
             object.type = 1;
             append_object(object, object_list);
@@ -89,7 +91,7 @@ namespace clara {
                               , const double y_pos
                               , const double yaw
                               , object_list_t & object_list)
-        {   
+        {
             object_t object = to_object_t(cs, x_pos, y_pos, yaw);
             object.type = 0;
             append_object(object, object_list);

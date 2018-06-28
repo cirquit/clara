@@ -211,11 +211,52 @@ namespace clara {
             // get currently seen cluster indexes by reference
             const auto & yellow_detected_cluster_ix = _yellow_data_association.get_detected_cluster_ixs();
             const auto & blue_detected_cluster_ix   = _blue_data_association.get_detected_cluster_ixs();
+            // copy them for modification
+            std::vector<size_t> yellow_detected_cluster_ix_copy;
+            std::vector<size_t> blue_detected_cluster_ix_copy;
+            std::copy(yellow_detected_cluster_ix.begin(), yellow_detected_cluster_ix.end(),
+                  std::back_inserter(yellow_detected_cluster_ix_copy));
+            std::copy(blue_detected_cluster_ix.begin(), blue_detected_cluster_ix.end(),
+                  std::back_inserter(blue_detected_cluster_ix_copy));
+            // add the possibly previously seen yellow cluster
+            if (yellow_detected_cluster_ix_copy.size() > 0)
+            {
+                size_t min_y_ix = *std::min_element(yellow_detected_cluster_ix_copy.begin()
+                                                  , yellow_detected_cluster_ix_copy.end());
+                for(int i = 1; i < 3; ++i)
+                {
+                    int y_ix = static_cast<int>(min_y_ix) - i;
+                    if (y_ix > -1) // \todo looping
+                    {
+                        yellow_detected_cluster_ix_copy.push_back(static_cast<size_t>(y_ix));
+                    }
+                }
+            }
+            // add the possibly previously seen blue cluster
+            if (blue_detected_cluster_ix_copy.size() > 0)
+            {
+                size_t min_b_ix = *std::min_element(blue_detected_cluster_ix_copy.begin()
+                                                  , blue_detected_cluster_ix_copy.end());
+                for(int i = 1; i < 3; ++i)
+                {
+                    int b_ix = static_cast<int>(min_b_ix) - i;
+                    if (b_ix > -1) // \todo looping
+                    {
+                        blue_detected_cluster_ix_copy.push_back(static_cast<size_t>(b_ix));
+                    }
+                }
+            }
+
             // convert them into sets to remove duplicates (\todo implement this in clara)
-            std::set<size_t> yellow_detected_cluster_ix_set(yellow_detected_cluster_ix.begin(),
-                                                            yellow_detected_cluster_ix.end());
-            std::set<size_t> blue_detected_cluster_ix_set(blue_detected_cluster_ix.begin(),
-                                                          blue_detected_cluster_ix.end());
+            std::set<size_t> yellow_detected_cluster_ix_set(yellow_detected_cluster_ix_copy.begin(),
+                                                            yellow_detected_cluster_ix_copy.end());
+            std::set<size_t> blue_detected_cluster_ix_set(blue_detected_cluster_ix_copy.begin(),
+                                                          blue_detected_cluster_ix_copy.end());
+            // convert them into sets to remove duplicates (\todo implement this in clara)
+//            std::set<size_t> yellow_detected_cluster_ix_set(yellow_detected_cluster_ix.begin(),
+//                                                            yellow_detected_cluster_ix.end());
+//            std::set<size_t> blue_detected_cluster_ix_set(blue_detected_cluster_ix.begin(),
+//                                                          blue_detected_cluster_ix.end());
             // "preallocation" of the returning list
             object_list_t object_list;
             object_list.size = 0; // resetting for security reasons

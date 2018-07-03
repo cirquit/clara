@@ -223,7 +223,7 @@ namespace clara {
             {
                 size_t min_y_ix = *std::min_element(yellow_detected_cluster_ix_copy.begin()
                                                   , yellow_detected_cluster_ix_copy.end());
-                for(int i = 1; i < 3; ++i)
+                for(int i = 1; i < 1; ++i)
                 {
                     int y_ix = static_cast<int>(min_y_ix) - i;
                     if (y_ix > -1) // \todo looping
@@ -237,7 +237,7 @@ namespace clara {
             {
                 size_t min_b_ix = *std::min_element(blue_detected_cluster_ix_copy.begin()
                                                   , blue_detected_cluster_ix_copy.end());
-                for(int i = 1; i < 3; ++i)
+                for(int i = 1; i < 1; ++i)
                 {
                     int b_ix = static_cast<int>(min_b_ix) - i;
                     if (b_ix > -1) // \todo looping

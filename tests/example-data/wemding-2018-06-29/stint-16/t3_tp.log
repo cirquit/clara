@@ -1,0 +1,6786 @@
+[INFO] I connected to 192.168.140.21:33333
+[INFO] Some clients connected!
+[INFO] Binding successful to port 3500!
+[INFO] Some clients connected!
+[INFO] Binding successful to port 3501!
+[INFO] I connected to 192.168.140.20:33333
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.739235
+Angle: 0.127068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.73977
+Angle: 0.127262
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.740261
+Angle: 0.127441
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.740712
+Angle: 0.127606
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.741128
+Angle: 0.127757
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.741513
+Angle: 0.127898
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.741871
+Angle: 0.128028
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.742204
+Angle: 0.12815
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.742515
+Angle: 0.128263
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.742806
+Angle: 0.128369
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.743079
+Angle: 0.128468
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.743335
+Angle: 0.128562
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.743576
+Angle: 0.12865
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.743803
+Angle: 0.128732
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.744017
+Angle: 0.128811
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74422
+Angle: 0.128885
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.744412
+Angle: 0.128955
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.744595
+Angle: 0.129021
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.744768
+Angle: 0.129085
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.744933
+Angle: 0.129145
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74509
+Angle: 0.129202
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.745239
+Angle: 0.129257
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.745382
+Angle: 0.129309
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.745519
+Angle: 0.129358
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.745649
+Angle: 0.129406
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.745774
+Angle: 0.129452
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.745894
+Angle: 0.129495
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746009
+Angle: 0.129537
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746119
+Angle: 0.129577
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746225
+Angle: 0.129616
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746327
+Angle: 0.129653
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746425
+Angle: 0.129689
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746519
+Angle: 0.129724
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74661
+Angle: 0.129757
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746698
+Angle: 0.129789
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746782
+Angle: 0.12982
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746864
+Angle: 0.129849
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746943
+Angle: 0.129878
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747019
+Angle: 0.129906
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747093
+Angle: 0.129933
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747164
+Angle: 0.129959
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747233
+Angle: 0.129984
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.7473
+Angle: 0.130009
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747365
+Angle: 0.130032
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747428
+Angle: 0.130055
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747489
+Angle: 0.130078
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747549
+Angle: 0.130099
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747606
+Angle: 0.13012
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747662
+Angle: 0.130141
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747716
+Angle: 0.130161
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747769
+Angle: 0.13018
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74782
+Angle: 0.130199
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74787
+Angle: 0.130217
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747919
+Angle: 0.130235
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747966
+Angle: 0.130252
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748013
+Angle: 0.130269
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748058
+Angle: 0.130285
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748101
+Angle: 0.130301
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748144
+Angle: 0.130317
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748186
+Angle: 0.130332
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748226
+Angle: 0.130347
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748266
+Angle: 0.130361
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748305
+Angle: 0.130375
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748342
+Angle: 0.130389
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748379
+Angle: 0.130403
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748415
+Angle: 0.130416
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748451
+Angle: 0.130429
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748485
+Angle: 0.130441
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748519
+Angle: 0.130454
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748552
+Angle: 0.130466
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748584
+Angle: 0.130477
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748616
+Angle: 0.130489
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748646
+Angle: 0.1305
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748677
+Angle: 0.130511
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748706
+Angle: 0.130522
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748735
+Angle: 0.130533
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748764
+Angle: 0.130543
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748791
+Angle: 0.130553
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748819
+Angle: 0.130563
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748845
+Angle: 0.130573
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748872
+Angle: 0.130582
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748778
+Angle: 0.130548
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748687
+Angle: 0.130515
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748597
+Angle: 0.130482
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748509
+Angle: 0.13045
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748422
+Angle: 0.130418
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748337
+Angle: 0.130387
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748254
+Angle: 0.130357
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748172
+Angle: 0.130327
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748092
+Angle: 0.130298
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.748013
+Angle: 0.130269
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747935
+Angle: 0.13024
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747859
+Angle: 0.130213
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747784
+Angle: 0.130185
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74771
+Angle: 0.130158
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747638
+Angle: 0.130132
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747567
+Angle: 0.130106
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747497
+Angle: 0.13008
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747428
+Angle: 0.130055
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747361
+Angle: 0.130031
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747294
+Angle: 0.130006
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747229
+Angle: 0.129983
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747263
+Angle: 0.129995
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747297
+Angle: 0.130008
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747331
+Angle: 0.13002
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747364
+Angle: 0.130032
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747396
+Angle: 0.130044
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747428
+Angle: 0.130055
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74746
+Angle: 0.130067
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747491
+Angle: 0.130078
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747521
+Angle: 0.130089
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747551
+Angle: 0.1301
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747581
+Angle: 0.130111
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747519
+Angle: 0.130089
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747458
+Angle: 0.130066
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747398
+Angle: 0.130044
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747339
+Angle: 0.130023
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747281
+Angle: 0.130002
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747224
+Angle: 0.129981
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747167
+Angle: 0.12996
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747111
+Angle: 0.12994
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747056
+Angle: 0.12992
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747002
+Angle: 0.1299
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746949
+Angle: 0.12988
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746896
+Angle: 0.129861
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746844
+Angle: 0.129842
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746792
+Angle: 0.129823
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746742
+Angle: 0.129805
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746774
+Angle: 0.129816
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746805
+Angle: 0.129828
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746836
+Angle: 0.129839
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746867
+Angle: 0.12985
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746897
+Angle: 0.129861
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746927
+Angle: 0.129872
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746956
+Angle: 0.129883
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746985
+Angle: 0.129894
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747014
+Angle: 0.129904
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747042
+Angle: 0.129915
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74707
+Angle: 0.129925
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747098
+Angle: 0.129935
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747125
+Angle: 0.129945
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747152
+Angle: 0.129955
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747104
+Angle: 0.129937
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747056
+Angle: 0.12992
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747009
+Angle: 0.129902
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746963
+Angle: 0.129885
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746917
+Angle: 0.129869
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746871
+Angle: 0.129852
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746899
+Angle: 0.129862
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746926
+Angle: 0.129872
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746953
+Angle: 0.129882
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746979
+Angle: 0.129891
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747005
+Angle: 0.129901
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747031
+Angle: 0.12991
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747056
+Angle: 0.12992
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747012
+Angle: 0.129904
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746969
+Angle: 0.129888
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746925
+Angle: 0.129872
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746883
+Angle: 0.129856
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746841
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746799
+Angle: 0.129826
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746758
+Angle: 0.129811
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746717
+Angle: 0.129796
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746743
+Angle: 0.129805
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746768
+Angle: 0.129815
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746794
+Angle: 0.129824
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746819
+Angle: 0.129833
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746844
+Angle: 0.129842
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746868
+Angle: 0.129851
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746828
+Angle: 0.129836
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746789
+Angle: 0.129822
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74675
+Angle: 0.129808
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746711
+Angle: 0.129794
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746673
+Angle: 0.12978
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746635
+Angle: 0.129766
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746598
+Angle: 0.129752
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74656
+Angle: 0.129739
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746585
+Angle: 0.129748
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74661
+Angle: 0.129757
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746634
+Angle: 0.129766
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746659
+Angle: 0.129774
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746683
+Angle: 0.129783
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746706
+Angle: 0.129792
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74673
+Angle: 0.1298
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746753
+Angle: 0.129809
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746776
+Angle: 0.129817
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746799
+Angle: 0.129826
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746821
+Angle: 0.129834
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746844
+Angle: 0.129842
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746866
+Angle: 0.12985
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746888
+Angle: 0.129858
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74691
+Angle: 0.129866
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746931
+Angle: 0.129874
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746953
+Angle: 0.129882
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746974
+Angle: 0.129889
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746995
+Angle: 0.129897
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747015
+Angle: 0.129905
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747036
+Angle: 0.129912
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747056
+Angle: 0.12992
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747077
+Angle: 0.129927
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747097
+Angle: 0.129934
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747116
+Angle: 0.129942
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747136
+Angle: 0.129949
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747156
+Angle: 0.129956
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747175
+Angle: 0.129963
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747194
+Angle: 0.12997
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747213
+Angle: 0.129977
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747232
+Angle: 0.129984
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74725
+Angle: 0.12999
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747269
+Angle: 0.129997
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747287
+Angle: 0.130004
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747305
+Angle: 0.130011
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747323
+Angle: 0.130017
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747341
+Angle: 0.130024
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747359
+Angle: 0.13003
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747376
+Angle: 0.130036
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747394
+Angle: 0.130043
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747411
+Angle: 0.130049
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747428
+Angle: 0.130055
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747445
+Angle: 0.130062
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747462
+Angle: 0.130068
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747479
+Angle: 0.130074
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997317
+Angle: -0.0571818
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997371
+Angle: -0.0571897
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997425
+Angle: -0.0571976
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997479
+Angle: -0.0572054
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997532
+Angle: -0.0572131
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997585
+Angle: -0.0572207
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997637
+Angle: -0.0572283
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997689
+Angle: -0.0572359
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997741
+Angle: -0.0572434
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74759
+Angle: 0.130114
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747557
+Angle: 0.130102
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747524
+Angle: 0.130091
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747492
+Angle: 0.130079
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74746
+Angle: 0.130067
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747428
+Angle: 0.130055
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747397
+Angle: 0.130044
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747365
+Angle: 0.130032
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997452
+Angle: -0.0572015
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997421
+Angle: -0.057197
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997391
+Angle: -0.0571926
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99736
+Angle: -0.0571882
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99733
+Angle: -0.0571838
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.9973
+Angle: -0.0571795
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99727
+Angle: -0.0571751
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747123
+Angle: 0.129944
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747094
+Angle: 0.129933
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747065
+Angle: 0.129923
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747036
+Angle: 0.129912
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747007
+Angle: 0.129902
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746979
+Angle: 0.129891
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74695
+Angle: 0.129881
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746922
+Angle: 0.129871
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746895
+Angle: 0.129861
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746867
+Angle: 0.129851
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74684
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746812
+Angle: 0.129831
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746785
+Angle: 0.129821
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746759
+Angle: 0.129811
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746732
+Angle: 0.129801
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746705
+Angle: 0.129792
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746679
+Angle: 0.129782
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746653
+Angle: 0.129772
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746627
+Angle: 0.129763
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746644
+Angle: 0.129769
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746661
+Angle: 0.129775
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746678
+Angle: 0.129782
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746695
+Angle: 0.129788
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746711
+Angle: 0.129794
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746728
+Angle: 0.1298
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746744
+Angle: 0.129806
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74676
+Angle: 0.129812
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746776
+Angle: 0.129817
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746792
+Angle: 0.129823
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746808
+Angle: 0.129829
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746824
+Angle: 0.129835
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74684
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746855
+Angle: 0.129846
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746871
+Angle: 0.129852
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746886
+Angle: 0.129858
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746902
+Angle: 0.129863
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746917
+Angle: 0.129869
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746932
+Angle: 0.129874
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746947
+Angle: 0.12988
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746962
+Angle: 0.129885
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746977
+Angle: 0.129891
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746991
+Angle: 0.129896
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747006
+Angle: 0.129901
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74702
+Angle: 0.129907
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747035
+Angle: 0.129912
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747049
+Angle: 0.129917
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747063
+Angle: 0.129922
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747078
+Angle: 0.129927
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747053
+Angle: 0.129918
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747028
+Angle: 0.129909
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.747004
+Angle: 0.1299
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746979
+Angle: 0.129892
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746955
+Angle: 0.129883
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746931
+Angle: 0.129874
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746907
+Angle: 0.129865
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746884
+Angle: 0.129857
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74686
+Angle: 0.129848
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746837
+Angle: 0.129839
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996951
+Angle: -0.0571289
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996928
+Angle: -0.0571256
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996905
+Angle: -0.0571222
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996882
+Angle: -0.0571189
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996859
+Angle: -0.0571156
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996837
+Angle: -0.0571123
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996814
+Angle: -0.057109
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746912
+Angle: 0.129867
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746889
+Angle: 0.129859
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746866
+Angle: 0.12985
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746844
+Angle: 0.129842
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746821
+Angle: 0.129834
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746835
+Angle: 0.129839
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746849
+Angle: 0.129844
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746863
+Angle: 0.129849
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746876
+Angle: 0.129854
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74689
+Angle: 0.129859
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746903
+Angle: 0.129864
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746881
+Angle: 0.129856
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746859
+Angle: 0.129848
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746837
+Angle: 0.12984
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746815
+Angle: 0.129832
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746793
+Angle: 0.129824
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746772
+Angle: 0.129816
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74675
+Angle: 0.129808
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746729
+Angle: 0.1298
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746708
+Angle: 0.129792
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746686
+Angle: 0.129785
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746665
+Angle: 0.129777
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746645
+Angle: 0.129769
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746624
+Angle: 0.129762
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746603
+Angle: 0.129754
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746617
+Angle: 0.129759
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74663
+Angle: 0.129764
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746644
+Angle: 0.129769
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746658
+Angle: 0.129774
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746671
+Angle: 0.129779
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746684
+Angle: 0.129784
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746698
+Angle: 0.129789
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746711
+Angle: 0.129794
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746724
+Angle: 0.129798
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746737
+Angle: 0.129803
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74675
+Angle: 0.129808
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746763
+Angle: 0.129813
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746776
+Angle: 0.129817
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746789
+Angle: 0.129822
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746801
+Angle: 0.129827
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746814
+Angle: 0.129831
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746827
+Angle: 0.129836
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746839
+Angle: 0.12984
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746852
+Angle: 0.129845
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746864
+Angle: 0.129849
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746876
+Angle: 0.129854
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746889
+Angle: 0.129858
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746901
+Angle: 0.129863
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746913
+Angle: 0.129867
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746893
+Angle: 0.12986
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746873
+Angle: 0.129853
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746853
+Angle: 0.129845
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746833
+Angle: 0.129838
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746814
+Angle: 0.129831
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746794
+Angle: 0.129824
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746774
+Angle: 0.129817
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996764
+Angle: -0.0571018
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996745
+Angle: -0.057099
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996726
+Angle: -0.0570963
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996708
+Angle: -0.0570936
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996689
+Angle: -0.0570909
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99667
+Angle: -0.0570882
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996652
+Angle: -0.0570855
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996687
+Angle: -0.0570906
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996722
+Angle: -0.0570957
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996758
+Angle: -0.0571008
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996792
+Angle: -0.0571059
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996827
+Angle: -0.0571109
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996862
+Angle: -0.0571159
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996896
+Angle: -0.0571209
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746921
+Angle: 0.12987
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746902
+Angle: 0.129863
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746883
+Angle: 0.129856
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746864
+Angle: 0.129849
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746845
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746827
+Angle: 0.129836
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746808
+Angle: 0.129829
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74679
+Angle: 0.129822
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746801
+Angle: 0.129826
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746813
+Angle: 0.129831
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746824
+Angle: 0.129835
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746835
+Angle: 0.129839
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746847
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746858
+Angle: 0.129847
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746869
+Angle: 0.129851
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74688
+Angle: 0.129855
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746891
+Angle: 0.129859
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746902
+Angle: 0.129863
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746913
+Angle: 0.129867
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746924
+Angle: 0.129871
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746935
+Angle: 0.129875
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746917
+Angle: 0.129869
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746899
+Angle: 0.129862
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746881
+Angle: 0.129856
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746863
+Angle: 0.129849
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746845
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746827
+Angle: 0.129836
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74681
+Angle: 0.12983
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746792
+Angle: 0.129823
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746775
+Angle: 0.129817
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746757
+Angle: 0.129811
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74674
+Angle: 0.129804
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746723
+Angle: 0.129798
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746706
+Angle: 0.129792
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746689
+Angle: 0.129785
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997299
+Angle: -0.0571793
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99733
+Angle: -0.0571838
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99736
+Angle: -0.0571882
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99739
+Angle: -0.0571925
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.997421
+Angle: -0.0571969
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99745
+Angle: -0.0572012
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746599
+Angle: 0.129753
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74661
+Angle: 0.129757
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746621
+Angle: 0.129761
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746632
+Angle: 0.129765
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746643
+Angle: 0.129769
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746654
+Angle: 0.129773
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746665
+Angle: 0.129777
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746675
+Angle: 0.129781
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746686
+Angle: 0.129784
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746697
+Angle: 0.129788
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746707
+Angle: 0.129792
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746718
+Angle: 0.129796
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746728
+Angle: 0.1298
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746739
+Angle: 0.129804
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746749
+Angle: 0.129808
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74676
+Angle: 0.129811
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74677
+Angle: 0.129815
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74678
+Angle: 0.129819
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746791
+Angle: 0.129823
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746801
+Angle: 0.129826
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746811
+Angle: 0.12983
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746795
+Angle: 0.129824
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746779
+Angle: 0.129818
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746762
+Angle: 0.129812
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746746
+Angle: 0.129806
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74673
+Angle: 0.129801
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746714
+Angle: 0.129795
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746699
+Angle: 0.129789
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746683
+Angle: 0.129783
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746693
+Angle: 0.129787
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746703
+Angle: 0.129791
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746713
+Angle: 0.129794
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746723
+Angle: 0.129798
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746734
+Angle: 0.129802
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746744
+Angle: 0.129805
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746753
+Angle: 0.129809
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746763
+Angle: 0.129813
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746773
+Angle: 0.129816
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746758
+Angle: 0.129811
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746742
+Angle: 0.129805
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746727
+Angle: 0.129799
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746711
+Angle: 0.129794
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746696
+Angle: 0.129788
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746681
+Angle: 0.129782
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746665
+Angle: 0.129777
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74665
+Angle: 0.129771
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746635
+Angle: 0.129766
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74662
+Angle: 0.12976
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74663
+Angle: 0.129764
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74664
+Angle: 0.129768
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74665
+Angle: 0.129771
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74666
+Angle: 0.129775
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746669
+Angle: 0.129778
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746679
+Angle: 0.129782
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746689
+Angle: 0.129786
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746674
+Angle: 0.12978
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746659
+Angle: 0.129775
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746644
+Angle: 0.129769
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74663
+Angle: 0.129764
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746615
+Angle: 0.129758
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.7466
+Angle: 0.129753
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746586
+Angle: 0.129748
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746571
+Angle: 0.129743
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746557
+Angle: 0.129737
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746542
+Angle: 0.129732
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746528
+Angle: 0.129727
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746514
+Angle: 0.129722
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746499
+Angle: 0.129716
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746485
+Angle: 0.129711
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746471
+Angle: 0.129706
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746457
+Angle: 0.129701
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746443
+Angle: 0.129696
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996678
+Angle: -0.0570893
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996664
+Angle: -0.0570873
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99665
+Angle: -0.0570852
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996636
+Angle: -0.0570832
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996622
+Angle: -0.0570812
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996608
+Angle: -0.0570792
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996594
+Angle: -0.0570772
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996581
+Angle: -0.0570752
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996567
+Angle: -0.0570732
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996553
+Angle: -0.0570712
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746549
+Angle: 0.129735
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746559
+Angle: 0.129738
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746568
+Angle: 0.129741
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746577
+Angle: 0.129745
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746587
+Angle: 0.129748
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746596
+Angle: 0.129752
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746605
+Angle: 0.129755
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746615
+Angle: 0.129758
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746624
+Angle: 0.129762
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746633
+Angle: 0.129765
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746642
+Angle: 0.129768
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996392
+Angle: -0.0570479
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996379
+Angle: -0.057046
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996366
+Angle: -0.0570441
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996353
+Angle: -0.0570422
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99634
+Angle: -0.0570404
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996328
+Angle: -0.0570385
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996315
+Angle: -0.0570366
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746533
+Angle: 0.129729
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74652
+Angle: 0.129724
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746507
+Angle: 0.129719
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746493
+Angle: 0.129714
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74648
+Angle: 0.129709
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746467
+Angle: 0.129704
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746454
+Angle: 0.1297
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746441
+Angle: 0.129695
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74645
+Angle: 0.129698
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746459
+Angle: 0.129702
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746468
+Angle: 0.129705
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746477
+Angle: 0.129708
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746486
+Angle: 0.129712
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746495
+Angle: 0.129715
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746504
+Angle: 0.129718
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746513
+Angle: 0.129721
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746522
+Angle: 0.129725
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746531
+Angle: 0.129728
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74654
+Angle: 0.129731
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746549
+Angle: 0.129734
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746558
+Angle: 0.129738
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746567
+Angle: 0.129741
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746575
+Angle: 0.129744
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746584
+Angle: 0.129747
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746593
+Angle: 0.12975
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746601
+Angle: 0.129754
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74661
+Angle: 0.129757
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746619
+Angle: 0.12976
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746627
+Angle: 0.129763
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746614
+Angle: 0.129758
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746601
+Angle: 0.129754
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746589
+Angle: 0.129749
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746576
+Angle: 0.129744
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746563
+Angle: 0.12974
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746551
+Angle: 0.129735
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746538
+Angle: 0.12973
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746525
+Angle: 0.129726
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746513
+Angle: 0.129721
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.7465
+Angle: 0.129717
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746488
+Angle: 0.129712
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996557
+Angle: -0.0570717
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996581
+Angle: -0.0570752
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996605
+Angle: -0.0570787
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996629
+Angle: -0.0570822
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996653
+Angle: -0.0570857
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996677
+Angle: -0.0570891
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996701
+Angle: -0.0570926
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74639
+Angle: 0.129676
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746378
+Angle: 0.129672
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746366
+Angle: 0.129668
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746354
+Angle: 0.129663
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746342
+Angle: 0.129659
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74633
+Angle: 0.129654
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746318
+Angle: 0.12965
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746306
+Angle: 0.129646
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746315
+Angle: 0.129649
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746324
+Angle: 0.129652
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746332
+Angle: 0.129655
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746341
+Angle: 0.129658
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746349
+Angle: 0.129662
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746358
+Angle: 0.129665
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746366
+Angle: 0.129668
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746375
+Angle: 0.129671
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746383
+Angle: 0.129674
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746392
+Angle: 0.129677
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.7464
+Angle: 0.12968
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746409
+Angle: 0.129683
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746417
+Angle: 0.129686
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746425
+Angle: 0.129689
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746434
+Angle: 0.129692
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746442
+Angle: 0.129695
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74645
+Angle: 0.129698
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996391
+Angle: -0.0570477
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99638
+Angle: -0.057046
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996368
+Angle: -0.0570444
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996357
+Angle: -0.0570428
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996346
+Angle: -0.0570411
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996334
+Angle: -0.0570395
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996323
+Angle: -0.0570379
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996312
+Angle: -0.0570362
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996301
+Angle: -0.0570346
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746335
+Angle: 0.129656
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746324
+Angle: 0.129652
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746312
+Angle: 0.129648
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746301
+Angle: 0.129644
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74629
+Angle: 0.12964
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746279
+Angle: 0.129636
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746268
+Angle: 0.129632
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746256
+Angle: 0.129628
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746245
+Angle: 0.129624
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746254
+Angle: 0.129627
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746262
+Angle: 0.12963
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74627
+Angle: 0.129633
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746279
+Angle: 0.129636
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746287
+Angle: 0.129639
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746295
+Angle: 0.129642
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746284
+Angle: 0.129638
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746273
+Angle: 0.129634
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746262
+Angle: 0.12963
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746251
+Angle: 0.129626
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74624
+Angle: 0.129622
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746229
+Angle: 0.129618
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746238
+Angle: 0.129621
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746246
+Angle: 0.129624
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746254
+Angle: 0.129627
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746262
+Angle: 0.12963
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74627
+Angle: 0.129633
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746278
+Angle: 0.129636
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746286
+Angle: 0.129639
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746294
+Angle: 0.129641
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746302
+Angle: 0.129644
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74631
+Angle: 0.129647
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746318
+Angle: 0.12965
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746307
+Angle: 0.129646
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746297
+Angle: 0.129642
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746286
+Angle: 0.129638
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746275
+Angle: 0.129635
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746265
+Angle: 0.129631
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746254
+Angle: 0.129627
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746243
+Angle: 0.129623
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746233
+Angle: 0.129619
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746222
+Angle: 0.129615
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74623
+Angle: 0.129618
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746238
+Angle: 0.129621
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746246
+Angle: 0.129624
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746254
+Angle: 0.129627
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746262
+Angle: 0.12963
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74627
+Angle: 0.129633
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746277
+Angle: 0.129635
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746285
+Angle: 0.129638
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746293
+Angle: 0.129641
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746301
+Angle: 0.129644
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746309
+Angle: 0.129647
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746316
+Angle: 0.12965
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746324
+Angle: 0.129652
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746332
+Angle: 0.129655
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746339
+Angle: 0.129658
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746347
+Angle: 0.129661
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746354
+Angle: 0.129663
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746362
+Angle: 0.129666
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746369
+Angle: 0.129669
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746377
+Angle: 0.129672
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746367
+Angle: 0.129668
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746356
+Angle: 0.129664
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746346
+Angle: 0.12966
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746336
+Angle: 0.129657
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746325
+Angle: 0.129653
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746315
+Angle: 0.129649
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746305
+Angle: 0.129645
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746295
+Angle: 0.129642
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746285
+Angle: 0.129638
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746274
+Angle: 0.129634
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746264
+Angle: 0.129631
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746254
+Angle: 0.129627
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746262
+Angle: 0.12963
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746269
+Angle: 0.129632
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746277
+Angle: 0.129635
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746284
+Angle: 0.129638
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746292
+Angle: 0.129641
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746299
+Angle: 0.129643
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746307
+Angle: 0.129646
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746314
+Angle: 0.129649
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746321
+Angle: 0.129651
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746329
+Angle: 0.129654
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746336
+Angle: 0.129657
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746343
+Angle: 0.129659
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746333
+Angle: 0.129656
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746323
+Angle: 0.129652
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746313
+Angle: 0.129648
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746304
+Angle: 0.129645
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746294
+Angle: 0.129641
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746284
+Angle: 0.129638
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746274
+Angle: 0.129634
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746264
+Angle: 0.12963
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746254
+Angle: 0.129627
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746245
+Angle: 0.129623
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746252
+Angle: 0.129626
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746259
+Angle: 0.129629
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746267
+Angle: 0.129631
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746274
+Angle: 0.129634
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746281
+Angle: 0.129637
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746288
+Angle: 0.129639
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746295
+Angle: 0.129642
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746303
+Angle: 0.129645
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74631
+Angle: 0.129647
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746317
+Angle: 0.12965
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746324
+Angle: 0.129652
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746331
+Angle: 0.129655
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746338
+Angle: 0.129658
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746345
+Angle: 0.12966
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746352
+Angle: 0.129663
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746359
+Angle: 0.129665
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746366
+Angle: 0.129668
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746373
+Angle: 0.12967
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74638
+Angle: 0.129673
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746387
+Angle: 0.129675
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746394
+Angle: 0.129678
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746401
+Angle: 0.129681
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746408
+Angle: 0.129683
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746415
+Angle: 0.129686
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746422
+Angle: 0.129688
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746429
+Angle: 0.129691
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746436
+Angle: 0.129693
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746442
+Angle: 0.129696
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746449
+Angle: 0.129698
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746456
+Angle: 0.1297
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746463
+Angle: 0.129703
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746469
+Angle: 0.129705
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746476
+Angle: 0.129708
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746483
+Angle: 0.12971
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74649
+Angle: 0.129713
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746496
+Angle: 0.129715
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746503
+Angle: 0.129718
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746509
+Angle: 0.12972
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746516
+Angle: 0.129722
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746523
+Angle: 0.129725
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746529
+Angle: 0.129727
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746536
+Angle: 0.12973
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746542
+Angle: 0.129732
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746549
+Angle: 0.129734
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746555
+Angle: 0.129737
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746562
+Angle: 0.129739
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746568
+Angle: 0.129742
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746575
+Angle: 0.129744
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746581
+Angle: 0.129746
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746588
+Angle: 0.129749
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746594
+Angle: 0.129751
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.7466
+Angle: 0.129753
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746607
+Angle: 0.129756
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746613
+Angle: 0.129758
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746619
+Angle: 0.12976
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746626
+Angle: 0.129762
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746632
+Angle: 0.129765
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746638
+Angle: 0.129767
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746645
+Angle: 0.129769
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746651
+Angle: 0.129772
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746657
+Angle: 0.129774
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746663
+Angle: 0.129776
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74667
+Angle: 0.129778
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746676
+Angle: 0.129781
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746682
+Angle: 0.129783
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746688
+Angle: 0.129785
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746694
+Angle: 0.129787
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995623
+Angle: -0.0569363
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995615
+Angle: -0.0569352
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995607
+Angle: -0.056934
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995599
+Angle: -0.0569329
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995591
+Angle: -0.0569318
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995583
+Angle: -0.0569306
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995575
+Angle: -0.0569295
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995568
+Angle: -0.0569283
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746749
+Angle: 0.129807
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746755
+Angle: 0.12981
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746761
+Angle: 0.129812
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746767
+Angle: 0.129814
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746773
+Angle: 0.129816
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746779
+Angle: 0.129818
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746785
+Angle: 0.12982
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746791
+Angle: 0.129823
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746796
+Angle: 0.129825
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746802
+Angle: 0.129827
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746808
+Angle: 0.129829
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746814
+Angle: 0.129831
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74682
+Angle: 0.129833
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746826
+Angle: 0.129835
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746832
+Angle: 0.129838
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746837
+Angle: 0.12984
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746843
+Angle: 0.129842
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746849
+Angle: 0.129844
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746855
+Angle: 0.129846
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74686
+Angle: 0.129848
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746866
+Angle: 0.12985
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746872
+Angle: 0.129852
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746877
+Angle: 0.129854
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746883
+Angle: 0.129856
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746889
+Angle: 0.129858
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746894
+Angle: 0.129861
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.7469
+Angle: 0.129863
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746906
+Angle: 0.129865
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746911
+Angle: 0.129867
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746917
+Angle: 0.129869
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746922
+Angle: 0.129871
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746928
+Angle: 0.129873
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746934
+Angle: 0.129875
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746939
+Angle: 0.129877
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746945
+Angle: 0.129879
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74695
+Angle: 0.129881
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746941
+Angle: 0.129877
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746932
+Angle: 0.129874
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746922
+Angle: 0.129871
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746913
+Angle: 0.129867
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746904
+Angle: 0.129864
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746895
+Angle: 0.129861
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.7469
+Angle: 0.129863
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746906
+Angle: 0.129865
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746911
+Angle: 0.129867
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746917
+Angle: 0.129869
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746922
+Angle: 0.129871
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746928
+Angle: 0.129873
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746933
+Angle: 0.129875
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995781
+Angle: -0.0569593
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995799
+Angle: -0.0569619
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995816
+Angle: -0.0569644
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995834
+Angle: -0.056967
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995852
+Angle: -0.0569695
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995869
+Angle: -0.056972
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995886
+Angle: -0.0569746
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995904
+Angle: -0.0569771
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995896
+Angle: -0.056976
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995889
+Angle: -0.0569749
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995881
+Angle: -0.0569737
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995873
+Angle: -0.0569726
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995866
+Angle: -0.0569715
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995858
+Angle: -0.0569704
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995851
+Angle: -0.0569693
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995843
+Angle: -0.0569682
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74691
+Angle: 0.129866
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746915
+Angle: 0.129868
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74692
+Angle: 0.12987
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746926
+Angle: 0.129872
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746931
+Angle: 0.129874
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746936
+Angle: 0.129876
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746927
+Angle: 0.129873
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746919
+Angle: 0.129869
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74691
+Angle: 0.129866
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746901
+Angle: 0.129863
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746892
+Angle: 0.12986
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746883
+Angle: 0.129857
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746875
+Angle: 0.129853
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746866
+Angle: 0.12985
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746857
+Angle: 0.129847
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746848
+Angle: 0.129844
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74684
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746831
+Angle: 0.129837
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746822
+Angle: 0.129834
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746814
+Angle: 0.129831
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746819
+Angle: 0.129833
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746825
+Angle: 0.129835
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74683
+Angle: 0.129837
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746835
+Angle: 0.129839
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74684
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746846
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746851
+Angle: 0.129845
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746856
+Angle: 0.129847
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995799
+Angle: -0.0569619
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995792
+Angle: -0.0569609
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995785
+Angle: -0.0569598
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995778
+Angle: -0.0569588
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995771
+Angle: -0.0569578
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995763
+Angle: -0.0569567
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995756
+Angle: -0.0569557
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995749
+Angle: -0.0569546
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746889
+Angle: 0.129859
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746881
+Angle: 0.129856
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746872
+Angle: 0.129853
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746864
+Angle: 0.129849
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746855
+Angle: 0.129846
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746847
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746839
+Angle: 0.12984
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74683
+Angle: 0.129837
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746835
+Angle: 0.129839
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746841
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746846
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746851
+Angle: 0.129845
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746856
+Angle: 0.129847
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746861
+Angle: 0.129848
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746866
+Angle: 0.12985
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746871
+Angle: 0.129852
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746863
+Angle: 0.129849
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746855
+Angle: 0.129846
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746846
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746838
+Angle: 0.12984
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74683
+Angle: 0.129837
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746821
+Angle: 0.129834
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746827
+Angle: 0.129836
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746832
+Angle: 0.129838
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746837
+Angle: 0.12984
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746842
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746847
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746852
+Angle: 0.129845
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746857
+Angle: 0.129847
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746862
+Angle: 0.129849
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746867
+Angle: 0.129851
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746872
+Angle: 0.129852
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746877
+Angle: 0.129854
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746882
+Angle: 0.129856
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746887
+Angle: 0.129858
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746892
+Angle: 0.12986
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746897
+Angle: 0.129862
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746902
+Angle: 0.129863
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746907
+Angle: 0.129865
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746899
+Angle: 0.129862
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746891
+Angle: 0.129859
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746882
+Angle: 0.129856
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746874
+Angle: 0.129853
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746866
+Angle: 0.12985
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746858
+Angle: 0.129847
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74685
+Angle: 0.129844
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746842
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746834
+Angle: 0.129838
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746826
+Angle: 0.129836
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746818
+Angle: 0.129833
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74681
+Angle: 0.12983
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746815
+Angle: 0.129831
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74682
+Angle: 0.129833
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746825
+Angle: 0.129835
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74683
+Angle: 0.129837
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746835
+Angle: 0.129839
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746839
+Angle: 0.12984
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746844
+Angle: 0.129842
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746849
+Angle: 0.129844
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746854
+Angle: 0.129846
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746859
+Angle: 0.129848
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746864
+Angle: 0.129849
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746869
+Angle: 0.129851
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995701
+Angle: -0.0569477
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995717
+Angle: -0.0569499
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995732
+Angle: -0.0569522
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995748
+Angle: -0.0569544
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995763
+Angle: -0.0569567
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.995779
+Angle: -0.0569589
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746903
+Angle: 0.129863
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746907
+Angle: 0.129865
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746912
+Angle: 0.129867
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746917
+Angle: 0.129869
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746922
+Angle: 0.12987
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746926
+Angle: 0.129872
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746918
+Angle: 0.129869
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746911
+Angle: 0.129866
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746903
+Angle: 0.129864
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746895
+Angle: 0.129861
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746887
+Angle: 0.129858
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746879
+Angle: 0.129855
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746871
+Angle: 0.129852
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746876
+Angle: 0.129854
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746881
+Angle: 0.129856
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746886
+Angle: 0.129857
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74689
+Angle: 0.129859
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746895
+Angle: 0.129861
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.7469
+Angle: 0.129862
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746892
+Angle: 0.12986
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746884
+Angle: 0.129857
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746876
+Angle: 0.129854
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746869
+Angle: 0.129851
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746861
+Angle: 0.129848
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746853
+Angle: 0.129846
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746846
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74685
+Angle: 0.129844
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746855
+Angle: 0.129846
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74686
+Angle: 0.129848
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746864
+Angle: 0.12985
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746869
+Angle: 0.129851
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746874
+Angle: 0.129853
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746878
+Angle: 0.129855
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746871
+Angle: 0.129852
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746863
+Angle: 0.129849
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746855
+Angle: 0.129846
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746848
+Angle: 0.129844
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74684
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746833
+Angle: 0.129838
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746825
+Angle: 0.129835
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746818
+Angle: 0.129833
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746822
+Angle: 0.129834
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746827
+Angle: 0.129836
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746832
+Angle: 0.129838
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746836
+Angle: 0.129839
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746841
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746846
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74685
+Angle: 0.129844
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746855
+Angle: 0.129846
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746847
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74684
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746832
+Angle: 0.129838
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746825
+Angle: 0.129835
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746817
+Angle: 0.129832
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74681
+Angle: 0.12983
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746803
+Angle: 0.129827
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746795
+Angle: 0.129824
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746788
+Angle: 0.129822
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74678
+Angle: 0.129819
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746773
+Angle: 0.129816
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746766
+Angle: 0.129814
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746758
+Angle: 0.129811
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746751
+Angle: 0.129808
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746744
+Angle: 0.129806
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746736
+Angle: 0.129803
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746729
+Angle: 0.1298
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746722
+Angle: 0.129798
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746727
+Angle: 0.129799
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746731
+Angle: 0.129801
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746736
+Angle: 0.129803
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74674
+Angle: 0.129804
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746745
+Angle: 0.129806
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74675
+Angle: 0.129808
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746754
+Angle: 0.129809
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746759
+Angle: 0.129811
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746763
+Angle: 0.129813
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746768
+Angle: 0.129814
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746773
+Angle: 0.129816
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746777
+Angle: 0.129818
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746782
+Angle: 0.129819
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746786
+Angle: 0.129821
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746791
+Angle: 0.129823
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746795
+Angle: 0.129824
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.7468
+Angle: 0.129826
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996357
+Angle: -0.0570427
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.99637
+Angle: -0.0570447
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996384
+Angle: -0.0570467
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996397
+Angle: -0.0570486
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996411
+Angle: -0.0570506
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746827
+Angle: 0.129836
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746831
+Angle: 0.129837
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746835
+Angle: 0.129839
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74684
+Angle: 0.129841
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746844
+Angle: 0.129842
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746849
+Angle: 0.129844
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746853
+Angle: 0.129845
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746858
+Angle: 0.129847
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746862
+Angle: 0.129849
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746866
+Angle: 0.12985
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746871
+Angle: 0.129852
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746875
+Angle: 0.129853
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746879
+Angle: 0.129855
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746884
+Angle: 0.129857
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746888
+Angle: 0.129858
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746892
+Angle: 0.12986
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746897
+Angle: 0.129861
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746901
+Angle: 0.129863
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746905
+Angle: 0.129865
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74691
+Angle: 0.129866
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746903
+Angle: 0.129864
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746895
+Angle: 0.129861
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746888
+Angle: 0.129858
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746881
+Angle: 0.129856
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746874
+Angle: 0.129853
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746867
+Angle: 0.129851
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74686
+Angle: 0.129848
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746853
+Angle: 0.129845
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746846
+Angle: 0.129843
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746839
+Angle: 0.12984
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996682
+Angle: -0.0570898
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996675
+Angle: -0.0570888
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996668
+Angle: -0.0570879
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996661
+Angle: -0.0570869
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996655
+Angle: -0.0570859
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996648
+Angle: -0.0570849
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996641
+Angle: -0.057084
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996635
+Angle: -0.057083
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996628
+Angle: -0.057082
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.996621
+Angle: -0.0570811
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746763
+Angle: 0.129812
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746756
+Angle: 0.12981
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746749
+Angle: 0.129807
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746742
+Angle: 0.129805
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746735
+Angle: 0.129802
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746728
+Angle: 0.1298
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746722
+Angle: 0.129797
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746726
+Angle: 0.129799
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74673
+Angle: 0.129801
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746735
+Angle: 0.129802
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746739
+Angle: 0.129804
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746743
+Angle: 0.129805
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746748
+Angle: 0.129807
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746741
+Angle: 0.129804
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746734
+Angle: 0.129802
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746727
+Angle: 0.1298
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746721
+Angle: 0.129797
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746714
+Angle: 0.129795
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746707
+Angle: 0.129792
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746711
+Angle: 0.129794
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746716
+Angle: 0.129795
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.74672
+Angle: 0.129797
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746724
+Angle: 0.129798
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746729
+Angle: 0.1298
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.746733
+Angle: 0.129802

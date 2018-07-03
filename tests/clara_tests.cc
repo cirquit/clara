@@ -26,16 +26,17 @@
 #include "../library/clara.h"
 #include "csv.h"
 
+
 const std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string path)
 {
     std::vector< std::tuple<object_list_t, double> > observations;
     // read the data
-    io::CSVReader< 10 > in( path );
-    double distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp;
+    io::CSVReader< 14 > in( path );
+    double distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp, lap, a_x, a_y, steer_angle;
     // double distance, angle, x_car, y_car, yaw_rad, color, timestamp;
-    int    time_old = -1;
+    int    time_old      = -1;
     double timestamp_old = 0;
-    while ( in.read_row( distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp ) ) {
+    while ( in.read_row( distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp, lap, a_x, a_y, steer_angle ) ) {
         // group by timestamp
         if ( time != time_old )
         {
@@ -55,8 +56,11 @@ const std::vector< std::tuple<object_list_t, double> > parse_csv(const std::stri
         cur_object.y_car         = y_car;
         cur_object.vx            = v_x;
         cur_object.vy            = v_y;
+        cur_object.ax            = a_x;
+        cur_object.ay            = a_y;
         cur_object.angle_yaw     = yaw_rad;
         cur_object.type          = static_cast<int>(color);
+        cur_object.steering_rad  = steer_angle;
         cur_object.time_s        = timestamp;
         cur_list.size++;
     }
@@ -132,6 +136,10 @@ int main(int argc, char const *argv[]){
         double yaw_rad = l.element[0].angle_yaw;
         double vx      = l.element[0].vx;
         double vy      = l.element[0].vy;
+        double ax      = l.element[0].ax;
+        double ay      = l.element[0].ay;
+
+        double steer_angle = l.element[0].steering_rad; 
         std::cerr << "Observation [ " << counter++ << "/" << observations.size() << "]:\n"
                   << "    Rec. time: " << t_s  << "s\n"
                   << "    velocity: "  << vx << ", " << vy << " m/s\n"
@@ -139,14 +147,14 @@ int main(int argc, char const *argv[]){
 
         if (t_s > 100) { continue; }
         std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
-        std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw_rad, 0, 0, 0, t_s);
+        std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw_rad, ax, ay, steer_angle, t_s);
         std::cerr << "    pos: " << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
         UNUSED(pos);
     }
 
     // python logging data
-    // log_da(clara);
+    log_da(clara);
 
     return EXIT_SUCCESS;
 }

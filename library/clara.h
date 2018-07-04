@@ -136,6 +136,41 @@ namespace clara {
             _start_clock();
         }
 
+        //! main function - use all external sensor data to do the localization
+        const std::tuple<double, double> & add_observation(double v_x_sensor
+                                                         , double v_y_sensor
+                                                         , double yaw_rad
+                                                         , double a_x
+                                                         , double a_y
+                                                         , double steer_angle
+                                                         , double timestep_s = 0)
+        {
+            // prepare preallocated raw cone lists for new cones
+            _new_yellow_cones.clear();
+            _new_blue_cones.clear();
+            _new_red_cones.clear();
+            // calculate difference from last call to start_clock(), if it's zero, we have to calculate it by ourselves
+            if (timestep_s == 0){
+                // std::cerr << "        measuring time: ";
+                timestep_s = _get_diff_time_s();
+                // std::cerr << timestep_s << "s\n";
+            } else 
+            {
+                // std::cerr << "        got time: " << timestep_s << "s\n";
+            }
+            // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
+            const std::tuple<double, double, double> velocity_t = _to_world_velocity(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+            // update the position based on the estimated v_x, v_y and the time
+            const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
+            _update_estimated_position(new_position);
+            // update the travelled distance to check if we are close enough to the start
+            _lap_counter.add_positions(_estimated_position_old, _estimated_position);
+            // logging
+            // _log_velocity_position_dirty(velocity_t, obj_list, new_position);
+            _log_visualization_udp(std::get<0>(new_position), std::get<1>(new_position), yaw_rad, v_x_sensor, v_y_sensor, a_x, a_y, steer_angle);
+            return _estimated_position;
+        }
+
         //! main function - parse obj_list and use all external sensor data to do the data association and localization
         const std::tuple<double, double> & add_observation(const object_list_t & obj_list
                                                          , double v_x_sensor

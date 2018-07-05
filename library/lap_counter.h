@@ -54,8 +54,8 @@ namespace clara {
         , _set_start_after_m(set_start_after_m)
         , _distance_cnt { }
         , _lap(0)
-        , _lap_driven_distance(0)
         , _unset_start(true)
+        , _lap_driven_distance(0)
         { }
 
     // methods

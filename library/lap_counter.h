@@ -54,6 +54,7 @@ namespace clara {
         , _set_start_after_m(set_start_after_m)
         , _distance_cnt { }
         , _lap(0)
+        , _lap_driven_distance(0)
         , _unset_start(true)
         { }
 
@@ -79,6 +80,15 @@ namespace clara {
                 _start_pos = new_pos;
             }
 
+            // after the first round, we only use the driven distance to check if we finished a lap
+            if ( _lap_driven_distance != 0 &&
+                 _lap_driven_distance < driven_distance )
+            {
+                _lap++;
+                _distance_cnt.reset_distance();
+                return _lap;
+            }
+
             // if we moved away enough, check for distance to start_point
             if ( driven_distance >= _min_driven_distance_m)
             {
@@ -88,6 +98,7 @@ namespace clara {
                 if (to_start_distance <= _lap_epsilon_m)
                 {
                     _lap++;
+                    _lap_driven_distance = driven_distance;
                     _distance_cnt.reset_distance();
                 }
             }
@@ -103,6 +114,9 @@ namespace clara {
         distance_counter           _distance_cnt;
         int                        _lap;
         bool                       _unset_start;
+
+        double             _lap_driven_distance;
+
     };
 } // namespace clara
 

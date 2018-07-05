@@ -50,27 +50,27 @@ double calc_yawrate_from_steering(const double & steer_angle
     return yaw_rate;
 }
 
-//! get yaw rate (very noisy and bad practice, use yaw_rate from can)
-double get_yaw_rate(const object_t & obj
-                  , const double & old_yaw
-                  , const double & time_s )
-{
-    // std::cerr << "yaw:    " << obj.angle_yaw << '\n'
-    //           << "oldyaw: " << old_yaw    << '\n'
-    //           << "delta_t:" << time_s     << '\n';
-    return (obj.angle_yaw - old_yaw) / time_s;
-}
+// //! get yaw rate (very noisy and bad practice, use yaw_rate from can)
+// double get_yaw_rate(const object_t & obj
+//                   , const double & old_yaw
+//                   , const double & time_s )
+// {
+//     // std::cerr << "yaw:    " << obj.angle_yaw << '\n'
+//     //           << "oldyaw: " << old_yaw    << '\n'
+//     //           << "delta_t:" << time_s     << '\n';
+//     return (obj.angle_yaw - old_yaw) / time_s;
+// }
 
 const std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string path)
 {
     std::vector< std::tuple<object_list_t, double> > observations;
     // read the data
-    io::CSVReader< 14 > in( path );
-    double distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp, lap, a_x, a_y, steer_angle;
+    io::CSVReader< 15 > in( path );
+    double distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp, lap, a_x, a_y, steer_angle, yaw_rate;
     // double distance, angle, x_car, y_car, yaw_rad, color, timestamp;
     int    time_old      = -1;
     double timestamp_old = 0;
-    while ( in.read_row( distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp, lap, a_x, a_y, steer_angle ) ) {
+    while ( in.read_row( distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp, lap, a_x, a_y, steer_angle, yaw_rate ) ) {
         // group by timestamp
         if ( time != time_old )
         {
@@ -92,7 +92,7 @@ const std::vector< std::tuple<object_list_t, double> > parse_csv(const std::stri
         cur_object.vy            = v_y;
         cur_object.ax            = a_x;
         cur_object.ay            = a_y;
-        cur_object.angle_yaw     = yaw_rad;
+        cur_object.angle_yaw     = yaw_rate;
         cur_object.type          = static_cast<int>(color);
         cur_object.steering_rad  = steer_angle;
         cur_object.time_s        = timestamp;
@@ -197,18 +197,16 @@ int main(int argc, char const *argv[]){
                        , process_noise
                        , sensor_noise);
     double yaw_rate_kafi = yaw_rate_steer;
-    double yaw     = std::get<0>(*(observations.begin() + 1)).element[0].angle_yaw;
-    double old_yaw = yaw;
+    double yaw     = 0;
     for(const auto & o : observations)
     {
         if (counter++ < 1) continue;
         const object_list_t & l   = std::get<0>(o);
         const double        & t_s = std::get<1>(o);
         if (t_s > 100) { continue; }
-        
         if (l.size == 0) { continue; }
         if (t_s == 0)    { continue; }
-        double yaw_rate_rad = get_yaw_rate(l.element[0], old_yaw, t_s);
+        double yaw_rate_rad = l.element[0].angle_yaw;
         double vx           = l.element[0].vx;
         double vy           = l.element[0].vy;
         double ax           = l.element[0].ax;
@@ -216,10 +214,7 @@ int main(int argc, char const *argv[]){
         double steer_angle  = l.element[0].steering_rad; 
 
         double yaw_rate_steer = calc_yawrate_from_steering(steer_angle, vx, vy);
-        // if (yaw_steer < 0)
-        // {
-        //     yaw_steer = 2*3.1415926 - yaw_steer;
-        // }
+
 
         // we start with the same yaw for both measurements
         std::shared_ptr< mx1_vector > observation = std::make_shared< mx1_vector >(
@@ -241,12 +236,17 @@ int main(int argc, char const *argv[]){
                   << "    yaw_rate: "       << yaw_rate_rad << "rad/s\n"
                   << "    yaw_rate_steer: " << yaw_rate_steer << "rad/s\n"
                   << "    yaw_rate_kafi: "  << yaw_rate_kafi << "rad/s\n";
-        yaw += (yaw_rate_rad + 0.0272834) * t_s;
-        old_yaw = yaw;
+        yaw += (yaw_rate_steer) * t_s; //  + 0.0272834
 
-        double inserted_yaw = yaw_rate_kafi * t_s;
+        // yaw = fmod(yaw, 2*3.1415926);
+
+        if (yaw < 0)
+        {
+            yaw = 2*3.1415926 - yaw;
+        }
+        //double inserted_yaw = yaw_rate_kafi * t_s;
         // std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
-        std::tuple<double, double> pos = clara.add_observation(l, vx, vy, inserted_yaw, ax, ay, steer_angle, t_s);
+        std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw, ax, ay, steer_angle, t_s);
         std::cerr << "    pos: " << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
         UNUSED(pos);
@@ -254,8 +254,8 @@ int main(int argc, char const *argv[]){
         // std::cout << yaw_rate_steer << ',' << yaw_rate_rad << '\n';
 
         // std::cout << l.element[0].angle_yaw << ", " << yaw << '\n';
-        std::cout << yaw_rate_rad << ',' <<  yaw_rate_steer << ',' << yaw_rate_kafi << '\n';
-        // std::cout << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
+        // std::cout << yaw_rate_rad << ',' <<  yaw_rate_steer << ',' << yaw_rate_kafi << '\n';
+        std::cout << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
     }
 
 

@@ -26,6 +26,8 @@
 /** \brief CLARA namespace
  *
  */
+
+
 namespace clara {
     //! Counts the lap, starting from 0
     class lap_counter
@@ -55,6 +57,7 @@ namespace clara {
         , _distance_cnt { }
         , _lap(0)
         , _unset_start(true)
+        , _lap_driven_distance(0)
         { }
 
     // methods
@@ -79,8 +82,20 @@ namespace clara {
                 _start_pos = new_pos;
             }
 
+            // after the first round, we only use the driven distance to check if we finished a lap
+            if ( _lap_driven_distance != 0 &&
+                 _lap_driven_distance < driven_distance )
+            {
+                _lap++;
+                _distance_cnt.reset_distance();
+                return _lap;
+            } else if ( _lap_driven_distance != 0 )
+            {
+                return _lap;
+            }
+
             // if we moved away enough, check for distance to start_point
-            if ( driven_distance >= _min_driven_distance_m)
+            if ( !_unset_start && driven_distance >= _min_driven_distance_m )
             {
                 // check the distance to our starting position
                 const double to_start_distance = util::euclidean_distance(new_pos, _start_pos);
@@ -88,6 +103,7 @@ namespace clara {
                 if (to_start_distance <= _lap_epsilon_m)
                 {
                     _lap++;
+                    _lap_driven_distance = driven_distance;
                     _distance_cnt.reset_distance();
                 }
             }
@@ -103,6 +119,9 @@ namespace clara {
         distance_counter           _distance_cnt;
         int                        _lap;
         bool                       _unset_start;
+
+        double             _lap_driven_distance;
+
     };
 } // namespace clara
 

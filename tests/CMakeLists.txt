@@ -23,6 +23,12 @@ set(SOURCES_CLARA csv.h clara_tests.cc)
 add_executable(${TEST_NAME_CLARA} ${SOURCES_CLARA})
 target_link_libraries(${TEST_NAME_CLARA} ${LIB_NAME})
 
+set(TEST_NAME_CLARA_15 clara_csv_test_15)
+set(SOURCES_CLARA csv.h clara_tests-15.cc)
+add_executable(${TEST_NAME_CLARA_15} ${SOURCES_CLARA})
+target_link_libraries(${TEST_NAME_CLARA_15} ${LIB_NAME})
+
+
 set(TEST_NAME_UTIL clara_util_test)
 set(SOURCES_UTIL catch.h main.cc csv.h util_tests.cc)
 add_executable(${TEST_NAME_UTIL} ${SOURCES_UTIL})

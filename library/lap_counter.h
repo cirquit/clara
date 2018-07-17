@@ -26,6 +26,8 @@
 /** \brief CLARA namespace
  *
  */
+
+
 namespace clara {
     //! Counts the lap, starting from 0
     class lap_counter
@@ -87,10 +89,13 @@ namespace clara {
                 _lap++;
                 _distance_cnt.reset_distance();
                 return _lap;
+            } else if ( _lap_driven_distance != 0 )
+            {
+                return _lap;
             }
 
             // if we moved away enough, check for distance to start_point
-            if ( driven_distance >= _min_driven_distance_m)
+            if ( !_unset_start && driven_distance >= _min_driven_distance_m )
             {
                 // check the distance to our starting position
                 const double to_start_distance = util::euclidean_distance(new_pos, _start_pos);

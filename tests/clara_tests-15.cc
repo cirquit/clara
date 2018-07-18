@@ -80,6 +80,16 @@ const std::vector< std::tuple<object_list_t, double> > parse_csv(const std::stri
             timestamp_old = timestamp;
             observations.push_back( std::make_tuple(list, t) );
             time_old = time;
+
+            // std::cout // << v_x << ','
+            //           // << v_y << ','
+            //           // << a_x << ','
+            //           // << a_y << ','
+            //           // << steer_angle << ','
+            //           // << yaw_rad     << ','
+            //           // << yaw_rate    << ','
+            //           // << timestamp   << ','
+            //           << t           << '\n';
         }
 
         object_list_t & cur_list = std::get<0>(observations.back());
@@ -185,8 +195,8 @@ int main(int argc, char const *argv[]){
     // given by our example, read as "the real world temperature changes are 0.1°
     nxn_matrix process_noise( { { 0.0001 } } );
     // given by our example, read as "both temperature sensors fluctuate by 0.8° (0.8^2 = 0.64)"
-    mxm_matrix sensor_noise( { { 0.003, 0      }     // need to estimate the best possible noise
-                             , { 0,     0.01  } }); // 
+    mxm_matrix sensor_noise( { { 0.001, 0      }     // need to estimate the best possible noise
+                             , { 0,     0.003  } }); // 
   // we start with the initial state at t = 0, which we take as "ground truth", because we build the relative map around it
     nx1_vector starting_state( { { yaw_rate_steer } } );
 
@@ -237,20 +247,22 @@ int main(int argc, char const *argv[]){
                   << "    yaw_rate: "       << yaw_rate_rad << "rad/s\n"
                   << "    yaw_rate_steer: " << yaw_rate_steer << "rad/s\n"
                   << "    yaw_rate_kafi: "  << yaw_rate_kafi << "rad/s\n";
-        yaw += (yaw_rate_kafi) * t_s; //  + 0.0272834
+        yaw += (yaw_rate_rad) * t_s; //  + 0.0272834
 
         // yaw = fmod(yaw, 2*3.1415926);
 
-        if (yaw < 0)
-        {
-            yaw = 2*3.1415926 - yaw;
-        }
+//        if (yaw < 0)
+//        {
+//            yaw = 2*3.1415926 - yaw;
+//        }
         //double inserted_yaw = yaw_rate_kafi * t_s;
-        // std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
+        std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw, ax, ay, steer_angle, t_s);
         std::cerr << "    pos: " << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
         UNUSED(pos);
+
+        // if (lap == 1)
 
         // std::cout << yaw_rate_steer << ',' << yaw_rate_rad << '\n';
 

@@ -126,6 +126,8 @@ int main(int argc, char const *argv[]){
       //  , std::make_tuple(4.94177, 0.722539)); // hockenheim (+5m in CM)
       //, std::make_tuple(0.888982, -1.50739)); //
 
+    clara::vehicle_state_t vs( clara::USE_NORMAL_YAW );
+
     int counter  = 0;
     for(const auto & o : observations)
     {
@@ -139,16 +141,20 @@ int main(int argc, char const *argv[]){
         if (vx == 0) continue;
         double ax      = l.element[0].ax;
         double ay      = l.element[0].ay;
-
         double steer_angle = l.element[0].steering_rad;
-        std::cerr << "Observation [ " << counter++ << "/" << observations.size() << "]:\n"
-                  << "    Rec. time: " << t_s  << "s\n"
-                  << "    velocity: "  << vx << ", " << vy << " m/s\n"
-                  << "    yaw: "       << yaw_rad << "rad\n";
+
+        vs.update(vx, vy, ax, ay, yaw_rad, 0, steer_angle, t_s);
+
+        std::cerr << "Observation [        " << counter++ << "/" << observations.size() << "]:\n"
+                  << "    Rec. time:       " << vs._timestep_s  << "s\n"
+                  << "    Freq:            " << 1 / vs._timestep_s << "Hz\n"
+                  << "    velocity:        " << vs._v_x_vehicle << ", "
+                                             << vs._v_y_vehicle << " m/s\n"
+                  << "    yaw (mode dep.): " << vs.get_yaw()    << " rad\n";
 
         if (t_s > 100) { continue; }
-//        std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
-        std::tuple<double, double> pos = clara.add_observation(l, vx, vy, yaw_rad, ax, ay, steer_angle, t_s);
+        std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
+        std::tuple<double, double> pos = clara.add_observation(l, vs);
         std::cerr << "    pos: " << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
         UNUSED(pos);

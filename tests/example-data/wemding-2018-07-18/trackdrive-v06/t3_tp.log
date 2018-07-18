@@ -1,0 +1,4373 @@
+[INFO] I connected to 192.168.140.21:33333
+[INFO] Some clients connected!
+[INFO] Binding successful to port 3500!
+[INFO] Some clients connected!
+[INFO] Binding successful to port 3501!
+[INFO] I connected to 192.168.140.20:33333
+[INFO] fill_colored_objects - size : 0
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+[INFO] fill_colored_objects - size : 0
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.0291756
+Angle: -0.0059601
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0182713
+Angle: -0.0128411
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0294643
+Angle: -0.0140326
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0371418
+Angle: -0.0149555
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0417655
+Angle: -0.0155121
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0330819
+Angle: -0.0140339
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0295568
+Angle: -0.0133991
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0309527
+Angle: -0.0135576
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0341954
+Angle: -0.0140199
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0365213
+Angle: -0.0145744
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0354301
+Angle: -0.0143514
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0345215
+Angle: -0.0141656
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0298541
+Angle: -0.0133959
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0302737
+Angle: -0.0139781
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0329632
+Angle: -0.0148511
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0417345
+Angle: -0.0161461
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0482194
+Angle: -0.0170908
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.048746
+Angle: -0.0172309
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0493583
+Angle: -0.0172587
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0487931
+Angle: -0.0172215
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0480142
+Angle: -0.0170374
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0457053
+Angle: -0.0166178
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0451309
+Angle: -0.0164764
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0421869
+Angle: -0.0159186
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0414766
+Angle: -0.0157658
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0436165
+Angle: -0.0160651
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0510676
+Angle: -0.017288
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0511672
+Angle: -0.0170606
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0520779
+Angle: -0.0170181
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0518818
+Angle: -0.017044
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0568249
+Angle: -0.0178744
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0568509
+Angle: -0.0149563
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0549803
+Angle: -0.014799
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0522195
+Angle: -0.0144937
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0501991
+Angle: -0.0142326
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0494847
+Angle: -0.0141738
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0511142
+Angle: -0.0146284
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0504428
+Angle: -0.0144159
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0488814
+Angle: -0.0142161
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0486143
+Angle: -0.0142742
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.047733
+Angle: -0.0142032
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.045326
+Angle: -0.0138891
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0441912
+Angle: -0.013772
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.042798
+Angle: -0.01356
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0401049
+Angle: -0.0130421
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0379338
+Angle: -0.0127343
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0361926
+Angle: -0.0124927
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0344803
+Angle: -0.0123014
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0335722
+Angle: -0.0121871
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0321839
+Angle: -0.0119962
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0330496
+Angle: -0.0121582
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0335678
+Angle: -0.0122647
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0328962
+Angle: -0.0121833
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0335495
+Angle: -0.0123091
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0331931
+Angle: -0.0122755
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0328064
+Angle: -0.0122769
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0326619
+Angle: -0.0122743
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0318098
+Angle: -0.0121403
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0319168
+Angle: -0.0122146
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0313116
+Angle: -0.0121752
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0310689
+Angle: -0.0121537
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.031535
+Angle: -0.012243
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0327103
+Angle: -0.0125642
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0336436
+Angle: -0.0128087
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0328668
+Angle: -0.0126806
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0316885
+Angle: -0.012524
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0310484
+Angle: -0.0124512
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0304447
+Angle: -0.0123665
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0287803
+Angle: -0.0121149
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0283951
+Angle: -0.0121729
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0289256
+Angle: -0.0124437
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.028926
+Angle: -0.0125397
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0283928
+Angle: -0.0124595
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0281233
+Angle: -0.0124208
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.027509
+Angle: -0.0123277
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0302308
+Angle: -0.0128601
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0307242
+Angle: -0.0129398
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0307157
+Angle: -0.0129696
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0304722
+Angle: -0.0129617
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.029866
+Angle: -0.0128674
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.027913
+Angle: -0.0124026
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0270258
+Angle: -0.0122111
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0268539
+Angle: -0.0122014
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.026907
+Angle: -0.00919534
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0267431
+Angle: -0.00922183
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0267963
+Angle: -0.00928121
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0272121
+Angle: -0.00945753
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0281618
+Angle: -0.00965493
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0280164
+Angle: -0.00967902
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.027747
+Angle: -0.00969517
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0269668
+Angle: -0.00960476
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0267655
+Angle: -0.00960469
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0269012
+Angle: -0.00966914
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0261451
+Angle: -0.00953311
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0266206
+Angle: -0.00952946
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0282492
+Angle: -0.0097695
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0283846
+Angle: -0.00977527
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0288567
+Angle: -0.00989112
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0291877
+Angle: -0.0100489
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0306283
+Angle: -0.0103569
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0309982
+Angle: -0.010442
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0325046
+Angle: -0.0107274
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.034231
+Angle: -0.0110244
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0346674
+Angle: -0.0111183
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0348172
+Angle: -0.0111774
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0343087
+Angle: -0.0111323
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0342813
+Angle: -0.0111623
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0339239
+Angle: -0.0111502
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0337022
+Angle: -0.0112075
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0343081
+Angle: -0.0113732
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.035338
+Angle: -0.011566
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0356064
+Angle: -0.0116486
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0365935
+Angle: -0.0118435
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0371177
+Angle: -0.011945
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0384083
+Angle: -0.0121865
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0387123
+Angle: -0.0122721
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0398522
+Angle: -0.0124692
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0406491
+Angle: -0.012612
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0408584
+Angle: -0.0126812
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0399717
+Angle: -0.0125395
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0396123
+Angle: -0.0125444
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0402236
+Angle: -0.0127192
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0401224
+Angle: -0.0127806
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0401946
+Angle: -0.0128503
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0403305
+Angle: -0.012929
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0399931
+Angle: -0.0128892
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0390631
+Angle: -0.0127649
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0378966
+Angle: -0.012603
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0385326
+Angle: -0.0127245
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0386021
+Angle: -0.0127565
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0382822
+Angle: -0.0127269
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.037956
+Angle: -0.0127369
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.037383
+Angle: -0.0126751
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0367172
+Angle: -0.0125812
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0359331
+Angle: -0.0124686
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0355043
+Angle: -0.0124285
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0348099
+Angle: -0.0123296
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0342814
+Angle: -0.0122731
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0334264
+Angle: -0.0121485
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0332216
+Angle: -0.0121342
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0328501
+Angle: -0.0120934
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0322588
+Angle: -0.00896348
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0317707
+Angle: -0.00893322
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0312895
+Angle: -0.00890339
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.030815
+Angle: -0.00887398
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.030717
+Angle: -0.00888764
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0303878
+Angle: -0.00886452
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0297615
+Angle: -0.00880961
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0288292
+Angle: -0.00865326
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0283873
+Angle: -0.00862658
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0279514
+Angle: -0.00860026
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0269586
+Angle: -0.00847086
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0261178
+Angle: -0.00837986
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0256177
+Angle: -0.00832717
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0252112
+Angle: -0.00830354
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0247235
+Angle: -0.00825204
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.024192
+Angle: -0.00819335
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0235075
+Angle: -0.00807504
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.022836
+Angle: -0.00799394
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0225834
+Angle: -0.00797841
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0225873
+Angle: -0.00800996
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0224792
+Angle: -0.00802352
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0220296
+Angle: -0.00797605
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0218366
+Angle: -0.00796863
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0214307
+Angle: -0.00794121
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0209485
+Angle: -0.0078877
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0207655
+Angle: -0.00788095
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0205846
+Angle: -0.00787429
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0204059
+Angle: -0.00786771
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0199874
+Angle: -0.00782317
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0193407
+Angle: -0.00770321
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0190116
+Angle: -0.00768567
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0198942
+Angle: -0.00787572
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0204249
+Angle: -0.00802263
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0211583
+Angle: -0.00815773
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0213761
+Angle: -0.00821153
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0212009
+Angle: -0.00820332
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.020983
+Angle: -0.00818818
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0210331
+Angle: -0.00822763
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0210077
+Angle: -0.00824225
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0206109
+Angle: -0.00819828
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0203048
+Angle: -0.00816837
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0199899
+Angle: -0.00814928
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0196906
+Angle: -0.00811998
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0192161
+Angle: -0.00803286
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.018747
+Angle: -0.00794675
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0184594
+Angle: -0.00791905
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0181749
+Angle: -0.00789165
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0178053
+Angle: -0.00787874
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0177846
+Angle: -0.0079202
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0176828
+Angle: -0.00792068
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0175693
+Angle: -0.00793097
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0172155
+Angle: -0.00789144
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0171182
+Angle: -0.00789206
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0169404
+Angle: -0.00787987
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0166754
+Angle: -0.0078538
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0165724
+Angle: -0.00787996
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0161938
+Angle: -0.00780751
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.015859
+Angle: -0.0077421
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0156468
+Angle: -0.00769609
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0158465
+Angle: -0.00776894
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0157973
+Angle: -0.00780226
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0156244
+Angle: -0.00781574
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0155944
+Angle: -0.00786215
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0154881
+Angle: -0.00789609
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0157027
+Angle: -0.00799383
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0158474
+Angle: -0.00805551
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0159374
+Angle: -0.00805592
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0156504
+Angle: -0.00797493
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0155563
+Angle: -0.00798408
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0154753
+Angle: -0.00493093
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0155234
+Angle: -0.00496041
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0153688
+Angle: -0.00496315
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0150619
+Angle: -0.00494168
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0147943
+Angle: -0.00492615
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0145602
+Angle: -0.0049209
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0145921
+Angle: -0.00497604
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.01442
+Angle: -0.00500884
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0141244
+Angle: -0.00498765
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.013716
+Angle: -0.00495365
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0137944
+Angle: -0.00499592
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0139979
+Angle: -0.00505249
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0139723
+Angle: -0.00507281
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0138677
+Angle: -0.00508048
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0138429
+Angle: -0.0051005
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0137829
+Angle: -0.00511476
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0136508
+Angle: -0.00511249
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0138206
+Angle: -0.00519518
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0139114
+Angle: -0.00526498
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0138097
+Angle: -0.0052716
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.013843
+Angle: -0.00532195
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0141496
+Angle: -0.00543649
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0150018
+Angle: -0.00562438
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0149733
+Angle: -0.00564133
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0148747
+Angle: -0.00562364
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.014915
+Angle: -0.00565115
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0146677
+Angle: -0.00563803
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0145611
+Angle: -0.00564682
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0143829
+Angle: -0.00564416
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0144402
+Angle: -0.00570008
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0143325
+Angle: -0.00572507
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0144898
+Angle: -0.00576499
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0146342
+Angle: -0.00581212
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0145303
+Angle: -0.00581998
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0144372
+Angle: -0.00582006
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0141327
+Angle: -0.00577372
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0139258
+Angle: -0.0057695
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0137916
+Angle: -0.00578853
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0134029
+Angle: -0.00572397
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0130802
+Angle: -0.00566983
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.012829
+Angle: -0.00562698
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0127775
+Angle: -0.00561557
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0127264
+Angle: -0.00560426
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0130812
+Angle: -0.00567845
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0130939
+Angle: -0.00569871
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0128382
+Angle: -0.00563255
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0126557
+Angle: -0.00560059
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0124633
+Angle: -0.00559724
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0121558
+Angle: -0.00554559
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0119669
+Angle: -0.00554248
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0117881
+Angle: -0.00553207
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0115765
+Angle: -0.0055207
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0113863
+Angle: -0.00553656
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0109118
+Angle: -0.00547914
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0106178
+Angle: -0.00544997
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.01083
+Angle: -0.00550023
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0109106
+Angle: -0.00552967
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.010889
+Angle: -0.00554716
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0105745
+Angle: -0.00551002
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0105295
+Angle: -0.00551936
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0104859
+Angle: -0.00551279
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0103688
+Angle: -0.00550321
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0101751
+Angle: -0.00548891
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00977834
+Angle: -0.00544258
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00944303
+Angle: -0.00540579
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00962225
+Angle: -0.00544973
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00961736
+Angle: -0.00546462
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00957707
+Angle: -0.00547384
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00948062
+Angle: -0.00241719
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00915436
+Angle: -0.0023922
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00872642
+Angle: -0.00234297
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00849655
+Angle: -0.00230946
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00825671
+Angle: -0.00228259
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00798762
+Angle: -0.00225514
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00767246
+Angle: -0.00221221
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00729606
+Angle: -0.00216775
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00687474
+Angle: -0.00210805
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00688238
+Angle: -0.00216001
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0069487
+Angle: -0.00222085
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00684189
+Angle: -0.00222482
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00656023
+Angle: -0.00220899
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00617208
+Angle: -0.00215782
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00594865
+Angle: -0.00213245
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00578122
+Angle: -0.00213411
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0057254
+Angle: -0.0021531
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00575572
+Angle: -0.00218542
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00594708
+Angle: -0.00228026
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00605602
+Angle: -0.00233795
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0058748
+Angle: -0.00231056
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00549336
+Angle: -0.00226721
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00530817
+Angle: -0.00224687
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00548944
+Angle: -0.00230932
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00560938
+Angle: -0.00237503
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00532185
+Angle: -0.0023522
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00514058
+Angle: -0.00234592
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00496051
+Angle: -0.00233967
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00520425
+Angle: -0.00240721
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00542482
+Angle: -0.00246724
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00561313
+Angle: -0.00252571
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00553901
+Angle: -0.00253547
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00525809
+Angle: -0.00251263
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00545434
+Angle: -0.00256458
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0055853
+Angle: -0.00262264
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00560903
+Angle: -0.00266363
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00578014
+Angle: -0.00273457
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00609787
+Angle: -0.00278773
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.00639523
+Angle: -0.00285835
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0388926
+Angle: 0.238753
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0976602
+Angle: 0.237992
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.176618
+Angle: 0.243296
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.250838
+Angle: 0.248507
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.318424
+Angle: 0.247586
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.3727
+Angle: 0.240531
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.94343
+Angle: -0.254786
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.415
+Angle: 0.232158
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.779489
+Angle: -0.0552098
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.608752
+Angle: -0.132537
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.67758
+Angle: -0.157861
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.746034
+Angle: -0.183782
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.785739
+Angle: -0.205716
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.124336
+Angle: -0.364937
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0326895
+Angle: -0.383091
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.177443
+Angle: -0.39048
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.232812
+Angle: -0.387327
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.26735
+Angle: -0.368791
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.189612
+Angle: -0.312646
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.131197
+Angle: -0.248004
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0846307
+Angle: -0.190863
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0927557
+Angle: -0.147998
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.315245
+Angle: -0.00202511
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.41095
+Angle: 0.0216175
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.465861
+Angle: 0.0568394
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.499305
+Angle: 0.09479
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.535524
+Angle: 0.122505
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.391764
+Angle: 0.102238
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.605608
+Angle: 0.165855
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.663679
+Angle: 0.172572
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.716877
+Angle: 0.171087
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.748111
+Angle: 0.16832
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0407077
+Angle: 0.277348
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.118344
+Angle: 0.262612
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.158873
+Angle: 0.240207
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.197643
+Angle: 0.217713
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.248938
+Angle: 0.181954
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.299955
+Angle: 0.143834
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.350288
+Angle: 0.104257
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.511573
+Angle: 0.0284769
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.599342
+Angle: -0.0363892
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.615555
+Angle: -0.0776147
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.633367
+Angle: -0.115328
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.980367
+Angle: -0.227064
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.887912
+Angle: -0.245823
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.797143
+Angle: -0.262352
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.962021
+Angle: -0.340898
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.963379
+Angle: -0.37612
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.91597
+Angle: -0.396398
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 3
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.873317
+Angle: -0.414049
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.825833
+Angle: -0.422836
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.77653
+Angle: -0.42679
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.719515
+Angle: -0.418297
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.672299
+Angle: -0.407004
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -1.00188
+Angle: -0.501504
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.592003
+Angle: -0.370483
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.543683
+Angle: -0.33785
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.46365
+Angle: -0.565397
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.39526
+Angle: -0.537972
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.30653
+Angle: -0.500559
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.25452
+Angle: -0.475645
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.21988
+Angle: -0.45562
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.16349
+Angle: -0.421669
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.1498
+Angle: -0.406425
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.515415
+Angle: -0.156209
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.511349
+Angle: -0.113439
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.569072
+Angle: -0.184193
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.473666
+Angle: -0.124899
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.449961
+Angle: -0.0883987
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.4287
+Angle: -0.0490059
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.432812
+Angle: -0.019284
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.439997
+Angle: 0.00967441
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -1.0718
+Angle: -0.104872
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -1.03823
+Angle: -0.0859935
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.94002
+Angle: -0.0450898
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.898669
+Angle: -0.0266366
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.866117
+Angle: -0.0163203
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.16209
+Angle: -0.154941
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.03104
+Angle: -0.134095
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.926182
+Angle: -0.126609
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.867828
+Angle: -0.127921
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.80481
+Angle: -0.136389
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.743876
+Angle: -0.1381
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.687761
+Angle: -0.141159
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.499301
+Angle: -0.132192
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.44118
+Angle: -0.358369
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.27606
+Angle: -0.361804
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.17449
+Angle: -0.350594
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.08784
+Angle: -0.341635
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.01368
+Angle: -0.335468
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.919543
+Angle: -0.318586
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.812182
+Angle: -0.287995
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.74359
+Angle: -0.262076
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.702996
+Angle: -0.235922
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.669973
+Angle: -0.212649
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.652762
+Angle: -0.192184
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.648223
+Angle: -0.179156
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.66226
+Angle: -0.653699
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.45921
+Angle: -0.602987
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.21753
+Angle: -0.542219
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.09029
+Angle: -0.514299
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.96543
+Angle: -0.488774
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.81387
+Angle: -0.456248
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.66123
+Angle: -0.41787
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.55482
+Angle: -0.389948
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.47896
+Angle: -0.372822
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.39526
+Angle: -0.352233
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.33481
+Angle: -0.333453
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.28149
+Angle: -0.32078
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.56445
+Angle: -0.660918
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.45382
+Angle: -0.646474
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.46326
+Angle: -0.678151
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.30925
+Angle: -0.65244
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.21637
+Angle: -0.654421
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.11289
+Angle: -0.64154
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.00711
+Angle: -0.632345
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.9073
+Angle: -0.618618
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.80243
+Angle: -0.603251
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.7233
+Angle: -0.584974
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.6348
+Angle: -0.563326
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -3.39766
+Angle: -1.16431
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.48851
+Angle: -0.802158
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.42325
+Angle: -0.79281
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.30962
+Angle: -0.76134
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.2492
+Angle: -0.747587
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.16246
+Angle: -0.724523
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.0791
+Angle: -0.701383
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 0
+blue_objects.size: 4
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.99013
+Angle: -0.672269
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.89815
+Angle: -0.638165
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.39919
+Angle: -0.875537
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.23348
+Angle: -0.823677
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.07036
+Angle: -0.768692
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.92819
+Angle: -0.717058
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.81366
+Angle: -0.669778
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.72961
+Angle: -0.612069
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.99454
+Angle: -1.03896
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.79005
+Angle: -0.964995
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.6303
+Angle: -0.915756
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.48234
+Angle: -0.857162
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.34546
+Angle: -0.800628
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.22764
+Angle: -0.74638
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.98319
+Angle: -1.05253
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.80285
+Angle: -0.996932
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.62102
+Angle: -0.935275
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.4726
+Angle: -0.874739
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.35405
+Angle: -0.82128
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.22185
+Angle: -0.75529
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.1091
+Angle: -0.690682
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.03227
+Angle: -0.633857
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.9655
+Angle: -0.561928
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -3.51976
+Angle: -1.24294
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -3.32479
+Angle: -1.18014
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -3.15584
+Angle: -1.11618
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.97165
+Angle: -1.06237
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.79905
+Angle: -1.00315
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.66389
+Angle: -0.946837
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.51821
+Angle: -0.885941
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.38786
+Angle: -0.824281
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.03131
+Angle: -0.582836
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.93692
+Angle: -0.479261
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.91588
+Angle: -0.433029
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.90324
+Angle: -0.374476
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -1.50325
+Angle: -0.303296
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -1.45554
+Angle: -0.257951
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -1.41382
+Angle: -0.218688
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+                                                                                                  

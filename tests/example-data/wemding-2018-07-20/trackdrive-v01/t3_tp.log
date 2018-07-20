@@ -1,0 +1,5655 @@
+[INFO] I connected to 192.168.140.21:33333
+[INFO] Some clients connected!
+[INFO] Binding successful to port 3500!
+[INFO] Some clients connected!
+[INFO] Binding successful to port 3501!
+[INFO] I connected to 192.168.140.20:33333
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 0
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 0
+yellow_objects.size: 0
+blue_objects.size: 0
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.621079
+Angle: -0.0937177
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.612515
+Angle: -0.092197
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.605511
+Angle: -0.0909538
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.609392
+Angle: -0.0916427
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.605814
+Angle: -0.0910075
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.608351
+Angle: -0.0914579
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.605949
+Angle: -0.088402
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.607829
+Angle: -0.0890645
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.610695
+Angle: -0.0898289
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.611728
+Angle: -0.0902168
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.61531
+Angle: -0.0910201
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.619361
+Angle: -0.0918791
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.619492
+Angle: -0.0920204
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.619605
+Angle: -0.0921415
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.620544
+Angle: -0.092396
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.618726
+Angle: -0.0921497
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.618864
+Angle: -0.0922419
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.618986
+Angle: -0.0923238
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.619096
+Angle: -0.0923971
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.619195
+Angle: -0.092463
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.617873
+Angle: -0.0922722
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.618019
+Angle: -0.0923378
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.6187
+Angle: -0.0924952
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.618799
+Angle: -0.0925461
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.61889
+Angle: -0.0925929
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.618974
+Angle: -0.0926362
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.618418
+Angle: -0.0925636
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.61959
+Angle: -0.0927962
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.620077
+Angle: -0.0929052
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.62032
+Angle: -0.0929696
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.619388
+Angle: -0.0928239
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.619441
+Angle: -0.0928518
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.621172
+Angle: -0.0934174
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.621169
+Angle: -0.0934263
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.62203
+Angle: -0.0935881
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.622843
+Angle: -0.093741
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.623481
+Angle: -0.0940776
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.623418
+Angle: -0.091081
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.623358
+Angle: -0.0911487
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.623931
+Angle: -0.091523
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.624477
+Angle: -0.0918796
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.624998
+Angle: -0.0922197
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.624907
+Angle: -0.0922547
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.624146
+Angle: -0.0921679
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.623419
+Angle: -0.0920851
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.623368
+Angle: -0.0921207
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.623858
+Angle: -0.0924197
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.623182
+Angle: -0.0923367
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.623656
+Angle: -0.0926194
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.624209
+Angle: -0.0927492
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.62474
+Angle: -0.092874
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.625251
+Angle: -0.092994
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.625743
+Angle: -0.0931094
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.625657
+Angle: -0.0931207
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.626035
+Angle: -0.0933589
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.626401
+Angle: -0.0935888
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.626308
+Angle: -0.0935911
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.626217
+Angle: -0.0935933
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.626058
+Angle: -0.0937178
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.625975
+Angle: -0.0937178
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.626312
+Angle: -0.0939233
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.649339
+Angle: 0.201967
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.709946
+Angle: 0.202919
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.992657
+Angle: -0.242209
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.72781
+Angle: 0.000297192
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.629915
+Angle: -0.0314319
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.530841
+Angle: -0.0631406
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.742202
+Angle: -0.247792
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.707542
+Angle: -0.243134
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.698383
+Angle: -0.241842
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.681247
+Angle: -0.234312
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.671274
+Angle: -0.2246
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.661423
+Angle: -0.21344
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.661588
+Angle: -0.206731
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.657269
+Angle: -0.192748
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.637417
+Angle: -0.173092
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.606157
+Angle: -0.148406
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.589616
+Angle: -0.126486
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.5811
+Angle: -0.111137
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.33389
+Angle: -0.0329997
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.369611
+Angle: -0.0237818
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.400282
+Angle: -0.0150185
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.410034
+Angle: -0.00240363
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.442441
+Angle: 0.00544945
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.468313
+Angle: 0.00755669
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.567135
+Angle: -0.0242537
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.603588
+Angle: -0.0403785
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.324472
+Angle: -0.0157267
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.302727
+Angle: -0.0156913
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.283732
+Angle: -0.019269
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.326774
+Angle: -0.033513
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.364873
+Angle: -0.0480372
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.398981
+Angle: -0.0647147
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.434549
+Angle: -0.0819505
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.464277
+Angle: -0.100183
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.515844
+Angle: -0.125566
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.546741
+Angle: -0.144514
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.570768
+Angle: -0.15983
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.592845
+Angle: -0.179095
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.38162
+Angle: -0.413799
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.25486
+Angle: -0.406894
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.13836
+Angle: -0.398541
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.03626
+Angle: -0.393985
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.972607
+Angle: -0.392645
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.887899
+Angle: -0.379587
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.819802
+Angle: -0.368741
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.770419
+Angle: -0.353821
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.38655
+Angle: -0.506373
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.22437
+Angle: -0.46562
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.10728
+Angle: -0.432568
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.00298
+Angle: -0.39718
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.915838
+Angle: -0.364145
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.841637
+Angle: -0.331438
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.779861
+Angle: -0.297016
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.738403
+Angle: -0.267384
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.714534
+Angle: -0.236837
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.726253
+Angle: -0.165907
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.715351
+Angle: -0.139964
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.684415
+Angle: -0.104961
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.661715
+Angle: -0.0797889
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.653684
+Angle: -0.0532397
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.631403
+Angle: -0.027018
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.661074
+Angle: -0.0102542
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.0454637
+Angle: 0.00762352
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.0552189
+Angle: 0.014507
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.0640513
+Angle: 0.0197913
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.0847038
+Angle: 0.0279861
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.36178
+Angle: -0.169761
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.20842
+Angle: -0.131982
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.13689
+Angle: -0.116478
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.12874
+Angle: -0.11904
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.09293
+Angle: -0.113812
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.418144
+Angle: -0.0663087
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.407222
+Angle: -0.0714085
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.37754
+Angle: -0.075437
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.360715
+Angle: -0.0817133
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.341682
+Angle: -0.0881288
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.30422
+Angle: -0.296156
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.12294
+Angle: -0.257255
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.03016
+Angle: -0.235413
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.98172
+Angle: -0.224715
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.938805
+Angle: -0.209813
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.78374
+Angle: -0.621386
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.53968
+Angle: -0.59429
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -2.78126
+Angle: -0.745963
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.09501
+Angle: -0.540593
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.82289
+Angle: -0.494307
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.5985
+Angle: -0.451326
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.45361
+Angle: -0.425817
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.32118
+Angle: -0.396043
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.19763
+Angle: -0.360576
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.14481
+Angle: -0.339304
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.37763
+Angle: -0.643727
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.28959
+Angle: -0.635992
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.18393
+Angle: -0.621056
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.01594
+Angle: -0.590314
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.90386
+Angle: -0.569626
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.77333
+Angle: -0.541268
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.66451
+Angle: -0.51611
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.5689
+Angle: -0.492975
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.49001
+Angle: -0.468562
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.41545
+Angle: -0.448738
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.35895
+Angle: -0.430117
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -3.1379
+Angle: -0.989156
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.90241
+Angle: -0.938639
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.67007
+Angle: -0.891828
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.50921
+Angle: -0.866221
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.34471
+Angle: -0.836635
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.20601
+Angle: -0.812253
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.05804
+Angle: -0.779983
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.92934
+Angle: -0.746396
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.81359
+Angle: -0.706492
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.22711
+Angle: -0.874986
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.06269
+Angle: -0.826677
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.90355
+Angle: -0.771232
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.77275
+Angle: -0.720709
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.6632
+Angle: -0.677721
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.54688
+Angle: -0.626855
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.47662
+Angle: -0.58069
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.4123
+Angle: -0.531855
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.69904
+Angle: -0.861426
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.52279
+Angle: -0.792317
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.37395
+Angle: -0.736699
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.24811
+Angle: -0.685882
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.11968
+Angle: -0.63457
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.01592
+Angle: -0.592413
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.91289
+Angle: -0.551706
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 0
+blue_objects.size: 4
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.84683
+Angle: -0.516452
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 0
+blue_objects.size: 4
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.77825
+Angle: -0.478481
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 0
+blue_objects.size: 4
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.70606
+Angle: -0.43946
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 0
+blue_objects.size: 4
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.65254
+Angle: -0.410809
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 0
+blue_objects.size: 4
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.59911
+Angle: -0.3846
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -3.14733
+Angle: -0.925969
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.93681
+Angle: -0.883003
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.73737
+Angle: -0.848521
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.54878
+Angle: -0.81813
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.38249
+Angle: -0.788246
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.24611
+Angle: -0.761783
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 0
+blue_objects.size: 4
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.10419
+Angle: -0.732392
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 0
+blue_objects.size: 4
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.96574
+Angle: -0.696636
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.86935
+Angle: -1.11558
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.63525
+Angle: -1.05844
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.4312
+Angle: -1.01019
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.2414
+Angle: -0.963282
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.07172
+Angle: -0.917435
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.91135
+Angle: -0.867165
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.76911
+Angle: -0.811508
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.64526
+Angle: -0.757921
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.53439
+Angle: -0.701958
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.6752
+Angle: -0.730784
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.56721
+Angle: -0.675974
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.50606
+Angle: -0.633303
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.40664
+Angle: -0.570686
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.35277
+Angle: -0.514841
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.29967
+Angle: -0.464732
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.2559
+Angle: -0.414728
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.21344
+Angle: -0.358348
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.17573
+Angle: -0.300295
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.06219
+Angle: -0.478807
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.90866
+Angle: -0.411151
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.7106
+Angle: -0.335806
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.57954
+Angle: -0.275203
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.48624
+Angle: -0.227153
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.40413
+Angle: -0.181731
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.33366
+Angle: -0.143621
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.462433
+Angle: 0.125163
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.883223
+Angle: -0.00537979
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.8154
+Angle: 0.00675062
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.676705
+Angle: 0.0410407
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.61299
+Angle: 0.0545931
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.562366
+Angle: 0.0613744
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.198605
+Angle: 0.0652508
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.18619
+Angle: 0.0535371
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.172962
+Angle: 0.0379511
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.23903
+Angle: 0.218539
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.12551
+Angle: 0.20201
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.01761
+Angle: 0.189906
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.90407
+Angle: 0.182434
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.818546
+Angle: 0.17883
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.0351824
+Angle: 0.20037
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.0658777
+Angle: 0.232611
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.0232766
+Angle: 0.246194
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0333369
+Angle: 0.25302
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.50365
+Angle: 0.345131
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.42948
+Angle: 0.313977
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.314391
+Angle: 0.105565
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.526397
+Angle: 0.284608
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.28258
+Angle: 0.229276
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.22654
+Angle: 0.200975
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.18314
+Angle: 0.173636
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.230507
+Angle: 0.0630115
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.13182
+Angle: 0.110004
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.112231
+Angle: 0.140289
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.13191
+Angle: 0.163455
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.23169
+Angle: 0.325147
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.14648
+Angle: 0.324794
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.06296
+Angle: 0.32225
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.996605
+Angle: 0.319516
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 2.68287
+Angle: 0.773575
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 2.33862
+Angle: 0.703221
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 2.06976
+Angle: 0.653174
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.83855
+Angle: 0.612348
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.67105
+Angle: 0.581893
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.53692
+Angle: 0.564461
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.42222
+Angle: 0.545527
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.30621
+Angle: 0.523441
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.1873
+Angle: 0.500132
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.07644
+Angle: 0.473561
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.992367
+Angle: 0.447889
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.922847
+Angle: 0.426539
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.841597
+Angle: 0.397514
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.787959
+Angle: 0.373438
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.77403
+Angle: 0.572668
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.64456
+Angle: 0.537152
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.50336
+Angle: 0.496624
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.36324
+Angle: 0.453957
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.22887
+Angle: 0.411133
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.12767
+Angle: 0.373289
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 1.02903
+Angle: 0.337275
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.958249
+Angle: 0.306489
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.891822
+Angle: 0.276901
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.83663
+Angle: 0.251389
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.449992
+Angle: 0.189759
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.429932
+Angle: 0.175354
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.445344
+Angle: 0.166039
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.423237
+Angle: 0.151513
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.390042
+Angle: 0.137517
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.351977
+Angle: 0.125827
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.310717
+Angle: 0.112724
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.271979
+Angle: 0.102217
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.230531
+Angle: 0.0935587
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.2006
+Angle: 0.0857171
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.0644899
+Angle: -0.046116
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.101863
+Angle: -0.0651295
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.118799
+Angle: -0.0750744
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.10239
+Angle: -0.0819166
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.077817
+Angle: -0.0798161
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.03611
+Angle: -0.21232
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.945975
+Angle: -0.20081
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.871181
+Angle: -0.187773
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.827911
+Angle: -0.179035
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.777658
+Angle: -0.16939
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.735938
+Angle: -0.157133
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.702726
+Angle: -0.149223
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.684883
+Angle: -0.142029
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.663474
+Angle: -0.136921
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.734755
+Angle: -0.252294
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: -0.705294
+Angle: -0.257158
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.19577
+Angle: -0.264959
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.16208
+Angle: -0.268024
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.0965
+Angle: -0.257256
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.00685
+Angle: -0.241271
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.961431
+Angle: -0.236082
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.91173
+Angle: -0.223873
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.859284
+Angle: -0.209283
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.823739
+Angle: -0.19767
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.79581
+Angle: -0.187901
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.75862
+Angle: -0.177585
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.729578
+Angle: -0.164652
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.292
+Angle: -0.529366
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.13325
+Angle: -0.502251
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.93854
+Angle: -0.46442
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.81732
+Angle: -0.444271
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.71012
+Angle: -0.425942
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.61158
+Angle: -0.411172
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.50391
+Angle: -0.392297
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.54122
+Angle: -0.422199
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.5064
+Angle: -0.433207
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.43636
+Angle: -0.41764
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.36194
+Angle: -0.404216
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.29114
+Angle: -0.386532
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.88224
+Angle: -0.789666
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.7304
+Angle: -0.776297
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.56481
+Angle: -0.75694
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.4087
+Angle: -0.734236
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.28114
+Angle: -0.719124
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.11303
+Angle: -0.68264
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.9905
+Angle: -0.657085
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.88654
+Angle: -0.6349
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.77719
+Angle: -0.603099
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.68023
+Angle: -0.574322
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.60019
+Angle: -0.546758
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.13734
+Angle: -0.726199
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.9798
+Angle: -0.680292
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.83549
+Angle: -0.635678
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.70833
+Angle: -0.596114
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.61075
+Angle: -0.558135
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.52956
+Angle: -0.51869
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.46735
+Angle: -0.48736
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.4165
+Angle: -0.453028
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.40956
+Angle: -0.430571
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.41321
+Angle: -0.718847
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.23439
+Angle: -0.66597
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.08943
+Angle: -0.631543
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.94825
+Angle: -0.593841
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.8439
+Angle: -0.562154
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.74588
+Angle: -0.53243
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.66273
+Angle: -0.506263
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.59719
+Angle: -0.478684
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.52195
+Angle: -0.448123
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.47526
+Angle: -0.740404
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.30868
+Angle: -0.700405
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.16609
+Angle: -0.666828
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.01944
+Angle: -0.6344
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.87404
+Angle: -0.599718
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.76014
+Angle: -0.569303
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.63909
+Angle: -0.537307
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.54703
+Angle: -0.507187
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.46205
+Angle: -0.472199
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.9625
+Angle: -0.840171
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.74368
+Angle: -0.786864
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.56631
+Angle: -0.74619
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.36933
+Angle: -0.700138
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.2633
+Angle: -0.681874
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.14529
+Angle: -0.653559
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.0144
+Angle: -0.619292
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.9034
+Angle: -0.582025
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.79425
+Angle: -0.54978
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.70719
+Angle: -0.520787
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.6414
+Angle: -0.496589
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.32924
+Angle: -0.660607
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.18742
+Angle: -0.622175
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.06842
+Angle: -0.589233
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.9526
+Angle: -0.556177
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.83994
+Angle: -0.525288
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.71128
+Angle: -0.484703
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.61125
+Angle: -0.450929
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.52141
+Angle: -0.421951
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.45438
+Angle: -0.397144
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.39263
+Angle: -0.375085
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.33757
+Angle: -0.354799
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.22826
+Angle: -0.631628
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.07461
+Angle: -0.598032
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.9088
+Angle: -0.56738
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.75052
+Angle: -0.529189
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.63535
+Angle: -0.50423
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.5467
+Angle: -0.484962
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.46436
+Angle: -0.468246
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.38476
+Angle: -0.448703
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.91192
+Angle: -0.590859
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.83568
+Angle: -0.574267
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.71384
+Angle: -0.550255
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.58723
+Angle: -0.520749
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.50479
+Angle: -0.495494
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.43941
+Angle: -0.481241
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.36993
+Angle: -0.4616
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.2855
+Angle: -0.435348
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.21282
+Angle: -0.410371
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.97511
+Angle: -0.674085
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.80067
+Angle: -0.635916
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.63704
+Angle: -0.601753
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.51153
+Angle: -0.575222
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.40749
+Angle: -0.548118
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.31346
+Angle: -0.520562
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.22573
+Angle: -0.489972
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.19326
+Angle: -0.470626
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.06729
+Angle: -0.420981
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.983753
+Angle: -0.383468
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.905981
+Angle: -0.340909
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.852364
+Angle: -0.300557
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.812624
+Angle: -0.26196
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.78639
+Angle: -0.227912
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.773442
+Angle: -0.196658
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.774206
+Angle: -0.167455
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -2.06853
+Angle: -0.48245
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.93342
+Angle: -0.446357
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.79281
+Angle: -0.408726
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.6878
+Angle: -0.384406
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.58417
+Angle: -0.358725
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.50666
+Angle: -0.337711
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.43624
+Angle: -0.319081
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.766753
+Angle: -0.171986
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.668727
+Angle: -0.150478
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.660281
+Angle: -0.146262
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.651609
+Angle: -0.144264
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.620007
+Angle: -0.134945
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.602615
+Angle: -0.125886
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.58578
+Angle: -0.120172
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.581841
+Angle: -0.116215
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.578862
+Angle: -0.111043
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.584728
+Angle: -0.109594
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.67386
+Angle: 0.0165307
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.472206
+Angle: -0.105422
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.351742
+Angle: -0.0751893
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.286585
+Angle: -0.0570017
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.260946
+Angle: -0.0478817
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.252164
+Angle: -0.0402197
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.246584
+Angle: -0.0363497
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.241563
+Angle: -0.0264873
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.237187
+Angle: -0.0199421
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.243103
+Angle: -0.0169463
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.260693
+Angle: -0.0178138
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 1.60564
+Angle: 0.390328
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 1.45424
+Angle: 0.38046
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 1.30573
+Angle: 0.367933
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 1.16094
+Angle: 0.355749
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 1.01644
+Angle: 0.343561
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.892919
+Angle: 0.332508
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.774356
+Angle: 0.315381
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.66856
+Angle: 0.30225
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.560445
+Angle: 0.279726
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 0.462135
+Angle: 0.257897
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.988312
+Angle: -0.201675
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.923121
+Angle: -0.220046
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.857903
+Angle: -0.238685
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.789444
+Angle: -0.25718
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.726552
+Angle: -0.269462
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.656826
+Angle: -0.281406
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.589498
+Angle: -0.287102
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.523995
+Angle: -0.290161
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.470048
+Angle: -0.287314
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 1
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 3.10708
+Angle: 0.40449
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 2.79476
+Angle: 0.38281
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 2.55024
+Angle: 0.378947
+Clara go grittr flag: 1
+[INFO] - GOT GRITTR FLAG!
+[INFO] fill_colored_objects - size : [TP] Trying to receive cones from clara after grittr flag
+[INFO] Got yellow cones size: 26
+3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+[INFO] Got blue cones size: 43
+Got Cones from Clara, writing cones to csv
+Distance: 2.34654
+Angle: 0.38636
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 2.18154
+Angle: 0.399291
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 2.01502
+Angle: 0.408406
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 1.8509
+Angle: 0.417374
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 1.69365
+Angle: 0.42247
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 1.55402
+Angle: 0.42722
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 1.41637
+Angle: 0.433497
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: 1.27052
+Angle: 0.434746
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.312746
+Angle: -0.00734853
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.328952
+Angle: -0.00312215
+[INFO] Starting MCTS
+[INFO] Trajectory planning done - elapsed time: 0.024ms
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.344295
+Angle: -0.00429348
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.348148
+Angle: -0.00611669
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.343709
+Angle: -0.0130588
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.335896
+Angle: -0.0198945
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.327618
+Angle: -0.0265604
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.31699
+Angle: -0.0366294
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.307237
+Angle: -0.0438358
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 2
+blue_objects.size: 1
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;33myellow[0m cones
+Distance: 0.0425291
+Angle: -0.0649603
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.283916
+Angle: -0.0612181
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 5
+yellow_objects.size: 2
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.270067
+Angle: -0.068549
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0803769
+Angle: -0.0208636
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0848558
+Angle: -0.0218761
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0859087
+Angle: -0.0224287
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0878229
+Angle: -0.0232836
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0865293
+Angle: -0.0243686
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0887435
+Angle: -0.0263024
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0927576
+Angle: -0.0281317
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.0979265
+Angle: -0.0272188
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.953115
+Angle: -0.196168
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.934634
+Angle: -0.196416
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.905591
+Angle: -0.196182
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.883824
+Angle: -0.198547
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.851009
+Angle: -0.194984
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.811565
+Angle: -0.189286
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.766348
+Angle: -0.186485
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 2
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.744963
+Angle: -0.18258
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.721574
+Angle: -0.183714
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.702119
+Angle: -0.182514
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.68175
+Angle: -0.185954
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.676209
+Angle: -0.185977
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.675601
+Angle: -0.188947
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.672354
+Angle: -0.191184
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.32607
+Angle: -0.354444
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.31329
+Angle: -0.354569
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.30051
+Angle: -0.35452
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.28808
+Angle: -0.354403
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.2729
+Angle: -0.353448
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.25589
+Angle: -0.35182
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.755125
+Angle: -0.228676
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.22387
+Angle: -0.348747
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.758402
+Angle: -0.23372
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.1969
+Angle: -0.346503
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.18527
+Angle: -0.345726
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.1745
+Angle: -0.345056
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.16383
+Angle: -0.341336
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.15372
+Angle: -0.340721
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.80037
+Angle: -0.252228
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.788589
+Angle: -0.250965
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.778152
+Angle: -0.249994
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.767975
+Angle: -0.249006
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.758264
+Angle: -0.248097
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.748886
+Angle: -0.247216
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.739213
+Angle: -0.24621
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.730364
+Angle: -0.24534
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.721805
+Angle: -0.244497
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.06465
+Angle: -0.334084
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.720066
+Angle: -0.246579
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.711904
+Angle: -0.245729
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.04234
+Angle: -0.332218
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.709718
+Angle: -0.24746
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.02782
+Angle: -0.330871
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.707396
+Angle: -0.249061
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -1.01414
+Angle: -0.329613
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.704084
+Angle: -0.250258
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.69637
+Angle: -0.249286
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.688898
+Angle: -0.248346
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.991742
+Angle: -0.327965
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.686083
+Angle: -0.24945
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.980322
+Angle: -0.326879
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.683021
+Angle: -0.250382
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.675871
+Angle: -0.249383
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.66901
+Angle: -0.248451
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.960263
+Angle: -0.325173
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.66607
+Angle: -0.249258
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.659497
+Angle: -0.248338
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.653115
+Angle: -0.247446
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.646455
+Angle: -0.246465
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.640437
+Angle: -0.24563
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.93492
+Angle: -0.323233
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.637662
+Angle: -0.246248
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.631447
+Angle: -0.245313
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.625771
+Angle: -0.244487
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.62031
+Angle: -0.243714
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.614511
+Angle: -0.242827
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.608864
+Angle: -0.241966
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.603773
+Angle: -0.241233
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.598871
+Angle: -0.240549
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.594034
+Angle: -0.239856
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.589375
+Angle: -0.239209
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.584907
+Angle: -0.238599
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.580472
+Angle: -0.237986
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.575777
+Angle: -0.234258
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.571566
+Angle: -0.23371
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.567452
+Angle: -0.233177
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.563803
+Angle: -0.232751
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.560164
+Angle: -0.232318
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.556607
+Angle: -0.231896
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.553129
+Angle: -0.231484
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.549796
+Angle: -0.2311
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.866048
+Angle: -0.314532
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 0
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.548524
+Angle: -0.231688
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 1
+yellow_objects.size: 0
+blue_objects.size: 1
+Holding error!
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.547202
+Angle: -0.232231
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.54393
+Angle: -0.23182
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.540728
+Angle: -0.231419
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.537594
+Angle: -0.231027
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 2
+yellow_objects.size: 0
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.841128
+Angle: -0.311156
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.838378
+Angle: -0.310848
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 3
+yellow_objects.size: 1
+blue_objects.size: 2
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.83559
+Angle: -0.310533
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.539718
+Angle: -0.233138
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.536609
+Angle: -0.232717
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.533629
+Angle: -0.232323
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.530646
+Angle: -0.231922
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.527787
+Angle: -0.231547
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.524984
+Angle: -0.231179
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.522237
+Angle: -0.23082
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.519501
+Angle: -0.230449
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.516817
+Angle: -0.230085
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.513927
+Angle: -0.229672
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.511093
+Angle: -0.229269
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.508312
+Angle: -0.228873
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.505542
+Angle: -0.228466
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.503153
+Angle: -0.228162
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.500809
+Angle: -0.227864
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.498507
+Angle: -0.227572
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.496246
+Angle: -0.227286
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.494026
+Angle: -0.227006
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.491845
+Angle: -0.226732
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.489703
+Angle: -0.226463
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.487597
+Angle: -0.2262
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.485529
+Angle: -0.225942
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.483495
+Angle: -0.225688
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.481496
+Angle: -0.22544
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.479531
+Angle: -0.225196
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.477598
+Angle: -0.224957
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.475699
+Angle: -0.221676
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.473831
+Angle: -0.221467
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.471993
+Angle: -0.221263
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.470185
+Angle: -0.221061
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.468405
+Angle: -0.220864
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.466655
+Angle: -0.22067
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.464931
+Angle: -0.22048
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.4632
+Angle: -0.220277
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.46153
+Angle: -0.220094
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.459886
+Angle: -0.219914
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.458267
+Angle: -0.219737
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.456639
+Angle: -0.219547
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.455069
+Angle: -0.219376
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.453522
+Angle: -0.219209
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.451998
+Angle: -0.219044
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.450496
+Angle: -0.218883
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.449017
+Angle: -0.218724
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.447559
+Angle: -0.218567
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.446166
+Angle: -0.218425
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.444793
+Angle: -0.218285
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.44344
+Angle: -0.218148
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.442106
+Angle: -0.218013
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.440791
+Angle: -0.21788
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.43945
+Angle: -0.217738
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.438128
+Angle: -0.217598
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.436825
+Angle: -0.21746
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.435329
+Angle: -0.217271
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.433853
+Angle: -0.217084
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.432398
+Angle: -0.2169
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.43076
+Angle: -0.216667
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.429344
+Angle: -0.216489
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.427947
+Angle: -0.216313
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.426568
+Angle: -0.21614
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.425408
+Angle: -0.216022
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.424302
+Angle: -0.215915
+Clara go grittr flag: 0
+[INFO] fill_colored_objects - size : 4
+yellow_objects.size: 1
+blue_objects.size: 3
+[INFO] [base-case.h:find_error_on_color()]:
+    - using [1;94mblue[0m cones
+Distance: -0.423171
+Angle: -0.2158

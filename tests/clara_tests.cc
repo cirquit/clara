@@ -146,8 +146,8 @@ int main(int argc, char const *argv[]){
         vs.update(vx, vy, ax, ay, yaw_rad, 0, steer_angle, t_s);
 
         std::cerr << "Observation [        " << counter++ << "/" << observations.size() << "]:\n"
-                  << "    Rec. time:       " << vs._timestep_s  << "s\n"
-                  << "    Freq:            " << 1 / vs._timestep_s << "Hz\n"
+                  << "    Rec. time:       " << vs._delta_time_s  << "s\n"
+                  << "    Freq:            " << 1 / vs._delta_time_s << "Hz\n"
                   << "    velocity:        " << vs._v_x_vehicle << ", "
                                              << vs._v_y_vehicle << " m/s\n"
                   << "    yaw (mode dep.): " << vs.get_yaw()    << " rad\n";

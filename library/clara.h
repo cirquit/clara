@@ -133,8 +133,6 @@ namespace clara {
             _estimated_position_old = starting_position;
             // init kafi
             _init_kafi();
-            // init clock for velocity to distance calculation
-            _start_clock();
         }
 
         //! main function - use all external sensor data to do the localization
@@ -144,15 +142,6 @@ namespace clara {
             _new_yellow_cones.clear();
             _new_blue_cones.clear();
             _new_red_cones.clear();
-            // calculate difference from last call to start_clock(), if it's zero, we have to calculate it by ourselves
-            if (vs._timestep_s == 0){
-                // std::cerr << "        measuring time: ";
-                vs._timestep_s = _get_diff_time_s();
-                // std::cerr << timestep_s << "s\n";
-            } else 
-            {
-                // std::cerr << "        got time: " << timestep_s << "s\n";
-            }
             // rotate the velocity to get from the vehicle coord. system to world velocity
             const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
             // update the position based on the estimated v_x, v_y and the time
@@ -174,16 +163,6 @@ namespace clara {
             _new_yellow_cones.clear();
             _new_blue_cones.clear();
             _new_red_cones.clear();
-            // calculate difference from last call to start_clock(), if it's zero, we have to calculate it by ourselves
-            if (vs._timestep_s == 0){
-                // std::cerr << "        measuring time: ";
-                vs._timestep_s = _get_diff_time_s();
-                
-            } else 
-            {
-                // std::cerr << "        got time: " << timestep_s << "s\n";
-            }
-            std::cerr << "Frequency: " << 1 / vs._timestep_s << "Hz\n";
             // iterate over the c-style array and apped cones based on their color
             _append_cones_by_type(obj_list, vs);
             // erase cones by maximum allowed distance
@@ -638,21 +617,6 @@ namespace clara {
             // return util::median(velocities);
         }
 
-        //! starts the clock to use with get_diff_time_s
-        void _start_clock()
-        {
-            _start = std::chrono::high_resolution_clock::now();
-        }
-
-        //! get time difference from last call to start_clock in seconds. Restarts the clock
-        double _get_diff_time_s()
-        {
-            auto end = std::chrono::high_resolution_clock::now();
-            int elapsed_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - _start).count();
-            _start_clock();
-            return elapsed_ms / 1000.0;
-        }
-
         //! calculates the new position based on the estimated v_x, v_y and the elapsed time, this has to be the world-vx/y, not the vehicle model
         const std::tuple<double, double> _apply_physics_model(const std::tuple<double, double, double> & velocity_t) const
         {
@@ -673,8 +637,8 @@ namespace clara {
             const double x_car_old = std::get<0>(_estimated_position); // obj.x_car; // update with v_x_sensor
             const double y_car_old = std::get<1>(_estimated_position); // obj.y_car; // update with v_y_sensor
             // local vehicle distance 
-            const double x_ = vs._v_x_vehicle * vs._timestep_s;  
-            const double y_ = vs._v_y_vehicle * vs._timestep_s;
+            const double x_ = vs._v_x_vehicle * vs._delta_time_s;  
+            const double y_ = vs._v_y_vehicle * vs._delta_time_s;
             // local world distance
             const double x  = x_ * std::cos( vs.get_yaw() ) - y_ * std::sin( vs.get_yaw() );
             const double y  = x_ * std::sin( vs.get_yaw() ) + y_ * std::cos( vs.get_yaw() );
@@ -757,8 +721,6 @@ namespace clara {
         static const size_t M = 4;
         //! pointer to the velocity kalman filter which estimates the velocity in `x` and `y` from the correvit and cone velocity
         std::unique_ptr<kafi::kafi<N, M>> _kafi;
-        //! clock to apply velocities from last observed model
-        std::chrono::time_point<std::chrono::high_resolution_clock> _start;
         //! counts the lap based on the travelled distance and the set start_position 
         lap_counter _lap_counter;
 

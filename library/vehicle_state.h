@@ -45,7 +45,7 @@ namespace clara
         , _integrated_steering_yaw(0)
         , _integrated_kafi_yaw(0)
         , _steering_angle(0)
-        , _timestep_s(0)
+        , _delta_time_s(0)
         { }
 
     // methods
@@ -60,7 +60,8 @@ namespace clara
                   , const double a_y_vehicle
                   , const double yaw
                   , const double yaw_rate
-                  , const double steering_angle)
+                  , const double steering_angle
+                  , const double delta_time_s)
         {
             // set all our member
             _v_x_vehicle    = v_x_vehicle;
@@ -70,7 +71,7 @@ namespace clara
             _yaw            = yaw;
             _yaw_rate       = yaw_rate;
             _steering_angle = steering_angle;
-            _timestep_s     = timestep_s;
+            _delta_time_s   = delta_time_s;
             // update integrated yaw
             _integrated_yaw += get_local_integrated_yaw();
             //! calculate the yaw_rate from the steering
@@ -87,14 +88,14 @@ namespace clara
         // API helper function, need exactly this return type for clara 
         std::tuple< double, double, double > to_world_velocity() const
         {
-            return std::make_tuple(_v_x_world, _v_y_world, _timestep_s);
+            return std::make_tuple(_v_x_world, _v_y_world, _delta_time_s);
         }
 
         //! applies the current world velocity over time to the previous postion
         std::tuple< double, double > single_shot_localization_prediction(std::tuple< double, double > old_pos) const
         {
-            const double local_pos_x  = _v_x_world * _timestep_s;
-            const double local_pos_y  = _v_y_world * _timestep_s;
+            const double local_pos_x  = _v_x_world * _delta_time_s;
+            const double local_pos_y  = _v_y_world * _delta_time_s;
             const double global_pos_x = std::get< 0 >( old_pos );
             const double global_pos_y = std::get< 1 >( old_pos );
             return std::make_tuple( local_pos_x + global_pos_x, local_pos_y + global_pos_y );
@@ -120,13 +121,13 @@ namespace clara
         // get the integrated part of the local yaw calculated from the steering angle. *NOT THE YAW*, we only use the last timestep
         double get_local_integrated_steering_yaw() const
         {   
-            return get_steering_yaw_rate() * _timestep_s;
+            return get_steering_yaw_rate() * _delta_time_s;
         }
 
         // get the integrated part of the local yaw *NOT THE YAW*, we only use the last timestep
         double get_local_integrated_yaw() const 
         {
-            return _yaw_rate * _timestep_s;
+            return _yaw_rate * _delta_time_s;
         }
 
         //! generic function to return the yaw defined in _yaw_mode in the constructor
@@ -157,7 +158,7 @@ namespace clara
         }
     // methods
     private:
-        //! converts the from the vehicle coordinate system (vx is always positive) to the global world coordiante system (vx may be negative), additional _timestep_s for ease of use
+        //! converts the from the vehicle coordinate system (vx is always positive) to the global world coordiante system (vx may be negative), additional _delta_time_s for ease of use
         const std::tuple< double, double > _to_world_velocity()
         {
             const double v_x_world = _v_x_vehicle * std::cos( get_yaw() ) - _v_y_vehicle * std::sin( get_yaw() );
@@ -198,7 +199,7 @@ namespace clara
         //! current steering angle position
         double _steering_angle;
         //! elapsed time in seconds since the last vehicle state
-        double _timestep_s;
+        double _delta_time_s;
     };
 }
 

@@ -245,7 +245,7 @@ int main(int argc, char const *argv[]){
                   << "    yaw_rate_kafi:   " << vs._yaw_rate_kafi << "rad/s\n";
 
         //double inserted_yaw = yaw_rate_kafi * t_s;
-        std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
+     //   std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         std::tuple<double, double> pos = clara.add_observation(l, vs);
         std::cerr << "    pos: " << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
@@ -260,12 +260,12 @@ int main(int argc, char const *argv[]){
         // std::cout << t_s << '\n';
 
 
-     //   std::cout << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
+        std::cout << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
     }
 
 
     // python logging data
-    //log_da(clara);
+    // log_da(clara);
 
     return EXIT_SUCCESS;
 }

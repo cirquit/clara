@@ -57,9 +57,9 @@ namespace clara
         double get_diff_time_s()
         {
             auto end = std::chrono::high_resolution_clock::now();
-            int elapsed_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - _start).count();
+            int elapsed_mcs = std::chrono::duration_cast<std::chrono::microseconds>(end - _start).count();
             start_clock();
-            return elapsed_ms / 1000.0;
+            return elapsed_mcs / 1000000.0;
         }
 
         //! checks if the clock is already running

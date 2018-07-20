@@ -46,7 +46,11 @@ namespace clara
         , _integrated_kafi_yaw(0)
         , _steering_angle(0)
         , _delta_time_s(0)
-        { }
+        , _yaw_rate_mean(0)
+        , _yaw_rate_calculated(false)
+        { 
+            _yaw_rate_summary.reserve(10000);
+        }
 
     // methods
     public:
@@ -72,16 +76,34 @@ namespace clara
             _yaw_rate       = yaw_rate;
             _steering_angle = steering_angle;
             _delta_time_s   = delta_time_s;
-            // update integrated yaw
-            _integrated_yaw += get_local_integrated_yaw();
-            //! calculate the yaw_rate from the steering
-            _yaw_rate_steer = get_steering_yaw_rate();
-            // update integrated steering yaw
-            _integrated_steering_yaw += get_local_integrated_steering_yaw();
+
+            if (_v_x_vehicle == 0)
+            {
+               _yaw_rate_summary.emplace_back(_yaw_rate);
+                
+            } else {
+                
+                if (!_yaw_rate_calculated)
+                {
+                    double yaw_rate_sum = std::accumulate(_yaw_rate_summary.begin(), _yaw_rate_summary.end(), 0);
+                    _yaw_rate_mean = yaw_rate_sum / static_cast<double>(_yaw_rate_summary.size());
+                    _yaw_rate_calculated = true;
+                }
+
+                // update integrated yaw
+                _integrated_yaw += get_local_integrated_yaw() - _yaw_rate_mean;
+
+                //! calculate the yaw_rate from the steering
+                _yaw_rate_steer = get_steering_yaw_rate();
+                // update integrated steering yaw
+                _integrated_steering_yaw += get_local_integrated_steering_yaw();
+            }
             // update integrated kalman filtered yaw
             // \todo
             // translate from vehicle coordinate system to global coordiante system
             std::tie( _v_x_world, _v_y_world ) = _to_world_velocity();
+            
+
             
         }
 
@@ -200,6 +222,12 @@ namespace clara
         double _steering_angle;
         //! elapsed time in seconds since the last vehicle state
         double _delta_time_s;
+        //!
+        std::vector< double > _yaw_rate_summary;
+        //!
+        double _yaw_rate_mean;
+        //!
+        bool _yaw_rate_calculated;
     };
 }
 

@@ -47,9 +47,9 @@ namespace clara
         //! starts the clock to use with get_diff_time_s and uses a custom delay 
         void start_clock()
         {   
-            _started = true;
             _start = std::chrono::high_resolution_clock::now();
-            std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(_init_delay_s * 1000)));
+            if (!_started) std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(_init_delay_s * 1000)));
+            _started = true;
 
         }
 

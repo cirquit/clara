@@ -136,11 +136,11 @@ namespace clara
             switch ( _yaw_mode )
             {
                 case USE_NORMAL_YAW:
-                    std::cerr << "[INFO] clara::vehicle_state_t::get_yaw(): using normal yaw: " << _yaw << '\n';
+                //   std::cerr << "[INFO] clara::vehicle_state_t::get_yaw(): using normal yaw: " << _yaw << '\n';
                     return _yaw;
                 break;
                 case USE_INTEGRATED_YAW:
-                    std::cerr << "[INFO] clara::vehicle_state_t::get_yaw(): using integrated yaw: " << _integrated_yaw << '\n';
+                //    std::cerr << "[INFO] clara::vehicle_state_t::get_yaw(): using integrated yaw: " << _integrated_yaw << '\n';
                     return _integrated_yaw;
                 break;
                 case USE_INTEGRATED_STEERING_YAW:

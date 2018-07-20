@@ -178,11 +178,12 @@ namespace clara {
             if (vs._timestep_s == 0){
                 // std::cerr << "        measuring time: ";
                 vs._timestep_s = _get_diff_time_s();
-                // std::cerr << timestep_s << "s\n";
+                
             } else 
             {
                 // std::cerr << "        got time: " << timestep_s << "s\n";
             }
+            std::cerr << "Frequency: " << 1 / vs._timestep_s << "Hz\n";
             // iterate over the c-style array and apped cones based on their color
             _append_cones_by_type(obj_list, vs);
             // erase cones by maximum allowed distance

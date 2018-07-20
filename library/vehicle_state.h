@@ -43,8 +43,9 @@ namespace clara
         , _yaw_rate_kafi(0)
         , _integrated_yaw(0)
         , _integrated_steering_yaw(0)
-        , _timestep_s(0)
+        , _integrated_kafi_yaw(0)
         , _steering_angle(0)
+        , _timestep_s(0)
         { }
 
     // methods
@@ -59,8 +60,7 @@ namespace clara
                   , const double a_y_vehicle
                   , const double yaw
                   , const double yaw_rate
-                  , const double steering_angle
-                  , const double timestep_s)
+                  , const double steering_angle)
         {
             // set all our member
             _v_x_vehicle    = v_x_vehicle;
@@ -74,7 +74,7 @@ namespace clara
             // update integrated yaw
             _integrated_yaw += get_local_integrated_yaw();
             //! calculate the yaw_rate from the steering
-            _yaw_rate_steer = get_local_integrated_steering_yaw();
+            _yaw_rate_steer = get_steering_yaw_rate();
             // update integrated steering yaw
             _integrated_steering_yaw += get_local_integrated_steering_yaw();
             // update integrated kalman filtered yaw
@@ -120,7 +120,7 @@ namespace clara
         // get the integrated part of the local yaw calculated from the steering angle. *NOT THE YAW*, we only use the last timestep
         double get_local_integrated_steering_yaw() const
         {   
-            return get_steering_yaw_rate() * _timestep_s; 
+            return get_steering_yaw_rate() * _timestep_s;
         }
 
         // get the integrated part of the local yaw *NOT THE YAW*, we only use the last timestep
@@ -135,9 +135,11 @@ namespace clara
             switch ( _yaw_mode )
             {
                 case USE_NORMAL_YAW:
+                    std::cerr << "[INFO] clara::vehicle_state_t::get_yaw(): using normal yaw: " << _yaw << '\n';
                     return _yaw;
                 break;
                 case USE_INTEGRATED_YAW:
+                    std::cerr << "[INFO] clara::vehicle_state_t::get_yaw(): using integrated yaw: " << _integrated_yaw << '\n';
                     return _integrated_yaw;
                 break;
                 case USE_INTEGRATED_STEERING_YAW:

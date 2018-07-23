@@ -127,10 +127,11 @@ namespace clara
          *    * 1.54 - Radstand
          *    * 2.73 - Übersetzung
          *    * 1.128 - Fahrzeugspur
+         *    * 0.06 - magic number from tests with a circle \todo
          */
         double get_steering_yaw_rate() const
         {
-            double radius = 1.54 / (std::sin(std::abs(_steering_angle / 2.73))) - 1.128 / 2;
+            double radius = 1.54 / (std::sin(std::abs((_steering_angle - 0.06) / 2.73))) - 1.128 / 2;
             if (_steering_angle < 0) {
                 radius = -1 * std::abs( radius );
             } else {

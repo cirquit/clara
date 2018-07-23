@@ -278,7 +278,9 @@ namespace clara {
     // methods
     private:
 
-        //! appends the object_list by type to the according list (_new_yellow_cones / _new_blue_cones / _new_red_cones)
+        /** \brief appends the object_list by type to the according list (_new_yellow_cones / _new_blue_cones / _new_red_cones)
+         *  uses the red cones as yellow or blue ones if their angle to car is -/+ 10° (0.1745329 rad), according to RGB rule (rechts gelb, sonst blau). Uses vehicle coordinate system 
+         */
         void _append_cones_by_type(const object_list_t & obj_list
                                  , const vehicle_state_t & vs)
         {
@@ -286,7 +288,13 @@ namespace clara {
             {
                 if (obj_list.element[i].type == 0) _new_yellow_cones.emplace_back(_parse_object_t(obj_list.element[i], vs));
                 if (obj_list.element[i].type == 1) _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
-                if (obj_list.element[i].type == 2) _new_red_cones.emplace_back(   _parse_object_t(obj_list.element[i], vs));
+                if (obj_list.element[i].type == 2 || obj_list.element[i].type == 3 ) {
+                    if ( obj_list.element[i].angle > 0.1745329 ){
+                        _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
+                    } else if ( obj_list.element[i].angle > -0.1745329 ) {
+                        _new_yellow_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
+                    }
+                }
             }
         }
 

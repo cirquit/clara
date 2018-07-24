@@ -126,7 +126,13 @@ int main(int argc, char const *argv[]){
       //  , std::make_tuple(4.94177, 0.722539)); // hockenheim (+5m in CM)
       //, std::make_tuple(0.888982, -1.50739)); //
 
-    clara::vehicle_state_t vs( clara::USE_NORMAL_YAW );
+    double yaw_process_noise = 0.00001;
+    double bosch_variance    = 0.005;
+    double steering_variance = 0.01;
+    clara::vehicle_state_t vs( clara::USE_KAFI_YAW
+                            ,  yaw_process_noise
+                            ,  bosch_variance
+                            ,  steering_variance );
 
     int counter  = 0;
     for(const auto & o : observations)

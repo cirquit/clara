@@ -29,7 +29,10 @@ namespace clara
 
     // constructors
     public:
-        vehicle_state_t(const YAW_MODE yaw_mode)
+        vehicle_state_t(const YAW_MODE yaw_mode
+                      , double yaw_process_noise
+                      , double bosch_variance
+                      , double steering_variance)
         : _yaw_mode(yaw_mode)
         , _v_x_vehicle(0)
         , _v_y_vehicle(0)
@@ -50,7 +53,9 @@ namespace clara
         , _yaw_rate_calculated(false)
         { 
             _yaw_rate_summary.reserve(10000);
-            _init_yaw_kafi();
+            _init_yaw_kafi(yaw_process_noise
+                         , bosch_variance
+                         , steering_variance);
         }
 
     // methods
@@ -134,7 +139,7 @@ namespace clara
          */
         double get_steering_yaw_rate() const
         {
-            double radius = 1.54 / (std::sin(std::abs((_steering_angle - 0.06) / 2.73))) - 1.128 / 2;
+            double radius = 1.54 / (std::sin(std::abs((_steering_angle - 0.0461) / 2.73))) - 1.128 / 2;
             if (_steering_angle < 0) {
                 radius = -1 * std::abs( radius );
             } else {
@@ -217,7 +222,9 @@ namespace clara
         }
 
         //! initialize the yaw kalman filter
-        void _init_yaw_kafi()
+        void _init_yaw_kafi(double yaw_process_noise
+                          , double bosch_variance
+                          , double steering_variance)
         {
             // some useful typedefs
             using nx1_vector = typename kafi::jacobian_function<N,M>::nx1_vector;
@@ -233,10 +240,10 @@ namespace clara
                 std::move(kafi::util::create_identity_jacobian<N,M>()));
 
             // given by our example, read as "the real world temperature changes are 0.1°
-            nxn_matrix process_noise( { { 0.0001 } } );
+            nxn_matrix process_noise( { { yaw_process_noise } } );
             // given by our example, read as "both temperature sensors fluctuate by 0.8° (0.8^2 = 0.64)"
-            mxm_matrix sensor_noise( { { 0.001, 0      }     // need to estimate the best possible noise
-                                     , { 0,     0.003  } }); // 
+            mxm_matrix sensor_noise( { { bosch_variance, 0      }     // need to estimate the best possible noise
+                                     , { 0,              steering_variance  } }); // 
             // we start with the initial state at t = 0, which we take as "ground truth", because we build the relative map around it
             nx1_vector starting_state( { { _yaw_rate } } );
 

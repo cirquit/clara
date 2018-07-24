@@ -119,7 +119,7 @@ int main(int argc, char const *argv[]){
     const double lap_epsilon_m                        = 3; // if we're 0.5m near the starting point, increment the lap counter
     const double set_start_after_m                    = 5;   // we travel at least some distance until setting our start point
     std::tuple<std::string, int> log_ip_port          = std::make_tuple("0.0.0.0", 33333);
-    const double max_accepted_distance_m              = 10;  // we delete every observation if it's farther than 10m
+    const double max_accepted_distance_m              = 9;  // we delete every observation if it's farther than 10m
     const double origin_distance                      = 0.35; // is the distance of the COG to the camera in x
 
     clara::clara clara(
@@ -138,7 +138,13 @@ int main(int argc, char const *argv[]){
       //  , std::make_tuple(4.94177, 0.722539)); // hockenheim (+5m in CM)
       //, std::make_tuple(0.888982, -1.50739)); //
 
-    clara::vehicle_state_t vs( clara::USE_KAFI_YAW );
+    double yaw_process_noise = 0.00001;
+    double bosch_variance    = 0.003;
+    double steering_variance = 0.01;
+    clara::vehicle_state_t vs( clara::USE_KAFI_YAW
+                            ,  yaw_process_noise
+                            ,  bosch_variance
+                            ,  steering_variance );
 
     int counter  = 0;
     for(auto & o : observations)
@@ -183,13 +189,17 @@ int main(int argc, char const *argv[]){
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
         UNUSED(pos);
 
-        if (clara.get_lap() == 1) break;
+        // if (clara.get_lap() == 1) break;
 
         // std::cout << yaw_rate_steer << ',' << yaw_rate_rad << '\n';
 
         // std::cout << l.element[0].angle_yaw << ", " << yaw << '\n';
         // std::cout << yaw_rate_rad << ',' <<  yaw_rate_steer << ',' << yaw_rate_kafi << '\n';
         // std::cout << t_s << '\n';
+
+        // std::cout << vs._yaw_rate <<  ','
+        //           << vs._yaw_rate_steer << ','
+        //           << vs._yaw_rate_kafi << '\n';
 
         std::cout << std::get<0>(pos) << ","
                    << std::get<1>(pos) << "\n";

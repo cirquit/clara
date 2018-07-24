@@ -50,6 +50,7 @@ namespace clara
         , _yaw_rate_calculated(false)
         { 
             _yaw_rate_summary.reserve(10000);
+            _init_yaw_kafi();
         }
 
     // methods
@@ -97,9 +98,9 @@ namespace clara
                 _yaw_rate_steer = get_steering_yaw_rate();
                 // update integrated steering yaw
                 _integrated_steering_yaw += get_local_integrated_steering_yaw();
+                // update integrated kafi yaw
+                _integrated_kafi_yaw += get_kafi_yaw_rate();
             }
-            // update integrated kalman filtered yaw
-            // \todo
             // translate from vehicle coordinate system to global coordiante system
             std::tie( _v_x_world, _v_y_world ) = _to_world_velocity();
             
@@ -153,24 +154,43 @@ namespace clara
             return _yaw_rate * _delta_time_s;
         }
 
+        //! run the kalman filter with the _yaw_rate and _yaw_rate_steer, configured by _init_yaw_kafi
+        double get_kafi_yaw_rate()
+        {
+            // typedefs
+            using mx1_vector = typename kafi::jacobian_function<N,M>::mx1_vector;
+            using return_t   = typename kafi::kafi<N,M>::return_t;
+            using nx1_vector = typename kafi::jacobian_function<N,M>::nx1_vector;
+
+            // create observations
+            std::shared_ptr< mx1_vector > observation = std::make_shared< mx1_vector >(
+                                  mx1_vector({ { _yaw_rate   }
+                                             , { _yaw_rate_steer } }));
+            // update the observation
+            _kafi -> set_current_observation(observation);
+            // run the estimation
+            return_t   result                = _kafi -> step();
+            const nx1_vector estimated_state = std::get<0>(result);
+            _yaw_rate_kafi = estimated_state(0,0);
+
+            return _yaw_rate_kafi;
+        }
+
         //! generic function to return the yaw defined in _yaw_mode in the constructor
         double get_yaw() const 
         {
             switch ( _yaw_mode )
             {
                 case USE_NORMAL_YAW:
-                //   std::cerr << "[INFO] clara::vehicle_state_t::get_yaw(): using normal yaw: " << _yaw << '\n';
                     return _yaw;
                 break;
                 case USE_INTEGRATED_YAW:
-                //    std::cerr << "[INFO] clara::vehicle_state_t::get_yaw(): using integrated yaw: " << _integrated_yaw << '\n';
                     return _integrated_yaw;
                 break;
                 case USE_INTEGRATED_STEERING_YAW:
                     return _integrated_steering_yaw;
                 break;
                 case USE_KAFI_YAW:
-                    std::cerr << "[INFO] clara::vehicle_state_t::get_yaw(): Using a USE_KAFI_YAW is not implemented yet\n";
                     return _integrated_kafi_yaw;
                 break;
                 default:
@@ -187,6 +207,38 @@ namespace clara
             const double v_x_world = _v_x_vehicle * std::cos( get_yaw() ) - _v_y_vehicle * std::sin( get_yaw() );
             const double v_y_world = _v_x_vehicle * std::sin( get_yaw() ) + _v_y_vehicle * std::cos( get_yaw() );
             return std::make_tuple( v_x_world, v_y_world );
+        }
+
+        //! initialize the yaw kalman filter
+        void _init_yaw_kafi()
+        {
+            // some useful typedefs
+            using nx1_vector = typename kafi::jacobian_function<N,M>::nx1_vector;
+            using mxm_matrix = typename kafi::jacobian_function<N,M>::mxm_matrix;
+            using nxn_matrix = typename kafi::jacobian_function<N,M>::nxn_matrix;
+
+            // state transition
+            kafi::jacobian_function<N,N> f(
+                std::move(kafi::util::create_identity_jacobian<N,N>()));
+
+            // prediction scaling (state -> observations)
+            kafi::jacobian_function<N,M> h(
+                std::move(kafi::util::create_identity_jacobian<N,M>()));
+
+            // given by our example, read as "the real world temperature changes are 0.1°
+            nxn_matrix process_noise( { { 0.0001 } } );
+            // given by our example, read as "both temperature sensors fluctuate by 0.8° (0.8^2 = 0.64)"
+            mxm_matrix sensor_noise( { { 0.001, 0      }     // need to estimate the best possible noise
+                                     , { 0,     0.003  } }); // 
+            // we start with the initial state at t = 0, which we take as "ground truth", because we build the relative map around it
+            nx1_vector starting_state( { { _yaw_rate } } );
+
+            // init kalman filter
+            _kafi = std::make_unique<kafi::kafi<N, M>>(std::move(f)
+                                                     , std::move(h)
+                                                     , starting_state
+                                                     , process_noise
+                                                     , sensor_noise);
         }
 
     // member
@@ -223,12 +275,19 @@ namespace clara
         double _steering_angle;
         //! elapsed time in seconds since the last vehicle state
         double _delta_time_s;
-        //!
+        //! used to pool the yaw_rates to calculate a mean which we subtract from every future yaw_rate
         std::vector< double > _yaw_rate_summary;
-        //!
+        //! mean to subtract from every future yaw_rate
         double _yaw_rate_mean;
-        //!
-        bool _yaw_rate_calculated;
+        //! flag to start the subtraction from future yaw_rates
+        bool   _yaw_rate_calculated;
+
+        //! we estimate `kafi_yaw_rate`
+        static const size_t N = 1UL;
+        //! we use `yaw_rate` and `steering_yaw_rate`
+        static const size_t M = 2UL;
+        //! pointer to the velocity kalman filter which estimates the `kafi_yaw_rate` from `steering_yaw_rate` and `yaw_rate` 
+        std::unique_ptr<kafi::kafi<N, M>> _kafi;
     };
 }
 

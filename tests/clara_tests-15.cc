@@ -29,29 +29,6 @@
 #include "../library/origin-calc.h"
 #include "csv.h"
 
-
-//! calculates the yawrate rad/s based on the steering angle and velocity
-double calc_yawrate_from_steering(const double & steer_angle
-                                , const double & vx
-                                , const double & vy)
-{
-    // 1.54 - Radstand
-    // 2.73 - Übersetzung
-    // 1.128 - Fahrzeugspur
-    double radius =  1.54 / (std::sin(std::abs(steer_angle / 2.73))) - 1.128 / 2;
-
-    if (steer_angle < 0)
-    {
-        radius =  -1 * std::abs(radius);
-    } else {
-        radius = std::abs(radius);
-    }
-    double v = std::sqrt(std::pow(vx,2) + std::pow(vy,2));
-    double yaw_rate = v / radius;
-    
-    return yaw_rate;
-}
-
 std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string path)
 {
     std::vector< std::tuple<object_list_t, double> > observations;
@@ -66,7 +43,7 @@ std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string pat
         {
             object_list_t list;
             list.size = 0;
-            double t = timestamp - timestamp_old;
+            // double t = timestamp - timestamp_old;
             timestamp_old = timestamp;
             observations.push_back( std::make_tuple(list, timestamp) );
             time_old = time;
@@ -78,7 +55,7 @@ std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string pat
             //           // << steer_angle << ','
             //           // << yaw_rad     << ','
             //           // << yaw_rate    << ','
-            //           // << timestamp   << ','
+            //            << timestamp   << '\n';
             //              << t           << '\n';
         }
 
@@ -236,6 +213,8 @@ int main(int argc, char const *argv[]){
         //     yaw_rate_kafi = estimated_state(0,0);
         // }
 
+        // if (vs._v_x_vehicle == 0) continue;
+
         std::cerr << "Observation [        " << counter++ << "/" << observations.size() << "]:\n"
                   << "    Rec. time:       " << vs._delta_time_s  << "s\n"
                   << "    Freq:            " << 1 / vs._delta_time_s << "Hz\n"
@@ -260,7 +239,7 @@ int main(int argc, char const *argv[]){
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
         UNUSED(pos);
 
-        // if (lap == 1)
+ //       if (clara.get_lap() == 1) break;
 
         // std::cout << yaw_rate_steer << ',' << yaw_rate_rad << '\n';
 
@@ -268,8 +247,9 @@ int main(int argc, char const *argv[]){
         // std::cout << yaw_rate_rad << ',' <<  yaw_rate_steer << ',' << yaw_rate_kafi << '\n';
         // std::cout << t_s << '\n';
 
-
-        std::cout << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
+//        std::cout << std::get<0>(pos) << ","
+//                   << std::get<1>(pos) << "\n";
+                  //<< vs.get_yaw()     << '\n';
     }
 
 

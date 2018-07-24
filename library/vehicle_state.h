@@ -94,12 +94,14 @@ namespace clara
                 // update integrated yaw
                 _integrated_yaw += get_local_integrated_yaw() - _yaw_rate_mean;
 
-                //! calculate the yaw_rate from the steering
+                // calculate the yaw_rate from the steering
                 _yaw_rate_steer = get_steering_yaw_rate();
                 // update integrated steering yaw
                 _integrated_steering_yaw += get_local_integrated_steering_yaw();
+                // calculate the kafi yaw rate
+                _yaw_rate_kafi = get_kafi_yaw_rate();
                 // update integrated kafi yaw
-                _integrated_kafi_yaw += get_kafi_yaw_rate();
+                _integrated_kafi_yaw += get_local_integrated_kafi_yaw();
             }
             // translate from vehicle coordinate system to global coordiante system
             std::tie( _v_x_world, _v_y_world ) = _to_world_velocity();
@@ -148,10 +150,16 @@ namespace clara
             return get_steering_yaw_rate() * _delta_time_s;
         }
 
-        // get the integrated part of the local yaw *NOT THE YAW*, we only use the last timestep
+        // get the integrated part of the local yaw *NOT THE GLOBAL YAW*, we only use the last timestep
         double get_local_integrated_yaw() const 
         {
             return _yaw_rate * _delta_time_s;
+        }
+
+        // get the integrated part of the local kafi yaw *NOT THE GLOBAL YAW*
+        double get_local_integrated_kafi_yaw() const
+        {
+            return _yaw_rate_kafi * _delta_time_s;
         }
 
         //! run the kalman filter with the _yaw_rate and _yaw_rate_steer, configured by _init_yaw_kafi
@@ -172,7 +180,6 @@ namespace clara
             return_t   result                = _kafi -> step();
             const nx1_vector estimated_state = std::get<0>(result);
             _yaw_rate_kafi = estimated_state(0,0);
-
             return _yaw_rate_kafi;
         }
 

@@ -15,6 +15,7 @@
 #ifndef CLARA_H
 #define CLARA_H
 
+#include <cmath>
 #include <set>
 #include <functional>
 #include <iostream>
@@ -285,7 +286,10 @@ namespace clara {
                                  , const vehicle_state_t & vs)
         {
             for(uint32_t i = 0; i < obj_list.size; ++i)
-            {
+            {   
+                // didn't find the error source in darknet yet, this is a quick fix
+                if (std::isnan(obj_list.element[i].angle) || std::isnan(obj_list.element[i].distance)) continue;
+                // otherwise insert by type
                 if (obj_list.element[i].type == 0) _new_yellow_cones.emplace_back(_parse_object_t(obj_list.element[i], vs));
                 if (obj_list.element[i].type == 1) _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
                 if (obj_list.element[i].type == 2 || obj_list.element[i].type == 3 ) {

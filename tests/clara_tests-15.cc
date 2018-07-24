@@ -26,6 +26,7 @@
 #include "../library/data_association.h"
 #include "../library/clara.h"
 #include "../library/vehicle_state.h"
+#include "../library/origin-calc.h"
 #include "csv.h"
 
 
@@ -51,7 +52,7 @@ double calc_yawrate_from_steering(const double & steer_angle
     return yaw_rate;
 }
 
-const std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string path)
+std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string path)
 {
     std::vector< std::tuple<object_list_t, double> > observations;
     // read the data
@@ -128,20 +129,21 @@ int main(int argc, char const *argv[]){
     std::string path = argv[1];
     std::cerr << "[CLARA-TEST] Reading from file: \"" << path << "\"\n";
     // 
-    const std::vector< std::tuple<object_list_t, double> > observations = parse_csv(path);
+    std::vector< std::tuple< object_list_t, double > > observations = parse_csv(path);
     // parametrization of data associtaion in clara
     const size_t preallocated_cluster_count           = 500;
     const size_t preallocated_detected_cones_per_step = 10;
-    const double max_distance_btw_cones_m             = 2.5;  // meter
-    const double variance_xx                          = 0.45;
-    const double variance_yy                          = 0.45;
-    const size_t apply_variance_step_count            = 100000; // apply custom variance for this amount of observations
-    const int    cluster_search_range                 = 5; // +/- to the min/max used cluster-index
+    const double max_distance_btw_cones_m             = 2;  // meter
+    const double variance_xx                          = 0.55;
+    const double variance_yy                          = 0.55;
+    const size_t apply_variance_step_count            = 1000000; // apply custom variance for this amount of observations
+    const int    cluster_search_range                 = 10; // +/- to the min/max used cluster-index
     const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
-    const double lap_epsilon_m                        = 1.5; // if we're 0.5m near the starting point, increment the lap counter
-    const double set_start_after_m                    = 0;   // we travel at least some distance until setting our start point
-    const double max_accepted_distance_m              = 10;  // we delete every observation if it's farther than 10m
+    const double lap_epsilon_m                        = 3; // if we're 0.5m near the starting point, increment the lap counter
+    const double set_start_after_m                    = 5;   // we travel at least some distance until setting our start point
     std::tuple<std::string, int> log_ip_port          = std::make_tuple("0.0.0.0", 33333);
+    const double max_accepted_distance_m              = 10;  // we delete every observation if it's farther than 10m
+    const double origin_distance                      = 0.35; // is the distance of the COG to the camera in x
 
     clara::clara clara(
         preallocated_cluster_count
@@ -199,10 +201,10 @@ int main(int argc, char const *argv[]){
   //                      , sensor_noise);
   //   double yaw_rate_kafi = yaw_rate_steer;
   //   double yaw     = 0;
-    for(const auto & o : observations)
+    for(auto & o : observations)
     {
         if (counter++ < 1) continue;
-        const object_list_t & l   = std::get<0>(o);
+        object_list_t & l   = std::get<0>(o);
         double                t_s = std::get<1>(o);
         if (t_s > 100) { continue; }
         if (l.size == 0) { continue; }
@@ -218,7 +220,7 @@ int main(int argc, char const *argv[]){
 
         vs.update(vx, vy, ax, ay, 0, yaw_rate_rad, steer_angle, t_s);
 
-        // if (vx == 0) continue;
+        if (vx == 0) continue;
 
         // we start with the same yaw for both measurements
         // std::shared_ptr< mx1_vector > observation = std::make_shared< mx1_vector >(
@@ -246,7 +248,14 @@ int main(int argc, char const *argv[]){
 
         //double inserted_yaw = yaw_rate_kafi * t_s;
         std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
-        std::tuple<double, double> pos = clara.add_observation(l, vs);
+        std::tuple< double, double > pos;
+        if (l.element[0].distance == 0)
+        {
+            pos = clara.add_observation( vs );  
+        } else {
+            origin::move_objects_by_distance(l, origin_distance);
+            pos = clara.add_observation(l, vs);
+        }
         std::cerr << "    pos: " << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
         UNUSED(pos);

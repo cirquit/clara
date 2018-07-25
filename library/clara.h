@@ -76,7 +76,8 @@ namespace clara {
             , double lap_epsilon_m
             , double set_start_after_m
             , std::tuple<std::string, int> log_ip_port
-            , double max_accepted_distance_m)
+            , double max_accepted_distance_m
+            , int lookback_count)
         : clara(preallocated_cluster_count
             , preallocated_detected_cones_per_step
             , max_dist_btw_cones_m
@@ -89,6 +90,7 @@ namespace clara {
             , set_start_after_m
             , log_ip_port
             , max_accepted_distance_m
+            , lookback_count
             , std::make_tuple(0.0, 0.0)) { }
 
         //! constructor
@@ -104,6 +106,7 @@ namespace clara {
             , double set_start_after_m
             , std::tuple<std::string, int> log_ip_port
             , double max_accepted_distance_m
+            , int lookback_count
             , std::tuple<double, double> starting_position) 
         : _yellow_data_association {
             preallocated_cluster_count, preallocated_detected_cones_per_step, max_dist_btw_cones_m,
@@ -117,6 +120,7 @@ namespace clara {
         , _lap_counter(starting_position, min_driven_distance_m, lap_epsilon_m, set_start_after_m)
         , _log_client(std::get<1>(log_ip_port), std::get<0>(log_ip_port))
         , _max_accepted_distance_m(max_accepted_distance_m)
+        , _lookback_count(lookback_count)
         { 
             // initialize the logging server
             _log_client.init();
@@ -246,7 +250,7 @@ namespace clara {
             {
                 size_t min_y_ix = *std::min_element(yellow_detected_cluster_ix_copy.begin()
                                                   , yellow_detected_cluster_ix_copy.end());
-                for(int i = 1; i < 1; ++i)
+                for(int i = 1; i < 1 + _lookback_count; ++i)
                 {
                     int y_ix = static_cast<int>(min_y_ix) - i;
                     if (y_ix > -1) // \todo looping
@@ -260,7 +264,7 @@ namespace clara {
             {
                 size_t min_b_ix = *std::min_element(blue_detected_cluster_ix_copy.begin()
                                                   , blue_detected_cluster_ix_copy.end());
-                for(int i = 1; i < 1; ++i)
+                for(int i = 1; i < 1 + _lookback_count; ++i)
                 {
                     int b_ix = static_cast<int>(min_b_ix) - i;
                     if (b_ix > -1) // \todo looping
@@ -275,11 +279,6 @@ namespace clara {
                                                             yellow_detected_cluster_ix_copy.end());
             std::set<size_t> blue_detected_cluster_ix_set(blue_detected_cluster_ix_copy.begin(),
                                                           blue_detected_cluster_ix_copy.end());
-            // convert them into sets to remove duplicates (\todo implement this in clara)
-//            std::set<size_t> yellow_detected_cluster_ix_set(yellow_detected_cluster_ix.begin(),
-//                                                            yellow_detected_cluster_ix.end());
-//            std::set<size_t> blue_detected_cluster_ix_set(blue_detected_cluster_ix.begin(),
-//                                                          blue_detected_cluster_ix.end());
             // "preallocation" of the returning list
             object_list_t object_list;
             object_list.size = 0; // resetting for security reasons
@@ -743,11 +742,11 @@ namespace clara {
 
     // member
     public:
-        //! data association 
+        //! data association for yellow cones 
         data_association< double > _yellow_data_association;
-        //! data association 
+        //! data association for blue cones
         data_association< double > _blue_data_association;
-        //! data association 
+        //! data association for red cones
         data_association< double > _red_data_association;
 
         //! temporary storage for the observations
@@ -783,6 +782,9 @@ namespace clara {
 
         //! maximum accepted distance, everything else will be deleted from the object_list_t by _erase_by_distance()
         double _max_accepted_distance_m;
+
+        //! how far do we want to look back if we use `get_clustered_observations`. Not an unsigend compared to the constructor argument to allow check for underflow
+        int _lookback_count;
     };
 } // namespace clara
 

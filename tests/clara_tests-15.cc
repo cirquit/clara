@@ -121,6 +121,7 @@ int main(int argc, char const *argv[]){
     std::tuple<std::string, int> log_ip_port          = std::make_tuple("0.0.0.0", 33333);
     const double max_accepted_distance_m              = 9;  // we delete every observation if it's farther than 10m
     const double origin_distance                      = 0.35; // is the distance of the COG to the camera in x
+    const unsigned lookback_count                     = 0;       // how far do we look back for the get_clustered_observations
 
     clara::clara clara(
         preallocated_cluster_count
@@ -134,7 +135,8 @@ int main(int argc, char const *argv[]){
       , lap_epsilon_m
       , set_start_after_m
       , log_ip_port
-      , max_accepted_distance_m); 
+      , max_accepted_distance_m
+      , lookback_count);
       //  , std::make_tuple(4.94177, 0.722539)); // hockenheim (+5m in CM)
       //, std::make_tuple(0.888982, -1.50739)); //
 

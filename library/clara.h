@@ -179,10 +179,7 @@ namespace clara {
             // update the travelled distance to check if we are close enough to the start
             _lap_counter.add_positions(_estimated_position_old, _estimated_position);
             // logging
-            // _log_velocity_position_dirty(velocity_t, obj_list, new_position);
-            // _log_position_dirty(obj_list, new_position);
             _log_visualization_udp(std::get<0>(new_position), std::get<1>(new_position), vs);
-            // _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
             return _estimated_position;
         }
  

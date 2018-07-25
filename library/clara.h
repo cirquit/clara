@@ -160,21 +160,8 @@ namespace clara {
         const std::tuple<double, double> & add_observation(const object_list_t   & obj_list
                                                          ,       vehicle_state_t & vs)
         {
-             // std::cerr << "    [clara.h::add_observation()]\n";
-            // prepare preallocated raw cone lists for new cones
-            _new_yellow_cones.clear();
-            _new_blue_cones.clear();
-            _new_red_cones.clear();
-            // iterate over the c-style array and apped cones based on their color
-            _append_cones_by_type(obj_list, vs);
-            // erase cones by maximum allowed distance
-            _erase_by_distance(_new_yellow_cones, vs);
-            _erase_by_distance(_new_blue_cones, vs);
-            _erase_by_distance(_new_red_cones, vs);
-            // sort by relative distance to our current position, so the mapping step has some ordering and can do sanity checks
-            _sort_by_distance_to_cur_pos(_new_yellow_cones, vs);
-            _sort_by_distance_to_cur_pos(_new_blue_cones, vs);
-            _sort_by_distance_to_cur_pos(_new_red_cones, vs);
+            // prepare preallocated raw cone lists and append them to _new_yellow/blue/red_cones
+            _preprocess_cones(obj_list, vs);
             // do the data association (\todo parallelize me with openmp tasks)
             _yellow_data_association.classify_new_data(_new_yellow_cones);
             _blue_data_association.classify_new_data(_new_blue_cones);
@@ -195,26 +182,14 @@ namespace clara {
             return _estimated_position;
         }
  
-        /** \brief 
+        /** \brief Uses the obj_list and vs to check which cluster got a match and modifies the current_position based on triangulation/trilateration
           *
           */
         const std::tuple<double, double> & use_observation(const object_list_t   & obj_list
                                                          ,       vehicle_state_t & vs)
         {
-            // prepare preallocated raw cone lists for new cones
-            _new_yellow_cones.clear();
-            _new_blue_cones.clear();
-            _new_red_cones.clear();
-            // iterate over the c-style array and apped cones based on their color
-            _append_cones_by_type(obj_list, vs);
-            // erase cones by maximum allowed distance
-            _erase_by_distance(_new_yellow_cones, vs);
-            _erase_by_distance(_new_blue_cones, vs);
-            _erase_by_distance(_new_red_cones, vs);
-            // sort by relative distance to our current position, so the mapping step has some ordering and can do sanity checks
-            _sort_by_distance_to_cur_pos(_new_yellow_cones, vs);
-            _sort_by_distance_to_cur_pos(_new_blue_cones, vs);
-            _sort_by_distance_to_cur_pos(_new_red_cones, vs);
+            // prepare preallocated raw cone lists and append them to _new_yellow/blue/red_cones
+            _preprocess_cones(obj_list, vs);
             // do the data association (\todo parallelize me with openmp tasks)
             std::vector< std::tuple< double, double >> yellow_pos_diff = _yellow_data_association.estimate_positional_difference(_new_yellow_cones);
             std::vector< std::tuple< double, double >> blue_pos_diff   = _blue_data_association.estimate_positional_difference(_new_blue_cones);
@@ -223,7 +198,6 @@ namespace clara {
             std::tuple< double, double > mean_pos_diff = util::mean_positional_difference( yellow_pos_diff
                                                                                         ,  blue_pos_diff
                                                                                         ,  red_pos_diff);
-
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
             // const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
@@ -239,8 +213,6 @@ namespace clara {
             _log_visualization_udp(std::get<0>(corrected_position), std::get<1>(corrected_position), vs);
             return _estimated_position;
         }
-
-
 
        //! return the current amount of laps
         int get_lap() const {
@@ -326,6 +298,28 @@ namespace clara {
 
     // methods
     private:
+
+        /** \brief Preprocessing of the cones. Clears the _new_yellow/blue_red_cones vectors, appends by type, erases by distance and sorts by distance
+          *
+          */ 
+        void _preprocess_cones(const object_list_t   & obj_list
+                             , const vehicle_state_t & vs)
+        {
+            // prepare preallocated raw cone lists for new cones
+            _new_yellow_cones.clear();
+            _new_blue_cones.clear();
+            _new_red_cones.clear();
+            // iterate over the c-style array and apped cones based on their color
+            _append_cones_by_type(obj_list, vs);
+            // erase cones by maximum allowed distance
+            _erase_by_distance(_new_yellow_cones, vs);
+            _erase_by_distance(_new_blue_cones, vs);
+            _erase_by_distance(_new_red_cones, vs);
+            // sort by relative distance to our current position, so the mapping step has some ordering and can do sanity checks
+            _sort_by_distance_to_cur_pos(_new_yellow_cones, vs);
+            _sort_by_distance_to_cur_pos(_new_blue_cones, vs);
+            _sort_by_distance_to_cur_pos(_new_red_cones, vs);
+        }
 
         /** \brief appends the object_list by type to the according list (_new_yellow_cones / _new_blue_cones / _new_red_cones)
          *  uses the red cones as yellow or blue ones if their angle to car is -/+ 10° (0.1745329 rad), according to RGB rule (rechts gelb, sonst blau). Uses vehicle coordinate system 

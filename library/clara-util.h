@@ -236,6 +236,14 @@ namespace clara
             return euclidean_distance(_a, _b);
         }
 
+        //! hack \todo
+        double sub_to_zero(double to_subtract, double num)
+        {
+            if (num < 0 && num < -to_subtract) return num + to_subtract;
+            if (num > 0 && num > to_subtract)  return num - to_subtract;
+            return 0;
+        }
+
         //! calculates the mean of the three vectors in both dimensions
         std::tuple< double, double > mean_positional_difference ( const std::vector< std::tuple< double, double > > & yellow_pos_diff
                                                                 , const std::vector< std::tuple< double, double > > & blue_pos_diff
@@ -244,21 +252,26 @@ namespace clara
             // helper function
             auto add_tuples = [&](std::tuple< double, double > a
                                 , std::tuple< double, double > b)
-            {
+            {   
                 double x = std::get< 0 >(a) + std::get< 0 >(b);
                 double y = std::get< 1 >(a) + std::get< 1 >(b);
-                return std::make_tuple(x,y);
+                std::tuple<double, double> z = std::make_tuple(x,y);
+                return z;
             };
 
+            std::tuple< double, double > acc_yellow_pos_diff = std::make_tuple(0,0);
+            std::tuple< double, double > acc_blue_pos_diff = std::make_tuple(0,0);
             // sum all positional differences
-            std::tuple< double, double > acc_yellow_pos_diff = std::accumulate(yellow_pos_diff.begin(), yellow_pos_diff.end(), std::make_tuple(0,0), add_tuples);
-            std::tuple< double, double > acc_blue_pos_diff = std::accumulate(blue_pos_diff.begin(), blue_pos_diff.end(), std::make_tuple(0,0), add_tuples);
-            std::tuple< double, double > acc_red_pos_diff = std::accumulate(red_pos_diff.begin(), red_pos_diff.end(), std::make_tuple(0,0), add_tuples);
-            std::tuple< double, double> pos_diff = add_tuples(add_tuples(acc_yellow_pos_diff
-                                                                       , acc_blue_pos_diff)
-                                                            , acc_red_pos_diff);
+            acc_yellow_pos_diff = std::accumulate(yellow_pos_diff.begin(), yellow_pos_diff.end(), acc_yellow_pos_diff, add_tuples);
+            acc_blue_pos_diff = std::accumulate(blue_pos_diff.begin(), blue_pos_diff.end(), acc_blue_pos_diff, add_tuples);
+            // std::tuple< double, double > acc_red_pos_diff = std::accumulate(red_pos_diff.begin(), red_pos_diff.end(), std::make_tuple(0,0), add_tuples);
+            std::tuple< double, double> pos_diff = std::make_tuple(
+                    sub_to_zero(0.7, std::get<0>(acc_yellow_pos_diff)) + sub_to_zero(0.7, std::get<0>(acc_blue_pos_diff))  // + std::get<0>(acc_red_pos_diff)
+                  , sub_to_zero(0.7, std::get<1>(acc_yellow_pos_diff)) + sub_to_zero(0.7, std::get<1>(acc_blue_pos_diff)));//) + std::get<0>(acc_red_pos_diff));
             // count all occurancies
             int sum_size = yellow_pos_diff.size() + blue_pos_diff.size() + red_pos_diff.size();
+            // if we didn't match anything, return pos. error of 0,0
+            if (sum_size == 0) return std::make_tuple( 0,0 );
             // calculate the mean
             return std::make_tuple( std::get< 0 >(pos_diff) / static_cast< double >(sum_size)
                                   , std::get< 1 >(pos_diff) / static_cast< double >(sum_size));

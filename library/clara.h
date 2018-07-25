@@ -204,6 +204,11 @@ namespace clara {
             const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
             // update the position based on the estimated v_x, v_y and the time
             const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
+            if (std::abs(std::get< 0 >( mean_pos_diff )) > 0  || std::abs(std::get< 1 >( mean_pos_diff ) > 0))
+            {
+                // std::cout << "[clara:use_observation()] mean_pos_diff: " << std::get< 0 >( mean_pos_diff ) << ", " <<  std::get< 1 >( mean_pos_diff ) << '\n';
+                
+            }
             // apply the mean translation of the cone
             const std::tuple<double, double> corrected_position = std::make_tuple( std::get< 0 >(new_position) - std::get< 0 >(mean_pos_diff)
                                                                                  , std::get< 1 >(new_position) - std::get< 1 >(mean_pos_diff));

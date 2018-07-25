@@ -182,7 +182,7 @@ int main(int argc, char const *argv[]){
 
         vs.update(vx, vy, ax, ay, 0, yaw_rate_rad, steer_angle, t_s);
 
-        // if (vx == 0) continue;
+        if (vx == 0) continue;
 
         std::cerr << "Observation [        " << counter++ << "/" << observations.size() << "]:\n"
                   << "    Rec. time:       " << vs._delta_time_s  << "s\n"
@@ -192,7 +192,14 @@ int main(int argc, char const *argv[]){
                   << "    yaw (mode dep.): " << vs.get_yaw()    << " rad\n"
                   << "    yaw_rate:        " << vs._yaw_rate << "rad/s\n"
                   << "    yaw_rate_steer:  " << vs._yaw_rate_steer << "rad/s\n"
-                  << "    yaw_rate_kafi:   " << vs._yaw_rate_kafi << "rad/s\n";
+                  << "    yaw_rate_kafi:   " << vs._yaw_rate_kafi << "rad/s\n"
+                  << "    object_list: \n";
+        for (uint32_t i = 0; i < l.size; ++i)
+        {
+            std::cerr << "         " << l.element[i].distance << ','
+                                     << l.element[i].angle    << ','
+                                     << l.element[i].type    << '\n';
+        }
 
         std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         if (l.element[0].distance == 0)
@@ -200,11 +207,18 @@ int main(int argc, char const *argv[]){
             std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation( vs );  
         } else {
             origin::move_objects_by_distance(l, origin_distance);
-            std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation(l, vs);
+
+            if (clara.get_lap() >= 1)
+            {
+                std::tie(clara_object.x_pos, clara_object.y_pos) = clara.use_observation(l, vs);
+            } else {
+                std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation(l, vs);
+            }
         }
         std::cerr << "    pos: " << clara_object.x_pos << "," << clara_object.y_pos << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
 
+        if (std::isnan(clara_object.x_pos)) break;
         // for each object, use it's cluster mid-point
         clara_object.clustered_object_list = clara.get_clustered_observations(clara_object.x_pos, clara_object.y_pos, vs.get_yaw());
         // send yaw

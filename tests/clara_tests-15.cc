@@ -27,6 +27,7 @@
 #include "../library/clara.h"
 #include "../library/vehicle_state.h"
 #include "../library/origin-calc.h"
+#include "../library/clara-object.h"
 #include "csv.h"
 
 std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string path)
@@ -58,7 +59,6 @@ std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string pat
             //            << timestamp   << '\n';
             //              << t           << '\n';
         }
-
         object_list_t & cur_list = std::get<0>(observations.back());
         object_t & cur_object    = cur_list.element[cur_list.size];
         cur_object.distance      = distance;
@@ -105,6 +105,22 @@ int main(int argc, char const *argv[]){
     // get the path to the csv 
     std::string path = argv[1];
     std::cerr << "[CLARA-TEST] Reading from file: \"" << path << "\"\n";
+
+    // for error visualization
+    const int               auto_scheduler_port        = 3500;
+    const int               auto_scheduler_grittr_port = 3501;
+    const std::string       auto_scheduler_ip   = "127.0.0.1"; // localhost
+
+    // send clara-objects to AS
+    connector::client < connector::UDP > to_autonomous_scheduler_client( auto_scheduler_port, auto_scheduler_ip);
+    to_autonomous_scheduler_client.init( );
+    // if we're ready, send the whole map to AS + Grittr
+    connector::client < connector::UDP > to_autonomous_scheduler_grittr_client( auto_scheduler_grittr_port, auto_scheduler_ip);
+    to_autonomous_scheduler_grittr_client.init( );
+
+    // preallocation of the clara object to send to AS
+    clara::object::clara_obj clara_object;
+
     // 
     std::vector< std::tuple< object_list_t, double > > observations = parse_csv(path);
     // parametrization of data associtaion in clara
@@ -148,7 +164,6 @@ int main(int argc, char const *argv[]){
                             ,  yaw_process_noise
                             ,  bosch_variance
                             ,  steering_variance );
-
     int counter  = 0;
     for(auto & o : observations)
     {
@@ -167,7 +182,7 @@ int main(int argc, char const *argv[]){
 
         vs.update(vx, vy, ax, ay, 0, yaw_rate_rad, steer_angle, t_s);
 
-        if (vx == 0) continue;
+        // if (vx == 0) continue;
 
         std::cerr << "Observation [        " << counter++ << "/" << observations.size() << "]:\n"
                   << "    Rec. time:       " << vs._delta_time_s  << "s\n"
@@ -179,18 +194,23 @@ int main(int argc, char const *argv[]){
                   << "    yaw_rate_steer:  " << vs._yaw_rate_steer << "rad/s\n"
                   << "    yaw_rate_kafi:   " << vs._yaw_rate_kafi << "rad/s\n";
 
-//        std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
-        std::tuple< double, double > pos;
+        std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         if (l.element[0].distance == 0)
         {
-            pos = clara.add_observation( vs );  
+            std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation( vs );  
         } else {
             origin::move_objects_by_distance(l, origin_distance);
-            pos = clara.add_observation(l, vs);
+            std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation(l, vs);
         }
-        std::cerr << "    pos: " << std::get<0>(pos) << "," << std::get<1>(pos) << '\n';
+        std::cerr << "    pos: " << clara_object.x_pos << "," << clara_object.y_pos << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
-        UNUSED(pos);
+
+        // for each object, use it's cluster mid-point
+        clara_object.clustered_object_list = clara.get_clustered_observations(clara_object.x_pos, clara_object.y_pos, vs.get_yaw());
+        // send yaw
+        clara_object.yaw = vs.get_yaw();
+        // send clara_obj to autonomous_scheduler
+        to_autonomous_scheduler_client.send_udp< clara::object::clara_obj >( clara_object );
 
         // if (clara.get_lap() == 1) break;
         // std::cout << yaw_rate_steer << ',' << yaw_rate_rad << '\n';
@@ -200,8 +220,8 @@ int main(int argc, char const *argv[]){
         // std::cout << vs._yaw_rate <<  ','
         //           << vs._yaw_rate_steer << ','
         //           << vs._yaw_rate_kafi << '\n';
-        std::cout << std::get<0>(pos) << ","
-                  << std::get<1>(pos) << "\n";
+        std::cout << clara_object.x_pos << ","
+                  << clara_object.y_pos << "\n";
                   //<< vs.get_yaw()     << '\n';
     }
 

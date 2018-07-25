@@ -34,6 +34,7 @@
 #include "search_cones.h"
 #include "refined_cones.h"
 #include "vehicle_state.h"
+#include "util.h"
 
 /*!
  *  \addtogroup clara
@@ -159,7 +160,7 @@ namespace clara {
         const std::tuple<double, double> & add_observation(const object_list_t   & obj_list
                                                          ,       vehicle_state_t & vs)
         {
-            // std::cerr << "    [clara.h::add_observation()]\n";
+             // std::cerr << "    [clara.h::add_observation()]\n";
             // prepare preallocated raw cone lists for new cones
             _new_yellow_cones.clear();
             _new_blue_cones.clear();
@@ -193,6 +194,53 @@ namespace clara {
             // _log_position(obj_list.element[0].x_car, obj_list.element[0].y_car, std::get<0>(new_position), std::get<1>(new_position));
             return _estimated_position;
         }
+ 
+        /** \brief 
+          *
+          */
+        const std::tuple<double, double> & use_observation(const object_list_t   & obj_list
+                                                         ,       vehicle_state_t & vs)
+        {
+            // prepare preallocated raw cone lists for new cones
+            _new_yellow_cones.clear();
+            _new_blue_cones.clear();
+            _new_red_cones.clear();
+            // iterate over the c-style array and apped cones based on their color
+            _append_cones_by_type(obj_list, vs);
+            // erase cones by maximum allowed distance
+            _erase_by_distance(_new_yellow_cones, vs);
+            _erase_by_distance(_new_blue_cones, vs);
+            _erase_by_distance(_new_red_cones, vs);
+            // sort by relative distance to our current position, so the mapping step has some ordering and can do sanity checks
+            _sort_by_distance_to_cur_pos(_new_yellow_cones, vs);
+            _sort_by_distance_to_cur_pos(_new_blue_cones, vs);
+            _sort_by_distance_to_cur_pos(_new_red_cones, vs);
+            // do the data association (\todo parallelize me with openmp tasks)
+            std::vector< std::tuple< double, double >> yellow_pos_diff = _yellow_data_association.estimate_positional_difference(_new_yellow_cones);
+            std::vector< std::tuple< double, double >> blue_pos_diff   = _blue_data_association.estimate_positional_difference(_new_blue_cones);
+            std::vector< std::tuple< double, double >> red_pos_diff    = _red_data_association.estimate_positional_difference(_new_red_cones);
+            // calculate the mean position translation from the cones
+            std::tuple< double, double > mean_pos_diff = util::mean_positional_difference( yellow_pos_diff
+                                                                                        ,  blue_pos_diff
+                                                                                        ,  red_pos_diff);
+
+            // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
+            // const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+            const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
+            // update the position based on the estimated v_x, v_y and the time
+            const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
+            // apply the mean translation of the cone
+            const std::tuple<double, double> corrected_position = std::make_tuple( std::get< 0 >(new_position) - std::get< 0 >(mean_pos_diff)
+                                                                                 , std::get< 1 >(new_position) - std::get< 1 >(mean_pos_diff));
+            _update_estimated_position(corrected_position);
+            // update the travelled distance to check if we are close enough to the start
+            _lap_counter.add_positions(_estimated_position_old, _estimated_position);
+            // logging
+            _log_visualization_udp(std::get<0>(corrected_position), std::get<1>(corrected_position), vs);
+            return _estimated_position;
+        }
+
+
 
        //! return the current amount of laps
         int get_lap() const {

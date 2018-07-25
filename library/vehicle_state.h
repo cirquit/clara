@@ -135,7 +135,7 @@ namespace clara
          *    * 1.54 - Radstand
          *    * 2.73 - Übersetzung
          *    * 1.128 - Fahrzeugspur
-         *    * 0.06 - magic number from tests with a circle \todo
+         *    * 0.0461 - magic number from tests with a circle \todo
          */
         double get_steering_yaw_rate() const
         {

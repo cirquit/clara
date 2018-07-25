@@ -133,6 +133,37 @@ namespace clara {
                 return _cone_states;
             }
 
+            /** \brief
+              *
+              */ 
+            std::vector< std::tuple< double, double > > estimate_positional_difference(const std::vector<raw_cone_data> & new_cones)
+            {
+
+                std::vector< std::tuple< double, double > > position_differences;
+
+                for(auto cone : new_cones){
+                    cluster_it prob_cluster_it = _get_most_probable_cluster_it(cone);
+                    if ((*prob_cluster_it).distance_greater_than(cone, _max_dist_btw_cones_m))
+                    {
+                        // do nothing..., we didn't 
+                    }
+                    else
+                    {   
+                        // if we got a "sure" match to a cluster
+                        position_differences.push_back((*prob_cluster_it).difference(cone));
+                        _add_detected_cone_ix(prob_cluster_it);
+                    }
+                }
+                // finished with detection, clear for the next step
+                // copy detected cluster from current step for search bounds calculation
+                _detected_cluster_ix_copy.clear();
+                std::copy(_detected_cluster_ix.begin(), _detected_cluster_ix.end(), std::back_inserter(_detected_cluster_ix_copy));
+                _detected_cluster_ix.clear();
+
+                return position_differences;
+
+            }
+
             //! Getter for the current clusters
             constexpr std::vector<cone_state<T>> & get_cluster()
             {

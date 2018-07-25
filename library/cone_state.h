@@ -202,6 +202,26 @@ namespace clara {
                 return std::sqrt(x_dist + y_dist);
             }
 
+            //! x,y difference to _mean_vec[0] and _mean_vec[1]
+            constexpr std::tuple< T, T > difference( const std::tuple< T, T, T, T > tup ) const
+            {
+                return difference(std::get<0>(tup), std::get<1>(tup));
+            }
+
+            //! x,y difference to _mean_vec[0] and _mean_vec[1]
+            constexpr std::tuple< T, T > difference( const std::tuple< T, T > tup ) const
+            {
+                return difference(std::get<0>(tup), std::get<1>(tup));
+            }
+
+            //! x,y difference to _mean_vec[0] and _mean_vec[1]
+            constexpr std::tuple< T, T > difference( const T x, const T y ) const
+            {
+                const T x_dist = x - _mean_vec[0];
+                const T y_dist = y - _mean_vec[1];
+                return std::make_tuple(x_dist, y_dist);
+            }
+
             //! checks if the distances is greater than epsilon from the mean position of the cluster _mean_vec
             constexpr bool distance_greater_than(const T x, const T y, const T epsilon) const
             {
@@ -356,7 +376,7 @@ namespace clara {
                 _cov_mat[3] = cov_yy;
             }
 
-        // member (were private, but for logging purposes we mage them public)
+        // member (were private, but for logging purposes we made them public)
         public:
             //! modification flag, if this is true, we need to recompute `_cov_mat`, `_inv_cov_mat` and `_mean_vec`. `add_observation()` triggers this
             bool _modified;

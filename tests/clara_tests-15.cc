@@ -114,7 +114,7 @@ int main(int argc, char const *argv[]){
     const double variance_xx                          = 0.55;
     const double variance_yy                          = 0.55;
     const size_t apply_variance_step_count            = 1000000; // apply custom variance for this amount of observations
-    const int    cluster_search_range                 = 10; // +/- to the min/max used cluster-index
+    const int    cluster_search_range                 = 100; // +/- to the min/max used cluster-index
     const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
     const double lap_epsilon_m                        = 3; // if we're 0.5m near the starting point, increment the lap counter
     const double set_start_after_m                    = 5;   // we travel at least some distance until setting our start point
@@ -138,6 +138,7 @@ int main(int argc, char const *argv[]){
       //  , std::make_tuple(4.94177, 0.722539)); // hockenheim (+5m in CM)
       //, std::make_tuple(0.888982, -1.50739)); //
 
+    // empirically estimated
     double yaw_process_noise = 0.00001;
     double bosch_variance    = 0.003;
     double steering_variance = 0.01;
@@ -190,19 +191,15 @@ int main(int argc, char const *argv[]){
         UNUSED(pos);
 
         // if (clara.get_lap() == 1) break;
-
         // std::cout << yaw_rate_steer << ',' << yaw_rate_rad << '\n';
-
         // std::cout << l.element[0].angle_yaw << ", " << yaw << '\n';
         // std::cout << yaw_rate_rad << ',' <<  yaw_rate_steer << ',' << yaw_rate_kafi << '\n';
         // std::cout << t_s << '\n';
-
         // std::cout << vs._yaw_rate <<  ','
         //           << vs._yaw_rate_steer << ','
         //           << vs._yaw_rate_kafi << '\n';
-
         std::cout << std::get<0>(pos) << ","
-                   << std::get<1>(pos) << "\n";
+                  << std::get<1>(pos) << "\n";
                   //<< vs.get_yaw()     << '\n';
     }
 

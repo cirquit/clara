@@ -24,6 +24,8 @@ cmake_minimum_required (VERSION 3.5.1)
 ## with #if DEBUG_MODE <code> #else <code> #endif OR the debug print macro
 OPTION(DEBUG_MODE "Enables the DEBUG messages and -O0 flags" 1)
 
+OPTION(WITH_TESTS "Enables the compilation of tests" 0)
+
 # set compiler flags
 set(CMAKE_CXX_COMPILER=g++)
 
@@ -32,11 +34,11 @@ add_compile_options(-std=c++14)
 
 # Compile differently if DEBUG_MODE is active
 if(DEBUG_MODE)
-    message("DEBUG_MODE is ON - no optimizations enabled")
+    message("> DEBUG_MODE is ON - no optimizations enabled")
     add_definitions(-DDEBUG_MODE=1)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -pthread -Wall -Wextra         -Wfatal-errors -pedantic -g -fPIC -Wno-reorder")
 else()
-    message("DEBUG_MODE is OFF - O2 optimizations enabled")
+    message("> DEBUG_MODE is OFF - O2 optimizations enabled")
     add_definitions(-DDEBUG_MODE=0)
     set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -pthread -Wall -Wextra -Werror -Wfatal-errors -pedantic -fPIC -Wno-reorder")
 endif()
@@ -47,5 +49,10 @@ find_package(connector 1.0 REQUIRED)
 # add the actual code
 add_subdirectory (library)
 add_subdirectory (src)
-add_subdirectory (tests)
-# add_subdirectory (external)
+
+if(WITH_TESTS)
+    message("> Compiling tests")
+    add_subdirectory (tests)
+else()
+    message("> NOT compiling tests")
+endif()

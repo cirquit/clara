@@ -99,6 +99,11 @@ void print_usage()
     std::cerr << "Usage: clara_test <path-to-csv>\n";
 }
 
+double distance_to_zero(double x, double y)
+{
+    return std::sqrt(std::pow(x,2) + std::pow(y,2));
+}
+
 int main(int argc, char const *argv[]){
 
     if (argc != 2) { print_usage(); return EXIT_FAILURE; }
@@ -130,12 +135,12 @@ int main(int argc, char const *argv[]){
     const double variance_xx                          = 0.55;
     const double variance_yy                          = 0.55;
     const size_t apply_variance_step_count            = 1000000; // apply custom variance for this amount of observations
-    const int    cluster_search_range                 = 100; // +/- to the min/max used cluster-index
+    const int    cluster_search_range                 = 10; // +/- to the min/max used cluster-index
     const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
     const double lap_epsilon_m                        = 3; // if we're 0.5m near the starting point, increment the lap counter
     const double set_start_after_m                    = 5;   // we travel at least some distance until setting our start point
     std::tuple<std::string, int> log_ip_port          = std::make_tuple("0.0.0.0", 33333);
-    const double max_accepted_distance_m              = 9;  // we delete every observation if it's farther than 10m
+    const double max_accepted_distance_m              = 10;  // we delete every observation if it's farther than 10m
     const double origin_distance                      = 0.35; // is the distance of the COG to the camera in x
     const unsigned lookback_count                     = 0;       // how far do we look back for the get_clustered_observations
 
@@ -160,14 +165,18 @@ int main(int argc, char const *argv[]){
     double yaw_process_noise = 0.00001;
     double bosch_variance    = 0.003;
     double steering_variance = 0.01;
-    clara::vehicle_state_t vs( clara::USE_KAFI_YAW
+    clara::vehicle_state_t vs( clara::USE_INTEGRATED_STEERING_YAW
                             ,  yaw_process_noise
                             ,  bosch_variance
                             ,  steering_variance );
+
+    bool grittr_waiting = true;
+
     int counter  = 0;
     for(auto & o : observations)
     {
-        if (counter++ < 1) continue;
+//        if (counter > 1000) break;
+        // if (counter++ < 1) continue;
         object_list_t & l   = std::get<0>(o);
         double                t_s = std::get<1>(o);
         if (t_s > 100) { continue; }
@@ -201,19 +210,23 @@ int main(int argc, char const *argv[]){
                                      << l.element[i].type    << '\n';
         }
 
-        std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
+        // std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         if (l.element[0].distance == 0)
         {
             std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation( vs );  
         } else {
             origin::move_objects_by_distance(l, origin_distance);
-
-            if (clara.get_lap() >= 1)
-            {
-                std::tie(clara_object.x_pos, clara_object.y_pos) = clara.use_observation(l, vs);
-            } else {
+//
+//            if (clara.get_lap() >= 1)
+//            {
+//              if (  distance_to_zero(clara_object.x_pos, clara_object.y_pos) < 5 ){
+//                  std::tie(clara_object.x_pos, clara_object.y_pos) = clara.use_observation(l, vs);
+//              } else {
+//                  std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation(l, vs);
+//              }
+//            } else {
                 std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation(l, vs);
-            }
+//            }
         }
         std::cerr << "    pos: " << clara_object.x_pos << "," << clara_object.y_pos << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
@@ -223,20 +236,60 @@ int main(int argc, char const *argv[]){
         clara_object.clustered_object_list = clara.get_clustered_observations(clara_object.x_pos, clara_object.y_pos, vs.get_yaw());
         // send yaw
         clara_object.yaw = vs.get_yaw();
+
+        if (clara.get_lap() == 1 && grittr_waiting) {
+            clara_object.go_grittr_flag = true;
+            grittr_waiting              = false;
+            // get all the yellow cones fron the data association
+            auto & yellow_cluster = clara._yellow_data_association.get_cluster();
+            // allocate the space needed to send the yellow cones over udp
+            std::vector<clara::object::cone_position> yellow_cones;
+            yellow_cones.reserve(yellow_cluster.size());
+            // copy the points into the newly allocated vector
+            std::for_each(yellow_cluster.begin(), yellow_cluster.end(),[&](const clara::cone_state<double> & cluster)
+                    {
+                    clara::object::cone_position cp;
+                    cp.x_pos = cluster._mean_vec[0];
+                    cp.y_pos = cluster._mean_vec[1];
+                    yellow_cones.emplace_back(cp);
+                    });
+            // send them over udp
+            size_t yellow_cones_size = yellow_cones.size(); // needed lhs
+            to_autonomous_scheduler_grittr_client.send_udp<size_t>(yellow_cones_size);
+            to_autonomous_scheduler_grittr_client.send_udp<clara::object::cone_position>(yellow_cones.data()[0],
+                    sizeof(clara::object::cone_position) * yellow_cones.size());
+            // get all the blue cones fron the data association
+            auto & blue_cluster = clara._blue_data_association.get_cluster();
+            // allocate the space needed to send the yellow cones over udp
+            std::vector<clara::object::cone_position> blue_cones;
+            blue_cones.reserve(blue_cluster.size());
+            // copy the points into the newly allocated vector
+            std::for_each(blue_cluster.begin(), blue_cluster.end(),[&](const clara::cone_state<double> & cluster)
+                    {
+                    clara::object::cone_position cp;
+                    cp.x_pos = cluster._mean_vec[0];
+                    cp.y_pos = cluster._mean_vec[1];
+                    blue_cones.emplace_back(cp);
+                    });
+            // send them over udp
+            size_t blue_cones_size = blue_cones.size(); // needed lhs
+            to_autonomous_scheduler_grittr_client.send_udp<size_t>(blue_cones_size);
+            to_autonomous_scheduler_grittr_client.send_udp<clara::object::cone_position>(blue_cones.data()[0],
+                    sizeof(clara::object::cone_position) * blue_cones.size());
+        } else {
+            clara_object.go_grittr_flag = false;
+        }
         // send clara_obj to autonomous_scheduler
         to_autonomous_scheduler_client.send_udp< clara::object::clara_obj >( clara_object );
 
-        // if (clara.get_lap() == 1) break;
-        // std::cout << yaw_rate_steer << ',' << yaw_rate_rad << '\n';
-        // std::cout << l.element[0].angle_yaw << ", " << yaw << '\n';
-        // std::cout << yaw_rate_rad << ',' <<  yaw_rate_steer << ',' << yaw_rate_kafi << '\n';
-        // std::cout << t_s << '\n';
         // std::cout << vs._yaw_rate <<  ','
         //           << vs._yaw_rate_steer << ','
         //           << vs._yaw_rate_kafi << '\n';
         std::cout << clara_object.x_pos << ","
                   << clara_object.y_pos << "\n";
-                  //<< vs.get_yaw()     << '\n';
+        //          << vs._yaw_rate       << ","
+        //          << vs.get_yaw()       << '\n';
+
     }
 
 

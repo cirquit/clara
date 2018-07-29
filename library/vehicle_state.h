@@ -100,7 +100,7 @@ namespace clara
                 _integrated_yaw += get_local_integrated_yaw() - _yaw_rate_mean;
 
                 // calculate the yaw_rate from the steering
-                _yaw_rate_steer = get_steering_yaw_rate();
+                double _yaw_rate_steer = get_steering_yaw_rate();
                 // update integrated steering yaw
                 _integrated_steering_yaw += get_local_integrated_steering_yaw();
                 // calculate the kafi yaw rate
@@ -111,11 +111,17 @@ namespace clara
             // translate from vehicle coordinate system to global coordiante system
             std::tie( _v_x_world, _v_y_world ) = _to_world_velocity();
             
-
-            
         }
 
-        // API helper function, need exactly this return type for clara 
+        //! reset all accumulated yaws
+        void reset_yaw()
+        {
+            _integrated_yaw = 0;
+            _integrated_steering_yaw = 0;
+            _integrated_kafi_yaw = 0;
+        }
+
+        //! API helper function, need exactly this return type for clara 
         std::tuple< double, double, double > to_world_velocity() const
         {
             return std::make_tuple(_v_x_world, _v_y_world, _delta_time_s);
@@ -152,7 +158,7 @@ namespace clara
         // get the integrated part of the local yaw calculated from the steering angle. *NOT THE YAW*, we only use the last timestep
         double get_local_integrated_steering_yaw() const
         {   
-            return get_steering_yaw_rate() * _delta_time_s;
+            return _yaw_rate_steer * _delta_time_s;
         }
 
         // get the integrated part of the local yaw *NOT THE GLOBAL YAW*, we only use the last timestep

@@ -41,6 +41,13 @@ set(SOURCES_LOOPING catch.h main.cc looping_tests.cc)
 add_executable(${TEST_NAME_LOOPING} ${SOURCES_LOOPING})
 target_link_libraries(${TEST_NAME_LOOPING} ${LIB_NAME})
 
+# custom data association test for debugging purposes
+set(TEST_NAME_MEMORY clara_memory)
+set(SOURCES_MEMORY catch.h main.cc memory_tests.cc)
+add_executable(${TEST_NAME_MEMORY} ${SOURCES_MEMORY})
+# target_link_libraries(${TEST_NAME_MEMORY} ${LIB_NAME})
+
+
 # file(COPY example-data DESTINATION .)  # execute ./clara_test
 # file(COPY example-data DESTINATION ..) # execute ./tests/clara_test
 # file(COPY visualization DESTINATION ..) #

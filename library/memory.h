@@ -43,7 +43,7 @@ namespace clara
         double get_mean()
         {
             if (_memory.size() == 0) return 0.0;
-            return std::accumulate(_memory.begin(), _memory.end(), 0) / static_cast<double>(_memory.size());
+            return std::accumulate(_memory.begin(), _memory.end(), 0.0) / static_cast<double>(_memory.size());
         }
 
         //! adds the value to the _memory vector

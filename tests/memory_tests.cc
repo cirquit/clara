@@ -37,5 +37,9 @@ TEST_CASE( "memory.h", "" ) {
     count_02.reset();
 
     REQUIRE(count_02.get_mean() == 0.0);
+
+    count_02.add_value(2.5);
+    count_02.add_value(5.0);
+    REQUIRE(count_02.get_mean() == 3.75);
 }
 

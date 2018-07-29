@@ -171,7 +171,7 @@ namespace clara {
             _blue_data_association.classify_new_data(_new_blue_cones);
             _red_data_association.classify_new_data(_new_red_cones);
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            // const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+            // const std::tuple<double, double, double> velocity_t = _estimate_velocity(vs);
             const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
             // update the position based on the estimated v_x, v_y and the time
             const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
@@ -479,41 +479,47 @@ namespace clara {
             return std::make_tuple(v_x_world, v_y_world, timestep_s);
         }
 
-        //! returns the estimated velocity_t (x,y, timestep_s)
-        const std::tuple<double, double, double> _estimate_velocity(double v_x_sensor
-                                                                  , double v_y_sensor
-                                                                  , double yaw_rad
-                                                                  , double timestep_s)
+        //! returns the estimated velocity_t from the cone velocitiy and sensor velocity through a kalman filter
+        const std::tuple<double, double, double> _estimate_velocity(const vehicle_state_t & vs)
         {
             // std::cerr << "    [clara.h:estimate_velocity()]\n";
             using nx1_vector = typename kafi::jacobian_function<N,M>::nx1_vector;
             using mx1_vector = typename kafi::jacobian_function<N,M>::mx1_vector;
             using return_t   = typename kafi::kafi<N,M>::return_t;
             // calculate cone velocities based on the recurring observations, may be nothing if we have zero recurring cones
-            concept::maybe<std::tuple<double, double>> m_cone_velocity = _calculate_cone_velocities(timestep_s);
+            concept::maybe<std::tuple<double, double>> m_cone_velocity = _calculate_cone_velocities(vs._delta_time_s);
             // if we don't see any new cones, we can't update the kalman filter
             if (m_cone_velocity.has_no_value())
             {   
                 std::cerr << "       - no matched cluster observations, returning transformed velocities from correvit to world velocity\n";
-                return _to_world_velocity(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+                return _to_world_velocity(vs._v_x_vehicle
+                                        , vs._v_y_vehicle
+                                        , vs.get_yaw()
+                                        , vs._delta_time_s);
             }
             const double v_x_cones = std::get<0>(m_cone_velocity.get_value());
             const double v_y_cones = std::get<1>(m_cone_velocity.get_value());
+            std::cerr << "        - v_x_cones = " << v_x_cones << '\n'
+                      << "        - v_y_cones = " << v_y_cones << '\n';
+                            return _to_world_velocity(vs._v_x_vehicle
+                                        , vs._v_y_vehicle
+                                        , vs.get_yaw()
+                                        , vs._delta_time_s);
             // for debugging purposes
             if (true) // v_x_sensor == 0 && v_y_sensor == 0)
             {   
                 // std::cerr << "       - vx/vy_sensor are zero, returning velocities from cones\n";
-                return std::make_tuple(v_x_cones, v_y_cones, timestep_s);
+                return std::make_tuple(v_x_cones, v_y_cones, vs._delta_time_s);
             }
             // convert the correvit velocity to world velocity for fusion
             double v_x_sensor_world, v_y_sensor_world;
-            std::tie(v_x_sensor_world, v_y_sensor_world, std::ignore) = _to_world_velocity(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
+            std::tie(v_x_sensor_world, v_y_sensor_world, std::ignore) = _to_world_velocity(vs._v_x_vehicle, vs._v_y_vehicle, vs.get_yaw(), vs._delta_time_s);
             // run the kalman filter with sensor and cone velocities
             std::shared_ptr< mx1_vector > observation = std::make_shared< mx1_vector >(
                             mx1_vector( { { v_x_sensor_world }, { v_y_sensor_world }
                                         , { v_x_cones },        { v_y_cones } } ));
-            std::cerr << "       - observation: " << v_x_sensor << '\n'
-                      << "                      " << v_y_sensor << '\n'
+            std::cerr << "       - observation: " << vs._v_x_vehicle << '\n'
+                      << "                      " << vs._v_y_vehicle << '\n'
                       << "                      " << v_x_cones << '\n'
                       << "                      " << v_y_cones << '\n';
             (*_kafi).set_current_observation(observation);
@@ -524,14 +530,14 @@ namespace clara {
             std::cerr << "       - estimation: " << estimated_v_x << '\n'
                       << "                     " << estimated_v_y << '\n';
             //
-            return std::make_tuple(estimated_v_x, estimated_v_y, timestep_s);
+            return std::make_tuple(estimated_v_x, estimated_v_y, vs._delta_time_s);
         }
 
         //! unsafe function, should only be called if we can access cone._observations[last/last-1] and cluster[ix]
         const std::tuple<double, double> _calculate_velocity(const size_t & ix
                                                            , const std::vector<cone_state<double>> & cluster
                                                            , const double & timestep_s) const
-        {   
+        {
             const cone_state<double> & cone = cluster[ix];
             double distance_x = 0;
             double distance_y = 0;

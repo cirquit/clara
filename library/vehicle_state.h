@@ -100,7 +100,7 @@ namespace clara
                 _integrated_yaw += get_local_integrated_yaw() - _yaw_rate_mean;
 
                 // calculate the yaw_rate from the steering
-                double _yaw_rate_steer = get_steering_yaw_rate();
+                _yaw_rate_steer = get_steering_yaw_rate();
                 // update integrated steering yaw
                 _integrated_steering_yaw += get_local_integrated_steering_yaw();
                 // calculate the kafi yaw rate

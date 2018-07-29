@@ -16,6 +16,7 @@
 #define VEHICLE_STATE_H
 
 #include <tuple>
+#include "memory.h"
 
 namespace clara
 {
@@ -33,24 +34,29 @@ namespace clara
                       , double yaw_process_noise
                       , double bosch_variance
                       , double steering_variance)
-        : _yaw_mode(yaw_mode)
-        , _v_x_vehicle(0)
-        , _v_y_vehicle(0)
-        , _a_x_vehicle(0)
-        , _a_y_vehicle(0)
-        , _v_x_world(0)
-        , _v_y_world(0)
-        , _yaw(0)
-        , _yaw_rate(0)
-        , _yaw_rate_steer(0)
-        , _yaw_rate_kafi(0)
-        , _integrated_yaw(0)
-        , _integrated_steering_yaw(0)
-        , _integrated_kafi_yaw(0)
-        , _steering_angle(0)
-        , _delta_time_s(0)
-        , _yaw_rate_mean(0)
-        , _yaw_rate_calculated(false)
+        : _yaw_mode( yaw_mode )
+        , _v_x_vehicle( 0 )
+        , _v_x_vehicle_mem( 2 )
+        , _v_y_vehicle( 0 )
+        , _v_y_vehicle_mem( 2 )
+        , _a_x_vehicle( 0 )
+        , _a_y_vehicle( 0 )
+        , _v_x_world( 0 )
+        , _v_y_world( 0 )
+        , _yaw( 0 )
+        , _yaw_rate( 0 )
+        , _yaw_rate_mem( 2 )
+        , _yaw_rate_steer( 0 )
+        , _yaw_rate_steer_mem( 2 )
+        , _yaw_rate_kafi( 0 )
+        , _yaw_rate_kafi_mem( 2 )
+        , _integrated_yaw( 0 )
+        , _integrated_steering_yaw( 0 )
+        , _integrated_kafi_yaw( 0 )
+        , _steering_angle( 0 )
+        , _delta_time_s( 0 )
+        , _yaw_rate_mean( 0 )
+        , _yaw_rate_calculated( false )
         { 
             _yaw_rate_summary.reserve(10000);
             _init_yaw_kafi(yaw_process_noise
@@ -74,12 +80,17 @@ namespace clara
                   , const double delta_time_s)
         {
             // set all our member
-            _v_x_vehicle    = v_x_vehicle;
-            _v_y_vehicle    = v_y_vehicle;
+
+            _v_x_vehicle_mem.add_value(v_x_vehicle);
+            _v_y_vehicle_mem.add_value(v_y_vehicle);
+            _yaw_rate_mem.add_value(yaw_rate);
+
+            _v_x_vehicle    = _v_x_vehicle_mem.get_mean();
+            _v_y_vehicle    = _v_y_vehicle_mem.get_mean();
             _a_x_vehicle    = a_x_vehicle;
             _a_y_vehicle    = a_y_vehicle;
             _yaw            = yaw;
-            _yaw_rate       = yaw_rate;
+            _yaw_rate       = _yaw_rate_mem.get_mean();
             _steering_angle = steering_angle;
             _delta_time_s   = delta_time_s;
 
@@ -100,11 +111,13 @@ namespace clara
                 _integrated_yaw += get_local_integrated_yaw() - _yaw_rate_mean;
 
                 // calculate the yaw_rate from the steering
-                _yaw_rate_steer = get_steering_yaw_rate();
+                _yaw_rate_steer_mem.add_value( get_steering_yaw_rate() );
+                _yaw_rate_steer = _yaw_rate_steer_mem.get_mean();
                 // update integrated steering yaw
                 _integrated_steering_yaw += get_local_integrated_steering_yaw();
                 // calculate the kafi yaw rate
-                _yaw_rate_kafi = get_kafi_yaw_rate();
+                _yaw_rate_kafi_mem.add_value( get_kafi_yaw_rate() );
+                _yaw_rate_kafi = _yaw_rate_kafi_mem.get_mean();
                 // update integrated kafi yaw
                 _integrated_kafi_yaw += get_local_integrated_kafi_yaw();
             }
@@ -267,8 +280,12 @@ namespace clara
         YAW_MODE _yaw_mode;
         //! x velocity from the vehicle coordiante system (x is pointing forward, always positive)
         double _v_x_vehicle;
-        //! y velocity from the vehicle coordiante system (y is the lateral velocity)
+        //! memory for _v_x_vehicle
+        memory_t _v_x_vehicle_mem;
+        //! y velocity from the vehicle coordi$nte system (y is the lateral velocity)
         double _v_y_vehicle;
+        //! memory for _v_y_vehicle
+        memory_t _v_y_vehicle_mem;
         //! x acceleration from the vehicle coordiante system (x is pointing forward, always positive)
         double _a_x_vehicle;
         //! y acceleration from the vehicle coordiante system (y is the lateral acceleration)
@@ -281,10 +298,16 @@ namespace clara
         double _yaw;
         //! yaw_rate in radians/s of the car
         double _yaw_rate;
+        //! memory for _yaw_rate
+        memory_t _yaw_rate_mem;
         //! yaw_rate in radians/s of the car calculated from the steering
         double _yaw_rate_steer;
+        //! memory for _yaw_rate_steer
+        memory_t _yaw_rate_steer_mem;
         //! yaw_rate in radians/s of the car kalman filtered from _yaw_rate & _yaw_rate_steer
         double _yaw_rate_kafi;
+        //! memory for _yaw_rate_kafi
+        memory_t _yaw_rate_kafi_mem;
         //! integrated yaw_rate with time is saved here
         double _integrated_yaw;
         //! integrated steering_yaw_rate with time is saved here
@@ -295,6 +318,7 @@ namespace clara
         double _steering_angle;
         //! elapsed time in seconds since the last vehicle state
         double _delta_time_s;
+
         //! used to pool the yaw_rates to calculate a mean which we subtract from every future yaw_rate
         std::vector< double > _yaw_rate_summary;
         //! mean to subtract from every future yaw_rate

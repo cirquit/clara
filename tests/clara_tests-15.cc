@@ -165,7 +165,7 @@ int main(int argc, char const *argv[]){
     double yaw_process_noise = 0.00001;
     double bosch_variance    = 0.003;
     double steering_variance = 0.01;
-    clara::vehicle_state_t vs( clara::USE_INTEGRATED_STEERING_YAW
+    clara::vehicle_state_t vs( clara::USE_INTEGRATED_YAW
                             ,  yaw_process_noise
                             ,  bosch_variance
                             ,  steering_variance );

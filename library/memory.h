@@ -30,8 +30,8 @@ namespace clara
           *
           */
         memory_t(unsigned int count)
-        : _count( count )
-        , _ix( 0 )
+        : _ix( 0 )
+        , _count( count )
         {
             _memory.reserve(_count);
         }

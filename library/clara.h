@@ -170,6 +170,14 @@ namespace clara {
             _yellow_data_association.classify_new_data(_new_yellow_cones);
             _blue_data_association.classify_new_data(_new_blue_cones);
             _red_data_association.classify_new_data(_new_red_cones);
+            add_vehicle_state(vs);
+            // logging
+            _log_visualization_udp(std::get<0>(_estimated_position), std::get<1>(_estimated_position), vs);
+            return _estimated_position;
+        }
+
+        const std::tuple<double, double> & add_vehicle_state(vehicle_state_t & vs)
+        {
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
             // const std::tuple<double, double, double> velocity_t = _estimate_velocity(vs);
             const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
@@ -178,8 +186,6 @@ namespace clara {
             _update_estimated_position(new_position);
             // update the travelled distance to check if we are close enough to the start
             _lap_counter.add_positions(_estimated_position_old, _estimated_position);
-            // logging
-            _log_visualization_udp(std::get<0>(new_position), std::get<1>(new_position), vs);
             return _estimated_position;
         }
  
@@ -198,7 +204,7 @@ namespace clara {
             // calculate the mean position translation from the cones
             std::tuple< double, double > mean_pos_diff = util::mean_positional_difference( yellow_pos_diff
                                                                                         ,  blue_pos_diff
-                                                                                        ,  red_pos_diff);
+                                                                                        ,  red_pos_diff );
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
             // const std::tuple<double, double, double> velocity_t = _estimate_velocity(v_x_sensor, v_y_sensor, yaw_rad, timestep_s);
             const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
@@ -216,7 +222,14 @@ namespace clara {
             // update the travelled distance to check if we are close enough to the start
             _lap_counter.add_positions(_estimated_position_old, _estimated_position);
             // logging
-            _log_visualization_udp(std::get<0>(corrected_position), std::get<1>(corrected_position), vs);
+            _log_visualization_udp(std::get< 0 >( corrected_position )
+                                 , std::get< 1 >( corrected_position ), vs);
+            return _estimated_position;
+        }
+
+        //! get the current position without any calculation
+        const std::tuple< double, double > & get_position( )
+        {
             return _estimated_position;
         }
 

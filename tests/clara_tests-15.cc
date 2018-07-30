@@ -38,6 +38,7 @@ std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string pat
     double distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp, lap, a_x, a_y, steer_angle, yaw_rate;
     int    time_old      = -1;
     double timestamp_old = 0;
+    double acc_time = 0;
     while ( in.read_row( distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp, lap, a_x, a_y, steer_angle, yaw_rate ) ) {
         // group by timestamp
         if ( time != time_old )
@@ -48,16 +49,16 @@ std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string pat
             timestamp_old = timestamp;
             observations.push_back( std::make_tuple(list, timestamp) );
             time_old = time;
-
-            // std::cout // << v_x << ','
-            //           // << v_y << ','
-            //           // << a_x << ','
-            //           // << a_y << ','
-            //           // << steer_angle << ','
-            //           // << yaw_rad     << ','
-            //           // << yaw_rate    << ','
-            //            << timestamp   << '\n';
-            //              << t           << '\n';
+            acc_time += timestamp; 
+            // std::cout << v_x << ','
+            //           << v_y << ','
+            //           << a_x << ','
+            //           << a_y << ','
+            //           << steer_angle << ','
+            //           << yaw_rad     << ','
+            //           << yaw_rate    << ','
+            //           << acc_time    << ','
+            //           << timestamp   << '\n';
         }
         object_list_t & cur_list = std::get<0>(observations.back());
         object_t & cur_object    = cur_list.element[cur_list.size];
@@ -139,7 +140,7 @@ int main(int argc, char const *argv[]){
     const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
     const double lap_epsilon_m                        = 3; // if we're 0.5m near the starting point, increment the lap counter
     const double set_start_after_m                    = 5;   // we travel at least some distance until setting our start point
-    std::tuple<std::string, int> log_ip_port          = std::make_tuple("0.0.0.0", 33333);
+    std::tuple<std::string, int> log_ip_port          = std::make_tuple("0.0.0.0", 33332);
     const double max_accepted_distance_m              = 10;  // we delete every observation if it's farther than 10m
     const double origin_distance                      = 0.35; // is the distance of the COG to the camera in x
     const unsigned lookback_count                     = 0;       // how far do we look back for the get_clustered_observations
@@ -162,10 +163,10 @@ int main(int argc, char const *argv[]){
       //, std::make_tuple(0.888982, -1.50739)); //
 
     // empirically estimated
-    double yaw_process_noise = 0.00001;
-    double bosch_variance    = 0.003;
-    double steering_variance = 0.01;
-    clara::vehicle_state_t vs( clara::USE_INTEGRATED_YAW 
+    double yaw_process_noise = 0.0085;
+    double bosch_variance    = 0.001;
+    double steering_variance = 0.0125;
+    clara::vehicle_state_t vs( clara::USE_KAFI_YAW 
                             ,  yaw_process_noise
                             ,  bosch_variance
                             ,  steering_variance );
@@ -175,10 +176,11 @@ int main(int argc, char const *argv[]){
     int counter  = 0;
     for(auto & o : observations)
     {
+     //   break;
 //        if (counter > 1000) break;
         // if (counter++ < 1) continue;
         object_list_t & l   = std::get<0>(o);
-        double                t_s = std::get<1>(o);
+        double          t_s = std::get<1>(o);
         if (t_s > 100) { continue; }
         if (l.size == 0) { continue; }
 //        if (t_s == 0)    { continue; }
@@ -285,8 +287,12 @@ int main(int argc, char const *argv[]){
         // std::cout << vs._yaw_rate <<  ','
         //           << vs._yaw_rate_steer << ','
         //           << vs._yaw_rate_kafi << '\n';
-        std::cout << clara_object.x_pos << ","
-                  << clara_object.y_pos << "\n";
+        // 
+
+        if (counter % 10 == 0){
+            std::cout << clara_object.x_pos << ","
+                      << clara_object.y_pos << "\n";
+        }
         //          << vs._yaw_rate       << ","
         //          << vs.get_yaw()       << '\n';
 

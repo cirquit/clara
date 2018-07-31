@@ -96,6 +96,17 @@ namespace clara {
             object.type = 0;
             append_object(object, object_list);
         }
+        //! appends the red cone to the object_list by converting it into the object 
+        void append_red_cone(const cone_state<double> & cs
+                              , const double x_pos
+                              , const double y_pos
+                              , const double yaw
+                              , object_list_t & object_list)
+        {
+            object_t object = to_object_t(cs, x_pos, y_pos, yaw);
+            object.type = 3;
+            append_object(object, object_list);
+        }
     }
 }
 

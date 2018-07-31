@@ -250,16 +250,21 @@ namespace clara {
             // get cluster by reference to not change ownership
             auto & yellow_cluster = _yellow_data_association.get_cluster();
             auto & blue_cluster   = _blue_data_association.get_cluster();
+            auto & red_cluster    = _red_data_association.get_cluster();
             // get currently seen cluster indexes by reference
             const auto & yellow_detected_cluster_ix = _yellow_data_association.get_detected_cluster_ixs();
             const auto & blue_detected_cluster_ix   = _blue_data_association.get_detected_cluster_ixs();
+            const auto & red_detected_cluster_ix    = _red_data_association.get_detected_cluster_ixs();
             // copy them for modification
             std::vector<size_t> yellow_detected_cluster_ix_copy;
             std::vector<size_t> blue_detected_cluster_ix_copy;
+            std::vector<size_t> red_detected_cluster_ix_copy;
             std::copy(yellow_detected_cluster_ix.begin(), yellow_detected_cluster_ix.end(),
                   std::back_inserter(yellow_detected_cluster_ix_copy));
             std::copy(blue_detected_cluster_ix.begin(), blue_detected_cluster_ix.end(),
                   std::back_inserter(blue_detected_cluster_ix_copy));
+            std::copy(red_detected_cluster_ix.begin(), red_detected_cluster_ix.end(),
+                  std::back_inserter(red_detected_cluster_ix_copy));
             // add the possibly previously seen yellow cluster
             if (yellow_detected_cluster_ix_copy.size() > 0)
             {
@@ -288,12 +293,28 @@ namespace clara {
                     }
                 }
             }
+            // add the possibly previously seen red cluster
+            if (red_detected_cluster_ix_copy.size() > 0)
+            {
+                size_t min_r_ix = *std::min_element(red_detected_cluster_ix_copy.begin()
+                                                  , red_detected_cluster_ix_copy.end());
+                for(int i = 1; i < 1 + _lookback_count; ++i)
+                {
+                    int r_ix = static_cast<int>(min_r_ix) - i;
+                    if (r_ix > -1) // \todo looping
+                    {
+                        red_detected_cluster_ix_copy.push_back(static_cast<size_t>(r_ix));
+                    }
+                }
+            }
 
             // convert them into sets to remove duplicates (\todo implement this in clara)
             std::set<size_t> yellow_detected_cluster_ix_set(yellow_detected_cluster_ix_copy.begin(),
                                                             yellow_detected_cluster_ix_copy.end());
             std::set<size_t> blue_detected_cluster_ix_set(blue_detected_cluster_ix_copy.begin(),
                                                           blue_detected_cluster_ix_copy.end());
+            std::set<size_t> red_detected_cluster_ix_set(red_detected_cluster_ix_copy.begin(),
+                                                          red_detected_cluster_ix_copy.end());
             // "preallocation" of the returning list
             object_list_t object_list;
             object_list.size = 0; // resetting for security reasons
@@ -306,6 +327,11 @@ namespace clara {
             std::for_each(blue_detected_cluster_ix_set.begin(), blue_detected_cluster_ix_set.end(), [&](size_t b_ix)
             {
                 util::append_blue_cone(blue_cluster[b_ix], x_pos, y_pos, yaw, object_list);
+            });
+            // append seen red cones to the object_list
+            std::for_each(red_detected_cluster_ix_set.begin(), red_detected_cluster_ix_set.end(), [&](size_t r_ix)
+            {
+                util::append_red_cone(red_cluster[r_ix], x_pos, y_pos, yaw, object_list);
             });
             return object_list;
         }
@@ -348,13 +374,16 @@ namespace clara {
                 // otherwise insert by type
                 if (obj_list.element[i].type == 0) _new_yellow_cones.emplace_back(_parse_object_t(obj_list.element[i], vs));
                 if (obj_list.element[i].type == 1) _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
-                if (obj_list.element[i].type == 2 || obj_list.element[i].type == 3 ) {
-                    if ( obj_list.element[i].angle > 0.1745329 ){
-                        _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
-                    } else if ( obj_list.element[i].angle > -0.1745329 ) {
-                        _new_yellow_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
-                    }
-                }
+                // Pretend that small red cones are big red cones
+                if (obj_list.element[i].type == 2) _new_red_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
+                if (obj_list.element[i].type == 3) _new_red_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
+//                if (obj_list.element[i].type == 2 || obj_list.element[i].type == 3 ) {
+//                    if ( obj_list.element[i].angle > 0.1745329 ){
+//                        _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
+//                    } else if ( obj_list.element[i].angle > -0.1745329 ) {
+//                        _new_yellow_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
+//                    }
+//                }
             }
         }
 

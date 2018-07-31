@@ -49,7 +49,7 @@ std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string pat
             timestamp_old = timestamp;
             observations.push_back( std::make_tuple(list, timestamp) );
             time_old = time;
-            acc_time += timestamp; 
+            acc_time += timestamp;
             // std::cout << v_x << ','
             //           << v_y << ','
             //           << a_x << ','
@@ -84,7 +84,7 @@ void log_da(clara::clara & clara)
 
    clara::data_association<double> & yellow_data_association = clara._yellow_data_association;
    clara::data_association<double> & blue_data_association = clara._blue_data_association;
-   clara::data_association<double> & red_data_association = clara._red_data_association; 
+   clara::data_association<double> & red_data_association = clara._red_data_association;
    // print out the python file
    std::cout << "import numpy as np\n";
    yellow_data_association.print_data_assoc(0);
@@ -108,7 +108,7 @@ double distance_to_zero(double x, double y)
 int main(int argc, char const *argv[]){
 
     if (argc != 2) { print_usage(); return EXIT_FAILURE; }
-    // get the path to the csv 
+    // get the path to the csv
     std::string path = argv[1];
     std::cerr << "[CLARA-TEST] Reading from file: \"" << path << "\"\n";
 
@@ -127,7 +127,7 @@ int main(int argc, char const *argv[]){
     // preallocation of the clara object to send to AS
     clara::object::clara_obj clara_object;
 
-    // 
+    //
     std::vector< std::tuple< object_list_t, double > > observations = parse_csv(path);
     // parametrization of data associtaion in clara
     const size_t preallocated_cluster_count           = 500;
@@ -166,7 +166,7 @@ int main(int argc, char const *argv[]){
     double yaw_process_noise = 0.0085;
     double bosch_variance    = 0.001;
     double steering_variance = 0.0125;
-    clara::vehicle_state_t vs( clara::USE_KAFI_YAW 
+    clara::vehicle_state_t vs( clara::USE_KAFI_YAW
                             ,  yaw_process_noise
                             ,  bosch_variance
                             ,  steering_variance );
@@ -189,7 +189,7 @@ int main(int argc, char const *argv[]){
         double vy           = l.element[0].vy;
         double ax           = l.element[0].ax;
         double ay           = l.element[0].ay;
-        double steer_angle  = l.element[0].steering_rad; 
+        double steer_angle  = l.element[0].steering_rad;
 
         vs.update(vx, vy, ax, ay, 0, yaw_rate_rad, steer_angle, t_s);
 
@@ -215,7 +215,7 @@ int main(int argc, char const *argv[]){
         // std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         if (l.element[0].distance == 0)
         {
-            std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation( vs );  
+            std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation( vs );
         } else {
             origin::move_objects_by_distance(l, origin_distance);
 //
@@ -287,11 +287,11 @@ int main(int argc, char const *argv[]){
         // std::cout << vs._yaw_rate <<  ','
         //           << vs._yaw_rate_steer << ','
         //           << vs._yaw_rate_kafi << '\n';
-        // 
-
+        //
+        if(clara.get_lap()==1) break;
         if (counter % 10 == 0){
-            std::cout << clara_object.x_pos << ","
-                      << clara_object.y_pos << "\n";
+/*            std::cout << vs._v_x_vehicle << ","
+                      << vs._v_y_vehicle << "\n";*/
         }
         //          << vs._yaw_rate       << ","
         //          << vs.get_yaw()       << '\n';

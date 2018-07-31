@@ -23,6 +23,7 @@ namespace clara
     enum YAW_MODE : size_t { USE_NORMAL_YAW
                           ,  USE_INTEGRATED_YAW
                           ,  USE_INTEGRATED_STEERING_YAW
+                          ,  USE_INTEGRATED_ACCELERATION_YAW
                           ,  USE_KAFI_YAW };
 
     class vehicle_state_t
@@ -46,18 +47,23 @@ namespace clara
         , _yaw( 0 )
         , _yaw_rate( 0 )
         , _yaw_rate_mem( 2 )
+        , _yaw_acceleration( 0 )
+        , _yaw_rate_acceleration( 0 )
+        , _acceleration_yaw_rate_mem( 2 )
         , _yaw_rate_steer( 0 )
         , _yaw_rate_steer_mem( 2 )
         , _yaw_rate_kafi( 0 )
         , _yaw_rate_kafi_mem( 2 )
         , _integrated_yaw( 0 )
+        , _integrated_acceleration_yaw( 0 )
         , _integrated_steering_yaw( 0 )
         , _integrated_kafi_yaw( 0 )
         , _steering_angle( 0 )
         , _delta_time_s( 0 )
         , _yaw_rate_mean( 0 )
         , _yaw_rate_calculated( false )
-        { 
+        , _acceleration_yaw_rate_mean( 0 )
+        {
             _yaw_rate_summary.reserve(10000);
             _init_yaw_kafi(yaw_process_noise
                          , bosch_variance
@@ -97,9 +103,9 @@ namespace clara
             if (_v_x_vehicle == 0)
             {
                _yaw_rate_summary.emplace_back(_yaw_rate);
-                
+
             } else {
-                
+
                 if (!_yaw_rate_calculated)
                 {
                     double yaw_rate_sum = std::accumulate(_yaw_rate_summary.begin(), _yaw_rate_summary.end(), 0);
@@ -109,6 +115,11 @@ namespace clara
 
                 // update integrated yaw
                 _integrated_yaw += get_local_integrated_yaw() - _yaw_rate_mean;
+                // calculate yaw rate from acceleration
+                _yaw_rate_acceleration = get_acceleration_yaw_rate();
+
+                // update integrated acceleration yaw
+                _integrated_acceleration_yaw += get_local_integrated_acceleration_yaw();
 
                 // calculate the yaw_rate from the steering
                 _yaw_rate_steer_mem.add_value( get_steering_yaw_rate() );
@@ -123,18 +134,19 @@ namespace clara
             }
             // translate from vehicle coordinate system to global coordiante system
             std::tie( _v_x_world, _v_y_world ) = _to_world_velocity();
-            
+
         }
 
         //! reset all accumulated yaws
         void reset_yaw()
         {
             _integrated_yaw = 0;
+            _integrated_acceleration_yaw = 0;
             _integrated_steering_yaw = 0;
             _integrated_kafi_yaw = 0;
         }
 
-        //! API helper function, need exactly this return type for clara 
+        //! API helper function, need exactly this return type for clara
         std::tuple< double, double, double > to_world_velocity() const
         {
             return std::make_tuple(_v_x_world, _v_y_world, _delta_time_s);
@@ -149,7 +161,7 @@ namespace clara
             const double global_pos_y = std::get< 1 >( old_pos );
             return std::make_tuple( local_pos_x + global_pos_x, local_pos_y + global_pos_y );
         }
-        
+
         /** \brief calculates the yawrate rad/s based on the steering angle and velocity
          *    * 1.54 - Radstand
          *    * 2.73 - Übersetzung
@@ -168,16 +180,30 @@ namespace clara
             return v / radius;
         }
 
+        //! calculate the yaw rate acceleration with the acceleration and the x velocity and y velocity
+        double get_acceleration_yaw_rate() const
+        {
+            if( _v_x_vehicle == 0 && _v_y_vehicle == 0 ) return 0;
+            return _a_y_vehicle / std::sqrt( std::pow(_v_x_vehicle,2) + std::pow(_v_y_vehicle,2) );
+        }
+
+
         // get the integrated part of the local yaw calculated from the steering angle. *NOT THE YAW*, we only use the last timestep
         double get_local_integrated_steering_yaw() const
-        {   
+        {
             return _yaw_rate_steer * _delta_time_s;
         }
 
         // get the integrated part of the local yaw *NOT THE GLOBAL YAW*, we only use the last timestep
-        double get_local_integrated_yaw() const 
+        double get_local_integrated_yaw() const
         {
             return _yaw_rate * _delta_time_s;
+        }
+
+        // get the integrated part of the local acceleration yaw *NOT THE GLOBAL ACCELERATION YAW*
+        double get_local_integrated_acceleration_yaw() const
+        {
+            return _yaw_rate_acceleration * _delta_time_s;
         }
 
         // get the integrated part of the local kafi yaw *NOT THE GLOBAL YAW*
@@ -208,7 +234,7 @@ namespace clara
         }
 
         //! generic function to return the yaw defined in _yaw_mode in the constructor
-        double get_yaw() const 
+        double get_yaw() const
         {
             switch ( _yaw_mode )
             {
@@ -220,6 +246,8 @@ namespace clara
                 break;
                 case USE_INTEGRATED_STEERING_YAW:
                     return _integrated_steering_yaw;
+                case USE_INTEGRATED_ACCELERATION_YAW:
+                    return _integrated_acceleration_yaw;
                 break;
                 case USE_KAFI_YAW:
                     return _integrated_kafi_yaw;
@@ -262,7 +290,7 @@ namespace clara
             nxn_matrix process_noise( { { yaw_process_noise } } );
             // given by our example, read as "both temperature sensors fluctuate by 0.8° (0.8^2 = 0.64)"
             mxm_matrix sensor_noise( { { bosch_variance, 0      }     // need to estimate the best possible noise
-                                     , { 0,              steering_variance  } }); // 
+                                     , { 0,              steering_variance  } }); //
             // we start with the initial state at t = 0, which we take as "ground truth", because we build the relative map around it
             nx1_vector starting_state( { { _yaw_rate } } );
 
@@ -300,6 +328,12 @@ namespace clara
         double _yaw_rate;
         //! memory for _yaw_rate
         memory_t _yaw_rate_mem;
+        //! acceleration yaw in m/s²
+        double _yaw_acceleration;
+        //! acceleration yaw rate in radians/s of the car
+        double _yaw_rate_acceleration;
+        //! memory for _acceleration yaw rate
+        memory_t _acceleration_yaw_rate_mem;
         //! yaw_rate in radians/s of the car calculated from the steering
         double _yaw_rate_steer;
         //! memory for _yaw_rate_steer
@@ -310,6 +344,8 @@ namespace clara
         memory_t _yaw_rate_kafi_mem;
         //! integrated yaw_rate with time is saved here
         double _integrated_yaw;
+        //! integrated acceleration yaw rate with time is saved here
+        double _integrated_acceleration_yaw;
         //! integrated steering_yaw_rate with time is saved here
         double _integrated_steering_yaw;
         //! integrated kalman filtered_yaw_rate with time is saved here \todo
@@ -326,11 +362,14 @@ namespace clara
         //! flag to start the subtraction from future yaw_rates
         bool   _yaw_rate_calculated;
 
+        //! mean to subtract from every future acceleration yaw rate
+        double _acceleration_yaw_rate_mean;
+
         //! we estimate `kafi_yaw_rate`
         static const size_t N = 1UL;
         //! we use `yaw_rate` and `steering_yaw_rate`
         static const size_t M = 2UL;
-        //! pointer to the velocity kalman filter which estimates the `kafi_yaw_rate` from `steering_yaw_rate` and `yaw_rate` 
+        //! pointer to the velocity kalman filter which estimates the `kafi_yaw_rate` from `steering_yaw_rate` and `yaw_rate`
         std::unique_ptr<kafi::kafi<N, M>> _kafi;
     };
 }

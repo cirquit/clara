@@ -41,8 +41,8 @@ std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string pat
     double acc_time = 0;
     while ( in.read_row( distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp, lap, a_x, a_y, steer_angle, yaw_rate ) ) {
         // group by timestamp
-        if ( time != time_old )
-        {
+        //if ( time != time_old )
+        //{
             object_list_t list;
             list.size = 0;
             // double t = timestamp - timestamp_old;
@@ -51,15 +51,15 @@ std::vector< std::tuple<object_list_t, double> > parse_csv(const std::string pat
             time_old = time;
             acc_time += timestamp; 
             // std::cout << v_x << ','
-            //           << v_y << ','
-            //           << a_x << ','
-            //           << a_y << ','
-            //           << steer_angle << ','
-            //           << yaw_rad     << ','
-            //           << yaw_rate    << ','
-            //           << acc_time    << ','
-            //           << timestamp   << '\n';
-        }
+            //            << v_y << ','
+            //            << a_x << ','
+            //            << a_y << ','
+            //            << steer_angle << ','
+            //            << yaw_rad     << ','
+            //            << yaw_rate    << ','
+            //            << acc_time    << ','
+            //            << timestamp   << '\n';
+        //}
         object_list_t & cur_list = std::get<0>(observations.back());
         object_t & cur_object    = cur_list.element[cur_list.size];
         cur_object.distance      = distance;
@@ -136,7 +136,7 @@ int main(int argc, char const *argv[]){
     const double variance_xx                          = 0.55;
     const double variance_yy                          = 0.55;
     const size_t apply_variance_step_count            = 1000000; // apply custom variance for this amount of observations
-    const int    cluster_search_range                 = 10; // +/- to the min/max used cluster-index
+    const int    cluster_search_range                 = 100; // +/- to the min/max used cluster-index
     const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
     const double lap_epsilon_m                        = 3; // if we're 0.5m near the starting point, increment the lap counter
     const double set_start_after_m                    = 5;   // we travel at least some distance until setting our start point
@@ -163,10 +163,10 @@ int main(int argc, char const *argv[]){
       //, std::make_tuple(0.888982, -1.50739)); //
 
     // empirically estimated
-    double yaw_process_noise = 0.0085;
+    double yaw_process_noise = 0.01;
     double bosch_variance    = 0.001;
     double steering_variance = 0.0125;
-    clara::vehicle_state_t vs( clara::USE_KAFI_YAW 
+    clara::vehicle_state_t vs( clara::USE_INTEGRATED_STEERING_YAW 
                             ,  yaw_process_noise
                             ,  bosch_variance
                             ,  steering_variance );
@@ -239,7 +239,7 @@ int main(int argc, char const *argv[]){
         // send yaw
         clara_object.yaw = vs.get_yaw();
 
-        if (clara.get_lap() == 1 && grittr_waiting) {
+        if (false && clara.get_lap() == 1 && grittr_waiting) {
             clara_object.go_grittr_flag = true;
             grittr_waiting              = false;
             // get all the yellow cones fron the data association

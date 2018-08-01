@@ -179,8 +179,8 @@ namespace clara {
         const std::tuple<double, double> & add_vehicle_state(vehicle_state_t & vs)
         {
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            const std::tuple<double, double, double> velocity_t = _estimate_velocity(vs);
-            //const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
+            //const std::tuple<double, double, double> velocity_t = _estimate_velocity(vs);
+            const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
             // update the position based on the estimated v_x, v_y and the time
             const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
             _update_estimated_position(new_position);
@@ -512,8 +512,8 @@ namespace clara {
             }
             const double v_x_cones = std::get<0>(m_cone_velocity.get_value());
             const double v_y_cones = std::get<1>(m_cone_velocity.get_value());
-            std::cout << v_x_cones << ','
-                      << v_y_cones << '\n';
+            //std::cout << v_x_cones << ','
+            //          << v_y_cones << '\n';
                             return _to_world_velocity(vs._v_x_vehicle
                                         , vs._v_y_vehicle
                                         , vs.get_yaw()

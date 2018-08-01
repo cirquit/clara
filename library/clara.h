@@ -144,19 +144,10 @@ namespace clara {
         //! main function - use all external sensor data to do the localization
         const std::tuple<double, double> & add_observation(vehicle_state_t & vs)
         {
-            // prepare preallocated raw cone lists for new cones
-            _new_yellow_cones.clear();
-            _new_blue_cones.clear();
-            _new_red_cones.clear();
-            // rotate the velocity to get from the vehicle coord. system to world velocity
-            const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
-            // update the position based on the estimated v_x, v_y and the time
-            const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
-            _update_estimated_position(new_position);
-            // update the travelled distance to check if we are close enough to the start
-            _lap_counter.add_positions(_estimated_position_old, _estimated_position);
+            // update the position via vehicle state
+            _add_vehicle_state( vs );
             // logging
-            _log_visualization_udp(std::get<0>(new_position), std::get<1>(new_position), vs);
+            _log_visualization_udp(std::get<0>(_estimated_position), std::get<1>(_estimated_position), vs);
             return _estimated_position;
         }
 
@@ -170,22 +161,10 @@ namespace clara {
             _yellow_data_association.classify_new_data(_new_yellow_cones);
             _blue_data_association.classify_new_data(_new_blue_cones);
             _red_data_association.classify_new_data(_new_red_cones);
-            add_vehicle_state(vs);
+            // update the position via vehicle state
+            _add_vehicle_state( vs );
             // logging
             _log_visualization_udp(std::get<0>(_estimated_position), std::get<1>(_estimated_position), vs);
-            return _estimated_position;
-        }
-
-        const std::tuple<double, double> & add_vehicle_state(vehicle_state_t & vs)
-        {
-            // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            //const std::tuple<double, double, double> velocity_t = _estimate_velocity(vs);
-            const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
-            // update the position based on the estimated v_x, v_y and the time
-            const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
-            _update_estimated_position(new_position);
-            // update the travelled distance to check if we are close enough to the start
-            _lap_counter.add_positions(_estimated_position_old, _estimated_position);
             return _estimated_position;
         }
 
@@ -387,6 +366,20 @@ namespace clara {
             }
         }
 
+        //! uses the vehicle state to update our new position and lap_counter
+        void _add_vehicle_state(vehicle_state_t & vs)
+        {
+            // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
+            //const std::tuple<double, double, double> velocity_t = _estimate_velocity(vs);
+            const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
+            // update the position based on the estimated v_x, v_y and the time
+            const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
+            _update_estimated_position(new_position);
+            // update the travelled distance to check if we are close enough to the start
+            _lap_counter.add_positions(_estimated_position_old, _estimated_position);
+        }
+
+
         //! csv position logging function
         void _log_position(const double & ground_truth_x_car
                          , const double & ground_truth_y_car
@@ -541,12 +534,6 @@ namespace clara {
             }
             const double v_x_cones = std::get<0>(m_cone_velocity.get_value());
             const double v_y_cones = std::get<1>(m_cone_velocity.get_value());
-            //std::cout << v_x_cones << ','
-            //          << v_y_cones << '\n';
-                            return _to_world_velocity(vs._v_x_vehicle
-                                        , vs._v_y_vehicle
-                                        , vs.get_yaw()
-                                        , vs._delta_time_s);
             // for debugging purposes
             if (true) // v_x_sensor == 0 && v_y_sensor == 0)
             {

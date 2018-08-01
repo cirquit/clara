@@ -35,31 +35,31 @@ std::vector< std::tuple< object_list_t, double, double > > parse_csv(const std::
     std::vector< std::tuple< object_list_t, double, double > > observations;
     // read the data
     io::CSVReader< 15 > in( path );
-    double distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp, lap, a_x, a_y, steer_angle, yaw_rate;
-    int    time_old      = -1;
-    double timestamp_old = 0;
+    double distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, counter, delta_time_s, lap, a_x, a_y, steer_angle, yaw_rate;
+    int    old_counter      = -1;
+    // double timestamp_old = 0;
     // double acc_time = 0;
-    while ( in.read_row( distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, time, timestamp, lap, a_x, a_y, steer_angle, yaw_rate ) ) {
-        // group by timestamp
-        if ( time != time_old )
+    while ( in.read_row( distance, angle, x_car, y_car, yaw_rad, v_x, v_y, color, counter, delta_time_s, lap, a_x, a_y, steer_angle, yaw_rate ) ) {
+        // group by delta_time_s
+        if ( counter != old_counter )
         {
             object_list_t list;
             list.size = 0;
-            // double t = timestamp - timestamp_old;
-            timestamp_old = timestamp;
+            // double t = delta_time_s - timestamp_old;
+            //timestamp_old = delta_time_s;
             // yaw_rad is in new loggings the yaw_rate_vm
-            observations.push_back( std::make_tuple(list, timestamp, yaw_rad) );
-            time_old = time;
-            //acc_time += timestamp;
-            std::cout   << //v_x << ','
+            observations.push_back( std::make_tuple(list, delta_time_s, yaw_rad) );
+            old_counter = counter;
+            //acc_time += delta_time_s;
+            //std::cout   << //v_x << ','
             //            << v_y << ','
             //            << a_x << ','
             //            << a_y << ','
             //            << steer_angle << ','
-                           yaw_rad     << ','
-                        << yaw_rate    << '\n';
+            //               yaw_rad     << ','
+            //            << yaw_rate    << '\n';
             //            << acc_time    << ','
-            //            << timestamp   << '\n';
+            //            << delta_time_s   << '\n';
         }
         object_list_t & cur_list   = std::get<0>(observations.back());
         object_t      & cur_object = cur_list.element[cur_list.size];
@@ -74,7 +74,7 @@ std::vector< std::tuple< object_list_t, double, double > > parse_csv(const std::
         cur_object.angle_yaw     = yaw_rate;
         cur_object.type          = static_cast<int>(color);
         cur_object.steering_rad  = steer_angle;
-        cur_object.time_s        = timestamp;
+        cur_object.time_s        = delta_time_s;
         cur_list.size++;
     }
     return observations;
@@ -137,7 +137,7 @@ int main(int argc, char const *argv[]){
     const double variance_xx                          = 0.55;
     const double variance_yy                          = 0.55;
     const size_t apply_variance_step_count            = 1000000; // apply custom variance for this amount of observations
-    const int    cluster_search_range                 = 10; // +/- to the min/max used cluster-index
+    const int    cluster_search_range                 = 100; // +/- to the min/max used cluster-index
     const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
     const double lap_epsilon_m                        = 3; // if we're 0.5m near the starting point, increment the lap counter
     const double set_start_after_m                    = 5;   // we travel at least some distance until setting our start point
@@ -168,27 +168,22 @@ int main(int argc, char const *argv[]){
     double bosch_variance        = 0.001;
     double steering_variance     = 0.0125;
     double acceleration_variance = 10.0;
-    clara::vehicle_state_t vs( clara::USE_INTEGRATED_YAW 
+    clara::vehicle_state_t vs( clara::USE_KAFI_YAW 
                             ,  yaw_process_noise
                             ,  bosch_variance
                             ,  steering_variance
                             ,  acceleration_variance );
 
     bool grittr_waiting = true;
-    //double time_acc = 0;
-    int counter  = 0;
+    int  counter        = 0;
     for(auto & o : observations)
     {
-     //   break;
-//        if (counter > 1000) break;
-        // if (counter++ < 1) continue;
         object_list_t & l   = std::get<0>(o);
         double          t_s = std::get<1>(o);
-        double    yaw_rate  = std::get<2>(o);
+        double  yaw_rate_vm = std::get<2>(o);
         if (t_s > 100) { continue; }
         if (l.size == 0) { continue; }
-//        if (t_s == 0)    { continue; }
-        double yaw_rate_vm  = l.element[0].angle_yaw; // vehicle model yaw rate
+        double yaw_rate     = l.element[0].angle_yaw; // vehicle model yaw rate
         double vx           = l.element[0].vx;
         double vy           = l.element[0].vy;
         double ax           = l.element[0].ax;
@@ -197,10 +192,10 @@ int main(int argc, char const *argv[]){
 // 
         vs.update(vx, vy, ax, ay, 0, yaw_rate, yaw_rate_vm, steer_angle, t_s);
 
-        if (vx == 0) continue;
+        // if (vx == 0) continue;
 
         std::cerr << "Observation [        " << counter++ << "/" << observations.size() << "]:\n"
-                  << "    Rec. time:       " << vs._delta_time_s  << "s\n"
+                  << "    Rec. counter:       " << vs._delta_time_s  << "s\n"
                   << "    Freq:            " << 1 / vs._delta_time_s << "Hz\n"
                   << "    velocity:        " << vs._v_x_vehicle << ", "
                                              << vs._v_y_vehicle << " m/s\n"
@@ -218,23 +213,13 @@ int main(int argc, char const *argv[]){
                                      << l.element[i].type    << '\n';
         }
 
-        // std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
+        //  std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         if (l.element[0].distance == 0)
         {
             std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation( vs );
         } else {
             origin::move_objects_by_distance(l, origin_distance);
-//
-//            if (clara.get_lap() >= 1)
-//            {
-//              if (  distance_to_zero(clara_object.x_pos, clara_object.y_pos) < 5 ){
-//                  std::tie(clara_object.x_pos, clara_object.y_pos) = clara.use_observation(l, vs);
-//              } else {
-//                  std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation(l, vs);
-//              }
-//            } else {
-                std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation(l, vs);
-//            }
+            std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation(l, vs);
         }
         std::cerr << "    pos: " << clara_object.x_pos << "," << clara_object.y_pos << '\n';
         std::cerr << "    lap: #" << clara.get_lap() << '\n';
@@ -291,19 +276,15 @@ int main(int argc, char const *argv[]){
         // to_autonomous_scheduler_client.send_udp< clara::object::clara_obj >( clara_object );
 
         if (counter % 20 == 0){
-            // std::cout << vs._yaw_rate              << ','
-            //           << vs._yaw_rate_steer        << ','
-            //           << vs._yaw_rate_acceleration << ','
-            //           << vs._yaw_rate_kafi         << ','
-            //           << vs._yaw_rate_vm           << "\n";
+ //           std::cout << vs._yaw_rate              << ','
+ //                     << vs._yaw_rate_steer        << ','
+ //                     << vs._yaw_rate_acceleration << ','
+ //                     << vs._yaw_rate_kafi         << ','
+ //                     << vs._yaw_rate_vm           << "\n";
             std::cout << clara_object.x_pos << ","
                       << clara_object.y_pos << "\n";
         }
     }
-
-
-    // python logging data
-    // log_da(clara);
 
     return EXIT_SUCCESS;
 }

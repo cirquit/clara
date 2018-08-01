@@ -95,7 +95,7 @@ namespace clara
     // methods
     public:
 
-        /** \brief Updates all our sensors
+        /** \brief Updates all our sensors and creates new sensor data like a yaw_rate from steering_angle and v_x_vehicle
           *
           */
         void update(const double v_x_vehicle
@@ -109,10 +109,10 @@ namespace clara
                   , const double delta_time_s)
         {
             // trapezoid integration (mean over two values) for all these members
-            _v_x_vehicle_mem.add_value(v_x_vehicle);
-            _v_y_vehicle_mem.add_value(v_y_vehicle);
-            _yaw_rate_mem.add_value(yaw_rate);
-            _yaw_rate_vm_mem.add_value(yaw_rate_vm);
+            _v_x_vehicle_mem.add_value( v_x_vehicle );
+            _v_y_vehicle_mem.add_value( v_y_vehicle );
+            _yaw_rate_mem.add_value( yaw_rate );
+            _yaw_rate_vm_mem.add_value( yaw_rate_vm );
 
             // set our member
             _v_x_vehicle    = _v_x_vehicle_mem.get_mean();
@@ -125,7 +125,7 @@ namespace clara
             _steering_angle = steering_angle;
             _delta_time_s   = delta_time_s;
 
-            // since all our members were set, we can use them to compute our member
+            // since all our original sensor members were set, we can use them to compute our missing member
             // calculate yaw rate from acceleration
             _yaw_rate_acceleration_mem.add_value( get_acceleration_yaw_rate() );
             _yaw_rate_acceleration = _yaw_rate_acceleration_mem.get_mean();
@@ -135,7 +135,7 @@ namespace clara
             // calculate the kafi yaw rate
             _yaw_rate_kafi_mem.add_value( get_kafi_yaw_rate() );
             _yaw_rate_kafi = _yaw_rate_kafi_mem.get_mean();
-
+            // while we're not driving, pool the "noise"
             if (_v_x_vehicle == 0)
             {
                _yaw_rate_summary.emplace_back(_yaw_rate);
@@ -149,8 +149,8 @@ namespace clara
                     double yaw_rate_sum = std::accumulate(_yaw_rate_summary.begin(), _yaw_rate_summary.end(), 0);
                     _yaw_rate_mean = yaw_rate_sum / static_cast<double>(_yaw_rate_summary.size());
                     // get the mean for the vehicle model yaw_rate
-                    double yaw_rate_vm_sum = std::accumulate(_yaw_rate_summary.begin(), _yaw_rate_summary.end(), 0);
-                    _yaw_rate_vm_mean = yaw_rate_vm_sum / static_cast<double>(_yaw_rate_summary.size());
+                    double yaw_rate_vm_sum = std::accumulate(_yaw_rate_vm_summary.begin(), _yaw_rate_vm_summary.end(), 0);
+                    _yaw_rate_vm_mean = yaw_rate_vm_sum / static_cast<double>(_yaw_rate_vm_summary.size());
                     // set the flag to subtract in the future
                     _yaw_rate_calculated = true;
                 }
@@ -169,11 +169,6 @@ namespace clara
                 
                 // update integrated kafi yaw
                 _integrated_kafi_yaw += get_local_integrated_kafi_yaw();
-
-                // calculate the yaw_rate from the single track model
-                //_yaw_rate_single_track_mem.add_value( get_single_track_yaw_rate() );
-                //_yaw_rate_single_track = _yaw_rate_single_track_mem.get_mean( );
-                //_integrated_single_track_yaw += get_local_integrated_single_track_yaw();
             }
             // translate from vehicle coordinate system to global coordiante system
             std::tie( _v_x_world, _v_y_world ) = _to_world_velocity();
@@ -181,9 +176,10 @@ namespace clara
         }
 
         //! reset all accumulated yaws
-        void reset_yaw()
+        void reset_yaws()
         {
             _integrated_yaw = 0;
+            _integrated_yaw_vm = 0;
             _integrated_acceleration_yaw = 0;
             _integrated_steering_yaw = 0;
             _integrated_kafi_yaw = 0;
@@ -236,41 +232,6 @@ namespace clara
             return (_yaw_rate_vm - _yaw_rate_vm_mean) * _delta_time_s;
         }
 
-        //! 
-        /*double get_single_track_yaw_rate()
-        {
-            if( _v_x_vehicle == 0 && _v_y_vehicle == 0 ) return 0;
-            // velocity
-            double v = 3; // std::sqrt( std::pow( _v_x_vehicle, 2) + std::pow( _v_y_vehicle, 2 ) );
-
-            //std::cout << "steering_angle: " << _steering_angle << '\n';
-            // yaw_part for yaw rate
-            double yaw_part      = (-32205 / (98.61 * v)) * _yaw_rate_single_track;
-            //std::cout << "yaw_part: " << yaw_part<< '\n';
-            // steering_part for yaw rate
-            double steering_part = ((_steering_angle )) * 231.2139;
-            //std::cout << "steering_part: " << steering_part << '\n';
-            // side slip angle part for yaw rate
-            double ssa_part      = 28.9017 * _side_slip_angle;
-            //std::cout << "ssa_part: " << ssa_part << '\n';
-
-            // side slip angle
-            double ssa_part_ssa = (-57000 / (200 * v)) * _side_slip_angle;
-            //std::cout << "ssa_part_ssa: " << ssa_part_ssa << '\n';
-            double yaw_part_ssa = ((-2850 / (200 * std::pow(v, 2))) - 1) * _yaw_rate_single_track;
-            //std::cout << "yaw_part_ssa: " << yaw_part_ssa << '\n';
-            double steering_part_ssa = (_steering_angle ) * (28500 / (200 * v));
-            //std::cout << "steering_part_ssa: " << steering_part_ssa << '\n';
-            // update the ssa
-            _side_slip_angle = (ssa_part_ssa + yaw_part_ssa + steering_part_ssa) * _delta_time_s;
-            //std::cout << "new ssa: "      << _side_slip_angle << "\n";
-            //std::cout << "new yaw_rate: " << (ssa_part + yaw_part + steering_part) * _delta_time_s << "\n\n";
-
-            //
-            return (ssa_part + yaw_part + steering_part) * _delta_time_s;
-        }*/
-
-
         // get the integrated part of the local yaw calculated from the steering angle. *NOT THE YAW*, we only use the last timestep
         double get_local_integrated_steering_yaw() const
         {
@@ -294,12 +255,6 @@ namespace clara
         {
             return _yaw_rate_kafi * _delta_time_s;
         }
-
-        // 
-        // double get_local_integrated_single_track_yaw() const
-        // {
-        //     return _yaw_rate_single_track * _delta_time_s;
-        // }
 
         //! run the kalman filter with the _yaw_rate and _yaw_rate_steer, configured by _init_yaw_kafi
         double get_kafi_yaw_rate()
@@ -423,15 +378,10 @@ namespace clara
         double _yaw_rate;
         //! memory for _yaw_rate
         memory_t _yaw_rate_mem;
-
-        //!
+        //! yaw_rate in radians/s of the car calculated from a vehicle model on the ETAS
         double _yaw_rate_vm;
-        //! 
+        //! memory for _yaw_rate_vm
         memory_t _yaw_rate_vm_mem;
-
-
-        //!
-        //double _yaw_rate_single_track;
         //! acceleration yaw in m/s²
         double _yaw_acceleration;
         //! acceleration yaw rate in radians/s of the car
@@ -447,14 +397,11 @@ namespace clara
         //! memory for _yaw_rate_kafi
         memory_t _yaw_rate_kafi_mem;
 
-        //! memory for single track
-        // memory_t _yaw_rate_single_track_mem;
-        //! integrated yaw_rate with time is saved here
+
+        //! integrated yaw_rate over time is saved here
         double _integrated_yaw;
-        //! \todo
+        //! integrated yaw_rate_vm over time is saved here
         double _integrated_yaw_vm;
-        //! \todo
-        // double _integrated_single_track_yaw;
         //! integrated acceleration yaw rate with time is saved here
         double _integrated_acceleration_yaw;
         //! integrated steering_yaw_rate with time is saved here
@@ -466,8 +413,6 @@ namespace clara
         //! elapsed time in seconds since the last vehicle state
         double _delta_time_s;
 
-        // double _side_slip_angle;
-
         //! used to pool the yaw_rates to calculate a mean which we subtract from every future yaw_rate
         std::vector< double > _yaw_rate_summary;
         //! used to pool the yaw_rates from the vehicle model to calculate a mean which we subtract from every future yaw_rate
@@ -478,9 +423,6 @@ namespace clara
         double _yaw_rate_vm_mean;
         //! flag to start the subtraction from future yaw_rates
         bool   _yaw_rate_calculated;
-
-        //! mean to subtract from every future acceleration yaw rate
-        double _acceleration_yaw_rate_mean;
 
         //! we estimate `kafi_yaw_rate`
         static const size_t N = 1UL;

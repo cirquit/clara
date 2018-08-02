@@ -217,6 +217,26 @@ namespace clara {
             return _lap_counter.count();
         }
 
+        //! rules - we need to get the count of all currently seen cones
+        size_t get_observation_count() const {
+            const auto & yellow_detected_cluster_ix = _yellow_data_association.get_detected_cluster_ixs();
+            const auto & blue_detected_cluster_ix   = _blue_data_association.get_detected_cluster_ixs();
+            const auto & red_detected_cluster_ix    = _red_data_association.get_detected_cluster_ixs();
+            return yellow_detected_cluster_ix.size() + 
+                   blue_detected_cluster_ix.size() + 
+                   red_detected_cluster_ix.size();
+        }
+
+        //! rules - we need to get the count of all seen cones
+        size_t get_cone_count() {
+            auto & yellow_cluster = _yellow_data_association.get_cluster();
+            auto & blue_cluster   = _blue_data_association.get_cluster();
+            auto & red_cluster    = _red_data_association.get_cluster();
+            return yellow_cluster.size() + 
+                   blue_cluster.size() + 
+                   red_cluster.size();
+        }   
+
         //! returns the cones infront and behind us, respectivly yellow and blue, can fail if we don't have enough observations
         maybe_cones get_basecase_cones()
         {

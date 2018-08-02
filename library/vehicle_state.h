@@ -274,8 +274,7 @@ namespace clara
             // run the estimation
             return_t   result                = _kafi -> step();
             const nx1_vector estimated_state = std::get<0>(result);
-            _yaw_rate_kafi = estimated_state(0,0);
-            return _yaw_rate_kafi;
+            return estimated_state(0,0);
         }
 
         //! generic function to return the yaw defined in _yaw_mode in the constructor

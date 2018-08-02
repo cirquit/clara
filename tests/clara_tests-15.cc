@@ -218,7 +218,7 @@ int main(int argc, char const *argv[]){
         {
             std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation( vs );
         } else {
-            origin::move_objects_by_distance(l, origin_distance);
+            // origin::move_objects_by_distance(l, origin_distance);
             std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation(l, vs);
         }
         std::cerr << "    pos: " << clara_object.x_pos << "," << clara_object.y_pos << '\n';
@@ -230,7 +230,7 @@ int main(int argc, char const *argv[]){
         // send yaw
         clara_object.yaw = vs.get_yaw();
         // 
-        if (false && clara.get_lap() == 1 && grittr_waiting) {
+        if (clara.get_lap() == 1 && grittr_waiting) {
             clara_object.go_grittr_flag = true;
             grittr_waiting              = false;
             // get all the yellow cones fron the data association
@@ -273,7 +273,7 @@ int main(int argc, char const *argv[]){
             clara_object.go_grittr_flag = false;
         }
         // send clara_obj to autonomous_scheduler
-        // to_autonomous_scheduler_client.send_udp< clara::object::clara_obj >( clara_object );
+        to_autonomous_scheduler_client.send_udp< clara::object::clara_obj >( clara_object );
 
         if (counter % 20 == 0){
  //           std::cout << vs._yaw_rate              << ','

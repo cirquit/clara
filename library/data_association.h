@@ -103,15 +103,30 @@ namespace clara {
                 // when we start the car, we will take every visible cone as a new cluster, we have the assumption that we don't see cones twice in a single image
                 if (_cone_states.size() == 0)
                 {   
-                    for(auto cone : new_cones)
+                    for(size_t c_ix = 0; c_ix < new_cones.size(); ++c_ix)
                     {
-                        _add_new_cluster_with_ob(cone);
+                        const raw_cone_data & cone = new_cones[c_ix];
+                        // some red cones are detected too close to each other, therefore we want to merge them. We iterate over all cones and check for distance
+                        bool not_too_close = true;
+                        for (size_t oc_ix = 0; oc_ix < new_cones.size(); ++oc_ix)
+                        {
+                            // if it's the same cone, we don't compare it
+                            if (c_ix == oc_ix) continue;
+                            if (c_ix  < oc_ix) continue;
+                            const raw_cone_data & other_cone = new_cones[oc_ix];
+                            double distance = util::euclidean_distance<double>(cone, other_cone);
+                            // if it's is too close (< 0.5), we don't want to add it
+                            if (distance < 1.5) { not_too_close = false; }
+                        }
+                        if (not_too_close)
+                        {
+                            _add_new_cluster_with_ob(cone);
+                        }
                     }
                 }
                 // otherwise, we need to detect new cones and associate current clusters to our observations
                 else
                 {
-
                     for(auto cone : new_cones){
                         cluster_it prob_cluster_it = _get_most_probable_cluster_it(cone);
                         if ((*prob_cluster_it).distance_greater_than(cone, _max_dist_btw_cones_m))

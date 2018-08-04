@@ -39,7 +39,8 @@ namespace clara
                       , double yaw_process_noise
                       , double bosch_variance
                       , double steering_variance
-                      , double acceleration_variance) 
+                      , double acceleration_variance
+                      , double vehicle_model_variance) 
         : _yaw_mode( yaw_mode )
         // correvit stuff
         , _v_x_vehicle( 0 )
@@ -89,7 +90,8 @@ namespace clara
             _init_yaw_kafi(yaw_process_noise
                          , bosch_variance
                          , steering_variance
-                         , acceleration_variance);
+                         , acceleration_variance
+                         , vehicle_model_variance);
         }
 
     // methods
@@ -120,8 +122,8 @@ namespace clara
             _a_x_vehicle    = a_x_vehicle;
             _a_y_vehicle    = a_y_vehicle;
             _yaw            = yaw;
-            _yaw_rate       = _yaw_rate_mem.get_mean();
-            _yaw_rate_vm    = _yaw_rate_vm_mem.get_mean();
+            _yaw_rate       = yaw_rate; // _yaw_rate_mem.get_mean();
+            _yaw_rate_vm    = yaw_rate_vm; // _yaw_rate_vm_mem.get_mean();
             _steering_angle = steering_angle;
             _delta_time_s   = delta_time_s;
 
@@ -130,8 +132,8 @@ namespace clara
             _yaw_rate_acceleration_mem.add_value( get_acceleration_yaw_rate() );
             _yaw_rate_acceleration = _yaw_rate_acceleration_mem.get_mean();
             // calculate yaw_rate from steering
-            _yaw_rate_steer_mem.add_value( get_steering_yaw_rate() );
-            _yaw_rate_steer = _yaw_rate_steer_mem.get_mean();
+            //_yaw_rate_steer_mem.add_value( get_steering_yaw_rate() );
+            _yaw_rate_steer = get_steering_yaw_rate(); // _yaw_rate_steer_mem.get_mean();
             // calculate the kafi yaw rate
             _yaw_rate_kafi_mem.add_value( get_kafi_yaw_rate() );
             _yaw_rate_kafi = _yaw_rate_kafi_mem.get_mean();
@@ -268,7 +270,8 @@ namespace clara
             std::shared_ptr< mx1_vector > observation = std::make_shared< mx1_vector >(
                                   mx1_vector({ { _yaw_rate              }
                                              , { _yaw_rate_steer        }
-                                             , { _yaw_rate_acceleration } }));
+                                             , { _yaw_rate_acceleration }
+                                             , { _yaw_rate_vm           } }));
             // update the observation
             _kafi -> set_current_observation(observation);
             // run the estimation
@@ -277,7 +280,7 @@ namespace clara
             return estimated_state(0,0);
         }
 
-        //! generic function to return the yaw defined in _yaw_mode in the constructor
+        //! generic function to return the yaw defined by the `_yaw_mode` in the constructor
         double get_yaw() const
         {
             switch ( _yaw_mode )
@@ -290,6 +293,7 @@ namespace clara
                 break;
                 case USE_INTEGRATED_STEERING_YAW:
                     return _integrated_steering_yaw;
+                break;
                 case USE_INTEGRATED_ACCELERATION_YAW:
                     return _integrated_acceleration_yaw;
                 break;
@@ -315,18 +319,19 @@ namespace clara
             return std::make_tuple( v_x_world, v_y_world );
         }
 
-        //! initialize the yaw kalman filter
+        //! initialize the yaw kalman filter with the corresponding noise
         void _init_yaw_kafi(double yaw_process_noise
                           , double bosch_variance
                           , double steering_variance
-                          , double acceleration_variance)
+                          , double acceleration_variance
+                          , double vehicle_model_variance)
         {
             // some useful typedefs
             using nx1_vector = typename kafi::jacobian_function<N,M>::nx1_vector;
             using mxm_matrix = typename kafi::jacobian_function<N,M>::mxm_matrix;
             using nxn_matrix = typename kafi::jacobian_function<N,M>::nxn_matrix;
 
-            // state transition
+            // state transition (state -> state)
             kafi::jacobian_function<N,N> f(
                 std::move(kafi::util::create_identity_jacobian<N,N>()));
 
@@ -334,16 +339,17 @@ namespace clara
             kafi::jacobian_function<N,M> h(
                 std::move(kafi::util::create_identity_jacobian<N,M>()));
 
-            // given by our example, read as "the real world temperature changes are 0.1°
+            // given by our example, read as "the real world yaw_rate changes by yaw_process_noise rad/s
             nxn_matrix process_noise( { { yaw_process_noise } } );
-            // given by our example, read as "both temperature sensors fluctuate by 0.8° (0.8^2 = 0.64)"
-            mxm_matrix sensor_noise( { { bosch_variance, 0,                 0  }     // need to estimate the best possible noise
-                                     , { 0,              steering_variance, 0  }
-                                     , { 0,              0,                 acceleration_variance } }); //
-            // we start with the initial state at t = 0, which we take as "ground truth", because we build the relative map around it
+            // given by our example, read as "our sensors sensors fluctuate by sqrt(variance)"
+            mxm_matrix sensor_noise( { { bosch_variance, 0,                 0,                     0                      }
+                                     , { 0,              steering_variance, 0,                     0                      }
+                                     , { 0,              0,                 acceleration_variance, 0                      }
+                                     , { 0,              0,                 0,                     vehicle_model_variance } });
+            // we start with the initial state at the default yaw rate from the sensor, which we take as "ground truth", because we don't know any better
             nx1_vector starting_state( { { _yaw_rate } } );
 
-            // init kalman filter
+            // initialize the kalman filter
             _kafi = std::make_unique<kafi::kafi<N, M>>(std::move(f)
                                                      , std::move(h)
                                                      , starting_state
@@ -425,8 +431,8 @@ namespace clara
 
         //! we estimate `kafi_yaw_rate`
         static const size_t N = 1UL;
-        //! we use `yaw_rate` and `steering_yaw_rate`, `acceleration_yaw_rate`
-        static const size_t M = 3UL;
+        //! we use `yaw_rate` and `steering_yaw_rate`, `acceleration_yaw_rate` and `vehicle_model_yaw_rate`
+        static const size_t M = 4UL;
         //! pointer to the velocity kalman filter which estimates the `kafi_yaw_rate` from `steering_yaw_rate` and `yaw_rate`
         std::unique_ptr<kafi::kafi<N, M>> _kafi;
     };

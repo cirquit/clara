@@ -390,7 +390,7 @@ namespace clara {
         void _add_vehicle_state(vehicle_state_t & vs)
         {
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            //const std::tuple<double, double, double> velocity_t = _estimate_velocity(vs);
+            // const std::tuple<double, double, double> velocity_t = _estimate_velocity(vs);
             const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
             // update the position based on the estimated v_x, v_y and the time
             const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
@@ -556,9 +556,14 @@ namespace clara {
             const double v_y_cones = std::get<1>(m_cone_velocity.get_value());
             // for debugging purposes
             if (true) // v_x_sensor == 0 && v_y_sensor == 0)
-            {
+            {   
+                std::cout << v_x_cones << ',' << v_y_cones << '\n';
+                return _to_world_velocity(vs._v_x_vehicle
+                                        , vs._v_y_vehicle
+                                        , vs.get_yaw()
+                                        , vs._delta_time_s);
                 // std::cerr << "       - vx/vy_sensor are zero, returning velocities from cones\n";
-                return std::make_tuple(v_x_cones, v_y_cones, vs._delta_time_s);
+                //return std::make_tuple(v_x_cones, v_y_cones, vs._delta_time_s);
             }
             // convert the correvit velocity to world velocity for fusion
             double v_x_sensor_world, v_y_sensor_world;

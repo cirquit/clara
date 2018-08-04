@@ -55,11 +55,11 @@ std::vector< std::tuple< object_list_t, double, double > > parse_csv(const std::
             //            << v_y << ','
             //            << a_x << ','
             //            << a_y << ','
-            //            << steer_angle << ','
+            //               steer_angle    << ','
             //               yaw_rad     << ','
             //            << yaw_rate    << '\n';
             //            << acc_time    << ','
-            //            << delta_time_s   << '\n';
+            //            << acc_time  << '\n';
         }
         object_list_t & cur_list   = std::get<0>(observations.back());
         object_t      & cur_object = cur_list.element[cur_list.size];
@@ -143,7 +143,7 @@ int main(int argc, char const *argv[]){
     const double set_start_after_m                    = 5;   // we travel at least some distance until setting our start point
     std::tuple<std::string, int> log_ip_port          = std::make_tuple("0.0.0.0", 33333);
     const double max_accepted_distance_m              = 10;  // we delete every observation if it's farther than 10m
-    const double origin_distance                      = 0.35; // is the distance of the COG to the camera in x
+    // const double origin_distance                      = 0.35; // is the distance of the COG to the camera in x
     const unsigned lookback_count                     = 0;       // how far do we look back for the get_clustered_observations
 
     clara::clara clara(
@@ -164,15 +164,17 @@ int main(int argc, char const *argv[]){
       //, std::make_tuple(0.888982, -1.50739)); //
 
     // empirically estimated
-    double yaw_process_noise     = 0.01;
-    double bosch_variance        = 0.001;
-    double steering_variance     = 0.0125;
-    double acceleration_variance = 10.0;
-    clara::vehicle_state_t vs( clara::USE_KAFI_YAW 
+    double yaw_process_noise      = 0.01;
+    double bosch_variance         = 0.001;
+    double steering_variance      = 0.0125;
+    double acceleration_variance  = 10.0;
+    double vehicle_model_variance = 0.125;
+    clara::vehicle_state_t vs( clara::USE_INTEGRATED_YAW 
                             ,  yaw_process_noise
                             ,  bosch_variance
                             ,  steering_variance
-                            ,  acceleration_variance );
+                            ,  acceleration_variance
+                            ,  vehicle_model_variance );
 
     bool grittr_waiting = true;
     int  counter        = 0;
@@ -181,7 +183,7 @@ int main(int argc, char const *argv[]){
         object_list_t & l   = std::get<0>(o);
         double          t_s = std::get<1>(o);
         double  yaw_rate_vm = std::get<2>(o);
-        if (t_s > 100) { continue; }
+        if (t_s > 100)   { continue; }
         if (l.size == 0) { continue; }
         double yaw_rate     = l.element[0].angle_yaw; // vehicle model yaw rate
         double vx           = l.element[0].vx;
@@ -276,13 +278,14 @@ int main(int argc, char const *argv[]){
         to_autonomous_scheduler_client.send_udp< clara::object::clara_obj >( clara_object );
 
         if (counter % 20 == 0){
- //           std::cout << vs._yaw_rate              << ','
- //                     << vs._yaw_rate_steer        << ','
- //                     << vs._yaw_rate_acceleration << ','
- //                     << vs._yaw_rate_kafi         << ','
- //                     << vs._yaw_rate_vm           << "\n";
-            std::cout << clara_object.x_pos << ","
-                      << clara_object.y_pos << "\n";
+           std::cout << std::sqrt(std::pow(vs._v_x_vehicle,2) + std::pow(vs._v_y_vehicle,2)) << '\n';
+           //std::cout << vs._yaw_rate              << ','
+           //          << vs._yaw_rate_steer        << ','
+           //          << vs._yaw_rate_acceleration << ','
+           //          << vs._yaw_rate_kafi         << ','
+           //          << vs._yaw_rate_vm           << "\n";
+        // std::cout << clara_object.x_pos << ","
+        //           << clara_object.y_pos << "\n";
         }
     }
 

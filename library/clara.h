@@ -338,6 +338,27 @@ namespace clara {
     // methods
     private:
 
+        /** \brief We want to reset the map, but not the loop counter and and the current position
+          *
+          */
+        void _reset_clustering()
+        {
+            // temp storage for observations
+            _new_yellow_cones.clear();
+            _new_blue_cones.clear();
+            _new_red_cones.clear();
+            // reset clustering
+            _yellow_data_association.reset_state();
+            _blue_data_association.reset_state();
+            _red_data_association.reset_state();
+            // used for last observations
+            _yellow_detected_cluster_ixs_old.clear();
+            _blue_detected_cluster_ixs_old.clear();
+            _red_detected_cluster_ixs_old.clear();
+            // temporary velocities from cones
+            _velocities.clear();
+        }
+
         /** \brief Preprocessing of the cones. Clears the _new_yellow/blue_red_cones vectors, appends by type, erases by distance and sorts by distance
           *
           */
@@ -390,7 +411,7 @@ namespace clara {
         void _add_vehicle_state(vehicle_state_t & vs)
         {
             // estimate the velocity based on the detected cones (saved in (color)_detected_cluster_ixs_old)
-            // const std::tuple<double, double, double> velocity_t = _estimate_velocity(vs);
+            //const std::tuple<double, double, double> velocity_t = _estimate_velocity(vs);
             const std::tuple<double, double, double> velocity_t = vs.to_world_velocity();
             // update the position based on the estimated v_x, v_y and the time
             const std::tuple<double, double> new_position = _apply_physics_model(velocity_t);
@@ -544,7 +565,7 @@ namespace clara {
             // calculate cone velocities based on the recurring observations, may be nothing if we have zero recurring cones
             concept::maybe<std::tuple<double, double>> m_cone_velocity = _calculate_cone_velocities(vs._delta_time_s);
             // if we don't see any new cones, we can't update the kalman filter
-            if (m_cone_velocity.has_no_value())
+            if (false && m_cone_velocity.has_no_value())
             {
                 std::cerr << "       - no matched cluster observations, returning transformed velocities from correvit to world velocity\n";
                 return _to_world_velocity(vs._v_x_vehicle
@@ -557,7 +578,7 @@ namespace clara {
             // for debugging purposes
             if (true) // v_x_sensor == 0 && v_y_sensor == 0)
             {   
-                std::cout << v_x_cones << ',' << v_y_cones << '\n';
+                std::cout << v_x_cones  << ',' << v_y_cones << '\n';
                 return _to_world_velocity(vs._v_x_vehicle
                                         , vs._v_y_vehicle
                                         , vs.get_yaw()

@@ -132,8 +132,8 @@ namespace clara
             _yaw_rate_acceleration_mem.add_value( get_acceleration_yaw_rate() );
             _yaw_rate_acceleration = _yaw_rate_acceleration_mem.get_mean();
             // calculate yaw_rate from steering
-            //_yaw_rate_steer_mem.add_value( get_steering_yaw_rate() );
-            _yaw_rate_steer = get_steering_yaw_rate(); // _yaw_rate_steer_mem.get_mean();
+            _yaw_rate_steer_mem.add_value( get_steering_yaw_rate() );
+            _yaw_rate_steer = _yaw_rate_steer_mem.get_mean();
             // calculate the kafi yaw rate
             _yaw_rate_kafi_mem.add_value( get_kafi_yaw_rate() );
             _yaw_rate_kafi = _yaw_rate_kafi_mem.get_mean();

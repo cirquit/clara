@@ -111,7 +111,6 @@ namespace clara {
                 // otherwise, we need to detect new cones and associate current clusters to our observations
                 else
                 {
-
                     for(auto cone : new_cones){
                         cluster_it prob_cluster_it = _get_most_probable_cluster_it(cone);
                         if ((*prob_cluster_it).distance_greater_than(cone, _max_dist_btw_cones_m))
@@ -120,7 +119,7 @@ namespace clara {
                         }
                         // if it's not below the threshold, we need to put it in an existing cluster
                         else
-                        {   
+                        {
                             _add_observation(prob_cluster_it, cone);
                         }
                     }
@@ -275,6 +274,17 @@ namespace clara {
             });
             std::cout << "]);\n";
         }
+
+        //! If we want to restart the clustering, we reset every state this class has like _cone_states, _pdfs and _detected_cluster_ix
+        void reset_state()
+        {
+            _cone_states.clear();
+            _pdfs.clear();
+            _detected_cluster_ix.clear();
+            _detected_cluster_ix_copy.clear();
+            no_observations = false;
+        }
+
 
         // methods
         private:

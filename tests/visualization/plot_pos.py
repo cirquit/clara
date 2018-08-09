@@ -24,9 +24,9 @@ fig, ax = plt.subplots(figsize=(16,16))
 
 ax.set_xlabel('X', fontsize=17)
 ax.set_ylabel('Y', fontsize=17)
-ax.set_title("Global driven path with different yaw-rates", fontsize=17)
+ax.set_title("Global driven path with fused yaw-rates", fontsize=17)
 
-cut = 1000000
+cut = 100000
 
 
 # from numpy import genfromtxt
@@ -55,17 +55,17 @@ cut = 1000000
 
 
 ## 
-acc_x_list, acc_y_list       = read_csv('../../build/acc-pos-yaw.csv')
-ax.scatter(acc_x_list[:cut],    acc_y_list[:cut],    s = 2.5, color='#2038b0', label = 'acc. yaw rate')
-
-steer_x_list, steer_y_list   = read_csv('../../build/steering-pos-yaw.csv')
-ax.scatter(steer_x_list[:cut],  steer_y_list[:cut],  s = 2.5, color='#ce6f0e',    label = 'steering calc. yaw rate')
+# acc_x_list, acc_y_list       = read_csv('../../build/acc-pos-yaw.csv')
+# ax.scatter(acc_x_list[:cut],    acc_y_list[:cut],    s = 2.5, color='#2038b0', label = 'acc. yaw rate')
 # 
-st_x_list, st_y_list         = read_csv('../../build/st-pos-yaw.csv')
-ax.scatter(st_x_list[:cut],     st_y_list[:cut],     s = 2.5, color='#eef019', label = 'single track yaw rate')
-
-normal_x_list, normal_y_list = read_csv('../../build/normal-pos-yaw.csv')
-ax.scatter(normal_x_list[:cut], normal_y_list[:cut], s = 2.5, color='#60dfaf',  label = 'regular yaw rate')
+# steer_x_list, steer_y_list   = read_csv('../../build/steering-pos-yaw.csv')
+# ax.scatter(steer_x_list[:cut],  steer_y_list[:cut],  s = 2.5, color='#ce6f0e',    label = 'steering calc. yaw rate')
+# # 
+# st_x_list, st_y_list         = read_csv('../../build/st-pos-yaw.csv')
+# ax.scatter(st_x_list[:cut],     st_y_list[:cut],     s = 2.5, color='#eef019', label = 'single track yaw rate')
+# 
+# normal_x_list, normal_y_list = read_csv('../../build/normal-pos-yaw.csv')
+# ax.scatter(normal_x_list[:cut], normal_y_list[:cut], s = 2.5, color='#60dfaf',  label = 'regular yaw rate')
 # 
 kafi_x_list, kafi_y_list     = read_csv('../../build/kafi-pos-yaw.csv')
 ax.scatter(kafi_x_list[:cut],   kafi_y_list[:cut],   s = 2.5, color='#26b605',  label = 'kafi calc. yaw rate')

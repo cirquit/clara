@@ -3,7 +3,7 @@ import numpy             as np
 import csv
 from numpy import genfromtxt
 
-data = genfromtxt('../example-data/2017-01-01-sensordata-wemding.csv', delimiter=',')
+data = genfromtxt('../example-data/wemding-2018-08-05/trackdrive-v04/t3_tp.log', delimiter=',')
 # data_darknet = genfromtxt('../example-data/wemding-2018-08-02/trackdrive-v16/t3_darknet.log', delimiter=',')
 
 fig, ax = plt.subplots(figsize=(16,16))
@@ -14,24 +14,18 @@ fig, ax = plt.subplots(figsize=(16,16))
 
 acc_data = []
 acc_data_2 = []
-acc_data_3 = []
-acc_data_4 = []
-
-dim      = 0
-dim_2    = 0
+#acc_data_3 = []
+#acc_data_4 = []
 
 counter = 0
 for frame in data:
-
-    dim      = dim   + frame[1] * 0.001 
-    dim_2    = dim_2 + frame[2] * 0.001
-    dim_3    = frame[3]
-    dim_4    = frame[4]
+    dim      = frame[2]
+    dim_2    = frame[3]
     #if counter % 10:
     acc_data = np.append(acc_data, dim)
     acc_data_2 = np.append(acc_data_2, dim_2)
-    acc_data_3 = np.append(acc_data_3, dim_3)
-    acc_data_4 = np.append(acc_data_4, dim_4)
+    #acc_data_3 = np.append(acc_data_3, dim_3)
+    #acc_data_4 = np.append(acc_data_4, dim_4)
     #counter += 1
 
 #acc_data_dark = []
@@ -42,12 +36,12 @@ for frame in data:
 #    acc_data_dark = np.append(acc_data_dark, dim)
 
 
-
+plt.ylim(-3,3,0.5)
 
 # ax.scatter(acc_data, acc_data_2, s = 2.5)
-plt.plot(acc_data, label = 'ax')
-#plt.plot(acc_data_2, label = 'angle')
-#plt.plot(acc_data_3, label = 'vx')
+plt.plot(acc_data, label = 'distance')
+plt.plot(acc_data_2, label = 'angle')
+#plt.plot(acc_data_3, label = 'yaw_rate should')
 #plt.plot(acc_data_4, label = 'vx')
 #plt.plot(acc_data_dark, label = 'yaw_rate is')
 plt.grid()

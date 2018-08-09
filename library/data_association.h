@@ -116,7 +116,7 @@ namespace clara {
                             const raw_cone_data & other_cone = new_cones[oc_ix];
                             double distance = util::euclidean_distance<double>(cone, other_cone);
                             // if it's is too close (< 0.5), we don't want to add it
-                            if (distance < 1.5) { not_too_close = false; }
+                            if (distance < 2.0) { not_too_close = false; }
                         }
                         if (not_too_close)
                         {

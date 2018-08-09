@@ -395,15 +395,20 @@ namespace clara {
                 if (obj_list.element[i].type == 0) _new_yellow_cones.emplace_back(_parse_object_t(obj_list.element[i], vs));
                 if (obj_list.element[i].type == 1) _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
                 // Pretend that small red cones are big red cones
-                if (obj_list.element[i].type == 2) _new_red_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
-                if (obj_list.element[i].type == 3) _new_red_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
-//                if (obj_list.element[i].type == 2 || obj_list.element[i].type == 3 ) {
-//                    if ( obj_list.element[i].angle > 0.1745329 ){
-//                        _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
-//                    } else if ( obj_list.element[i].angle > -0.1745329 ) {
-//                        _new_yellow_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
-//                    }
-//                }
+//                if (obj_list.element[i].type == 2) _new_red_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
+//              if (obj_list.element[i].type == 3) _new_red_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
+                if (obj_list.element[i].type == 2 || obj_list.element[i].type == 3 ) {
+
+                    if ( obj_list.element[i].angle > 0.1745329 ){
+                        std::cerr << "Added blue cone from a red cone!";
+                        _new_blue_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
+                    } else if ( obj_list.element[i].angle < -0.1745329 ) {
+                        std::cerr << "Added yellow cone from a red cone!";
+                        _new_yellow_cones.emplace_back(  _parse_object_t(obj_list.element[i], vs));
+                    } else {
+                        std::cerr << "Got a red cone, but didn't add it, angle: " << obj_list.element[i].angle << '\n';
+                    }
+                }
             }
         }
 

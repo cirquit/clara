@@ -24,6 +24,7 @@
 #include <blaze/Math.h>
 #include <functional>
 #include <ctime>
+#include <tuple>
 
 //! unused macro to avoid errors because of nonuse of declared variables
 #define UNUSED(x) (void)(x)
@@ -231,8 +232,8 @@ namespace clara
         double euclidean_distance(const std::tuple<T, T, T, T> & a
                                 , const std::tuple<T, T, T, T> & b)
         {
-            std::tuple<T, T> _a = make_tuple(std::get<0>(a), std::get<1>(a));
-            std::tuple<T, T> _b = make_tuple(std::get<0>(b), std::get<1>(b));
+            std::tuple<T, T> _a = std::make_tuple(std::get<0>(a), std::get<1>(a));
+            std::tuple<T, T> _b = std::make_tuple(std::get<0>(b), std::get<1>(b));
             return euclidean_distance(_a, _b);
         }
 

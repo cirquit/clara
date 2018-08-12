@@ -3,8 +3,8 @@ import numpy             as np
 import csv
 from numpy import genfromtxt
 
-traj_data = genfromtxt('skidpad.csv', delimiter=',')
-path_data = genfromtxt('../example-data/wemding-2018-08-04/skipa-v04/skipa_debug.log', delimiter=',')
+traj_data = genfromtxt('../example-data/hockenheim/skidpad-v02/middle.csv', delimiter=',')
+path_data = genfromtxt('../example-data/hockenheim/skidpad-v02/skipa_debug.log', delimiter=',')
 
 fig, ax = plt.subplots(figsize=(16,16))
 

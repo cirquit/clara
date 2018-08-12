@@ -2,3 +2,4 @@ build/
 build-debug
 *.swp
 tests/example-data/
+documentation

@@ -138,9 +138,9 @@ int main(int argc, char const *argv[]){
     const double variance_yy                          = 0.55;
     const size_t apply_variance_step_count            = 1000000; // apply custom variance for this amount of observations
     const int    cluster_search_range                 = 100; // +/- to the min/max used cluster-index
-    const int    min_driven_distance_m                = 10; // drive at least 10m until starting to check if we're near the start point
+    const int    min_driven_distance_m                = 40; // drive at least 10m until starting to check if we're near the start point
     const double lap_epsilon_m                        = 3; // if we're 0.5m near the starting point, increment the lap counter
-    const double set_start_after_m                    = 5;   // we travel at least some distance until setting our start point
+    const double set_start_after_m                    = 20;   // we travel at least some distance until setting our start point
     std::tuple<std::string, int> log_ip_port          = std::make_tuple("0.0.0.0", 33333);
     const double max_accepted_distance_m              = 10;  // we delete every observation if it's farther than 10m
     // const double origin_distance                      = 0.35; // is the distance of the COG to the camera in x
@@ -169,7 +169,7 @@ int main(int argc, char const *argv[]){
     double steering_variance      = 0.0125;
     double acceleration_variance  = 10.0;
     double vehicle_model_variance = 0.125;
-    clara::vehicle_state_t vs( clara::USE_INTEGRATED_YAW 
+    clara::vehicle_state_t vs( clara::USE_KAFI_YAW 
                             ,  yaw_process_noise
                             ,  bosch_variance
                             ,  steering_variance
@@ -194,7 +194,7 @@ int main(int argc, char const *argv[]){
 // 
         vs.update(vx, vy, ax, ay, 0, yaw_rate, yaw_rate_vm, steer_angle, t_s);
 
-        // if (vx == 0) continue;
+        if (vx == 0) continue;
 
         std::cerr << "Observation [        " << counter++ << "/" << observations.size() << "]:\n"
                   << "    Rec. counter:       " << vs._delta_time_s  << "s\n"
@@ -215,7 +215,7 @@ int main(int argc, char const *argv[]){
                                      << l.element[i].type    << '\n';
         }
 
-        //  std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
+        std::this_thread::sleep_for(std::chrono::milliseconds(static_cast<int>(t_s*1000)));
         if (l.element[0].distance == 0)
         {
             std::tie(clara_object.x_pos, clara_object.y_pos) = clara.add_observation( vs );
@@ -232,7 +232,7 @@ int main(int argc, char const *argv[]){
         // send yaw
         clara_object.yaw = vs.get_yaw();
         // 
-        if (clara.get_lap() == 1 && grittr_waiting) {
+        if (false && clara.get_lap() == 1 && grittr_waiting) {
             clara_object.go_grittr_flag = true;
             grittr_waiting              = false;
             // get all the yellow cones fron the data association
@@ -277,16 +277,17 @@ int main(int argc, char const *argv[]){
         // send clara_obj to autonomous_scheduler
         to_autonomous_scheduler_client.send_udp< clara::object::clara_obj >( clara_object );
 
-        if (counter % 20 == 0){
-           std::cout << std::sqrt(std::pow(vs._v_x_vehicle,2) + std::pow(vs._v_y_vehicle,2)) << '\n';
-           //std::cout << vs._yaw_rate              << ','
-           //          << vs._yaw_rate_steer        << ','
-           //          << vs._yaw_rate_acceleration << ','
-           //          << vs._yaw_rate_kafi         << ','
-           //          << vs._yaw_rate_vm           << "\n";
-        // std::cout << clara_object.x_pos << ","
-        //           << clara_object.y_pos << "\n";
-        }
+        //std::cout << "lap: " << clara.get_lap() << '\n';
+        //if (counter % 20 == 0){
+        //   std::cout << std::sqrt(std::pow(vs._v_x_vehicle,2) + std::pow(vs._v_y_vehicle,2)) << '\n';
+        //   //std::cout << vs._yaw_rate              << ','
+        //   //          << vs._yaw_rate_steer        << ','
+        //   //          << vs._yaw_rate_acceleration << ','
+        //   //          << vs._yaw_rate_kafi         << ','
+        //   //          << vs._yaw_rate_vm           << "\n";
+        //// std::cout << clara_object.x_pos << ","
+        ////           << clara_object.y_pos << "\n";
+        //}
     }
 
     return EXIT_SUCCESS;

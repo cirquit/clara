@@ -116,8 +116,8 @@ namespace clara {
                             if (c_ix  < oc_ix) continue;
                             const raw_cone_data & other_cone = new_cones[oc_ix];
                             double distance = util::euclidean_distance<double>(cone, other_cone);
-                            // if it's is too close (< 1.5), we don't want to add it \todo make this a parameter
-                            if (distance < 1.5) { not_too_close = false; }
+                            // if it's is too close (< 2.0), we don't want to add it \todo add this as a config parameter
+                            if (distance < 2.0) { not_too_close = false; }
                         }
                         if (not_too_close)
                         {

@@ -21,6 +21,7 @@
 #include <blaze/Math.h>
 #include <cmath>
 #include <math.h>
+
 /*!
  *  \addtogroup clara
  *  @{
@@ -38,8 +39,6 @@ namespace clara {
      *
      *  To do EM, we need to calculate the mean und covarianceiance matrix over `x, y`. Because we know we only have a 2-dimensional state, we provide
      *  the needed functionality to do a gauss-sampling. See `_get_inv_cov_mat()` and `_get_det_cov_mat()`
-     *
-     *  Because of the assumption that new cones 
      *
      *  Template arguments:
      *  * `T` is the type of the cone x,y coordinates 
@@ -119,21 +118,15 @@ namespace clara {
               * Results in a cached access to every member after recalculation for the current `_observations`
               */
             void update_state()
-            {   //std::cerr << "  Updating state, is_modified: " << is_modified() << '\n';
+            {
                 if (is_modified())
-                {   //std::cerr << "  Cone is modified, size / max_N_size: " << _observations.size() << ", " << _apply_variance_step_count << " \n";
+                {
                     _update_mean_vec();
                     _update_cov_mat();
-                    if (_observations.size() < _apply_variance_step_count) // _apply_variance_step_count)
+                    if (_observations.size() < _apply_variance_step_count)
                     {    
-                         // std::cerr << "Before:\n";
-                         // std::cerr << "_cov_mat[0]: " << _cov_mat[0] << '\n';
-                         // std::cerr << "_cov_mat[3]: " << _cov_mat[3] << '\n';
                         _cov_mat[0] += _variance_xx; // increase the variance radius to allow for a better "association"
                         _cov_mat[3] += _variance_yy; // increase the variance radius to allow for a better "association"
-                         // std::cerr << "After:\n";
-                         // std::cerr << "_cov_mat[0]: " << _cov_mat[0] << '\n';
-                         // std::cerr << "_cov_mat[3]: " << _cov_mat[3] << '\n';
                     }
                     _update_det_cov_mat();
                     _update_inv_cov_mat();
@@ -226,7 +219,6 @@ namespace clara {
             constexpr bool distance_greater_than(const T x, const T y, const T epsilon) const
             {
                 const T dist = distance(x, y);
-                //std::cerr << "    distance_intrinsics: " << res << " => " << (std::abs(epsilon) < res) << "\n";
                 return std::abs(epsilon) < dist; 
             }
 
@@ -243,10 +235,6 @@ namespace clara {
             {
                 const coords_t & o_2 = _observations.back();
                 const coords_t & o_1 = *(_observations.end() - 2);
-                // std::cerr << "        > get_rel_pos_diff():\n" 
-                //           << "          mean_vec:" << _mean_vec[0] << ", " << _mean_vec[1] << '\n'
-                //           << "          o_2:"      << o_2[0]       << ", " << o_2[1]       << ", " << o_2[2] << ", " << o_2[3] << '\n'
-                //           << "          o_1:"      << o_1[0]       << ", " << o_1[1]       << ", " << o_1[2] << ", " << o_1[3] << '\n';
                 return std::make_tuple(o_1[2] - o_2[2], o_1[3] - o_2[3]);
             }
 

@@ -21,8 +21,25 @@
 #include <kafi-1.0/kafi.h>
 #include "memory.h"
 
+/*!
+ *  \addtogroup clara
+ *  @{
+ */
+
+/** \brief CLARA namespace
+ *
+ */
 namespace clara
 {
+    /** \brief The YAW_MODE defines how we calculate the yaw based on the incoming sensor data
+      *
+      * * USE_NORMAL_YAW - using the pure yaw given from simulink
+      * * USE_INTEGRATED_YAW - using trapezoid integration of _yaw_rate
+      * * USE_INTEGRATED_STEERING_YAW - using trapezoid integration of the calculated _yaw_rate_steering
+      * * USE_INTEGRATED_ACCELERATION_YAW - using trapezoid integration of the calculated _yaw_rate_acceleration
+      * * USE_INTEGRATED_VEHICLE_MODEL_YAW - using trapezoid integration of the calculated _yaw_rate_vm
+      * * USE_KAFI_YAW - using all the sensors and filtering them in a EKF to use trapezoid integration of _yaw_rate_kafi
+      */
     enum YAW_MODE : size_t { USE_NORMAL_YAW
                           ,  USE_INTEGRATED_YAW
                           ,  USE_INTEGRATED_STEERING_YAW
@@ -35,6 +52,10 @@ namespace clara
 
     // constructors
     public:
+        /** \brief 
+          *
+          *
+          */
         vehicle_state_t(const YAW_MODE yaw_mode
                       , double yaw_process_noise
                       , double bosch_variance

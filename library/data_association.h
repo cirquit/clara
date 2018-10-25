@@ -33,7 +33,7 @@
 namespace clara {
     /** \brief A class which handles the data association task for CLARA
      *  
-     *  Cones are observed by their absolute position (x,y), a GMM is used to cluster them into the best possible positional approximation
+     *  Cones are observed by their absolute position (x,y), a GMM is used to cluster them into the best possible positional approximation (maximum posterior)
      * 
      *  Template arguments:
      *  * `T` = type of the cones (has to support floating point caluclationsfloat / double)
@@ -108,6 +108,7 @@ namespace clara {
                         const raw_cone_data & cone = new_cones[c_ix];
                         // some red cones are detected too close to each other, therefore we want to merge them. We iterate over all cones and check for distance
                         bool not_too_close = true;
+                        // using indexes because we want to elements with each other and iterators might fail
                         for (size_t oc_ix = 0; oc_ix < new_cones.size(); ++oc_ix)
                         {
                             // if it's the same cone, we don't compare it
@@ -115,7 +116,7 @@ namespace clara {
                             if (c_ix  < oc_ix) continue;
                             const raw_cone_data & other_cone = new_cones[oc_ix];
                             double distance = util::euclidean_distance<double>(cone, other_cone);
-                            // if it's is too close (< 0.5), we don't want to add it
+                            // if it's is too close (< 1.5), we don't want to add it \todo make this a parameter
                             if (distance < 1.5) { not_too_close = false; }
                         }
                         if (not_too_close)
@@ -148,8 +149,8 @@ namespace clara {
                 return _cone_states;
             }
 
-            /** \brief
-              *
+            /** \brief \todo This is not a tested feature, WIP
+              * We check for matches and calculate the positional difference to the cone
               */ 
             std::vector< std::tuple< double, double > > estimate_positional_difference(const std::vector<raw_cone_data> & new_cones)
             {
@@ -159,16 +160,12 @@ namespace clara {
                     cluster_it prob_cluster_it = _get_most_probable_cluster_it(cone);
                     if ((*prob_cluster_it).distance_greater_than(cone, _max_dist_btw_cones_m))
                     {
-                        // do nothing..., we didn't 
-//                        std::cout << "Was too far away!\n";
+                        // do nothing
                     }
                     else
                     {   
-//                        std::cout << "Matched a cluster!\n";
                         // if we got a "sure" match to a cluster
                         position_differences.push_back((*prob_cluster_it).difference(cone));
-//                        std::cout << "   diff: " << std::get<0>(position_differences.back()) << ", "
-//                                                 << std::get<1>(position_differences.back()) << '\n';
                         _add_detected_cone_ix(prob_cluster_it);
                     }
                 }
@@ -250,9 +247,9 @@ namespace clara {
                 {
                     double mean_x = cs._mean_vec[0];
                     double mean_y = cs._mean_vec[1];
-                    double cov_xx = cs._cov_mat[0];// - 0.45;
+                    double cov_xx = cs._cov_mat[0];
                     double cov_xy = cs._cov_mat[1];
-                    double cov_yy = cs._cov_mat[3];// - 0.45;
+                    double cov_yy = cs._cov_mat[3];
 
                     std::string np_b = "np.array([";
                     std::string np_e = "])";
@@ -291,7 +288,7 @@ namespace clara {
             std::cout << "]);\n";
         }
 
-        //! If we want to restart the clustering, we reset every state this class has like _cone_states, _pdfs and _detected_cluster_ix
+        //! If we want to restart the clustering, we reset every state this class has like _cone_states, _pdfs and _detected_cluster_ix. \todo **NOT TESTED**
         void reset_state()
         {
             _cone_states.clear();
@@ -332,25 +329,30 @@ namespace clara {
 
                 return _cone_states.begin() + best_cone_ix;
 
+                // if we don't want the sliding window, this is the simple STL O(N) implementation. Try this if you don't trust the window 
                 // return std::max_element(_cone_states.begin(), _cone_states.end(), [&](cone_state<T> & a, cone_state<T> & b)
                 // {
                 //     return a.pdf(cone) < b.pdf(cone);
                 // });
             }
 
-            //! \todo
+            /** \brief Compared the clusters by their probability density function of the association of `cone` to either `a` or `b`
+             *  You might notice that we use probability density as the same thing as probability - we normally have a weight which increases
+             *  the probability based on how many observations the cluster has. We don't do this, because the amount of cones seen has no value 
+             *  for our certainty that the cluster is correct (dependent on darknet noise + velocity)
+             */
             bool _compare_clusters_by_probability(const raw_cone_data & cone, cone_state<T> & a, cone_state<T> & b)
             {
                 return a.pdf(cone) < b.pdf(cone);
             }
 
-            //! \todo
+            //! returns the cluster with the higher probability by using `_compare_clusters_by_probability`
             cluster_it _return_cluster_by_probability(const raw_cone_data & cone, cluster_it a, cluster_it b)
             {
                 return _compare_clusters_by_probability(cone, *a, *b) ? a : b;
             }
 
-            /** creates a default cluster with _variance_xx, _variance_yy and _apply_variance_step_count at the end of _cone_states
+            /** \brief Creates a default cluster with _variance_xx, _variance_yy and _apply_variance_step_count at the end of _cone_states
              *  adds the observation and updates it
              */
             void _add_new_cluster_with_ob(const raw_cone_data & observation)
@@ -368,23 +370,24 @@ namespace clara {
                 _add_detected_cone_ix(it);
             }
 
-            //! calculating the index of the detected cone and adds this into the _detected_cluster_ix container. Won't be added if it's already detected
+            //! calculating the index of the detected cone and adds this into the _detected_cluster_ix container. Won't be added if it's already detected. \todo test this, currently we add every index and delete duplicates through a set
             void _add_detected_cone_ix(const typename std::vector<cone_state<T>>::iterator & it)
             {
                 auto ix = std::distance(_cone_states.begin(), it);
+            // This is not a tested feature.
             //    auto maybe_ix_it = std::find(_detected_cluster_ix.begin(), _detected_cluster_ix.end(), ix);
-//                // if it's not detected, add it
+            // if it's not detected, add it
             //    if (maybe_ix_it == _detected_cluster_ix.end())
             //    {
                     _detected_cluster_ix.push_back(ix);
-            //    }
+            //   }
             }
 
-        // member (were private, but for logging purposes we mage them public)
+        // member (were private, but for logging purposes we made them public)
         public: 
             //! saving all cluster here
             std::vector<cone_state<T>> _cone_states;
-            //! \todo
+            //! if we have an associated cluster, the GMM algorithm **always** returns the most probable cluster. If this distance is overstepped, we create a new cluster
             size_t _max_dist_btw_cones_m;
             //! how often should we apply additional variance in x,y dim
             size_t _apply_variance_step_count;

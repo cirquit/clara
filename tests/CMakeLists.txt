@@ -17,7 +17,11 @@
 # add_executable(${TEST_NAME} ${SOURCES})
 # target_link_libraries(${TEST_NAME} ${LIB_NAME})
 
-# custom data association test for debugging purposes
+
+set(TEST_NAME_CONE_STATE clara_cone_state_test)
+set(SOURCES_CONE_STATE catch.h main.cc cone_state_tests.cc)
+add_executable(${TEST_NAME_CONE_STATE} ${SOURCES_CONE_STATE})
+target_link_libraries(${TEST_NAME_CONE_STATE} ${LIB_NAME})
 
 set(TEST_NAME_CLARA_CARMAKER clara_carmaker_simulation)
 set(SOURCES_CLARA_CARMAKER clara_carmaker_simulation.cc)

@@ -19,16 +19,10 @@
 
 # custom data association test for debugging purposes
 
-#set(TEST_NAME_CLARA clara_csv_test)
-#set(SOURCES_CLARA csv.h clara_tests.cc)
-#add_executable(${TEST_NAME_CLARA} ${SOURCES_CLARA})
-#target_link_libraries(${TEST_NAME_CLARA} ${LIB_NAME})
-
-set(TEST_NAME_CLARA_15 clara_csv_test_15)
-set(SOURCES_CLARA csv.h clara_tests-15.cc)
-add_executable(${TEST_NAME_CLARA_15} ${SOURCES_CLARA})
-target_link_libraries(${TEST_NAME_CLARA_15} ${LIB_NAME})
-
+set(TEST_NAME_CLARA_REPLAY clara_csv_replay)
+set(SOURCES_CLARA csv.h clara_csv_replay.cc)
+add_executable(${TEST_NAME_CLARA_REPLAY} ${SOURCES_CLARA})
+target_link_libraries(${TEST_NAME_CLARA_REPLAY} ${LIB_NAME})
 
 set(TEST_NAME_UTIL clara_util_test)
 set(SOURCES_UTIL catch.h main.cc csv.h util_tests.cc)
@@ -45,8 +39,7 @@ target_link_libraries(${TEST_NAME_LOOPING} ${LIB_NAME})
 set(TEST_NAME_MEMORY clara_memory)
 set(SOURCES_MEMORY catch.h main.cc memory_tests.cc)
 add_executable(${TEST_NAME_MEMORY} ${SOURCES_MEMORY})
-# target_link_libraries(${TEST_NAME_MEMORY} ${LIB_NAME})
-
+target_link_libraries(${TEST_NAME_MEMORY} ${LIB_NAME})
 
 # file(COPY example-data DESTINATION .)  # execute ./clara_test
 # file(COPY example-data DESTINATION ..) # execute ./tests/clara_test

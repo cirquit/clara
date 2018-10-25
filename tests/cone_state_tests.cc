@@ -23,23 +23,6 @@
 
 #include "../library/cone_state.h"
 
-// template<typename T>
-// void cone_state_test()
-// {
-//     clara::cone_state<T> cs_1;
-//     REQUIRE_FALSE(cs_1.is_modified());
-
-//     T x = 1;
-//     T y = 2;
-//     std::tuple<T, T> coords { x, y };
-
-//     cs_1.set_coords(x, y);
-
-//     REQUIRE(cs_1.get_coords() == coords);
-//     REQUIRE(cs_1.get_x() == x);
-//     REQUIRE(cs_1.get_y() == y);
-//     REQUIRE(cs_1.is_modified());
-// }
 
 void print_prob_pdf(std::string name, clara::cone_state<double> & cs_1, double x_cs_1, 
                                       clara::cone_state<double> & cs_2, double x_cs_2,

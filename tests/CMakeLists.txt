@@ -19,6 +19,11 @@
 
 # custom data association test for debugging purposes
 
+set(TEST_NAME_CLARA_CARMAKER clara_carmaker_simulation)
+set(SOURCES_CLARA_CARMAKER clara_carmaker_simulation.cc)
+add_executable(${TEST_NAME_CLARA_CARMAKER} ${SOURCES_CLARA_CARMAKER})
+target_link_libraries(${TEST_NAME_CLARA_CARMAKER} ${LIB_NAME} connector)
+
 set(TEST_NAME_CLARA_REPLAY clara_csv_replay)
 set(SOURCES_CLARA csv.h clara_csv_replay.cc)
 add_executable(${TEST_NAME_CLARA_REPLAY} ${SOURCES_CLARA})

@@ -48,7 +48,6 @@ find_package(connector 1.0 REQUIRED)
 
 # add the actual code
 add_subdirectory (library)
-add_subdirectory (src)
 
 if(WITH_TESTS)
     message("> Compiling tests for CLARA")

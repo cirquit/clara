@@ -31,6 +31,7 @@ TODO
 #### Build
 
 [Install our Kalman Filter library (v1.0)](https://github.com/cirquit/ekf).
+[Install our Connector library (v1.0)](https://github.com/cirquit/connector).
 
 ```bash
 > git clone https://github.com/cirquit/clara
@@ -111,6 +112,8 @@ in the `clara/build-debug/visualization` directory and run the `plot_loggings.ip
 
 * [ekf](https://github.com/cirquit/ekf)
     - our `O(1)` extended kalman filter, install the same way as this library (see its [README.md](https://github.com/cirquit/ekf/README.md))
+* [connector](https://github.com/cirquit/connector)
+    - our own C++ TCP/UDP wrapper, install the same way as this library (see its [README.md](https://github.com/cirquit/connector/README.md))
 * [fast-cpp-csv-parser](https://github.com/ben-strasser/fast-cpp-csv-parser)
     - header only
     - used for tests
@@ -120,6 +123,7 @@ in the `clara/build-debug/visualization` directory and run the `plot_loggings.ip
     - used for tests as this is a testing framework
     - already included in the source, no need to download anything
 * [blaze](https://bitbucket.org/blaze-lib/blaze/overview)
+    - we currently don't have this dependecy, but we already prepared the `FindLAPACK.cmake` and `FindBLAS.cmake` to add it if you want to extend it with anything matrix related. Otherwise remove the linking in `libraries/CMakeLists.txt`
 ```bash
 > wget https://bitbucket.org/blaze-lib/blaze/downloads/blaze-3.3.tar.gz
 > tar -xvf blaze-3.3.tar.gz

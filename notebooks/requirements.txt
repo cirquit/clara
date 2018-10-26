@@ -1,7 +1,0 @@
-ipython
-conda
-matplotlib
-numpy
-scipy
-seaborn
-mpld3

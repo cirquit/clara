@@ -83,28 +83,12 @@ To create documentation install doxygen an run in the source directory:
 ```
 
 Now you can open the PDF at `documentation/latex/refman.pdf` or the static HTML at `documentation/html/index.html` in your favourite browser.
-<!-- 
-### Visualization
 
-Done with python and anaconda. [Install anaconda](https://docs.anaconda.com/anaconda/install/) and follow the further steps.
+---
 
-```bash
-> conda create --name clara python=3.6
-> source activate clara
-> conda install numpy matplotlib ipython
-> conda install -c anaconda ipywidgets
-> conda install --channel=conda-forge nb_conda_kernels
-> jupyter nbextension enable --py widgetsnbextension
-> pip install mpld3 
-```
+#### Playground
 
-After creating an appropriate `.csv` or `.py` file, run:
-
-```bash
-> ipython notebook --NotebookApp.iopub_data_rate_limit=10000000000
-```
-
-in the `clara/build-debug/visualization` directory and run the `plot_loggings.ipynb` file. -->
+We have multiple ipython notebooks and plotting scripts which we used throughout the season which can be found in [here](playground). Please read the [README](playground/README.md) for the build tutorial.
 
 ---
 

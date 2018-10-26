@@ -7,10 +7,12 @@ from matplotlib import cm
 def rotate_by(x_pos, y_pos, angle):
 
     new_x_pos = x_pos * np.cos(angle) - y_pos * np.sin(angle);
-    new_y_pos = y_pos * np.sin(angle) + y_pos * np.cos(angle);
+    new_y_pos = x_pos * np.sin(angle) + y_pos * np.cos(angle);
 
     return new_x_pos, new_y_pos
 
+def from_deg(rad):
+    return (rad * 180) / np.pi
 
 
 # set the prefix to the sample you want to evaluate
@@ -86,8 +88,9 @@ for frame in blue_cones_gps_data:
     x_pos    = frame[0]
     y_pos    = frame[1]
     
-    angle = np.arctan2(-0.0311436783522, -1.5746489875)
-    x_pos, y_pos = rotate_by(x_pos, y_pos, angle)
+    #angle = np.arctan2(-0.0311436783522, -1.5746489875)
+    #angle = np.arctan2(0, -1.5746489875)
+    x_pos, y_pos = rotate_by(x_pos, y_pos, from_deg(270))
 #
     x_blue_cones_gps_pos = np.append(x_blue_cones_gps_pos, x_pos)
     y_blue_cones_gps_pos = np.append(y_blue_cones_gps_pos, y_pos)
@@ -99,8 +102,8 @@ y_yellow_cones_gps_pos = []
 for frame in yellow_cones_gps_data:
     x_pos    = frame[0]
     y_pos    = frame[1]
-    angle = np.arctan2(-0.0311436783522, -1.5746489875)
-    x_pos, y_pos = rotate_by(x_pos, y_pos, angle)
+    #angle = np.arctan2(-0.0311436783522, -1.5746489875)
+    #x_pos, y_pos = rotate_by(x_pos, y_pos, angle)
 
     x_yellow_cones_gps_pos = np.append(x_yellow_cones_gps_pos, x_pos)
     y_yellow_cones_gps_pos = np.append(y_yellow_cones_gps_pos, y_pos)
@@ -108,19 +111,19 @@ for frame in yellow_cones_gps_data:
 
 
 #1.38935792947,
-cog_x = 1.38935792947   + 1.13112601847
-cog_y = -0.466946133412 + 1.69169445056
-#ax.scatter( cog_x, cog_y, s = 20, color = 'violet', label = 'COG' );
+# cog_x = 1.38935792947   + 1.13112601847
+# cog_y = -0.466946133412 + 1.69169445056
+# #ax.scatter( cog_x, cog_y, s = 20, color = 'violet', label = 'COG' );
 
-ax.scatter( 0, 0, s = 20, color = 'violet', label = 'COG' );
+# ax.scatter( 0, 0, s = 20, color = 'violet', label = 'COG' );
 
 
 
 ax.scatter( x_blue_cones_pos, y_blue_cones_pos, s = 20, color = '#000000', label = 'blue_cones' );
-ax.scatter( x_yellow_cones_pos, y_yellow_cones_pos, s = 20, color = '#FF0000', label = 'yellow_cones' );
+#ax.scatter( x_yellow_cones_pos, y_yellow_cones_pos, s = 20, color = '#FF0000', label = 'yellow_cones' );
 
-ax.scatter( x_blue_cones_gps_pos - cog_x, y_blue_cones_gps_pos - cog_y, s = 20, color = '#277ece', label = 'GPS blue_cones' );
-ax.scatter( x_yellow_cones_gps_pos - cog_x, y_yellow_cones_gps_pos - cog_y, s = 20, color = '#ffc100', label = 'GPS yellow_cones' );
+ax.scatter( x_blue_cones_gps_pos, y_blue_cones_gps_pos, s = 20, color = '#277ece', label = 'GPS blue_cones' );
+#ax.scatter( x_yellow_cones_gps_pos, y_yellow_cones_gps_pos, s = 20, color = '#ffc100', label = 'GPS yellow_cones' );
 
 #ax.scatter( 0, 0, s = 40, color='violet', label = 'cog')
 #

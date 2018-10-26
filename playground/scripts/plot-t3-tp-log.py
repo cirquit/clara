@@ -3,7 +3,12 @@ import numpy             as np
 import csv
 from numpy import genfromtxt
 
-data = genfromtxt('../example-data/wemding-2018-08-05/trackdrive-v04/t3_tp.log', delimiter=',')
+# set the prefix to the sample you want to evaluate
+prefix = '../loggings-1819/jesenwang-26-10-2018/stint-03/'
+
+#traj_data         = genfromtxt(prefix + '/path.csv',         delimiter=',')
+#path_data         = genfromtxt(prefix + '/t3_tp.log',        delimiter=',')
+data   = genfromtxt(prefix + '/t3_tp.log',   delimiter=',')
 # data_darknet = genfromtxt('../example-data/wemding-2018-08-02/trackdrive-v16/t3_darknet.log', delimiter=',')
 
 fig, ax = plt.subplots(figsize=(16,16))

@@ -15,40 +15,40 @@
 # set(SOURCES catch.h csv.h main.cc cone_state_tests.cc util_tests.cc)
 
 # add_executable(${TEST_NAME} ${SOURCES})
-# target_link_libraries(${TEST_NAME} ${LIB_NAME})
+# target_link_libraries(${TEST_NAME} ${CPP_LIB_NAME})
 
 
 set(TEST_NAME_CONE_STATE clara_cone_state_test)
 set(SOURCES_CONE_STATE catch.h main.cc cone_state_tests.cc)
 add_executable(${TEST_NAME_CONE_STATE} ${SOURCES_CONE_STATE})
-target_link_libraries(${TEST_NAME_CONE_STATE} ${LIB_NAME})
+target_link_libraries(${TEST_NAME_CONE_STATE} ${CPP_LIB_NAME})
 
 set(TEST_NAME_CLARA_CARMAKER clara_carmaker_simulation)
 set(SOURCES_CLARA_CARMAKER clara_carmaker_simulation.cc)
 add_executable(${TEST_NAME_CLARA_CARMAKER} ${SOURCES_CLARA_CARMAKER})
-target_link_libraries(${TEST_NAME_CLARA_CARMAKER} ${LIB_NAME} connector)
+target_link_libraries(${TEST_NAME_CLARA_CARMAKER} ${CPP_LIB_NAME} connector)
 
 set(TEST_NAME_CLARA_REPLAY clara_csv_replay)
 set(SOURCES_CLARA csv.h clara_csv_replay.cc)
 add_executable(${TEST_NAME_CLARA_REPLAY} ${SOURCES_CLARA})
-target_link_libraries(${TEST_NAME_CLARA_REPLAY} ${LIB_NAME})
+target_link_libraries(${TEST_NAME_CLARA_REPLAY} ${CPP_LIB_NAME})
 
 set(TEST_NAME_UTIL clara_util_test)
 set(SOURCES_UTIL catch.h main.cc csv.h util_tests.cc)
 add_executable(${TEST_NAME_UTIL} ${SOURCES_UTIL})
-target_link_libraries(${TEST_NAME_UTIL} ${LIB_NAME})
+target_link_libraries(${TEST_NAME_UTIL} ${CPP_LIB_NAME})
 
 # custom data association test for debugging purposes
 set(TEST_NAME_LOOPING clara_looping_test)
 set(SOURCES_LOOPING catch.h main.cc looping_tests.cc)
 add_executable(${TEST_NAME_LOOPING} ${SOURCES_LOOPING})
-target_link_libraries(${TEST_NAME_LOOPING} ${LIB_NAME})
+target_link_libraries(${TEST_NAME_LOOPING} ${CPP_LIB_NAME})
 
 # custom data association test for debugging purposes
 set(TEST_NAME_MEMORY clara_memory)
 set(SOURCES_MEMORY catch.h main.cc memory_tests.cc)
 add_executable(${TEST_NAME_MEMORY} ${SOURCES_MEMORY})
-target_link_libraries(${TEST_NAME_MEMORY} ${LIB_NAME})
+target_link_libraries(${TEST_NAME_MEMORY} ${CPP_LIB_NAME})
 
 # file(COPY example-data DESTINATION .)  # execute ./clara_test
 # file(COPY example-data DESTINATION ..) # execute ./tests/clara_test

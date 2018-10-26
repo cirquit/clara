@@ -1,6 +1,6 @@
 build/
 build-debug
 *.swp
-tests/example-data/
 documentation
-notebooks/.ipynb_checkpoints
+playground/notebooks/.ipynb_checkpoints
+playground/logging-data-1718

@@ -2,6 +2,13 @@ import matplotlib.pyplot as plt
 import numpy             as np
 import csv
 
+from matplotlib import rc
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica']})
+## for Palatino and other serif fonts use:
+#rc('font',**{'family':'serif','serif':['Palatino']})
+rc('text', usetex=True)
+
+
 def read_csv(path):
     '''
     '''
@@ -22,11 +29,21 @@ def read_csv(path):
 
 fig, ax = plt.subplots(figsize=(16,16))
 
-ax.set_xlabel('X', fontsize=17)
-ax.set_ylabel('Y', fontsize=17)
-ax.set_title("Global driven path with fused yaw-rates", fontsize=17)
+ax.set_xlabel(r'$\textbf{x}$ (meter)', fontsize=25)
+ax.set_ylabel(r'$\textbf{y}$ (meter)', fontsize=25)
 
-cut = 100000
+plt.tick_params(axis='both', which='major', labelsize=15)
+
+#ax.set_yticks(np.arange(-60, 175, 25))
+#ax.set_ylim(            -60, 175, 25)
+#
+#ax.set_xticks(np.arange(-120, 120, 25))
+#ax.set_xlim(            -120, 120, 25)
+
+
+#plt.title('Localization of 7 laps with different yaw rates', y=1.01)
+#ax.set_title('Localization of 7 laps with different yaw rates', fontsize=17)
+cut = 5000000
 
 
 # from numpy import genfromtxt
@@ -53,28 +70,33 @@ cut = 100000
 
 # ax.scatter(acc_data, acc_data_2, s = 2.5, color = 'cyan', label = 'driven pos')
 
+prefix = "../../build/tests/"
+size = 2.5
 
-## 
-# acc_x_list, acc_y_list       = read_csv('../../build/acc-pos-yaw.csv')
-# ax.scatter(acc_x_list[:cut],    acc_y_list[:cut],    s = 2.5, color='#2038b0', label = 'acc. yaw rate')
 # 
-# steer_x_list, steer_y_list   = read_csv('../../build/steering-pos-yaw.csv')
-# ax.scatter(steer_x_list[:cut],  steer_y_list[:cut],  s = 2.5, color='#ce6f0e',    label = 'steering calc. yaw rate')
-# # 
-# st_x_list, st_y_list         = read_csv('../../build/st-pos-yaw.csv')
-# ax.scatter(st_x_list[:cut],     st_y_list[:cut],     s = 2.5, color='#eef019', label = 'single track yaw rate')
+acc_x_list, acc_y_list       = read_csv(prefix + 'acceleration-integrated-yaw-pos-2018-08-02-td-v17.csv')
+ax.scatter(acc_x_list[:cut],    acc_y_list[:cut],    s = size, color='#60dfaf', label = 'BOSCH + Kistler')
 # 
-# normal_x_list, normal_y_list = read_csv('../../build/normal-pos-yaw.csv')
-# ax.scatter(normal_x_list[:cut], normal_y_list[:cut], s = 2.5, color='#60dfaf',  label = 'regular yaw rate')
+steer_x_list, steer_y_list   = read_csv(prefix + 'steering-integrated-yaw-pos-2018-08-02-td-v17.csv')
+ax.scatter(steer_x_list[:cut],  steer_y_list[:cut],  s = size, color='#ce6f0e',    label = 'POSIROT + Kistler')
 # 
-kafi_x_list, kafi_y_list     = read_csv('../../build/kafi-pos-yaw.csv')
-ax.scatter(kafi_x_list[:cut],   kafi_y_list[:cut],   s = 2.5, color='#26b605',  label = 'kafi calc. yaw rate')
+st_x_list, st_y_list         = read_csv(prefix + 'vehicle-model-integrated-yaw-pos-2018-08-02-td-v17.csv')
+ax.scatter(st_x_list[:cut],     st_y_list[:cut],     s = size, color='#eef019', label = 'Single-track model')
+# 
+normal_x_list, normal_y_list = read_csv(prefix + 'bosch-integrated-yaw-pos-2018-08-02-td-v17.csv')
+ax.scatter(normal_x_list[:cut], normal_y_list[:cut], s = size, color='#2038b0',  label = 'BOSCH')
+# 
+kafi_x_list, kafi_y_list     = read_csv(prefix + 'kafi-yaw-pos-2018-08-02-td-v17.csv')
+ax.scatter(kafi_x_list[:cut],   kafi_y_list[:cut],   s = size, color='#26b605', label = 'EKF')
 
+#ax.set_xticks(np.arange(-110, 120, 25))
+#ax.set_yticks(np.arange(-80, 180, 25))
 
+#ax.set_xticks(np.arange(-15, 70, 1))
+#ax.set_yticks(np.arange(-60, 10, 1))
 
-#ax.set_xticks(np.arange(-20, 80, 5))
-#ax.set_yticks(np.arange(-60, 30, 5))
-
-ax.grid()
+plt.axis('scaled')
+ax.grid(linestyle='dotted')
 plt.legend()
+ax.legend(markerscale=6)
 plt.show()
